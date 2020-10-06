@@ -1,0 +1,188 @@
+% stránka číslo 1 druhé přednášky
+
+\begin{definition}
+Nechť $\mathbb{C}$ je otevřené a $f \colon G \to \mathbb{C}$.
+Potom říkáme, že $f$ je na $G$ kolomorfní, pokud $f$ je  $\mathbb{C}$-diferencovatelná v každém $z\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech kolomorfních $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je celá, pokud $F\in \mathcal{H}(G)$.
+\end{definition}
+
+\begin{example}
+\begin{itemize}
+    \item Polynom $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je celá funkce.
+    \item Necht $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionalita funkce $R$ je kolomorfní na $\mathbb{C}\setminus\mathbb{Q}^{-1}(\alpha\circ\varphi)$ konečné.
+\end{itemize}    
+\end{example}
+
+% stránka číslo 2 druhé přednášky
+
+\section{Elementární funkce v $\mathbb{C}$}
+\subsection{Exponenciála}
+
+\begin{definition}
+$\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
+\end{definition}
+
+\begin{properties}
+\begin{itemize}
+    \item $\exp \mid_{  \mathbb{R}}$ je reálná exponenciála 
+    \item $\exp(z+w)=\exp(z)\exp(w)$
+    \item $\exp'(z)=\exp(z)$, $ z \in\mathbb{C}$
+     \newline
+     $f(z)=\exp(z)$, $f_1(x,y)=e^x \cos y$, $ f_2(x,y)=e^x\sin y$, 
+     \newline
+     $\frac{\partial f_1}{\partial x} = e^x\cos y = \frac{\partial f_2}{\partial y}$, $
+     \frac{\partial f_2}{\partial x} = e^x \sin y= - \frac{\partial f_1}{\partial y}$
+     \newline Tedy $f\in\mathcal{C}^{\infty}(\mathbb{R}^2)$ a $(CR)$ platí všude $\mathbb{R}^2\cong\mathbb{C}$ z CR-věty máme $f'(z)=\exp(z)$, $z\in\mathbb{C}$
+     \item $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$, $z\in\mathbb{C}$
+     \newline
+     
+     \textbf{Polární tvar komplexního čísla}
+       $ x=r\cos \varphi$, $
+        y=r\sin \varphi$, $
+        z=x+i$, $ y=r(\cos \varphi + i \sin \varphi)=\lvert z \rvert e^{i\varphi} $, kde $r=\lvert z \rvert$ a $\varphi$ je argument $z$.
+    
+        % stránka číslo 3 druhé přednášky
+     
+     \begin{notation}
+          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $Arg(z)\colon=\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\}$ Je-li $Arg(z) \cap \left (\pi,\pi\right ]=\{\varphi_0\}$, potom $arg(z)\colon=\varphi_0$ je tzv. hlavní hodnota argumentu $z$. 
+     \end{notation}
+     
+         Platí: 
+        \begin{itemize}
+            \item $Arg(z)\colon = \{arg(z)+2k\pi\mid k\in\mathbb{Z}\}$,
+            \item funkce $arg\colon \mathbb {C}\setminus\{0\} \to \left (\pi,\pi\right ]$, kde $arg$ je surjektivní a  konstantní na polopřímkách vycházejících z $0$. Navíc je $arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,0\right ]$
+        \end{itemize}
+
+     \item $\exp(\mathbb{C})=\mathbb{C}\setminus\{0\}$ 
+     \item $\exp$ není prostá na $\mathbb{C}$, je $2\pi i$-periodická a platí dokonce\colon
+     \newline
+    $\exp(z) =\exp(w) \iff\exists k \in\mathbb{Z}\colon w=2k\pi i$
+     \item Nechť $P\colon=\{z\in\mathbb{C}\mid Im z \in \left (\pi,\pi\right ]\}$.
+     Potom $\exp{}\mid_P$ je prostá a $\exp(P)=\mathbb{C}\setminus\{0\}$.
+\end{itemize}
+\end{properties}
+
+% stránka číslo 4 druhé přednášky
+
+\subsection{Logaritmus}
+
+Pro dané $z\in\mathbb{C}$ řešíme $e^w=z$. Pro $z=0$ nemáme řešení. Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  arg(z)}=e^{\log\lvert z \rvert+i   arg(z)}=e^w\iff\exists\ k \in\mathbb{Z}\colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
+
+\begin{definition}
+Nechť $z\in\mathbb{C}\setminus\{0\}$.Položme 
+\begin{itemize}
+    \item $Log z\colon=\{w\in\mathbb{C}\mid e^w=z\}$
+    \item $\log z\colon= \log\lvert z \rvert + i arg z \dots$tzv. hlavní hodnota logaritmu $z$.
+\end{itemize}
+\end{definition}
+
+\begin{properties}
+Nechť $z \in\mathbb{C}\setminus\{0\}$.
+\begin{itemize}
+    \item $Log z =\{\log z +2k\pi i\mid k\in\mathbb{Z}\}$ a $
+    \log =(\exp{}\mid _p)^{-1}$
+    \item $\log{}$ není spojitá v žádném $z\in\left (-\infty,0\right ]$, ale $\log{}\in \mathcal{H}(\mathbb{C}\setminus\left (-\infty,0\right ])$.
+    \newline Navíc $\log'z=\frac{1}{z}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ]$.
+     \item $\log(1-z)=\sum_{n=1}^{\infty}\frac{z^n}{n}$, $\lvert z \rvert<1$
+\end{itemize}
+
+ Pozor na počítání s logaritmem!
+
+ \begin{itemize}
+     \item $\exp(\log z)=z$, $\log(\exp{z i})\neq z$, z toho, že je to $2\pi i$-periodické
+     \item $\log(z w)\neq \log(z) + \log(w)$
+ \end{itemize}
+\end{properties}
+
+% stránka číslo 5 druhé přednášky
+
+např. $0=\log 1= \log((-1)(-1))\neq 2 \log(-1)=2\pi i$
+
+\subsection{Obecná mocnina}
+
+\begin{definition}
+Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom hlavní hodnota $\alpha$-té mocniny $z$ definujeme $z^{\alpha}\colon=\exp(\alpha \log z)$. Položme $m_{\alpha}(z)\colon=\{\exp(\alpha w)\mid w\in Log z\}$. 
+\end{definition}
+
+\begin{properties}
+\begin{itemize}
+    \item $e^z=\exp(z \log e)=\exp(z)$ 
+    % stránka 6 druhé přednášky
+    \item Je-li $z>0$ a $\alpha\in\mathbb{R}$, potom $z^{\alpha}$ je v souladu s MA.
+    \item $m_{\alpha}(z)=\{z^{\alpha}e^{2k\pi i \alpha}\mid k\in\mathbb{Z}\}$, $z\neq 0$
+    \newline
+    $w\in Log z\iff w=\log z +2k\pi i$
+    \item $(z^{\alpha})'=\alpha z^{\alpha-1}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ])$ a $\alpha\in\mathbb{C}$
+    \item $(1+z)^{\alpha}=\sum_{n=0}^{\infty}\tbinom{\alpha}{n}z^{n} $, $\lvert z \rvert<1$, kde $\tbinom{\alpha}{n}:=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.
+\end{itemize}
+\end{properties}
+
+\begin{example}
+Nechť $z \in\mathbb{C}\setminus\{0\}$.
+\begin{itemize}
+    \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.
+    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p\mid_q$, kde $q\in\mathbb{Q}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{2K\frac{p}{q}\pi i}\mid K=\{0,1,\cdots,q-1\}\}$
+    tvoří vrcholy pravidelného $q$-úhelníku vepsaného do kružnice o středu $0$
+    \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.
+\end{itemize}
+\end{example}
+
+% stránka 7 druhé přednášky
+
+\begin{example}
+\begin{itemize}
+    \item $\sqrt{-1}=e^{\frac{pi i}{2}}=i$,  $m_{\frac{1}{2}}(-1)=\{\pm i\}$
+    \item $\sqrt[3]{-1}=e^{\frac{\pi i}{3}}$ (nesouhlasí s MA!),  $m_{\frac{1}{3}}(-1)=\{e^{\frac{\pi i}{3}},e^{\frac{-\pi i}{3}},-1\} $
+    \item  $i^i=e^{\frac{-\pi }{2}}$, 
+    $m_{i}(i)=\{e^{\frac{-\pi }{2}+2k\pi}\mid k\in\mathbb{Z}\}$
+\end{itemize}
+
+ \vspace{5mm}
+ Pozor na počítání s mocninami! \newline
+ $(zw)^{\alpha}\neq z^{\alpha}w^{\alpha}$ \newline
+ např. $1=\sqrt{1}=\sqrt{(-1)(-1)}\neq \sqrt{-1}\sqrt{-1}=i^2=-1$
+\end{example}
+
+\begin{note}
+Je-li $f \colon \mathbb{C} \to \mathbb{C}$, potom $f(z)=\frac{f(z)+f(-z)}{2}+\frac{f(z)-f(-z)}{2}=$ sudá část $+$ lichá část.
+\end{note}
+
+\subsection{Hyperbolické funkce}
+
+$e^{z}=\cosh(z)+\sinh(z)$, kde
+
+\begin{definition}
+\[\cosh(z)\colon=\frac{e^{z}+e^{-z}}{2}, z\in \mathbb{C}\] \newline
+\[\sinh(z)\colon=\frac{e^{z}-e^{-z}}{2}, z\in \mathbb{C}\]
+\end{definition}
+
+% stránka číslo 8 druhé přednášky
+
+\begin{properties}
+\begin{itemize}
+    \item $\cosh'{z}=\sinh{z}$, $\sinh'{z}=\cosh{z}$
+    \item $\cosh{z}=\sum_{n=0}^{\infty}\frac{z^2n}{(2n)!}$, $\sinh{z}=\sum_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}$
+\end{itemize}
+\end{properties}
+
+\subsection{Goniometrické funkce}
+
+$e^{i z}=\cos(z)+i\sin(z)$, kde
+
+\begin{definition}
+\[cos(z)\colon=\frac{e^{i z}+e^{-i z}}{2}, z\in \mathbb{C}\]
+\[sin(z)\colon=\frac{e^{i z}-e^{-i z}}{2i}, z\in \mathbb{C}\]
+\end{definition}
+
+\begin{properties}
+\begin{itemize}
+    \item $\cos$ a $\sin$ jsou rozšířením příslušných reálných funkcí z $\mathbb{R}$ do $\mathbb{C}$.
+    \item $\sin'(z)=\cos(z)$, $\cos'(z)=-\sin(z)$
+    \item $\sin$ i $\cos$ jsou $2\pi$-periodické, ale nejsou omezené na $\mathbb{C}$. Platí, že $\sin(\mathbb{C})=\mathbb{C}=\cos(\mathbb{C})$
+    \item i na $\mathbb{C}$ platí součtové vzorce, atd.
+    \item $\sin(z)=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}$, $ 
+    \cos(z)=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}$
+\end{itemize}
+\end{properties}
+
+
+% konec druhé přednášky
