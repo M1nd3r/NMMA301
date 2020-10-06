@@ -1,0 +1,222 @@
+\documentclass[11pt, a4paper, onecolumn]{article}
+\usepackage{mathptmx}
+\usepackage[11pt]{moresize}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{latexsym}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{listings}
+
+\advance\textwidth by 2cm
+\advance\hoffset by 0cm
+\advance\voffset by 0cm
+\advance\textheight by 2cm
+
+\usepackage[left=1in,right=1in,top=1in,bottom=1in]{geometry}
+
+\usepackage[affil-it]{authblk} 
+\usepackage{etoolbox}
+\usepackage{lmodern}
+
+\title{\textbf{\Huge Úvod do komplexní analýzy}}
+\date{}
+\author{\vspace{-10mm}}
+%\date{} % Toggle commenting to test
+
+
+\begin{document}
+\pagestyle{empty}
+%\thispagestyle{empty}
+\pagenumbering{arabic}
+
+\large
+\maketitle
+\setlength{\parindent}{0in}
+
+\textbf{\Large{1. Zavedení základních pojmů}}
+\vspace{5mm}
+\large
+
+% stránka číslo 2 první přednášky
+
+\textbf{$\mathbb{R}^2$} je reálný vektorový prostor dimenze 2. Definujeme v něm Euklidovskou normu a metriku:
+\begin{itemize}
+    \item $|z| = \sqrt{x^2+y^2}$, $z = (x,y)\in\mathbb{R}^2$
+    \item $\rho(z,w):= |z-w|$, $z,w\in\mathbb{R}^2$
+\end{itemize}
+
+\textbf{Definice} Prostor $\mathbb{C}$ je prostor $\mathbb{R}^2$, v němž definujeme navíc:
+\begin{itemize}
+    \item násobení $(x,y).(u,v) = (xu-yv, xv+yu)$
+    \item ztotožňujeme $(x,0) \cong$, neboli $\mathbb{R}\subset\mathbb{C}$
+    \item značíme $i = (0,1)$
+\end{itemize}
+
+Vlastnosti $\mathbb{C}$. Nechť $z = (x,y)\in\mathbb{C}$.
+\begin{itemize}
+    \item Potom $z = x+iy$ a $(\pm i)^2 = -1$
+    \item Násobení v $\mathbb{C}$ zahrnuje násobení v $\mathbb{R}$ i násobení skalárem v $\mathbb{R}^2$
+\end{itemize}
+
+% stránka číslo 3 první přednášky
+
+\textbf{Značení} Nechť $z = x+iy$, kde $x,y\in\mathbb{R}$. Potom
+\begin{itemize}
+    \item $\overline{z}:= x-iy$ je \textit{komplexně sdružená část} k $z$,
+    \item $Re(z):= x$ je \textit{reálná část} $z$, $Im(z):= y$ je \textit{imaginární část} $z$,
+    \item $|z| = \sqrt{x^2+y^2}$ je \textit{modul} nebo \textit{absolutní hodnota} $z$.
+\end{itemize}
+
+Dále platí
+\begin{itemize}
+    \item $|z|^2 = z\overline{z}$, $\overline{zw} = \overline{z}.\overline{w}$, $|zw| = |z|.|w|$, $z+\overline{z} = 2.Re(z)$, $z-\overline{z} = 2i.Im(z)$
+    \item $\frac{1}{z} = \frac{\overline{z}}{|z|^2}$, je-li $z\neq 0$
+    \item $\mathbb{C}$ je těleso
+\end{itemize}
+
+Pozor, $\mathbb{C}$ nelze \textit{rozumně} upořádat!
+\begin{itemize}
+    \item $i>0\implies -1=i^2>0$
+    \item $i<0\implies -1=i^2>0$
+\end{itemize}
+
+% stránka číslo 4 první přednášky
+
+\textbf{\Large{Lineární zobrazení}}
+
+$\mathbb{R}^2$ je reálný vektorový prostor dimenze 2, jeho báze je $((1,0)^T, (0,1)^T)$. Obecné $\mathbb{R}$-lineární zobrazení $L:\mathbb{R}^2\to\mathbb{R}^2$ má tvar 
+\begin{flalign}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\longmapsto
+\begin{pmatrix}
+a & c\\
+b & d
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}
+\end{flalign}
+kde $a,b,c,d\in\mathbb{R}$.
+
+$\mathbb{C}$ je komplexní vektorový prostor dimenze 1, jeho báze je $1$. Obecné $\mathbb{C}$-lineární zobrazení $L:\mathbb{C}\to\mathbb{C}$ má tvar $Lz = wz, z\in\mathbb{C}$, kde $w\in\mathbb{C}$. Nechť $z = (a+ib)(x+iy) = (ax-by, bx+ay) = $
+$$= \begin{pmatrix}
+a & -b\\
+b & a
+\end{pmatrix}
+\begin{pmatrix}
+x \\ y
+\end{pmatrix}$$
+
+\textbf{Pozorování} $\mathbb{R}$-lineární zobrazení $(1)$ je $\mathbb{C}$-lineární, právě když $d = a, c = -b$.
+
+\textbf{Poznámka} $\mathbb{C}$-lineární zobrazení jsou velmi specifická $\mathbb{R}$-lineární zobrazení.
+
+% stránka číslo 5 první přední přednášky
+
+\textbf{Úmluva} Nebude-li řečeno něco jiného, funkce znamená komplexnou funkci komplexné proměnné. Na $f: \mathbb{C} \to \mathbb{C}$ se můžeme vždy dívat jako na $f: \mathbb{R}^2 \to \mathbb{R}^2$, protože $\mathbb{C}\approx\mathbb{R}^2$.
+
+Nechť $f$ je funkce z $\mathbb{C}$ do $\mathbb{C}$. Spojitost a limita se definuje stejně jako v základním kurzu matematické analýzy.
+
+\textbf{Označení} Pro $z_0\in\mathbb{C}, \delta>0$ značíme $U(z_0,\delta):= \{z\in\mathbb{C}: |z-z_0|<\delta\}$ a nazýváme ji \textit{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \textit{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0), P(z_0)$.
+
+Potom definujeme
+\begin{itemize}
+    \item $\lim_{z\to x_0} {f(z)} = L$, pokud $\forall\epsilon>0\exists\delta>0:z\in P(x_0,\delta)\implies f(z)\in U(L, \epsilon)$
+    \item $f$ je spojitá v $x_0$, pokud $\lim_{x\to x_0}{f(x)} = f(x_0)$.
+\end{itemize}
+
+% stránka číslo 6 první přednášky
+
+\textbf{\Large{Diferencovatelnost}}
+\newline
+
+\textbf{Definice} Funkce $f$ je v $x_0$ $\mathbb{R}$-diferencovatelná, pokud existuje $\mathbb{R}$-lineární zobrazení \\$L: \mathbb{R}^2\to\mathbb{R}^2$ takové, že 
+$$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)-L(h)}{|h|} = 0.$$
+
+\textbf{Poznámka} Potom $df(x_0):=L$ je tzv. \textit{totální diferenciál} $f$ v $x_0$ a platí, že $$df(x_0)h:=\begin{pmatrix}
+\frac{\partial f_1}{\partial x}(x_0) & \frac{\partial f_1}{\partial y}(x_0)\\
+\frac{\partial f_2}{\partial x}(x_0) & \frac{\partial f_2}{\partial y}(x_0)
+\end{pmatrix}h,\vspace{5mm} h\in \mathbb{R}^2$$
+kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Ta matice se nazývá \textit{Jacobiho matice.})
+
+% stránka 7 první přednášky
+
+\textbf{Definice} Řekneme, že funkce $f$ je v $x_0$ $\mathbb{C}-diferencovatelná$, pokud existuje konečná limita $$f'(x_0):= \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h}.$$ Číslo $f'(x_0)$ nazýváme \textit{komplexnou derivací} $f$ v $x_0$.  
+
+\textbf{Poznámka} Jako pro reálnou funkci reálné proměnné platí $(f\pm g)', (f.g)', (f/g)', (f\circ g)'$
+
+\textbf{Příklad} 
+\begin{itemize}
+    \item $(z^n)' = n.z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}$
+    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$-diferencovatelná, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$-diferencovatelná. Skutečně, máme $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} = \lim_{h\to 0}\frac{\overline{h}}{h}$$ Avšak poslední limita neexistuje.
+\end{itemize}
+
+% stránka číslo 8 první přednášky
+
+\textbf{Věta 1.1 (Cauchy-Riemannova)}\newline
+Nechť $f$ je funkce diferencovatelná na okolí $x_0 \in \mathbb{C}$. Pak následující je ekvivalentní:
+\begin{enumerate}
+    \item Existuje $f'(x_0)$
+    \item Existuje $df(x_0)$ a $df(x_0)$ je $\mathbb{C}-linární$
+    \item Existuje $df(x_0)$ a v $z_0$ platí tvrzení Cauchy-Riemannových podmínek.
+\end{enumerate}
+
+Cauchy-Riemannovy podmínky:
+\[\frac{\partial f_1}{\partial x} = \frac{\partial f_2}{\partial y}\]
+\[\frac{\partial f_1}{\partial y} = -\frac{\partial f_2}{\partial x}\]
+
+zde $f(x,y) = (f_1(x,y),f_2(x,y))$
+
+\textbf{Důkaz} $(2. \iff 3.)$ plyne z pozorování pro lineární zobrazení
+\newline
+$(1. \iff 2.)$ Z definice $w = f'(z_0)$ znamená, že 
+
+\begin{flalign}
+0 = \lim_{h \to 0} {\frac{f(x_0+h)-f(z_0)-wh}{h}}
+\end{flalign}
+
+Po vynásobení výrazu v limitě $h/|h|$ dostaneme, že
+\begin{flalign}
+0 = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)-wh}{|h|}
+\end{flalign}
+
+což je ekvivalentní tomu, že $df(z_0)h=wh, h\in \mathbb{C}$. Z $(3)$ plyne $(2)$ vynásobením $|h|/h$.
+
+\begin{flushright}\qedsymbol\end{flushright}
+
+% stránka číslo 9 první přednášky
+
+\textbf{Poznámka 1.2}
+\begin{itemize}
+    \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \mathbb{C}$ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$
+    \item Platí, že $(CR) \iff \frac{\partial f}{\partial x} = -i\frac{\partial f}{\partial y}$
+\end{itemize}
+
+Důkaz:
+\begin{itemize}
+    \item $df(x_0)1 = \frac{\partial f_1}{\partial x}(x_0) + i\frac{\partial f_2}{\partial x}(x_0) =: \frac{\partial f}{\partial x}(x_0)$
+    \item zřejmé
+\end{itemize}
+
+\textbf{Příklad 1.3}
+Nechť $f(z) = \overline{z}$, pak $f'(x,y) = (x,-y)$. Dále 
+$$\frac{\partial f_1}{\partial x} = 1, \frac{\partial f_1}{\partial y} = 0, \frac{\partial f_2}{\partial x} = 0, \frac{\partial f_2}{\partial y} = -1.$$
+Máme, že $f\in C^\infty(\mathbb{R}^2)$, ale v žádném $z\in \mathbb{C}$ nesplňuje $(CR)$, proto není nikde $\mathbb{C}-diferencovatelná$.
+
+% konec první přednášky
+
+\end{document}
+
