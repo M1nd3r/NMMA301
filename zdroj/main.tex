@@ -37,6 +37,16 @@
 }
 \makeatother
 
+\newtheoremstyle{novy_radek}% name
+{10pt}% Space above
+{10pt}% Space below
+{}% Body font
+{}% Indent amount
+{\bfseries}% hTheorem head font
+{.}% Punctuation after theorem head
+{\newline}% Space after theorem head
+{}% Theorem head spec (can be left empty, meaning ‘normal’)
+
 \theoremstyle{plain}% default
 \newtheorem{theorem}{Věta}[section]
 \newtheorem{lemma}[theorem]{Lemma}
@@ -50,6 +60,9 @@
 \newtheorem{example}[theorem]{Příklad}
 \newtheorem{note}[theorem]{Poznámka}
 \newtheorem{observation}[theorem]{Pozorování}
+
+\theoremstyle{novy_radek}
+\newtheorem{properties}[theorem]{Vlastnosti\vspace{2mm}}
 
 \title{\textbf{\Huge Úvod do komplexní analýzy}}
 \date{6. října 2020}
@@ -66,7 +79,6 @@
 \maketitle
 \setlength{\parindent}{0in}
 \subfile{prednasky/01_prednaska}
-
+\subfile{prednasky/02_prednaska}
 
 \end{document}
-
