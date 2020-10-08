@@ -37,6 +37,14 @@
 }
 \makeatother
 
+\usepackage{titling}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\Large#1\end{center}
+    \vskip0.5em}%
+}
+
 \newtheoremstyle{novy_radek}% name
 {10pt}% Space above
 {10pt}% Space below
@@ -65,7 +73,8 @@
 \newtheorem{properties}[theorem]{Vlastnosti\vspace{2mm}}
 
 \title{\textbf{\Huge Úvod do komplexní analýzy}}
-\date{6. října 2020}
+\subtitle{doc. RNDr. Roman Lávička, Ph.D.}
+\date{8. října 2020}
 \author{\vspace{-10mm}}
 %\date{} % Toggle commenting to test
 
@@ -81,4 +90,5 @@
 \subfile{prednasky/01_prednaska}
 \subfile{prednasky/02_prednaska}
 
+\subfile{thanks}
 \end{document}
