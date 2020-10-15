@@ -1,15 +1,14 @@
-\section{\texorpdfstring{Křivkový integrál}{Lg}}
+\section{\texorpdfstring{Křivkový integrál}{Krivkovy integral}}
 
 \begin{definition}
 Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
 \begin{enumerate}
     \item $\varphi$ je \emph{křivka}, pokud je $\varphi$ spojitá
     \item $\varphi$ je \emph{regulární křivka}, pokud je $\varphi$ po částech spojitě diferencovatelná, tzn. $\varphi$ je spojitá na $[\alpha,\beta]$ a existuje dělení $\alpha = t_0<t_1<\cdots <t_n=\beta$ takové, že
-    $\varphi \Big\rvert
+    $\varphi \big\rvert
      _{[t_i,t_{i+1}]} 
-    $je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$
+    $je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$.
     
-     $\left( x^n + y^n = z^n \right.$
 \end{enumerate}
 \end{definition}
 
@@ -43,7 +42,7 @@ Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulárn�
 \begin{reminder}
 Jako v MA definujeme
 \begin{enumerate}
-    \item Vše po složkách, například.
+    \item Vše po složkách, například:
     \begin{align*}
         \varphi'(t)&=\varphi'_1(t)+i\varphi'_2(t),\\
         \int_\alpha^\beta\varphi(t)\diff t &=\int_\alpha^\beta\varphi_1(t)\diff t +i\int_\alpha^\beta\varphi_2(t)\diff t,
@@ -61,7 +60,7 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \begin{note}
 \mbox{} % prázdný mbox kvůli zarovnání položek listu
 \begin{enumerate}
-    \item Křivkový integrál \eqref{krivkovyIntegral} existuje vždy jako Riemannův.
+    \item Křivkový integrál \cref{krivkovyIntegral} existuje vždy jako Riemannův.
     \item Píšeme také $\int_\varphi f(z)\diff z$
 \end{enumerate}
 \end{note}
@@ -89,37 +88,37 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
         \int_{\dotminus \varphi}f&=-\int_\varphi f\text{,}
     \end{align*}
     kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k $\varphi$.
-    \item Křivková integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. Potom $$\int_\varphi f = \int_\psi f$$.
+    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. Potom $$\int_\varphi f = \int_\psi f\text{.}$$
     \begin{proof}
     \begin{multline*}
         \int_\psi f=
     \int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr) \varphi'\bigl(\omega(t)\bigr)\omega'(t)\diff t\\
     =\int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr)\psi'(t)\diff t \stackrel{\text{subst.}}{\stackrel{\tau=\omega(t)}{=}}
-    \int_\alpha^\beta f\bigl(\varphi(\tau)\bigr) \varphi'(\tau)\diff \tau=\int_\varphi f  
+    \int_\alpha^\beta f\bigl(\varphi(\tau)\bigr) \varphi'(\tau)\diff \tau=\int_\varphi f \text{.} 
     \end{multline*}
     \end{proof}
 \end{enumerate}
 \end{propertiesBasic}
 \begin{definition}
-Řekneme, že funkce $f$ má na otevřené $G\subset\mathbb{C}$ \emph{primitivní funkci F}, pokud $F'=f$ na $G$
+Řekneme, že funkce $f$ má na otevřené $G\subset\mathbb{C}$ \emph{primitivní funkci F}, pokud $F'=f$ na $G$.
 \end{definition}
 
 \begin{example}
 $\frac{z^{n+1}}{n+1}$ je primitivní funkcí k $z^n
 \twopartdef
-{\text{na } \mathbb{C}}{n=0,1,2,3, \cdots}
-{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \cdots}$
+{\text{na } \mathbb{C}}{n=0,1,2,3, \dots}
+{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \dots}$
 \end{example}
 
 \begin{theorem}[O výpočtu křivkového integrálu pomocí PF]
-Nechť $G\subset\mathbb{C}$ je otevřená a $f$ má na $G$ primitivní funkci $F$. Nechť $\varphi:[\alpha,\beta]\rightarrow G$ je křivka a $f$ je spojitá $^{(*)}\phantomsection \label{^{(*)}}$ na $\langle\varphi\rangle$. Potom
+Nechť $G\subset\mathbb{C}$ je otevřená a $f$ má na $G$ primitivní funkci $F$. Nechť $\varphi:[\alpha,\beta]\rightarrow G$ je křivka a $f$ je spojitá$\phantomsection$\hyperref[$^{(*)}$end]{$^{(*)}$} \label{^{(*)}start}na $\langle\varphi\rangle$. Potom
 \begin{enumerate}
     \item $\int_\varphi f=F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)$
     \item $\int_\varphi f=0$, je-li $\varphi$ \emph{uzavřená}, tzn. $\varphi(\alpha)=\varphi(\beta)$
 \end{enumerate}
 \end{theorem}
 \begin{note}
-\hyperref[^{(*)}]{$^{(*)}$} Ukážeme si později, že funkce $f$, která má na $G$ primitivní funkci je na $G$ holomorfní, tudíž i spojitá.
+\hyperref[^{(*)}start]{$^{(*)}$} \label{$^{(*)}$end} Ukážeme si později, že funkce $f$, která má na $G$ primitivní funkci, je na $G$ holomorfní, tudíž i spojitá.
 \end{note}
 
 \begin{proof}
@@ -150,7 +149,7 @@ Nechť $G\subset\mathbb{C}(\mathbb{R}^n)$ otevřená. Následující tvrzení js
 \end{enumerate}
 \end{reminder}
 \begin{proof}
-$(a)\Leftrightarrow (b)$: víte z MA; $(c)\Rightarrow(b)$: jasné; $(a)\Rightarrow(c)$: ukáže se podobně jako $(a)\Rightarrow (b)$
+$(a)\iff (b)$: víte z MA; $(c)\Rightarrow(b)$: jasné; $(a)\Rightarrow(c)$: ukáže se podobně jako $(a)\Rightarrow (b)$
 \end{proof}
 
 \begin{theorem}
@@ -169,7 +168,7 @@ Jsou-li $F_1,F_2$ primitivní funkce k $f$ na \emph{oblasti} $G\subset\mathbb{C}
 $$(F_2-F_1)'=F'_2-F'_1=f-f=0\text{.}$$
 \end{proof}
 
-\begin{theorem}[O existenci PF]
+\begin{theorem}[O existenci PF]\label{thm:oExistenciPF}
 Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. NTJE:
 \begin{enumerate}
     \item $f$ má na $G$ primitivní funkci.
@@ -182,7 +181,7 @@ Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. NTJE:
 Přípomíná \emph{větu o potenciálu} z MA \circled{?}
 \end{note}
 
-\begin{proof}
+\begin{proof}[Důkaz věty \cref{thm:oExistenciPF}]
 \mbox{}\\
 $1. \Rightarrow 2.$ Víme z věty o výpočtu integrálu pomocí PF\\
 $2. \Rightarrow 3.$ Položme $\tau:=\varphi \dotplus(\dotminus\psi)$. Potom je $\tau$ \emph{uzavřená} a z 2. dostaneme $$0=\int_\tau f=\int_\varphi f - \int_\psi f\text{.}$$
@@ -201,7 +200,7 @@ ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
 \mbox{}
 \begin{enumerate}
     \item 
-        Řekneme, že $m\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0,z]\subset M$ pro každý $z\in M$.
+        Řekneme, že $m\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0,z]\subset M$ pro každé $z\in M$.
         \begin{note*}
             Konvexní $\subsetneq$ hvězdicovitá.
         \end{note*}
