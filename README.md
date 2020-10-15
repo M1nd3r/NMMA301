@@ -7,7 +7,7 @@ Struktura repozitáře:
 
 ► zkompilované PDF
 
-► složka zdroj obsahující rozbalený source code (pro snadné porovnávání změn a GitBlame)
+► složka "zdroj" obsahující rozbalený source code (pro snadné porovnávání změn a GitBlame)
 
 -------------------------------------------------------------
 
