@@ -1,0 +1,230 @@
+\section{\texorpdfstring{Křivkový integrál}{Lg}}
+
+\begin{definition}
+Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
+\begin{enumerate}
+    \item $\varphi$ je \emph{křivka}, pokud je $\varphi$ spojitá
+    \item $\varphi$ je \emph{regulární křivka}, pokud je $\varphi$ po částech spojitě diferencovatelná, tzn. $\varphi$ je spojitá na $[\alpha,\beta]$ a existuje dělení $\alpha = t_0<t_1<\cdots <t_n=\beta$ takové, že
+    $\varphi \Big\rvert
+     _{[t_i,t_{i+1}]} 
+    $je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$
+    
+     $\left( x^n + y^n = z^n \right.$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}[Úsečka]
+Nechť $a, b \in \mathbb{C}$. Potom $\varphi(t):= a + t(b-a)$, $ t \in [0,1]$ je úsečka z \emph{a} do \emph{b}. Značíme $[a,b]$.
+\end{definition}
+
+\begin{notation}
+Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ a $\psi:[\gamma,\delta]\rightarrow\mathbb{C}$ jsou (regulární) křivky. Potom jejich \emph{součet} je regulární křivka.
+$(\varphi \dotplus \psi)(t) := 
+\twopartdef { \varphi(t) } {t \in[\alpha,\beta]} {\psi(t-\beta+\gamma)} {t \in[\beta,\delta+\beta-\gamma]}$, pokud $\varphi(\beta)=\psi(\gamma)$.
+\end{notation}
+
+\begin{definition}[Lomenná čára]
+Řekneme, že regulární křivka $\varphi$ je \emph{lomenná čára} v $\mathbb{C}$, existují-li $z_1,z_2,\cdots,z_k \in \mathbb{C}$ taková, že $\varphi=[z_1,z_2]\dotplus[z_2,z_3]\dotplus\cdots\dotplus[z_{k-1},z_k]$.
+\end{definition}
+
+
+\begin{definition}[Kružnice]
+Nechť $z_0\in\mathbb{C}$ a $r>0$. Potom $\varphi(t):=z_0+re^{it}$, $t\in [0,2\pi]$ je \emph{kružnice} probíhaná v kladném směru (proti směru hodinových ručiček).
+\end{definition}
+
+\begin{note}
+Pro křivku $\varphi$ může být její graf $\langle\varphi\rangle:=\varphi([\alpha,\beta])$ například čtverec (Peanova křivka).
+\end{note}
+
+\begin{agreement}
+Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulární křivku v $\mathbb{C}$}.
+\end{agreement}
+
+\begin{reminder}
+Jako v MA definujeme
+\begin{enumerate}
+    \item Vše po složkách, například.
+    \begin{align*}
+        \varphi'(t)&=\varphi'_1(t)+i\varphi'_2(t),\\
+        \int_\alpha^\beta\varphi(t)\diff t &=\int_\alpha^\beta\varphi_1(t)\diff t +i\int_\alpha^\beta\varphi_2(t)\diff t,
+    \end{align*}
+    mají-li pravé strany smysl. Zde $\varphi(t)=\big(\varphi_1(t),\varphi_2(t)\big)=\varphi_1(t)+i\varphi_2(t)$
+    \item \emph{Délka křivky}: \[V(\varphi):=\int_\alpha^\beta|\varphi'(t)|\diff t,\] je-li $\varphi$ regulární.
+\end{enumerate}
+\end{reminder}
+\begin{definition}
+Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f:\langle\varphi\rangle\rightarrow\mathbb{C}$ je spojitá. Potom definujeme
+\begin{equation}\label{krivkovyIntegral}
+    \int_\varphi f:=\int_\alpha^\beta f\big(\varphi(t)\big)\varphi'(t)\diff t
+\end{equation}
+\end{definition}
+\begin{note}
+\mbox{} % prázdný mbox kvůli zarovnání položek listu
+\begin{enumerate}
+    \item Křivkový integrál \eqref{krivkovyIntegral} existuje vždy jako Riemannův.
+    \item Píšeme také $\int_\varphi f(z)\diff z$
+\end{enumerate}
+\end{note}
+
+\begin{propertiesBasic}
+\mbox{}
+\vspace{-2em}
+\begin{enumerate}
+    \item Je-li $\varphi$ křivka, $f$ a $g$ jsou spojité funkce na $\langle\varphi\rangle$ a $A,B \in \mathbb{C}$, potom $$\int_\varphi (Af+Bg)=A\int_\varphi f+B\int_\varphi g.$$
+    \item Je-li $\varphi$ křivka a $f$ je spojitá funkce na $\langle\varphi\rangle$, potom $\left|\int_\varphi f\right|\leq\max_{\langle\varphi\rangle}|f|\cdot V(\varphi)$.
+    \begin{proof}
+     Označíme $M:=\max_{\langle\varphi\rangle}|f|$. Potom máme
+     \begin{multline*}
+     \left|\int_\varphi f\right|=
+     \left| \int_\alpha^\beta f\bigl(\varphi(t)\bigr) \varphi'(t) \diff t \right|
+     \leq\int_\alpha^\beta\left|f\bigl(\varphi(t)\bigr)\right|\left|\varphi'(t)\right|\diff t\\
+     \leq\int_\alpha^\beta M\left|\varphi'(t)\right|\diff t =M\int_\alpha^\beta \left|\varphi'(t)\right|\diff t
+     = M\cdot V(\varphi)
+     \end{multline*}
+    \end{proof}
+    \item Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$, $\psi:[\gamma,\delta],\rightarrow\mathbb{C}$ jsou křivky a $\varphi(\beta)=\psi(\gamma)$. Potom 
+    \begin{align*}
+        \int_{\varphi\dotplus\psi}f&=\int_\varphi f+\int_\psi f \\ 
+        &\text{a} \\
+        \int_{\dotminus \varphi}f&=-\int_\varphi f\text{,}
+    \end{align*}
+    kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k $\varphi$.
+    \item Křivková integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. Potom $$\int_\varphi f = \int_\psi f$$.
+    \begin{proof}
+    \begin{multline*}
+        \int_\psi f=
+    \int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr) \varphi'\bigl(\omega(t)\bigr)\omega'(t)\diff t\\
+    =\int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr)\psi'(t)\diff t \stackrel{\text{subst.}}{\stackrel{\tau=\omega(t)}{=}}
+    \int_\alpha^\beta f\bigl(\varphi(\tau)\bigr) \varphi'(\tau)\diff \tau=\int_\varphi f  
+    \end{multline*}
+    \end{proof}
+\end{enumerate}
+\end{propertiesBasic}
+\begin{definition}
+Řekneme, že funkce $f$ má na otevřené $G\subset\mathbb{C}$ \emph{primitivní funkci F}, pokud $F'=f$ na $G$
+\end{definition}
+
+\begin{example}
+$\frac{z^{n+1}}{n+1}$ je primitivní funkcí k $z^n
+\twopartdef
+{\text{na } \mathbb{C}}{n=0,1,2,3, \cdots}
+{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \cdots}$
+\end{example}
+
+\begin{theorem}[O výpočtu křivkového integrálu pomocí PF]
+Nechť $G\subset\mathbb{C}$ je otevřená a $f$ má na $G$ primitivní funkci $F$. Nechť $\varphi:[\alpha,\beta]\rightarrow G$ je křivka a $f$ je spojitá $^{(*)}\phantomsection \label{^{(*)}}$ na $\langle\varphi\rangle$. Potom
+\begin{enumerate}
+    \item $\int_\varphi f=F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)$
+    \item $\int_\varphi f=0$, je-li $\varphi$ \emph{uzavřená}, tzn. $\varphi(\alpha)=\varphi(\beta)$
+\end{enumerate}
+\end{theorem}
+\begin{note}
+\hyperref[^{(*)}]{$^{(*)}$} Ukážeme si později, že funkce $f$, která má na $G$ primitivní funkci je na $G$ holomorfní, tudíž i spojitá.
+\end{note}
+
+\begin{proof}
+Z \hyperref[CR]{Cauchy-Riemannovy věty} plyne, že 
+$$\frac{\diff}{\diff t}\Bigl(F\bigl(\varphi(t)\bigr)\Bigr)=\frac{\partial F}{\partial x}\varphi'_1+\frac{\partial F}{\partial y}\varphi'_2=F'\varphi'_1+iF'\varphi'_2=F'\bigl(\varphi(t)\bigr)\varphi'(t)\text{.}$$
+Tato rovnost platí až na konečně mnoho $t\in[\alpha\beta]$, neboli $F\circ\varphi$ je zobecnění PF k integrandu.
+Máme tedy
+$$\int_\varphi f=\int_\alpha^\beta f\bigl(\varphi(t)\bigr)\varphi'(t)\diff t
+=\int_\alpha^\beta \frac{\diff}{\diff t}\Bigl(F\bigl(\varphi(t)\bigr)\Bigr)\diff t=
+F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)\text{.}$$
+\end{proof}
+
+\begin{example}
+\mbox{}
+\begin{itemize}
+    \item $\frac{1}{z}$ je holomorfní na $\mathbb{C}\setminus\{0\}$, ale na $\mathbb{C}\setminus\{0\}$ \emph{nemá} primitivní funkci, neboť víme $$\int_\varphi \frac{\diff z}{z}=2\pi i \neq 0 \text{ pro } \varphi(t)=e^{it}\text{, } t \in [0,2\pi]\text{.}$$ 
+    \item $\frac{1}{z}$ má na $\mathbb{C}\setminus(-\infty,0]$ primitivní funkci $\log(z)$. $$\log'(z)=\frac{1}{z}\text{.}$$
+\end{itemize}
+\end{example}
+
+\begin{reminder}[Souvislost]
+Nechť $G\subset\mathbb{C}(\mathbb{R}^n)$ otevřená. Následující tvrzení jsou ekvivalentní:
+
+\begin{enumerate}[(a)]
+    \item $G$ je \emph{souvislá}, tj. $G$ je \emph{oblast}.
+    \item $G$ je \emph{křivkově souvislá}, tzn. pro každé $z_1,z_2\in G$ existuje spojitá křivka $\varphi:[\alpha,\beta]\rightarrow G$ taková, že $\varphi(\alpha)=z_1$ a $\varphi(\beta)=z_2$.
+    \item Pro každé $z_1,z_2\in G$ existuje \emph{lomenná čára} $\varphi:[\alpha,\beta]\rightarrow G$ taková, že $\varphi(\alpha)=z_1$ a $\varphi(\beta)=z_2$.
+\end{enumerate}
+\end{reminder}
+\begin{proof}
+$(a)\Leftrightarrow (b)$: víte z MA; $(c)\Rightarrow(b)$: jasné; $(a)\Rightarrow(c)$: ukáže se podobně jako $(a)\Rightarrow (b)$
+\end{proof}
+
+\begin{theorem}
+Funkce $f$ je konstatní na oblasti $G\subset\mathbb{C}$, právě když $f'=0$ na $G$.
+\end{theorem}
+\begin{proof}
+$\Rightarrow$ Jasné.\\
+$\Leftarrow$ Nechť $z,w\in G$ a $\varphi$ je lomenná čára v $G$ spojující $z$ a $w$. Potom $f(w)-f(z)=\int_\varphi f'=0$, protože $f$ je primitivní funkcí k $f'$ na $G$.
+\end{proof}
+
+\begin{consequence}
+Jsou-li $F_1,F_2$ primitivní funkce k $f$ na \emph{oblasti} $G\subset\mathbb{C}$, potom existuje $c\in\mathbb{C}$ tak, že $F_2=F_1+c$.
+\end{consequence}
+
+\begin{proof}
+$$(F_2-F_1)'=F'_2-F'_1=f-f=0\text{.}$$
+\end{proof}
+
+\begin{theorem}[O existenci PF]
+Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. NTJE:
+\begin{enumerate}
+    \item $f$ má na $G$ primitivní funkci.
+    \item $\int_\varphi f=0$ pro každou \emph{uzavřenou} křivku $\varphi$ v $G$.
+    \item $\int_\varphi f$ \emph{nezávisí} v $G$ \emph{na křivce} $\varphi$, tzn. pro každé dvě křivky $\varphi:[\alpha,\beta]\rightarrow G$, $\psi:[\gamma,\delta]\rightarrow G$ takové, že $\varphi(\alpha)=\psi(\gamma)$ a $\varphi(\beta)=\psi(\delta)$, platí $\int_\varphi f = \int_\psi f$.
+\end{enumerate}
+\end{theorem}
+
+\begin{note}
+Přípomíná \emph{větu o potenciálu} z MA \circled{?}
+\end{note}
+
+\begin{proof}
+\mbox{}\\
+$1. \Rightarrow 2.$ Víme z věty o výpočtu integrálu pomocí PF\\
+$2. \Rightarrow 3.$ Položme $\tau:=\varphi \dotplus(\dotminus\psi)$. Potom je $\tau$ \emph{uzavřená} a z 2. dostaneme $$0=\int_\tau f=\int_\varphi f - \int_\psi f\text{.}$$
+$3. \Rightarrow 1.$ Volme $z_0\in G$ pevně. Pro každé $z\in G$ najděme lomenou čáru $\varphi_z$ v $G$, která začíná v $z_0$ a končí v $z$. 
+Definujeme $F(z):=\int_{\varphi_z} f$, $z\in G$. 
+Definice $F$ je korektní, nezávislá na volbě $\varphi_z$, protože předpokládáme 3. Ukážeme, že $F$ je hledaná PF k $f$ na $G$. Nechť $z_1\in G$. Dokážeme, že $F'(z_1)=f(z_1)$. 
+Volme $r>0$, aby $U(z_1,r)\subset G$. Je-li $|h|<r$, 
+potom $$F(z_1+h)-F(z_1)\stackrel{3.}{=}\int_{\varphi_{z_1}\dotplus u} f-\int_{\varphi_{z_1}}f=\int_u f\text{,}$$
+kde $u=\left[z_1,z_1+h \right]$ je \emph{úsečka}, tzn. $u(t)=z_1+t\cdot h$, $t\in[0,1]$. 
+Tedy $$F(z_1+h)-F(z_1)=\int_u f=\int_0^1 f(z_1+th)h \diff t\text{,}$$tudíž $$\frac{F(z_1+h)-F(z_1)}{g}-f(z_1)=\int_0^1 \left(f(z_1+th)-f(z_1)\right)\diff t\text{.}$$ To se blíží k nule pro $h\rightarrow0$, protože 
+$$\left| \int_0^1\left(f(z_1+th)-f(z_1)\right)\diff t\right| \leq \max_{z\in[z_1,z_1+h]}\left|f(z)-f(z_1)\right| \xrightarrow{ h\rightarrow 0}0$$
+ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
+\end{proof}
+
+\begin{notation}
+\mbox{}
+\begin{enumerate}
+    \item 
+        Řekneme, že $m\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0,z]\subset M$ pro každý $z\in M$.
+        \begin{note*}
+            Konvexní $\subsetneq$ hvězdicovitá.
+        \end{note*}
+    \item
+        Řekneme, že $\triangle\subset\mathbb{C}$ 
+        je \emph{trojúhelník} s vrcholy $a,b,c\in\mathbb{C}$, 
+        pokud $$\triangle:=\left\{ \alpha a+\beta b + \gamma c\text{ }|\text{ }\alpha,\beta,\gamma\geq 0,\alpha+\beta+\gamma=1 \right\}$$ (\emph{konvexní obal }$a,b,c$) a značíme
+        $\partial\triangle:=[a,b]\dotplus[b,c]\dotplus[c,a]$. 
+        Připouštíme i degenerované $\triangle$, tzn. $a,b,c$ mohou ležet na jedné přímce nebo body $a,b,c$ mohou splývat...
+\end{enumerate}
+\end{notation}
+
+\begin{amendment}
+Nechť $f$ je spojitá funkce na \emph{hvězdicovité} oblasti $G\subset\mathbb{C}.$ Je-li
+\begin{equation}\label{intTriangle}
+    \int_{\partial\triangle}f=0\text{,}
+\end{equation}
+pro každý \emph{trojúhelník} $\triangle\subset G$, potom $f$ má na $G$ primitivní funkci.
+\end{amendment}
+
+\begin{proof}
+Nechť $z_0$ je střed hvězdovitosti $G$, Pro každé $z\in G$ položme $\varphi_z:=[z_0,z]$ a $F(z):=\int_{\varphi_z}f\text{.}$ 
+Rozmyslíme si, že důkaz
+\fbox{$F'=f \text{ na } G$}
+je zcela analogický $\circled{3}\Rightarrow\circled{1}$ předchozí věty, když místo \circled{3} uvažujeme \cref{intTriangle}.
+\end{proof}
