@@ -1,5 +1,4 @@
-# NMMA301
-Úvod do komplexní analýzy
+# NMMA301 - Úvod do komplexní analýzy
 
 Struktura repozitáře:
 
