@@ -4,7 +4,7 @@
 
 % stránka číslo 2 první přednášky
 
-\textbf{$\mathbb{R}^2$} je reálný vektorový prostor dimenze 2. Definujeme v něm Euklidovskou normu a metriku:
+\textbf{$\mathbb{R}^2$} je reálný vektorový prostor dimenze 2. Definujeme v něm \emph{Euklidovskou normu} a \emph{metriku}:
 \begin{itemize}
     \item $|z| = \sqrt{x^2+y^2}$, $z = (x,y)\in\mathbb{R}^2$
     \item $\rho(z,w):= |z-w|$, $z,w\in\mathbb{R}^2$
@@ -55,8 +55,9 @@ Pozor, $\mathbb{C}$ nelze \emph{rozumně} upořádat!
 
 \section{Lineární zobrazení}
 \begin{definition}
-$\mathbb{R}^2$ je reálný vektorový prostor dimenze 2, jeho báze je $((1,0)^T, (0,1)^T)$. Obecné $\mathbb{R}$-lineární zobrazení $L:\mathbb{R}^2\to\mathbb{R}^2$ má tvar 
-\begin{flalign}
+$\mathbb{R}^2$ je \emph{reálný vektorový prostor} dimenze 2, jeho báze je $\left((1,0)^T, (0,1)^T\right)$. Obecné $\mathbb{R}$\emph{-lineární zobrazení} $L:\mathbb{R}^2\to\mathbb{R}^2$ má tvar 
+
+\begin{equation}\label{eq:rLinearMap}
 \begin{pmatrix}
 x \\ y
 \end{pmatrix}
@@ -67,40 +68,42 @@ b & d
 \end{pmatrix}
 \begin{pmatrix}
 x \\ y
-\end{pmatrix},
-\end{flalign}
+\end{pmatrix}
+\text{,}
+\end{equation}
 kde $a,b,c,d\in\mathbb{R}$.
 
-$\mathbb{C}$ je komplexní vektorový prostor dimenze 1, jeho báze je $1$. Obecné $\mathbb{C}$-lineární zobrazení $L:\mathbb{C}\to\mathbb{C}$ má tvar $Lz = wz, z\in\mathbb{C}$, kde $w\in\mathbb{C}$. Nechť $z = (a+ib)(x+iy) = (ax-by, bx+ay) = $
-$$= \begin{pmatrix}
+$\mathbb{C}$ je \emph{komplexní vektorový prostor} dimenze 1, jeho báze je $1$. Obecné $\mathbb{C}$\emph{-lineární zobrazení} $L:\mathbb{C}\to\mathbb{C}$ má tvar $Lz = wz, z\in\mathbb{C}$, kde $w\in\mathbb{C}$. Nechť $z = (x+iy)$, $ w=(a+ib)$. 
+Potom $$Lz=(a+ib)(x+iy)= (ax-by, bx+ay) = 
+\begin{pmatrix}
 a & -b\\
 b & a
 \end{pmatrix}
 \begin{pmatrix}
 x \\ y
-\end{pmatrix}$$
+\end{pmatrix}\text{.}$$
 \end{definition}
 
 \begin{observation}
-$\mathbb{R}$-lineární zobrazení $(1)$ je $\mathbb{C}$-lineární, právě když $d = a, c = -b$.
+$\mathbb{R}$\emph{-lineární zobrazení} \cref{eq:rLinearMap} je $\mathbb{C}$\emph{-lineární}, právě když $d = a$, $ c = -b$.
 \end{observation} 
 
 \begin{note}
-$\mathbb{C}$-lineární zobrazení jsou velmi specifická $\mathbb{R}$-lineární zobrazení.
+$\mathbb{C}$\emph{-lineární zobrazení} jsou velmi specifická $\mathbb{R}$\emph{-lineární zobrazení}.
 \end{note}
 
 % stránka číslo 5 první přední přednášky
 \begin{agreement}
-Nebude-li řečeno něco jiného, funkce znamená komplexnou funkci komplexné proměnné. Na $f: \mathbb{C} \to \mathbb{C}$ se můžeme vždy dívat jako na $f: \mathbb{R}^2 \to \mathbb{R}^2$, protože $\mathbb{C}\approx\mathbb{R}^2$.
+Nebude-li řečeno něco jiného, \emph{funkce} znamená \emph{komplexní funkci komplexní proměnné}. Na $f: \mathbb{C} \to \mathbb{C}$ se můžeme vždy dívat jako na $f: \mathbb{R}^2 \to \mathbb{R}^2$, protože $\mathbb{C}\approx\mathbb{R}^2$.
 Nechť $f$ je funkce z $\mathbb{C}$ do $\mathbb{C}$. Spojitost a limita se definuje stejně jako v základním kurzu matematické analýzy.
 \end{agreement}
 
 \begin{definition}
-Pro $z_0\in\mathbb{C}, \delta>0$ značíme $U(z_0,\delta):= \{z\in\mathbb{C}: |z-z_0|<\delta\}$ a nazýváme ji \textit{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \textit{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0), P(z_0)$.
+Pro $z_0\in\mathbb{C}, \delta>0$ značíme $U(z_0,\delta):= \{z\in\mathbb{C}: |z-z_0|<\delta\}$ a nazýváme ji \emph{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \emph{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0)$, $P(z_0)$.
 
 Potom definujeme
 \begin{itemize}
-    \item $\lim_{z\to x_0} {f(z)} = L$, pokud $\forall\epsilon>0\exists\delta>0:z\in P(x_0,\delta)\implies f(z)\in U(L, \epsilon)$
+    \item $\lim_{z\to x_0} {f(z)} = L$, pokud $\forall\varepsilon>0\ \exists\delta>0:z\in P(x_0,\delta)\implies f(z)\in U(L, \varepsilon)$
     \item $f$ je spojitá v $x_0$, pokud $\lim_{x\to x_0}{f(x)} = f(x_0)$.
 \end{itemize}
 \end{definition} 
@@ -110,32 +113,35 @@ Potom definujeme
 \section{Diferencovatelnost}
 
 \begin{definition}
-Funkce $f$ je v $x_0$ $\mathbb{R}$-diferencovatelná, pokud existuje $\mathbb{R}$-lineární zobrazení \\$L: \mathbb{R}^2\to\mathbb{R}^2$ takové, že
+Funkce $f$ je v $x_0$ $\mathbb{R}$\emph{-diferencovatelná}, pokud existuje $\mathbb{R}$\emph{-lineární zobrazení} \\$L: \mathbb{R}^2\to\mathbb{R}^2$ takové, že
 $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)-L(h)}{|h|} = 0.$$
 \end{definition} 
 
 \begin{note}
-Potom $df(x_0):=L$ je tzv. \textit{totální diferenciál} $f$ v $x_0$ a platí, že $$df(x_0)h:=\begin{pmatrix}
+
+Potom $\diff f(x_0):=L$ je tzv. \emph{totální diferenciál} $f$ v $x_0$ a platí, že $$\diff f(x_0)h:=
+\renewcommand\arraystretch{1.5}
+\begin{pmatrix}
 \frac{\partial f_1}{\partial x}(x_0) & \frac{\partial f_1}{\partial y}(x_0)\\
 \frac{\partial f_2}{\partial x}(x_0) & \frac{\partial f_2}{\partial y}(x_0)
-\end{pmatrix}h,\vspace{5mm} h\in \mathbb{R}^2$$
-kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Ta matice se nazývá \textit{Jacobiho matice.})
+\end{pmatrix}h\text{, }h\in \mathbb{R}^2\text{,}$$
+kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Ta matice se nazývá \emph{Jacobiho matice.})
 \end{note} 
 
 % stránka 7 první přednášky
 
 \begin{definition}
-Řekneme, že funkce $f$ je v $x_0$ $\mathbb{C}$-diferencovatelná, pokud existuje konečná limita $$f'(x_0):= \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h}.$$ Číslo $f'(x_0)$ nazýváme \textit{komplexní derivací} $f$ v $x_0$. 
+Řekneme, že funkce $f$ je v $x_0$ $\mathbb{C}$\emph{-diferencovatelná}, pokud existuje konečná limita $$f'(x_0):= \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h}.$$ Číslo $f'(x_0)$ nazýváme \emph{komplexní derivací} $f$ v $x_0$. 
 \end{definition}  
 
 \begin{note}
-Jako pro reálnou funkci reálné proměnné platí $(f\pm g)', (f.g)', (f/g)', (f\circ g)'$
+Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'$, $(f.g)'$, $(f/g)'$ a $(f\circ g)'$.
 \end{note} 
 
-\begin{example}
+\begin{example}\mbox{}
 \begin{itemize}
-    \item $(z^n)' = n.z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}$
-    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$-diferencovatelná, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$-diferencovatelná. Skutečně, máme $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} = \lim_{h\to 0}\frac{\overline{h}}{h}$$ Avšak poslední limita neexistuje.
+    \item $(z^n)' = n.z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}\text{.}$
+    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$\emph{-diferencovatelná}. Skutečně, máme $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje.
 \end{itemize}
 \end{example}
 
@@ -146,53 +152,57 @@ Jako pro reálnou funkci reálné proměnné platí $(f\pm g)', (f.g)', (f/g)', 
 Nechť $f$ je funkce diferencovatelná na okolí $x_0 \in \mathbb{C}$. Pak následující je ekvivalentní:
 \begin{enumerate}
     \item Existuje $f'(x_0)$
-    \item Existuje $df(x_0)$ a $df(x_0)$ je $ \mathbb{C}$-lineární
-    \item Existuje $df(x_0)$ a v $z_0$ platí tvrzení Cauchy-Riemannových podmínek.
+    \item Existuje $\diff f(x_0)$ a $\diff f(x_0)$ je $ \mathbb{C}$-lineární
+    \item Existuje $\diff f(x_0)$ a v $z_0$ platí tvrzení \emph{Cauchy-Riemannových podmínek}.
 \end{enumerate}
 
-Cauchy-Riemannovy podmínky:
-\[\frac{\partial f_1}{\partial x} = \frac{\partial f_2}{\partial y}\]
-\[\frac{\partial f_1}{\partial y} = -\frac{\partial f_2}{\partial x}\]
+\emph{Cauchy-Riemannovy podmínky}:
+\begin{align*}
+\tag{CR}
+\label{eqn:CR}
+\frac{\partial f_1}{\partial x} &= \frac{\partial f_2}{\partial y}\text{, }\\
+\frac{\partial f_1}{\partial y} &= -\frac{\partial f_2}{\partial x}\text{,}    
+\end{align*}
+kde $f(x,y) = (f_1(x,y),f_2(x,y))$.
 
-zde $f(x,y) = (f_1(x,y),f_2(x,y))$
 \end{theorem}
 \begin{proof}
 $(2. \iff 3.)$ plyne z pozorování pro lineární zobrazení
 \newline
 $(1. \iff 2.)$ Z definice $w = f'(z_0)$ znamená, že 
 
-\begin{flalign}
-0 = \lim_{h \to 0} {\frac{f(x_0+h)-f(z_0)-wh}{h}}
-\end{flalign}
-
+\begin{equation}\label{eq:cr12-1} 
+0 = \lim_{h \to 0} {\frac{f(x_0+h)-f(z_0)-wh}{h}}\text{.} 
+\end{equation}
 Po vynásobení výrazu v limitě $h/|h|$ dostaneme, že
-\begin{flalign}
-0 = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)-wh}{|h|}
-\end{flalign}
+\begin{equation}\label{eq:cr12-2}
+0 = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)-wh}{|h|}\text{,}
+\end{equation}
 
-což je ekvivalentní tomu, že $df(z_0)h=wh, h\in \mathbb{C}$. Z $(3)$ plyne $(2)$ vynásobením $|h|/h$.
+což je ekvivalentní tomu, že $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{eq:cr12-2} plyne \cref{eq:cr12-1} vynásobením $|h|/h$.
 \end{proof}
 
 % stránka číslo 9 první přednášky
 
-\begin{note}
+\begin{note}\mbox{}
 \begin{itemize}
     \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \mathbb{C}$ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$
-    \item Platí, že $(CR) \iff \frac{\partial f}{\partial x} = -i\frac{\partial f}{\partial y}$
+    \item Platí, že \cref{eqn:CR}
+    $\iff \frac{\partial f}{\partial x}    = -i\frac{\partial f}{\partial y}$
 \end{itemize}
 \end{note}
 
-\begin{proof}
+\begin{proof}\mbox{}
 \begin{itemize}
-    \item $df(x_0)1 = \frac{\partial f_1}{\partial x}(x_0) + i\frac{\partial f_2}{\partial x}(x_0) =: \frac{\partial f}{\partial x}(x_0)$
+    \item $\diff f(x_0)1 = \frac{\partial f_1}{\partial x}(x_0) + i\frac{\partial f_2}{\partial x}(x_0) =: \frac{\partial f}{\partial x}(x_0)$
     \item zřejmé
 \end{itemize}
 \end{proof}
 
 \begin{example}
 Nechť $f(z) = \overline{z}$, pak $f'(x,y) = (x,-y)$. Dále 
-$$\frac{\partial f_1}{\partial x} = 1, \frac{\partial f_1}{\partial y} = 0, \frac{\partial f_2}{\partial x} = 0, \frac{\partial f_2}{\partial y} = -1.$$
-Máme, že $f\in C^\infty(\mathbb{R}^2)$, ale v žádném $z\in \mathbb{C}$ nesplňuje $(CR)$, proto není nikde $\mathbb{C}$-diferencovatelná.
+$$\frac{\partial f_1}{\partial x} = 1\text{, } \frac{\partial f_1}{\partial y} = 0\text{, } \frac{\partial f_2}{\partial x} = 0\text{, } \frac{\partial f_2}{\partial y} = -1\text{.}$$
+Máme, že $f\in C^\infty(\mathbb{R}^2)$, ale v žádném $z\in \mathbb{C}$ nesplňuje \cref{eqn:CR}, proto není nikde\\ $\mathbb{C}$\emph{-diferencovatelná}.
 \end{example}
 
 % konec první přednášky
