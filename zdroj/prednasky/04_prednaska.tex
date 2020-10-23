@@ -1,0 +1,55 @@
+\begin{note}
+Cauchyho věta -- Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\varphi$ je uzavřená křivka v $G$. Za jakých podmínek na $G$ a $\varphi$ je $\int_\varphi f=0$?
+\end{note}
+
+\begin{theorem}[Gousartovo lemma -- \uv{Cauchyho věta pro $\triangle$}] %obrázek
+Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\triangle$ je trojúhelník v $G$. Potom
+\begin{equation}
+    \int_{\partial\triangle}f=0\text{.}
+\end{equation} 
+\end{theorem}
+
+\begin{proof}
+Označme $\varphi_0:=\partial\triangle$. Sporem: Předpokládejme, že $|\int_{\varphi_0}f|=:K>0$. Zřejmě $\triangle$ je nedegenerovaný. V  $\triangle$ veďme střední příčky a označme $\psi_1$, $\psi_2$, $\psi_3$, $\psi_4$ obvody čtyř vzniklých trojúhelníků ($\psi_4$ je obvod vnitřního trojúhelníka). Potom $\int_{\varphi_0}f=\int_{\psi_1}f+\int_{\psi_2}f+\int_{\psi_3}f+\int_{\psi_4}f$. Ex. $j_1=1, \ldots, 4$ tak, že $|\int_{\psi_{j_1}}f|\ge \frac{K}{4}$ a $V({\psi_{j_1}})= \frac{V(\varphi)}{2}$.
+Označme $\varphi_1=\psi_{j_1}$. Indukcí sestrojíme posloupnost (uzavřených) trojúhelníků $\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že $(a) |\int_{\varphi_j}f|\ge \frac{K}{4^j}$ a $V({\varphi_j})= \frac{V(\varphi)}{2^j}$. Máme, že $\bigcap\limits_{j=0}^\infty \triangle_j=\{z_0\} \subset G$, protože diam$(\triangle_j)\rightarrow 0$. Položme
+$$\begin{aligned}
+\varepsilon(z): &= \frac{f(z)-f(z_0)}{z-z_0}-f'(z_0) \text{, } z \in G \backslash \{z_0\} \text{;} \\
+: &= 0  \text{, } z=z_0 \text{.}
+\end{aligned}
+$$
+Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
+$$
+(b) \int_{\varphi_j}f(z) \diff z = \int_{\varphi_j}(f(z_0)+f'(z_0)(z-z_0)) \diff z + \int_{\varphi_j}\varepsilon(z)(z-z_0) \diff z \text{,}
+$$
+kde první integrand má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z $(a), (b)$ dostaneme
+$$
+\frac{K}{4^j} \le \left| \int_{\varphi_j}f\right|\stackrel{(b)}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \max_{<\varphi_j>}|\varepsilon|=\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
+$$
+kde druhá nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
+\end{proof}
+
+\begin{theorem}[Cauchyho věta pro hvězdovité oblasti]
+Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast a  $f \in \mathcal{H}(G)$. Potom $f$ má na $G$ primitivní funkci. Ekvivalentně: platí, že $\int_\varphi f=0$ pro každou uzavřenou křivku $\varphi$ v $G$.
+\end{theorem}
+
+\begin{proof}
+Z Goursartova lemmatu a dodatku k větě o existenci PF.
+\end{proof}
+
+\begin{note} %obrázky
+Gousartovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je spojitá na $G$ a holomorfní na $G \backslash \{z_0\}$ pro nějaké $z_0 \in G$.
+\end{note}
+
+\begin{proof}
+Skutečně, nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Potom
+\begin{enumerate}
+    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$.
+    \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, poměr stran roven $\varepsilon$. $\triangle', \triangle''$ jsou trojúhelníky vzniklé rozdělením $\triangle$ na tři části. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle_\varepsilon}f+\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde poslední dva integrály jsou rovny $0$ podle bodu 1. Tudíž $|\int_{\partial\triangle}f|=|\int_{\partial\triangle_\varepsilon}f| \le \varepsilon \cdot V(\partial\triangle) \cdot \max_\triangle |f| \xrightarrow[\varepsilon \rightarrow 0+]{}0$. Tedy  $\int_{\partial\triangle} f=0$.
+    \item Nechť $z_0$ leží uvnitř strany $\triangle$.
+    \item Nechť $z_0$ leží uvnitř $\triangle$.
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}[O derivování podle komplexního parametru]
+
+\end{theorem}
