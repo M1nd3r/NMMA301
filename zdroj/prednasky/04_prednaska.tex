@@ -13,7 +13,7 @@ Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\triangle
 Označme $\varphi_0:=\partial\triangle$. Sporem: Předpokládejme, že $|\int_{\varphi_0}f|=:K>0$. Zřejmě $\triangle$ je nedegenerovaný. V  $\triangle$ veďme střední příčky a označme $\psi_1$, $\psi_2$, $\psi_3$, $\psi_4$ obvody čtyř vzniklých trojúhelníků ($\psi_4$ je obvod vnitřního trojúhelníka). Obvody vnitřních trojúhelníků $\psi_1$(vlevo dole),  $\psi_2$(vpravo dole), $\psi_3$(nahore) a  $\psi_4$(uprostřed) probíháme proti směru hodinových ručiček.
 Potom $\int_{\varphi_0}f=\int_{\psi_1}f+\int_{\psi_2}f+\int_{\psi_3}f+\int_{\psi_4}f$. Ex. $j_1=1, \ldots, 4$ tak, že $|\int_{\psi_{j_1}}f|\ge \frac{K}{4}$ a $V({\psi_{j_1}})= \frac{V(\varphi)}{2}$.
 Označme $\varphi_1=\psi_{j_1}$. Indukcí sestrojíme posloupnost (uzavřených) trojúhelníků, tž $\triangle \psi_{j_1}$ zase rozdělíme na $4$ menší $\triangle$y středními příčkami a proces opakujeme.
-$\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že $(a) |\int_{\varphi_j}f|\ge \frac{K}{4^j}$ a $V({\varphi_j})= \frac{V(\varphi)}{2^j}$. Máme, že $\bigcap\limits_{j=0}^\infty \triangle_j=\{z_0\} \subset G$,%Víme,že $\triangle_j$ jsou kompaktní. 
+$\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že $(a) |\int_{\varphi_j}f|\ge \frac{K}{4^j}$ a $V({\varphi_j})= \frac{V(\varphi)}{2^j}$. Máme, že $\bigcap\limits_{j=0}^\infty \triangle_j=\{z_0\} \subset G$, %Víme,že $\triangle_j$ jsou kompaktní. 
 protože diam$(\triangle_j)\rightarrow 0$. Položme
 $$\begin{aligned}
 \varepsilon(z): &= \frac{f(z)-f(z_0)}{z-z_0}-f'(z_0) \text{, } z \in G \backslash \{z_0\} \text{;} \\ %rozdíl v bodě $z$ té komplexní derivace od toho derivačního podílu.
@@ -24,7 +24,7 @@ Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
 $$
 (b) \int_{\varphi_j}f(z) \diff z = \int_{\varphi_j}(f(z_0)+f'(z_0)(z-z_0)) \diff z + \int_{\varphi_j}\varepsilon(z)(z-z_0) \diff z \text{,}
 $$
-kde první integrand má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z $(a), (b)$ dostaneme
+kde první integrand má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z $(a),\ (b)$ dostaneme
 $$
 \frac{K}{4^j} \le \left| \int_{\varphi_j}f\right|\stackrel{(b)}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \max_{<\varphi_j>}|\varepsilon|=\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
 $$
@@ -47,12 +47,12 @@ Gousartovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je s
 Skutečně, nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Potom
 \begin{enumerate}
     \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$. Tady nám bude stačit použít obyčejné Gousartovo lemmma
-    \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, $\triangle_\varepsilon\subset \triangle$
+    \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, $\triangle_\varepsilon\subset\ \triangle$
     a
     $z_{0}$ je jeho
     vrcholem. Poměr stran $\triangle$ ku 
     $\triangle_\varepsilon$ je
-    roven $\varepsilon$. $\triangle', \triangle''$ jsou trojúhelníky vzniklé rozdělením $\triangle$ na tři trojúhelníky ($\triangle_\varepsilon$, $\triangle'$, $\triangle''$). Obvody vzniklých vnitřních trojúhelníků procházíme proti směru hodinových ručiček.
+    roven $\varepsilon$. $\triangle',\ \triangle''$ jsou trojúhelníky vzniklé rozdělením $\triangle$ na tři trojúhelníky ($\triangle_\varepsilon$, $\triangle'$, $\triangle''$). Obvody vzniklých vnitřních trojúhelníků procházíme proti směru hodinových ručiček.
     Potom $\int_{\partial\triangle}f=\int_{\partial\triangle_\varepsilon}f+\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde poslední dva integrály jsou rovny $0$ podle bodu 1. Tudíž $|\int_{\partial\triangle}f|=|\int_{\partial\triangle_\varepsilon}f| \le \varepsilon \cdot V(\partial\triangle) \cdot \max_\triangle |f| \xrightarrow[\varepsilon \rightarrow 0+]{}0$. Tedy  $\int_{\partial\triangle} f=0$.
     \item Nechť $z_0$ leží uvnitř strany $\triangle$. Potom $\triangle$ rozříznu na dva menší trojúhelníky $\triangle'$ a $\triangle''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde oba integrály na pravé straně jsou rovny $0$ podle bodu 1. Tudíž $\int_{\partial\triangle}f=0$.
     \item Nechť $z_0$ leží uvnitř $\triangle$. Potom $\triangle$ rozříznu na tři menší trojúhelníky $\triangle'$ a $\triangle''$, $\triangle'''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f+\int_{\partial\triangle'''}f$, kde jsou všechny tři integrály na pravé straně rovny $0$ podle bodu 1. Tudíž $\int_{\partial\triangle}f=0$.
@@ -66,7 +66,7 @@ Potom $\phi\in\mathcal{H}(\Omega)$ a $\phi'=\int_{\varphi}\frac{\partial F}{\par
 \end{theorem}
 \begin{proof}
 %integrál závislý na komplexním parametru si můžeme přepsat jako integrál závislý na dvou reálných proměných.
-Pro $s=s_1+is_2=(s_1,s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),s_1,s_2)\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\mathbb{C}$. Podle vět o spojitosti a derivování integrálu závislího na reálných parametrech $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, }s\in\Omega$ a $j=1,2$ tyto parciální derivace $\frac{\partial \phi}{\partial s_j}(s)$, $j=1,2$ jsou spojité a splnují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splnují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostanu, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
+Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),s_1,s_2)\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\mathbb{C}$. Podle vět o spojitosti a derivování integrálu závislího na reálných parametrech $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, }s\in\Omega$ a $j=1,2$ tyto parciální derivace $\frac{\partial \phi}{\partial s_j}(s)$, $j=1,2$ jsou spojité a splnují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splnují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostanu, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
 \end{proof}
 
 \begin{definition}
@@ -94,11 +94,12 @@ Potom je $G$ otevřená, funkce $s\rightarrow ind_{\varphi} s$je konstantní na 
 
 \begin{example}
 Nechť $z_{0}\in\mathbb{C}\text{, }r>0\text{ a }\varphi(t):=z_{0}+r e^{it}\text{, }t\in [0,2\pi]$. %$z_0$ je bod v komplexní rovině, $\varphi$ je kladně orientovaná kružnice o středu $z_0$ a poloměru $r$.
-Potom $ind_{\varphi}s$
-\begin{itemize}
-    \item[=]$1\text{, }|s-z_{0}|<r$;%body uvnitř kružnice
-    \item[=] $0\text{, }|s-z_{0}|>r$.%body vně kružnice...toto je neomezená komponenta..plyne z předchozí věty
-\end{itemize}
+Potom $$ind_{\varphi}s=
+\twopartdef
+{0}{|s-z_{0}|<r,}  %body uvnitř kružnice
+{1}{|s-z_{0}|>r.}$$ %body vně kružnice
+%toto je neomezená komponenta..plyne z předchozí věty
+
 % Kružnice nám rozřízne rovinu na vnitřek a vnějšek. Tedy komplement kružnice má dvě komponenty
 Spočetli jsme, že
 $ind_{\varphi}z_{0}=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{z-z_{0}}=1$.
