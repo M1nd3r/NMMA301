@@ -32,7 +32,7 @@ Vlastnosti $\mathbb{C}$. Nechť $z = (x,y)\in\mathbb{C}$.
 \begin{notation}
 Nechť $z = x+iy$, kde $x,y\in\mathbb{R}$. Potom
 \begin{itemize}
-    \item $\overline{z}:= x-iy$ je \textit{komplexně sdružená část} k $z$,
+    \item $\overline{z}:= x-iy$ je \textit{komplexně sdružené číslo} k $z$,
     \item $Re(z):= x$ je \textit{reálná část} $z$, $Im(z):= y$ je \textit{imaginární část} $z$,
     \item $|z| = \sqrt{x^2+y^2}$ je \textit{modul} nebo \textit{absolutní hodnota} $z$.
 \end{itemize}
@@ -55,6 +55,7 @@ Pozor, $\mathbb{C}$ nelze \emph{rozumně} upořádat!
 
 \section{Lineární zobrazení}
 \begin{definition}
+%Je-li
 $\mathbb{R}^2$ je \emph{reálný vektorový prostor} dimenze 2, jeho báze je $\left((1,0)^T, (0,1)^T\right)$. Obecné $\mathbb{R}$\emph{-lineární zobrazení} $L:\mathbb{R}^2\to\mathbb{R}^2$ má tvar 
 
 \begin{equation}\label{eq:rLinearMap}
@@ -72,7 +73,7 @@ x \\ y
 \text{,}
 \end{equation}
 kde $a,b,c,d\in\mathbb{R}$.
-
+%Je-li
 $\mathbb{C}$ je \emph{komplexní vektorový prostor} dimenze 1, jeho báze je $1$. Obecné $\mathbb{C}$\emph{-lineární zobrazení} $L:\mathbb{C}\to\mathbb{C}$ má tvar $Lz = wz, z\in\mathbb{C}$, kde $w\in\mathbb{C}$. Nechť $z = (x+iy)$, $ w=(a+ib)$. 
 Potom $$Lz=(a+ib)(x+iy)= (ax-by, bx+ay) = 
 \begin{pmatrix}
@@ -82,6 +83,8 @@ b & a
 \begin{pmatrix}
 x \\ y
 \end{pmatrix}\text{.}$$
+%Platí díky tomu, že $\mathbb{C} \cong \mathbb{R}^2$.
+%Všimneme si, že každé $\mathbb{C}$\emph{-lineární zobrazení} je $\mathbb{R}$\emph{-lineární zobrazení}, ale matice tohoto lineárního zobrazení je speciální viz pozorování níže.
 \end{definition}
 
 \begin{observation}
@@ -90,6 +93,7 @@ $\mathbb{R}$\emph{-lineární zobrazení} \cref{eq:rLinearMap} je $\mathbb{C}$\e
 
 \begin{note}
 $\mathbb{C}$\emph{-lineární zobrazení} jsou velmi specifická $\mathbb{R}$\emph{-lineární zobrazení}.
+%Tj. komplexních lin. zob je mnohem méně, než těch reálných.
 \end{note}
 
 % stránka číslo 5 první přední přednášky
@@ -97,7 +101,7 @@ $\mathbb{C}$\emph{-lineární zobrazení} jsou velmi specifická $\mathbb{R}$\em
 Nebude-li řečeno něco jiného, \emph{funkce} znamená \emph{komplexní funkci komplexní proměnné}. Na $f: \mathbb{C} \to \mathbb{C}$ se můžeme vždy dívat jako na $f: \mathbb{R}^2 \to \mathbb{R}^2$, protože $\mathbb{C}\approx\mathbb{R}^2$.
 Nechť $f$ je funkce z $\mathbb{C}$ do $\mathbb{C}$. Spojitost a limita se definuje stejně jako v základním kurzu matematické analýzy.
 \end{agreement}
-
+%Následuje rychlé připomenutí definic z MA
 \begin{definition}
 Pro $z_0\in\mathbb{C}, \delta>0$ značíme $U(z_0,\delta):= \{z\in\mathbb{C}: |z-z_0|<\delta\}$ a nazýváme ji \emph{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \emph{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0)$, $P(z_0)$.
 
@@ -111,7 +115,8 @@ Potom definujeme
 % stránka číslo 6 první přednášky
 
 \section{Diferencovatelnost}
-
+%Funkce $f$ je v daném bodě diferencovatelná, pokud se dá v blízkosti toho bodu aproximovat lineárním zobrazením.
+%Jelikož máme dva typy lineárních zobrazení (podle toho zda se na tu rovinu díváme jako na $\mathbb{R}^2$, nebo jako na $\mathbb{C}$) tak dává smysl abychom měli i dva typy diferencovatelnosti.Jako první si uvedeme reálnou diferencovatelnost (funkci $f$ aproximujeme $\mathbb{R}$\emph{-lineárním zobrazením}).
 \begin{definition}
 Funkce $f$ je v $x_0$ $\mathbb{R}$\emph{-diferencovatelná}, pokud existuje $\mathbb{R}$\emph{-lineární zobrazení} \\$L: \mathbb{R}^2\to\mathbb{R}^2$ takové, že
 $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)-L(h)}{|h|} = 0.$$
@@ -126,36 +131,45 @@ Potom $\diff f(x_0):=L$ je tzv. \emph{totální diferenciál} $f$ v $x_0$ a plat
 \frac{\partial f_2}{\partial x}(x_0) & \frac{\partial f_2}{\partial y}(x_0)
 \end{pmatrix}h\text{, }h\in \mathbb{R}^2\text{,}$$
 kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Ta matice se nazývá \emph{Jacobiho matice.})
+%hodí se nezapomenout že doted jsme mluvili pouze o reálné diferencovatelnosti. Jako druhou si ted zavedeme komplexní diferencovatelnost(funkci $f$ aproximujeme $\mathbb{C}$\emph{-lineárním zobrazením}).
 \end{note} 
 
 % stránka 7 první přednášky
 
 \begin{definition}
-Řekneme, že funkce $f$ je v $x_0$ $\mathbb{C}$\emph{-diferencovatelná}, pokud existuje konečná limita $$f'(x_0):= \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h}.$$ Číslo $f'(x_0)$ nazýváme \emph{komplexní derivací} $f$ v $x_0$. 
+Řekneme, že funkce $f$ je v $x_0$ $\mathbb{C}$\emph{-diferencovatelná}, pokud existuje konečná limita $$f'(x_0):= \lim_{h \to 0}\frac{f(x_0+h)-f(x_0)}{h}.$$ 
+%, kde $h$ je komplexní číslo blížící se k nule.
+Číslo $f'(x_0)$ nazýváme \emph{komplexní derivací} $f$ v $x_0$. 
+
 \end{definition}  
 
 \begin{note}
 Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'$, $(f.g)'$, $(f/g)'$ a $(f\circ g)'$.
+%Protože s komplexními čísly se počítá stejně jako s reálnými (výjimkou mohou být některé nerovnosti).
+%Tak i pro komplexní funkce jedné komplexní proměnné platí stejné věty jako pro reálné funkce jedné reálné proměnné. Tedy platí: $(f\pm g)'$, $(f.g)'$, $(f/g)'$ a $(f\circ g)'$.
+
 \end{note} 
 
 \begin{example}\mbox{}
 \begin{itemize}
     \item $(z^n)' = n.z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}\text{.}$
-    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$\emph{-diferencovatelná}. Skutečně, máme $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje.
-\end{itemize}
+    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$\emph{-diferencovatelná}. Skutečně, máme $$\lim_{h\to 0}\frac{f(x_0+h)-f(x_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje. 
+    %Plyne z toho,že pro $h$ na reálné ose je $\frac{\ \overline{h}\ }{h}=1$ a pro $h$ na imaginární ose je $\frac{\ \overline{h}\ }{h}=-1$
+    \end{itemize}
+    %Již víme, že reálných lineárních zobrazení je mnohem více než komplexních lineárních zobrazení. Což znamená,  že pro funkci je mnohem těžší býti komplexně diferencovatelná v daném bodě, než-li v něm být reálně diferencovatelná.
 \end{example}
 
 
 % stránka číslo 8 první přednášky
 
 \begin{theorem}[Cauchy-Riemannova]\label{CR}
-Nechť $f$ je funkce diferencovatelná na okolí $x_0 \in \mathbb{C}$. Pak následující je ekvivalentní:
+Nechť $f$ je funkce diferencovatelná na okolí $z_0 \in \mathbb{C}$. Pak následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
-    \item Existuje $f'(x_0)$
-    \item Existuje $\diff f(x_0)$ a $\diff f(x_0)$ je $ \mathbb{C}$-lineární
-    \item Existuje $\diff f(x_0)$ a v $z_0$ platí tvrzení \emph{Cauchy-Riemannových podmínek}.
+    \item Existuje $f'(z_0)$ %existuje komplexní derivace v $z_{0}$ tj. funkce $f$ je v $z_{0}$ komplexně diferencovatelná.
+    \item Existuje $\diff f(z_0)$ a $\diff f(z_0)$ je $ \mathbb{C}$-lineární %existuje TD v $z_{0}$ a ten TD je komplexně lineární
+    \item Existuje $\diff f(z_0)$ a v $z_0$ platí tzv. \emph{Cauchy-Riemannovy podmínky}. % $f$ je v $z_{0}$ reálně diferencovatelná
 \end{enumerate}
-
+%C-R podmínky jsou vztahy mezi parciálními derivacemi funkce $f$
 \emph{Cauchy-Riemannovy podmínky}:
 \begin{align*}
 \tag{CR}
@@ -167,26 +181,25 @@ kde $f(x,y) = (f_1(x,y),f_2(x,y))$.
 
 \end{theorem}
 \begin{proof}
-$(2. \iff 3.)$ plyne z pozorování pro lineární zobrazení
+$(2. \iff 3.)$ plyne z pozorování pro lineární zobrazení %Totální diferenciál je komplexně lineární zobrazení $\iff$ jeho matice (Jakobiho matice) má ten speciální tvar (čásla na diagonále jsou stejná a na antidiagonále se liší o znamánko), ale úplnčě to samé řákají pro Jakobián (CR) podmínky.
 \newline
 $(1. \iff 2.)$ Z definice $w = f'(z_0)$ znamená, že 
 
 \begin{equation}\label{eq:cr12-1} 
-0 = \lim_{h \to 0} {\frac{f(x_0+h)-f(z_0)-wh}{h}}\text{.} 
+0 = \lim_{h \to 0} {\frac{f(z_0+h)-f(z_0)-wh}{h}}\text{.} 
 \end{equation}
 Po vynásobení výrazu v limitě $h/|h|$ dostaneme, že
 \begin{equation}\label{eq:cr12-2}
 0 = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)-wh}{|h|}\text{,}
-\end{equation}
-
-což je ekvivalentní tomu, že $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{eq:cr12-2} plyne \cref{eq:cr12-1} vynásobením $|h|/h$.
+\end{equation}% Číslování je trochu matoucí, chci si ho potom upravit na (1) a (2) místo (2) a (3) - čistě pro přehlednost.
+což je ekvivalentní tomu, že  $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{eq:cr12-2} plyne \cref{eq:cr12-1} vynásobením $|h|/h$.
 \end{proof}
 
 % stránka číslo 9 první přednášky
 
 \begin{note}\mbox{}
 \begin{itemize}
-    \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \mathbb{C}$ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$
+    \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \mathbb{C}$ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$ %Poslední rovnost platí co do hodnoty, nikoliv co do existence. Muže se stát, že všechny reálné parciální derivace existují, ale ta komplexní nikoliv....proto tam máme to existuje-li $f'(z_0)$, potom...
     \item Platí, že \cref{eqn:CR}
     $\iff \frac{\partial f}{\partial x}    = -i\frac{\partial f}{\partial y}$
 \end{itemize}
@@ -194,15 +207,16 @@ což je ekvivalentní tomu, že $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{e
 
 \begin{proof}\mbox{}
 \begin{itemize}
-    \item $\diff f(x_0)1 = \frac{\partial f_1}{\partial x}(x_0) + i\frac{\partial f_2}{\partial x}(x_0) =: \frac{\partial f}{\partial x}(x_0)$
-    \item zřejmé
+    \item $\diff f(z_0)1 = \frac{\partial f_1}{\partial x}z_0) + i\frac{\partial f_2}{\partial x}(z_0) =: \frac{\partial f}{\partial x}(z_0)$
+    \item zřejmé %je to jen přeformulování (CR)
 \end{itemize}
 \end{proof}
 
 \begin{example}
-Nechť $f(z) = \overline{z}$, pak $f'(x,y) = (x,-y)$. Dále 
+Nechť $f(z) = \overline{z}$, pak $f'(x,y) = (x,-y)$. %funkce $f$ vyjádřená v reálných souřadnicích
+Dále 
 $$\frac{\partial f_1}{\partial x} = 1\text{, } \frac{\partial f_1}{\partial y} = 0\text{, } \frac{\partial f_2}{\partial x} = 0\text{, } \frac{\partial f_2}{\partial y} = -1\text{.}$$
 Máme, že $f\in C^\infty(\mathbb{R}^2)$, ale v žádném $z\in \mathbb{C}$ nesplňuje \cref{eqn:CR}, proto není nikde\\ $\mathbb{C}$\emph{-diferencovatelná}.
 \end{example}
-
+%funkce $f$ je hladká na celé rovině v reálném smyslu, ale v žádném bodě roviny nejsou splněny (CR), nebot $\frac{\partial f_1}{\partial x} = 1 \neq -1 =\frac{\partial f_2}{\partial y} $
 % konec první přednášky

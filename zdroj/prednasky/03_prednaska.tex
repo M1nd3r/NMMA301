@@ -1,5 +1,5 @@
 \section{\texorpdfstring{Křivkový integrál}{Krivkový integrál}}
-
+%Chceme integrovat komplexní funkci jedné komplexní proměnné podél křivky v komplexní rovině tj. chceme zavést integrál funkce podél křivky. 
 \begin{definition}
 Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
 \begin{enumerate}
@@ -8,13 +8,13 @@ Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
     $\varphi \big\rvert
      _{[t_i,t_{i+1}]} 
     $je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$.
-    
+    %My se omezíme právě na regulární křivky.
 \end{enumerate}
 \end{definition}
 
 \begin{definition}[Úsečka]
-Nechť $a, b \in \mathbb{C}$. Potom $\varphi(t):= a + t(b-a)$, $ t \in [0,1]$ je úsečka z \emph{a} do \emph{b}. Značíme $[a,b]$.
-\end{definition}
+Nechť $a, b \in \mathbb{C}$. Potom $\varphi(t):= a + t(b-a)$, $ t \in [0,1]$ je úsečka z \emph{a} do \emph{b}. Značíme $[a;b]$.%Místo ',' píšeme ';' abychom to odlišili od značení pro reálný interval.
+\end{definition} 
 
 \begin{notation}
 Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ a $\psi:[\gamma,\delta]\rightarrow\mathbb{C}$ jsou (regulární) křivky. Potom jejich \emph{součet} je regulární křivka.
@@ -23,7 +23,7 @@ $(\varphi \dotplus \psi)(t) :=
 \end{notation}
 
 \begin{definition}[Lomenná čára]
-Řekneme, že regulární křivka $\varphi$ je \emph{lomenná čára} v $\mathbb{C}$, existují-li $z_1,z_2,\cdots,z_k \in \mathbb{C}$ taková, že $\varphi=[z_1,z_2]\dotplus[z_2,z_3]\dotplus\cdots\dotplus[z_{k-1},z_k]$.
+Řekneme, že regulární křivka $\varphi$ je \emph{lomenná čára} v $\mathbb{C}$, existují-li $z_1,z_2,\cdots,z_k \in \mathbb{C}$ taková, že $\varphi=[z_1;z_2]\dotplus[z_2;z_3]\dotplus\cdots\dotplus[z_{k-1};z_k]$.% Regulární křivka je lomennou čarou, pokud ji dostanu jako součet konečně mnoha úseček.
 \end{definition}
 
 
@@ -36,7 +36,7 @@ Pro křivku $\varphi$ může být její graf $\langle\varphi\rangle:=\varphi([\a
 \end{note}
 
 \begin{agreement}
-Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulární křivku v $\mathbb{C}$}.
+Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulární křivku v $\mathbb{C}$}. %Z toho důvodu, abychom se vyhnuli divným případům jako je třeba právě Peanova křivka.
 \end{agreement}
 
 \begin{reminder}
@@ -61,10 +61,11 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \mbox{} % prázdný mbox kvůli zarovnání položek listu
 \begin{enumerate}
     \item Křivkový integrál \cref{krivkovyIntegral} existuje vždy jako Riemannův.
-    \item Píšeme také $\int_\varphi f(z)\diff z$
+    \item Píšeme také $\int_\varphi f(z)\diff z$%Používáme pokud chceme zdůraznit podle kreré proměnné integrujeme.
 \end{enumerate}
 \end{note}
-
+%Příklad
+%Otázka
 \begin{propertiesBasic}
 \mbox{}
 \vspace{-2em}
@@ -81,14 +82,17 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
      = M\cdot V(\varphi)
      \end{multline*}
     \end{proof}
-    \item Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$, $\psi:[\gamma,\delta],\rightarrow\mathbb{C}$ jsou křivky a $\varphi(\beta)=\psi(\gamma)$. Potom 
+    \item Nechť %Křivkový integrál je lineární i v tom integračním oboru.
+    $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$, $\psi:[\gamma,\delta],\rightarrow\mathbb{C}$ jsou křivky a $\varphi(\beta)=\psi(\gamma)$. Potom 
     \begin{align*}
         \int_{\varphi\dotplus\psi}f&=\int_\varphi f+\int_\psi f \\ 
         &\text{a} \\
         \int_{\dotminus \varphi}f&=-\int_\varphi f\text{,}
     \end{align*}
-    kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k $\varphi$.
-    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. Potom $$\int_\varphi f = \int_\psi f\text{.}$$
+    kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k %pokud integruju v opačném směru tak se mi nezmění velikost integrálu, pouze jeho znaménko.
+    $\varphi$.
+    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. %\Omega je změna parametrizace křivky \varphi.
+    Potom $$\int_\varphi f = \int_\psi f\text{.}$$
     \begin{proof}
     \begin{multline*}
         \int_\psi f=
@@ -137,6 +141,7 @@ F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)\text{.}$$
     \item $\frac{1}{z}$ je holomorfní na $\mathbb{C}\setminus\{0\}$, ale na $\mathbb{C}\setminus\{0\}$ \emph{nemá} primitivní funkci, neboť víme $$\int_\varphi \frac{\diff z}{z}=2\pi i \neq 0 \text{ pro } \varphi(t)=e^{it}\text{, } t \in [0,2\pi]\text{.}$$ 
     \item $\frac{1}{z}$ má na $\mathbb{C}\setminus(-\infty,0]$ primitivní funkci $\log(z)$. $$\log'(z)=\frac{1}{z}\text{.}$$
 \end{itemize}
+%V reálném oboru je existence PF vlastnost lokální, v komplexním oboru je to vlastnost globální (záleží na vlastnostech té množiny na které tu PF hledám)
 \end{example}
 
 \begin{reminder}[Souvislost]
@@ -173,7 +178,7 @@ Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. NTJE:
 \begin{enumerate}
     \item $f$ má na $G$ primitivní funkci.
     \item $\int_\varphi f=0$ pro každou \emph{uzavřenou} křivku $\varphi$ v $G$.
-    \item $\int_\varphi f$ \emph{nezávisí} v $G$ \emph{na křivce} $\varphi$, tzn. pro každé dvě křivky $\varphi:[\alpha,\beta]\rightarrow G$, $\psi:[\gamma,\delta]\rightarrow G$ takové, že $\varphi(\alpha)=\psi(\gamma)$ a $\varphi(\beta)=\psi(\delta)$, platí $\int_\varphi f = \int_\psi f$.
+    \item $\int_\varphi f$ \emph{nezávisí} v $G$ \emph{na křivce} $\varphi$, tzn. pro každé dvě křivky $\varphi:[\alpha,\beta]\rightarrow G$, $\psi:[\gamma,\delta]\rightarrow G$ takové, že $\varphi(\alpha)=\psi(\gamma)$ a $\varphi(\beta)=\psi(\delta)$, platí $\int_\varphi f = \int_\psi f$.%Tedy pokud mám dvě křivky které začínají ve stejném bodě a končí ve stejném bodě, potom integrály přes obě křivky vyjdou stejně
 \end{enumerate}
 \end{theorem}
 
@@ -190,17 +195,17 @@ Definujeme $F(z):=\int_{\varphi_z} f$, $z\in G$.
 Definice $F$ je korektní, nezávislá na volbě $\varphi_z$, protože předpokládáme 3. Ukážeme, že $F$ je hledaná PF k $f$ na $G$. Nechť $z_1\in G$. Dokážeme, že $F'(z_1)=f(z_1)$. 
 Volme $r>0$, aby $U(z_1,r)\subset G$. Je-li $|h|<r$, 
 potom $$F(z_1+h)-F(z_1)\stackrel{3.}{=}\int_{\varphi_{z_1}\dotplus u} f-\int_{\varphi_{z_1}}f=\int_u f\text{,}$$
-kde $u=\left[z_1,z_1+h \right]$ je \emph{úsečka}, tzn. $u(t)=z_1+t\cdot h$, $t\in[0,1]$. 
+kde $u=\left[z_1;z_1+h \right]$ je \emph{úsečka}, tzn. $u(t)=z_1+t\cdot h$, $t\in[0,1]$. 
 Tedy $$F(z_1+h)-F(z_1)=\int_u f=\int_0^1 f(z_1+th)h \diff t\text{,}$$tudíž $$\frac{F(z_1+h)-F(z_1)}{g}-f(z_1)=\int_0^1 \left(f(z_1+th)-f(z_1)\right)\diff t\text{.}$$ To se blíží k nule pro $h\rightarrow0$, protože 
-$$\left| \int_0^1\left(f(z_1+th)-f(z_1)\right)\diff t\right| \leq \max_{z\in[z_1,z_1+h]}\left|f(z)-f(z_1)\right| \xrightarrow{ h\rightarrow 0}0$$
+$$\left| \int_0^1\left(f(z_1+th)-f(z_1)\right)\diff t\right| \leq \max_{z\in[z_1;z_1+h]}\left|f(z)-f(z_1)\right| \xrightarrow{ h\rightarrow 0}0$$
 ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
 \end{proof}
-
+%Ta věta je teoreticky zajímavá, ale je nám k něčemu prakticky? Protože k tomu abychom podle ní zjistili, zda má funkce primitivní funkci na dané oblasti, tak musíme ověřit spoustu hnusu (viz. 2. podmínka) Situace se zlepší ve speciálních případech. Např. když tu funkci hledáme na hvězdicovitých oblastech.
 \begin{notation}
 \mbox{}
 \begin{enumerate}
     \item 
-        Řekneme, že $m\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0,z]\subset M$ pro každé $z\in M$.
+        Řekneme, že $m\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0;z]\subset M$ pro každé $z\in M$.
         \begin{note*}
             Konvexní $\subsetneq$ hvězdicovitá.
         \end{note*}
@@ -208,7 +213,7 @@ ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
         Řekneme, že $\triangle\subset\mathbb{C}$ 
         je \emph{trojúhelník} s vrcholy $a,b,c\in\mathbb{C}$, 
         pokud $$\triangle:=\left\{ \alpha a+\beta b + \gamma c\text{ }|\text{ }\alpha,\beta,\gamma\geq 0,\alpha+\beta+\gamma=1 \right\}$$ (\emph{konvexní obal }$a,b,c$) a značíme
-        $\partial\triangle:=[a,b]\dotplus[b,c]\dotplus[c,a]$. 
+        $\partial\triangle:=[a;b]\dotplus[b;c]\dotplus[c;a]$. 
         Připouštíme i degenerované $\triangle$, tzn. $a,b,c$ mohou ležet na jedné přímce nebo body $a,b,c$ mohou splývat...
 \end{enumerate}
 \end{notation}
@@ -222,8 +227,8 @@ pro každý \emph{trojúhelník} $\triangle\subset G$, potom $f$ má na $G$ prim
 \end{amendment}
 
 \begin{proof}
-Nechť $z_0$ je střed hvězdovitosti $G$, Pro každé $z\in G$ položme $\varphi_z:=[z_0,z]$ a $F(z):=\int_{\varphi_z}f\text{.}$ 
+Nechť $z_0$ je střed hvězdovitosti $G$, Pro každé $z\in G$ položme $\varphi_z:=[z_0;z]$ a $F(z):=\int_{\varphi_z}f\text{.}$ 
 Rozmyslíme si, že důkaz
 \fbox{$F'=f \text{ na } G$}
-je zcela analogický $\circled{3}\Rightarrow\circled{1}$ předchozí věty, když místo \circled{3} uvažujeme \cref{intTriangle}.
+je zcela analogický $\circled{3}\Rightarrow\circled{1}$ předchozí věty, když místo \circled{3} uvažujeme \cref{intTriangle}.%Rozmyslete sami
 \end{proof}

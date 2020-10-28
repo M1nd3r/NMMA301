@@ -1,18 +1,19 @@
 % stránka číslo 1 druhé přednášky
 
 \begin{definition}
-Nechť $G\subset \mathbb{C}$ je otevřená a $f \colon G \to \mathbb{C}$.
-Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}$\emph{-diferencovatelná} v každém $z\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech holomorfních $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \mathcal{H}(G)$.
+Nechť $G\subset \mathbb{C}$ je otevřená %tj. $G$ obsahuje s každým bodem i nějaké jeho okolí
+a $f \colon G \to \mathbb{C}$.
+Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}$\emph{-diferencovatelná} v každém $z_{0}\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech holomorfních funkcí $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \mathcal{H}(G)$.
 \end{definition}
-
+%tj. hlavním objektem této přednášky bude studium holomorfních funkcí
 \begin{example}\mbox{}
 \begin{itemize}
-    \item Polynom $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je \emph{celá} funkce.
-    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$ konečné.
+    \item \emph{Polynom} $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je \emph{celá} funkce.
+    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$, což je konečná množina.
 \end{itemize}    
 \end{example}
 
-% stránka číslo 2 druhé přednášky
+% stránky číslo 2 a 3 druhé přednášky
 
 \section{Elementární funkce v \texorpdfstring{$\mathbb{C}$}{C}}
 \subsection{Exponenciála}
@@ -34,61 +35,70 @@ $\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
      \frac{\partial f_2}{\partial x} = e^x \sin y= - \frac{\partial f_1}{\partial y}
      \end{multline*}
      
-    Tedy $f\in\mathcal{C}^{\infty}(\mathbb{R}^2)$ a \cref{eqn:CR} platí všude $\mathbb{R}^2\cong\mathbb{C}$. Z CR-věty máme $f'(z)=\exp(z)$, $z\in\mathbb{C}$
+    Tedy $f\in\mathcal{C}^{\infty}(\mathbb{R}^2)$ % $f$ má spojité všechny reálné parciální derivace
+    a \cref{eqn:CR} platí všude $\mathbb{R}^2\cong\mathbb{C}$. Z CR-věty máme $f'(z)=\exp(z)\text{, } z\in\mathbb{C}$
     \item $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$, $z\in\mathbb{C}\text{.}$
+    \item $\exp(\mathbb{C})=\mathbb{C}\setminus\{0\}$ 
+    \item $\exp$ není prostá na $\mathbb{C}$, je $2\pi i$-periodická a platí dokonce:
     \newline
-     
-    \textbf{Polární tvar komplexního čísla}
-       $ x=r\cos \varphi$, $
-        y=r\sin \varphi$, $
-        z=x+i$, $ y=r(\cos \varphi + i \sin \varphi)=\lvert z \rvert e^{i\varphi} $, kde $r=\lvert z \rvert$ a $\varphi$ je argument $z$.
+    $\exp(z) =\exp(w) \iff\exists k \in\mathbb{Z}\colon w=z+2k\pi i$
+     \item Nechť $P:=\{z\in\mathbb{C}\mid \Img z \in \left (-\pi,\pi\right ]\}$.
+     Potom $\exp\mid_P$ je prostá a $\exp(P)=\mathbb{C}\setminus\{0\}$.
+     %obrázek
+    \newline
+  \end{itemize}  
+  \end{properties}
+  \begin{definition}
+    Nechť $z=x+iy$ je komplexní číslo, pak se na něj můžeme dívat jako na bod v rovině určený kartézskými souřadnicemi $x$ a $y$. \emph{Polární (Goniometrický) tvar komplexního čísla} získám tak, že si body $x$ a $y$ vyjádřím v polárních souřadnicích a ty pak dosadím do rovnice udávající $z$.
     
-        % stránka číslo 3 druhé přednášky
+    
+       $x=r\cos \varphi$, 
+       $y=r\sin \varphi$, 
+       $z=x+iy=r(\cos \varphi + i \sin \varphi)=\lvert z \rvert e^{i\varphi} $, kde $r=\lvert z \rvert$ a $\varphi$ je argument $z$.
+       Polární souřadnice mi říkají jak je daleko od počátku $r$ a v jakém směru  $\measuredangle \varphi$ se bod $z$ nachází.
+ \end{definition}
      
-    \begin{notation*}
-          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (\pi,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. hlavní hodnota argumentu $z$. 
-    \end{notation*}
+    \begin{notation}
+          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (-\pi,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. \emph{hlavní hodnota argumentu $z$}. %Popřípadě jen hlavní argument
+          %Místo intervalu $(-\pi,\pi]$ můžeme brát jakýkoli jiný interval délky $2\pi$. 
+    \end{notation}
      
          Platí: 
         \begin{itemize}
             \item $\Arg(z)\colon = \{\arg(z)+2k\pi\mid k\in\mathbb{Z}\}$,
-            \item funkce $\arg\colon \mathbb {C}\setminus\{0\} \to \left (\pi,\pi\right ]$, kde $\arg$ je surjektivní a  konstantní na polopřímkách vycházejících z $0$. Navíc je $\arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,0\right ]$
+            \item funkce $\arg\colon \mathbb {C}\setminus\{0\} \to \left (-\pi,\pi\right ]$, kde $\arg$ je surjektivní a navíc je konstantní na polopřímkách vycházejících z $0$. Dále je $\arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,0\right ]$
         \end{itemize}
 
-    \item $\exp(\mathbb{C})=\mathbb{C}\setminus\{0\}$ 
-    \item $\exp$ není prostá na $\mathbb{C}$, je $2\pi i$-periodická a platí dokonce:
-    \newline
-    $\exp(z) =\exp(w) \iff\exists k \in\mathbb{Z}\colon w=2k\pi i$
-     \item Nechť $P:=\{z\in\mathbb{C}\mid \Img z \in \left (\pi,\pi\right ]\}$.
-     Potom $\exp\mid_P$ je prostá a $\exp(P)=\mathbb{C}\setminus\{0\}$.
-\end{itemize}
-\end{properties}
 
 % stránka číslo 4 druhé přednášky
 
 \subsection{Logaritmus}
-
-Pro dané $z\in\mathbb{C}$ řešíme $e^w=z$. Pro $z=0$ nemáme řešení. Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  \arg(z)}=e^{\log\lvert z \rvert+i   \arg(z)}=e^w\iff\exists\ k \in\mathbb{Z}\colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
+%logaritmů můžeme mít mnohem víc
+Pro dané $z\in\mathbb{C}$ řešíme $e^w=z$. 
+\begin{itemize}
+    \item Pro $z=0$ nemáme řešení. \item Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  \arg(z)}=e^{\log\lvert z \rvert+i   \arg(z)}=e^w\iff\exists\ k \in\mathbb{Z}\colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
+    \end{itemize}
 
 \begin{definition}
 Nechť $z\in\mathbb{C}\setminus\{0\}$. Položme 
 \begin{itemize}
     \item $\Log z\colon=\{w\in\mathbb{C}\mid e^w=z\}$
-    \item $\log z\colon= \log\lvert z \rvert + i \arg z$,  tzv. hlavní hodnota logaritmu $z$.
+    \item $\log z\colon= \log\lvert z \rvert + i \arg z$,  tzv. \emph{hlavní hodnota logaritmu $z$}.
 \end{itemize}
 \end{definition}
 
 \begin{properties}
 Nechť $z \in\mathbb{C}\setminus\{0\}$.
+
 \begin{itemize}
     \item $\Log z =\{\log z +2k\pi i\mid k\in\mathbb{Z}\}$ a $
-    \log =(\exp{}\mid _p)^{-1}$
+    \log =(\exp{}\mid _P)^{-1}$, kde $P$ známe z vlastností exponenciály.
     \item $\log{}$ není spojitá v žádném $z\in\left (-\infty,0\right ]$, ale $\log{}\in \mathcal{H}(\mathbb{C}\setminus\left (-\infty,0\right ])$.
     \newline Navíc $\log'z=\frac{1}{z}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ]$.
-     \item $\log(1-z)=\sum_{n=1}^{\infty}\frac{z^n}{n}$, $\lvert z \rvert<1$
+     \item $\log(1-z)=-\sum_{n=1}^{\infty}\frac{z^n}{n}$, $\lvert z \rvert<1$
 \end{itemize}
 
- Pozor na počítání s logaritmem!
+ Pozor na počítání s komplexním logaritmem! %Nebot některé vzorečky z reálného oboru zde neplatí.
 
  \begin{itemize}
      \item $\exp(\log z)=z$, $\log(\exp{z})\neq z$, z toho, že je to $2\pi i$-periodické
@@ -103,7 +113,7 @@ např. $0=\log 1= \log((-1)(-1))\neq 2 \log(-1)=2\pi i$
 \subsection{Obecná mocnina}
 
 \begin{definition}
-Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hlavní hodnotu} $\alpha$-té mocniny $z$ definujeme $z^{\alpha}\colon=\exp(\alpha \log z)$. Položme $m_{\alpha}(z)\colon=\{\exp(\alpha w)\mid w\in \Log z\}$. 
+Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hlavní hodnotu $\alpha$-té mocniny $z$} definujeme $z^{\alpha}\colon=\exp(\alpha \log z)$. Položme $m_{\alpha}(z)\colon=\{\exp(\alpha w)\mid w\in \Log z\}$. % To je vlastně množina všech $\alpha$-tých mocnin $z$.
 \end{definition}
 
 \begin{properties}
@@ -112,39 +122,43 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hla
 \begin{itemize}
     \item $e^z=\exp(z \log e)=\exp(z)$ 
     % stránka 6 druhé přednášky
-    \item Je-li $z>0$ a $\alpha\in\mathbb{R}$, potom $z^{\alpha}$ je v souladu s MA.
+    \item Je-li $z>0$ a $\alpha\in\mathbb{R}$, potom $z^{\alpha}$ je v souladu s definicí z MA.
     \item $m_{\alpha}(z)=\{z^{\alpha}e^{2k\pi i \alpha}\mid k\in\mathbb{Z}\}$, $z\neq 0$
     \newline
     $w\in \Log z\iff w=\log z +2k\pi i$
     \item $(z^{\alpha})'=\alpha z^{\alpha-1}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ])$ a $\alpha\in\mathbb{C}$
-    \item $(1+z)^{\alpha}=\sum_{n=0}^{\infty}\tbinom{\alpha}{n}z^{n} $, $\lvert z \rvert<1$, kde $\tbinom{\alpha}{n}:=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.
+    \item $(1+z)^{\alpha}=\sum_{n=0}^{\infty}\tbinom{\alpha}{n}z^{n} $, $\lvert z \rvert<1$, kde $\tbinom{\alpha}{n}:=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.%mocninný rozvoj
 \end{itemize}
 \end{properties}
 
-\begin{example}
+\begin{observation}
 Nechť $z \in\mathbb{C}\setminus\{0\}$.
 \begin{itemize}
-    \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.
-    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p\mid_q$, kde $q\in\mathbb{Q}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{2K\frac{p}{q}\pi i}\mid K=\{0,1,\cdots,q-1\}\}$
-    tvoří vrcholy pravidelného $q$-úhelníku vepsaného do kružnice o středu $0$.
-    \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.
+    \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.%celočíselná mocnina je jenom jediná
+    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p\mid_q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{2K\frac{p}{q}\pi i}\mid K=\{0,1,\cdots,q-1\}\}$
+    tvoří vrcholy pravidelného $q$-úhelníka vepsaného do kružnice se středem v počátku. %mocnin je přesně $q$
+    %obrázek
+    \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.%mocnin je nekonečně
 \end{itemize}
-\end{example}
+\end{observation}
 
 % stránka 7 druhé přednášky
 
 \begin{example}
 \begin{itemize}
     \item $\sqrt{-1}=e^{\frac{\pi i}{2}}=i$,  $m_{\frac{1}{2}}(-1)=\{\pm i\}$
-    \item $\sqrt[3]{-1}=e^{\frac{\pi i}{3}}$ (nesouhlasí s MA!),  $m_{\frac{1}{3}}(-1)=\{e^{\frac{\pi i}{3}},e^{\frac{-\pi i}{3}},-1\} $
+    \item $\sqrt[3]{-1}=e^{\frac{\pi i}{3}}$ (nesouhlasí s definicí z MA!),  $m_{\frac{1}{3}}(-1)=\{e^{\frac{\pi i}{3}},e^{\frac{-\pi i}{3}},-1\} $
+    %obrázek
     \item  $i^i=e^{\frac{-\pi }{2}}$, 
     $m_{i}(i)=\{e^{\frac{-\pi }{2}+2k\pi}\mid k\in\mathbb{Z}\}$
 \end{itemize}
 
  \vspace{5mm}
- Pozor na počítání s mocninami! \newline
- $(zw)^{\alpha}\neq z^{\alpha}w^{\alpha}$ \newline
+ Pozor na počítání s mocninami!%vzorečky z reálného oboru někdy platí, někdy neplatí a někdy platí jinak 
+ \begin{itemize}
+    \item$(zw)^{\alpha}\neq z^{\alpha}w^{\alpha}$ \newline
  např. $1=\sqrt{1}=\sqrt{(-1)(-1)}\neq \sqrt{-1}\sqrt{-1}=i^2=-1$
+ \end{itemize}
 \end{example}
 
 \begin{note}
@@ -167,13 +181,13 @@ $e^{z}=\cosh(z)+\sinh(z)$, kde
 \vspace{-2em}
 \begin{itemize}
     \item $\cosh'{z}=\sinh{z}$, $\sinh'{z}=\cosh{z}$
-    \item $\cosh{z}=\sum_{n=0}^{\infty}\frac{z^2n}{(2n)!}$, $\sinh{z}=\sum_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}$
+    \item $\cosh{z}=\sum_{n=0}^{\infty}\frac{z^{2n}}{(2n)!}$, $\sinh{z}=\sum_{n=0}^{\infty}\frac{z^{2n+1}}{(2n+1)!}$
 \end{itemize}
 \end{properties}
 
 \subsection{Goniometrické funkce}
 
-$e^{i z}=\cos(z)+i\sin(z)$, kde
+$e^{i z}=\cos(z)+i\sin(z)$, kde %rozkládáme na sudou a lichou část
 
 \begin{definition}
 \[\cos(z):=\frac{e^{i z}+e^{-i z}}{2}, z\in \mathbb{C}\]
@@ -190,5 +204,5 @@ $e^{i z}=\cos(z)+i\sin(z)$, kde
     \cos(z)=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}$
 \end{itemize}
 \end{properties}
-
+% jediná elementární funkce je exponenciála všechny ostatní funkce jsou s ní více či méně příbuzné
 % konec druhé přednášky
