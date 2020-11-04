@@ -1,0 +1,76 @@
+\begin{theorem}[O rozvoji holomorfní funkce na kruhu do mocninné řady]
+Nechť $R \in (0, +\infty]$ a $f \in (U(z_0,R))$. Potom existuje jediná mocninná řada $\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, která má na $U(z_0,R)$ součet $f$. Navíc platí, že $a_n=\frac{f^{(n)}(z_0)}{n!}$, $n \in \mathbb{N}_0$.
+\end{theorem}
+
+\begin{proof}
+\begin{enumerate}
+    \item jednoznačnost: Zřejmě z toho, že $a_n=\frac{f^{(n)}(z_0)}{n!}$, $n \in \mathbb{N}_0$.
+    \item existence: Nechť $z_0 \in U(z_0, R)$. Volme $r>0$, aby $|z-z_0|<r<R$. Potom z (CV$_z$) je (1) $f(z)=\frac{1}{2 \pi i} \int_\varphi \frac{f(w)}{w-z} \diff w$, kde $\varphi(t)=z_0+re^{it} \text{, } t \in [0, 2\pi]$.
+    
+    Pro každé $w \in \langle \varphi \rangle$ máme
+    
+    $$(2) \quad \frac{1}{w-z}=\frac{1}{(w-z_0)-(z-z_0)}=\frac{1}{w-z_0}\cdot\frac{1}{1-\frac{z-z_0}{w-z_0}}=\sum_{n=0}^\infty \frac{(z-z_0)^n}{(w-z_0)^{n+1}} \text{.}$$
+    Kde $|\frac{z-z_0}{w-z_0}|=1$ a suma konverguje stejnoměrně pro $w \in  \langle \varphi \rangle$. Dosadíme (2) do (1). Potom
+    \begin{equation*}
+        \begin{split}
+    f(z) &=\frac{1}{2 \pi i} \int_\varphi \sum_{n=0}^\infty \frac{(z-z_0)^n}{(w-z_0)^{n+1}} f(w) \diff w= 
+    \sum_{n=0}^\infty (z-z_0)^n \frac{1}{2 \pi i} \int_\varphi \frac{f(w)}{(w-z_0)^{n+1}} \diff w \\
+     &=\sum_{n=0}^\infty (z-z_0)^n \frac{f^{(n)}(z_0)}{n!} \text{ z (CV}_z^{(n)} \text{).}
+     \end{split}
+    \end{equation*}
+\end{enumerate}
+\end{proof}
+
+\begin{example}
+$e^z=\sum\limits_{n=0}^\infty \frac{z^n}{n!}$, $z \in \mathbb{C}$, protože $\exp \in \mathcal{H}(\mathbb{C})$ a $\exp^{(n)}(0)=\exp(0)=1$.
+\end{example}
+
+\begin{theorem}[O nulovém bodě]
+Nechť $f$ je holomorfní funkce na okolí $z_0 \in \mathbb{C}$ a $f(z_0)=0$. Potom buď
+\begin{enumerate}
+    \item existuje $r>0$, že $f=0$ na $U(z_0,r)$, anebo
+    \item existuje $r>0$, že $f\neq 0$ na $P(z_0,r):=U(z_0,r)\backslash \{z_0\}$.
+\end{enumerate}
+V případě 2. existuje jediné $p\in \mathbb{N}$ takové, že (0) $f(z_0)=f'(z_0)= \ldots = f^{(p-1)}(z_0)=0$, $f{(p)}(z_0) \neq 0$. Číslo $p$ nazýváme násobnost nulového bodu $z_0$ funkce $f$.
+\end{theorem}
+
+\begin{note}
+Navíc $z_0$ je nulový bod $f$ násobnosti $p$, právě když existuje $r>0$ a $g \in \mathcal{H}(U(z_0,r))$ tak, že $\forall z \in U(z_0,r)$: ($\triangle$) $g(z) \neq 0$ a $f(z)=(z-z_0)^pg(z)$.
+\end{note}
+
+\begin{proof}
+Máme, že $f(z)=\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, $z \in U(z_0,r)$. Pokud nenastane 1., potom existuje $n \in \mathbb{N}$, že $0 \neq a_n=\frac{f^{(n)}(z_0)}{n!}$. Zvolme nejmenší $p \in \mathbb{N}$, aby $a_p \neq 0$. Potom platí (0) a $\forall z \in U(z_0,r)$: $f(z)=a_p(z-z_0)^p + \ldots = (z-z_0)^p \cdot \sum\limits_{n=p}^\infty a_n(z-z_0)^{n-p}$. Dále $g(z)$ definujeme jako poslední sumu. Protože $g(z_0)=a_p \neq 0$, existuje $r>0$, že $g \neq 0$ na $U(z_0,r)$ a $f(z)=(z-z_0)^pg(z) \neq 0$ na $P(z_0,r)$. Obrácené tvrzení plyne snadno.
+\end{proof}
+
+\begin{theorem}[O jednoznačnosti pro holomorfní funkce]
+Nechť $\varnothing \neq G \subset \mathbb{C}$ je oblast a $f,g \in \mathcal{H}(G)$. Pak jsou následující tvrzení ekvivalentní:
+\begin{enumerate}
+\item $f=g$ na $G$;
+\item množina $M:=\{z \in G | f(z)=g(z) \}$ má v $G$ hromadný bod, tj. existuje $z_0 \in G$ takový, že $M \cap P(z_0,r) \neq \varnothing \; \forall  r>0$;
+\item existuje $z_0 \in G$, že $f^{(k)}(z_0)=g^{(k)}(z_0) \; \forall k \in \mathbb{N}_0$.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+BÚNO $g \equiv 0$ na $G$ (jinak uvažme $f-g$).
+
+1 $\Rightarrow$ 2, 2 $\Rightarrow$ 3 Nechť $z_0 \in G$ je hromadný bod $M:=\{z \in G | f(z)=0 \}$. Z věty o nulovém bodě je $f=0$ na nějakém okolí $z_0$, tudíž platí 3.
+
+3 $\Rightarrow$ 1 Nechť $N:=\{z \in G | \forall k \in \mathbb{N}_0: f^{(k)}(z_0)=0 \}$. Potom $\varnothing \neq N$, $N$ je uzavřená v $G$, protože všechny $f^{(k)}$ jsou spojité. Navíc $N$ je otevřená. Nechť $z_1 \in \mathbb{N}$. Podle věty o nulovém bodě existuje $r>0$, že $f=0$ na $U(z_1,r)$. Tedy $U(z_1,r) \subset N$. Protože $G$ je oblast, dostaneme $N=G$ a speciálně 1.
+\end{proof}
+
+\begin{example}
+Vzoreček $\sin (2z)=2\sin (z) \cos (z)$, $z \in \mathbb{C}$ dostaneme z věty o jednoznačnosti, protože obě strany rovnosti jsou celé funkce a víme, že rovnost platí na $\mathbb{R}$ (tzn. platí 2).
+\end{example}
+
+\begin{example}
+Podobně lze řadu vzorečků bez počítání zobecnit z $\mathbb{R}$ do $\mathbb{C}$!
+\end{example}
+
+\begin{theorem}[Princip maxima modulu]
+Nechť $G \subset \mathbb{C}$ je oblast a $f\in \mathcal{H}(G)$. Potom je $f$ konstantní na $G$, pokud $|f|$ nabývá na $G$ lokální maximum, tzn. existuje $z_0 \in G$ a $r>0$ tak, že $\forall z \in U(z_0,r) \subset G: |f(z)| \leq |f(z_0)|$. (+)
+\end{theorem}
+
+\begin{proof}
+Nechť platí (+). Potom
+\end{proof}
