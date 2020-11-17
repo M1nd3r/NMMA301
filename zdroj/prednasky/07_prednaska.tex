@@ -1,0 +1,155 @@
+\begin{notation*}
+$\Sp:=\Comp\cup\{\infty\}$
+\end{notation*}
+\begin{definition}
+Nechť $f:\Sp\rightarrow\Sp$ a $z_0,L\in \Sp$. Potom $L=\lim_{z\rightarrow z_0}f(z)$, pokud pro každou $(z_n)\subset\Sp:$ $z_0\neq z_n\rightarrow z_0\Rightarrow f(z_n)\rightarrow L$.
+Platí:
+\begin{enumerate}
+    \item 
+        $\lim_{z\rightarrow\infty}f(z)=\lim_{z\rightarrow0}f\left(1/z\right)\text{,}$ má-li alespoň jedna strana smysl.
+    \item 
+        $\lim_{z\rightarrow z_0}f(z)=\infty\iff\lim_{z\rightarrow z_0}1/f(z)=0$.
+\end{enumerate}
+\end{definition}
+\begin{definition}[Aritmetika limit v $\Sp$] 
+Platí:
+\begin{align*}
+    \lim_{z\rightarrow z_0}\left(f(z)\pm g(z)\right)&=\lim_{z\rightarrow z_0}f(z)\pm\lim_{z\rightarrow z_0}g(z)\text{,}\\
+    \lim_{z\rightarrow z_0}\left(f(z)\cdot g(z)\right)&=\lim_{z\rightarrow z_0}f(z)\cdot\lim_{z\rightarrow z_0}g(z)\text{,}\\ 
+    \lim_{z\rightarrow z_0}\frac{f(z)}{g(z)}&=\frac{\lim_{z\rightarrow z_0}f(z)}{\lim_{z\rightarrow z_0}g(z)}\text{,}
+\end{align*}
+mají-li pravé strany smysl, pokud definujeme $a/\infty=0\ \forall a\in \Comp,\ a/0=\infty\ \forall a\in \Sp\setminus\{0\},\ a\pm\infty=\infty\ \forall a \in\Comp,\ a\cdot\infty=\infty\ \forall a\in\Sp\setminus\{0\}$.\\
+Nedefinujeme: $0/0,\ \infty/\infty,\ \infty\pm\infty\ 0\cdot\infty$.
+\end{definition}
+\begin{example}
+\emph{Racionální funkce} lze chápat jako spojité funkce z $\Sp$ do $\Sp$. Skutečně, nechť $R=P/Q$, kde $P,\ Q$ jsou polynomy, $Q\neq0$ a $P,\ Q$ nemají stejné kořeny.
+\begin{enumerate}
+    \item 
+        Nechť $Q(z_0)=0$. Potom $P(z_0)\neq0$ a $\lim_{z\rightarrow z_0}R(z)=\infty$. Položme $R(z_0):=\infty$.
+    \item
+        Pokud $R\not\equiv0$, potom 
+        $$\lim_{z\rightarrow\infty}R(z)
+        =\lim_{z\rightarrow\infty}\frac{\overbrace{a_0}^{\neq0}z^n+\cdots+a_n}{\underbrace{b_0}_{\neq0}z^m+\cdots+b_m}
+        =\lim_{z\rightarrow\infty}z^{n-m}\Bigg(\frac{a_0+\frac{a_1}{z}+\frac{a_n}{z^n}}{b_0+\frac{b_1}{z}+\frac{b_m}{z^m}}\Bigg)
+        =\threepartdef{0}{n<m,}{\frac{a_0}{b_0}}{n=m,}{\infty}{n>m.}$$ 
+        Položme $R(\infty):=\lim_{z\rightarrow\infty}R(z)$.
+\end{enumerate}
+\end{example}
+
+\subsection{Izolované singularity}
+\begin{definition}
+Nechť $f$ je holomorfní funkce na $P(z_0)$. Potom $f$ má v $z_0$
+\begin{enumerate}
+    \item \emph{izolovanou singularitu}, existuje-li $\lim_{z\rightarrow z_0}f(z)\in\Comp$,
+    \item \emph{pól}, je-li $\lim_{z\rightarrow z_0}f(z)=\infty$,
+    \item \emph{podstatnou singularitu}, pokud $\lim_{z\rightarrow z_0}f(z)$ neexistuje.
+\end{enumerate}
+\end{definition}
+\begin{example}
+\begin{align*}
+     \frac{\sin{z}}{z}& \text{ má v 0 odstranitelnou singularitu,}\\
+     \frac{1}{z^{10}}& \text{ má v 0 pól,}\\
+     e^{1/z}& \text{ má v 0 podstatnou singularitu.}\\
+\end{align*}
+\end{example}
+\begin{theorem}[O odstranitelné singularitě] Nechť f je holomorfní funkce na $P(z_0)$. NTJE:
+\begin{enumerate}
+    \item $z_0$ je odstranitelná singularita $f$,
+    \item existuje $r>0$ tak, že $f$ je omezená na $P(z_0,\ r)$,
+    \item existuje $F\in \Holo (U(z_0))$ tak, že $F=f$ na $P(z_0)$.
+\end{enumerate}
+\end{theorem}
+
+%TODO zkontrolovat následující úmluvu, přidat odkaz
+\begin{agreement}
+Odstranitelná singularita je vždy odstraněna ve smyslu (3). Didefinujeme $f$ v $z_0$ holomorfně.
+\end{agreement}
+\begin{proof}
+$(1)\Rightarrow(2),\ (2)\Rightarrow(3)$:\\
+Položme $g(z):=\twopartdef{(z-z_0)^2f(z)}{z\in P(z_0),}{0}{z=z_0.}$\\ 
+Potom $g\in \Holo(U(z_0))$, protože $g'(z_0)=\lim_{z\rightarrow z_0}\frac{g(z)-g(z_0)}{z-z_0}=\lim_{z\rightarrow z_0}\underbrace{(z-z_0)}_{\rightarrow0}\underbrace{f(z)}_{omez.}=0$.
+Navíc pro každé $z\in U(z_0)$ je $g(z)=\sum_{n=2}^{\infty}a_n(z-z_0)^n=(z-z_0)^2F(z)$, kde $F(z)\stackrel{def.}{:=}\sum_{n=2}^{\infty}a_n(z-z_0)^{n-2},\ z\in U(z_0)$. Zřejmě $F\in\Holo(U(z_0))$ a $F=f$ na $P(z_0)$.\\
+$(3)\Rightarrow(1)$: jasné.
+\end{proof}
+\begin{theorem}[O pólu] Nechť f je holomorfní funkce na $P(z_0)$. NTJE:
+\begin{enumerate}
+    \item $z_0$ je pól $f$,
+    \item $h:=\frac{1}{f}$ a $h(z_0):=0$ má v $z_0$ nulový bod násobnosti $p$ pro nějaké $p\in\N$,
+    \item existuje $p\in\N$ tak, že $$\lim_{z\rightarrow z_0}(z-z_0)^pf(z)\in\Comp\setminus\{0\}\text{,}$$
+    \item existuje $p\in \N$ tak, že $\forall k\in\Z$ $$\lim_{z\rightarrow z_0}(z-z_0)^kf(z)=\threepartdef{\infty}{k<p,}{\in\Comp\setminus\{0\}}{k=p,}{0}{k>p.}$$
+\end{enumerate}
+Číslo $p$ z $\circled{2.} - \circled{4.}$ je určeno jednoznačně a nazývá se \emph{násobnost pólu} $z_0$ funkce $f$.
+\end{theorem}
+
+\begin{note}
+Píšeme $f(z)\sim g(z)$ pro $z\rightarrow z_0$, je-li $\lim_{z\rightarrow z_0}\frac{f(z)}{g(z)}\in\Comp\setminus\{0\}$. Potom $\circled{3.}\iff f(z)\sim\frac{1}{(z-z_0)^p}$, pro $z\rightarrow z_0$.
+\end{note} 
+
+\begin{proof}
+$\circled{1.}\Rightarrow\circled{2.}$ Protože $\lim_{z\rightarrow z_0}f(z)=\infty$, je $\lim_{z\rightarrow z_0}\frac{1}{f(z)}=0$. Po odstranění odstranitelné singularity má $1/f$ v $z_0$ nulový bod konečné násobnosti $p\in\N$.\\
+$\circled{2.}\Rightarrow\circled{3.}$ Existuje $r>0$ a $g\in\Holo(U(z_0))$ tak, že $g\neq 0$ na $U(z_0,\ r)$ a $h(z)=(z-z_0)^p g(z),\ z\in U(z_0,\ r)$. Potom $\lim_{z\rightarrow z_0}(z-z_0)^p\underbrace{f(z)}_{=\frac{1}{h(z)}}=\frac{1}{g(z_0)}\in\Comp\setminus\{0\}$.\\
+$\circled{3.}\Rightarrow\circled{4.}$ Máme $\lim_{z\rightarrow z_0}(z-z_0)^kf(z)=\lim_{z\rightarrow z_0}(z-z_0)^{k-p}\underbrace{(z-z_0)^pf(z)}_{\in\ \Comp\setminus\{0\}}=\threepartdef{\infty}{k<p,}{\in\Comp\setminus\{0\}}{k=p,}{0}{k>p.}$\\
+$\circled{4.}\Rightarrow\circled{1.}$ pro k=0.
+\end{proof}
+
+\begin{theorem}[Casorati-Weierstrass] Nechť $f$ je holomorfní funkce na $P(z_0)$. NTJE:
+\begin{enumerate}
+    \item $z_0$ je podstatná singularita $f$,
+    \item $\forall r>0: \overline{f(P(z_0,\ r))}=\Comp$.
+\end{enumerate}
+\end{theorem}
+\begin{note}[Velká Picardova věta] $\circled{1.}\iff\circled{3.}$
+\begin{enumerate}
+\setcounter{enumi}{2}
+    \item $\forall r>0:\Comp\setminus f(P(z_0,\ r))$ je nejvýše jednobodová [hluboká věta, důkaz nebude].
+\end{enumerate}
+
+\begin{example}
+$\exp(\Comp\setminus\{0\})=\Comp\setminus\{0\}$, $\exp(1/z)$ má v 0 podstatnou singularitu.
+\end{example}
+\end{note}
+\begin{proof}
+$\circled{2.}\Rightarrow\circled{1.}$ Jasné z definice limity.\\
+$\neg\ \circled{2.}\Rightarrow\neg\ \circled{1.}$ Předpokládejme, že existuje $r>0$ tak, že $\Comp\setminus\overline{f(P(z_0,\ r))}\neq\emptyset$ a $f\in\Holo(P(z_0,\ r))$. Potom existuje $U(u_0,\ \beta)\subset\Comp\setminus\overline{f(P(z_0,\ r))}$, speciálně máme, že $0<|z-z_0|<r\Rightarrow|f(z)-u_0|\geq\beta$. 
+Definujeme 
+\begin{equation*} \tag{*}
+    g(z):=\frac{1}{f(z)-u_0},\ z\in P(z_0,\ r)\text{.}
+\end{equation*} 
+Potom je $g$ holomorfní a $|g|\leq\frac{1}{\beta}$ na $P(z_0,\ r)$. Tedy $z_0$ je odstranitelná singularita a existuje $L:=\lim_{z\rightarrow z_0}g(z)\in\Comp$. Potom máme $\lim_{z\rightarrow z_0}f(z)\stackrel{(*)}{=}\lim_{z\rightarrow z_0}(u_0+\frac{1}{g(z)})=\twopartdef{\infty}{L=0,}{\in\Comp}{L\neq0.}$
+Tedy $f$ má v $z_0$ buď odstranitelnou singularitu anebo pól.
+\end{proof}
+\subsection{Laurentovy řady}
+\begin{definition}
+Nechť $\{a_n\}_{n=-\infty}^{+\infty}\subset\Comp$ a $z_0\in\Comp$. Potom 
+\begin{equation}
+    \underbrace{\sum_{n=-\infty}^{+\infty}a_n(z-z_0)^n}_{(L)}= \underbrace{\sum_{n=1}^{+\infty}a_{-n}(z-z_0)^{-n}}_{(H)} + \underbrace{\sum_{n=0}^{+\infty}a_n(z-z_0)^n}_{(R)}
+\end{equation}
+je \emph{Laurentova řada} s koeficienty ${a_n}$ a středem $z_0$. Řada $(R)$ je \emph{regulární část} $(L)$ a řada $(H)$ je \emph{hlavní část} $(L)$. Řekneme, že $(L)$ konverguje, pokud obě její části, tj. $(H)$ i $(R)$, konvergují.
+\end{definition}
+
+\begin{example}
+$$\exp(\frac{1}{z})=\sum_{n=0}^\infty\frac{1}{n!}\frac{1}{z^n}$$
+\end{example}
+\begin{properties}[L]
+$\circled{1.}$ \emph{Konvergence:} Existují \emph{jedinná} $R,r\in[0,\ +\infty]$ tak, že 
+\begin{enumerate}
+    \item
+        řada $(R)$ konverguje absolutně a lokálně stejnoměrně na $|z-z_0|<R$ a diverguje na $|z-z_0|>R$, 
+    \item
+        řada $(H)$ konverguje absolutně a lokálně stejnoměrně na $|z-z_0|>r$ a diverguje na $|z-z_0|<r$.
+\end{enumerate}
+%TODO přidat obrázky
+
+$\circled{2.}$ \emph{Součet:} Nechť $0\leq r<R\leq+\infty$ (toto vždy neplatí!). Položme \emph{mezikruží} $P(z_0,\ r,\ R) :=\{z\in\Comp|r<|z-z_0|<R\}$. Označíme-li součet $(L)$ jako $f$, potom na $P(z_0,\ r,\ R)$ je $f$ holomorfní, řadu $(L)$ tam definujeme "člen po členu", atd.
+\end{properties}
+
+\begin{note*}
+$P(z_0,\ R)=P(z_0,\ 0,\ R)$.
+\end{note*}
+
+\begin{proof}
+$\circled{1.}$ Číslo $R$ je poloměr konvergence mocninné řady $(R)$. Pro $w=\frac{1}{z-z_0}$ je řada $(H)$ rovna mocninné řadě (*) $\sum_{n=1}^\infty a_{-n}w^n$. Číslo $\frac{1}{r}$ je poloměr konvergence (*).\\
+$\circled{2.}$ Plyne opět z Weierstrassovy věty.
+\end{proof}
+
+\fbox{Cíl} Ukážeme, že $f\in\Holo(P(z_0,\ r,\ R))$, právě když existuje jedinné $(L)$, které má na $(P(z_0,\ r,\ R))$ součet $f$.

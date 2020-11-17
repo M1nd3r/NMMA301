@@ -64,6 +64,16 @@
 		\end{array}
 	\right.
 }
+\newcommand{\threepartdef}[6]
+{
+	\left\{
+		\begin{array}{lll}
+			#1 & \mbox{pro } #2 \\
+			#3 & \mbox{pro } #4 \\
+			#5 & \mbox{pro } #6
+		\end{array}
+	\right.
+}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
 
@@ -84,7 +94,11 @@
 {.\mbox{}}% Punctuation after theorem head
 {\newline}% Space after theorem head
 {}% Theorem head spec (can be left empty, meaning ‘normal’)
-
+\DeclareMathOperator{\N}{\mathbb{N}}
+\DeclareMathOperator{\Z}{\mathbb{Z}}
+\DeclareMathOperator{\Sp}{\mathbb{S}}
+\DeclareMathOperator{\Comp}{\mathbb{C}}
+\DeclareMathOperator{\Holo}{\mathcal{H}}
 \DeclareMathOperator*{\Arg}{Arg}
 \DeclareMathOperator*{\Log}{Log}
 \DeclareMathOperator{\Img}{Im}
@@ -103,6 +117,7 @@
 \newtheorem{agreement}[theorem]{Úmluva}
 \newtheorem{reminder}[theorem]{Připomenutí}
 \newtheorem{excercise}[theorem]{Cvičení}
+
 %\theoremstyle{remark}
 \newtheorem{example}[theorem]{Příklad}
 \newtheorem{note}[theorem]{Poznámka}
@@ -137,6 +152,7 @@
 \subfile{prednasky/04_prednaska}
 \subfile{prednasky/05_prednaska}
 \subfile{prednasky/06_prednaska}
+\subfile{prednasky/07_prednaska}
 
 \subfile{thanks}
 \end{document}
