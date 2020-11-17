@@ -3,13 +3,13 @@
 \begin{definition}
 Nechť $G\subset \mathbb{C}$ je otevřená %tj. $G$ obsahuje s každým bodem i nějaké jeho okolí
 a $f \colon G \to \mathbb{C}$.
-Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}$\emph{-diferencovatelná} v každém $z_{0}\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech holomorfních funkcí $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \mathcal{H}(G)$.
+Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}$\emph{-diferencovatelná} v každém $z_{0}\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech holomorfních funkcí $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \mathcal{H}(\mathbb{C})$.
 \end{definition}
 %tj. hlavním objektem této přednášky bude studium holomorfních funkcí
 \begin{example}\mbox{}
 \begin{itemize}
     \item \emph{Polynom} $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je \emph{celá} funkce.
-    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$, což je konečná množina.
+    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$,kde $Q^{-1}(\{0\})$ je konečná množina.
 \end{itemize}    
 \end{example}
 
@@ -19,7 +19,7 @@ Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}
 \subsection{Exponenciála}
 
 \begin{definition}
-$\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
+$\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
 \end{definition}
 
 \begin{properties}
@@ -29,14 +29,16 @@ $\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
     \item $\exp \mid_\mathbb{R}$ je reálná exponenciála 
     \item $\exp(z+w)=\exp(z)\exp(w)$
     \item $\exp'(z)=\exp(z)$, $ z \in\mathbb{C}$
-     \begin{multline*}
-         f(z)=\exp(z)\text{, }f_1(x,y)=e^x \cos y\text{, } f_2(x,y)=e^x\sin y\text{, }\\
-         \frac{\partial f_1}{\partial x} = e^x\cos y = \frac{\partial f_2}{\partial y}\text{, }
-     \frac{\partial f_2}{\partial x} = e^x \sin y= - \frac{\partial f_1}{\partial y}
-     \end{multline*}
+ 
+         $f(z)=\exp(z)\text{, }\newline f_1(x,y)=e^x \cos y\text{, }\newline f_2(x,y)=e^x\sin y\text{, }\newline
+         \frac{\partial f_1}{\partial x} = e^x\cos y = \frac{\partial f_2}{\partial y}\text{, }\newline
+     \frac{\partial f_2}{\partial x} = e^x \sin y= - \frac{\partial f_1}{\partial y}$
+   
+     
+     
      
     Tedy $f\in\mathcal{C}^{\infty}(\mathbb{R}^2)$ % $f$ má spojité všechny reálné parciální derivace
-    a \cref{eqn:CR} platí všude $\mathbb{R}^2\cong\mathbb{C}$. Z CR-věty máme $f'(z)=\exp(z)\text{, } z\in\mathbb{C}$
+    a \cref{eqn:CR} platí všude v $\mathbb{R}^2\cong\mathbb{C}$. Z CR-věty a \textbf{ poznámky 3.7} máme $f'(z)=\exp(z)\text{, } z\in\mathbb{C}$
     \item $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$, $z\in\mathbb{C}\text{.}$
     \item $\exp(\mathbb{C})=\mathbb{C}\setminus\{0\}$ 
     \item $\exp$ není prostá na $\mathbb{C}$, je $2\pi i$-periodická a platí dokonce:
@@ -49,13 +51,13 @@ $\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
   \end{itemize}  
   \end{properties}
   \begin{definition}
-    Nechť $z=x+iy$ je komplexní číslo, pak se na něj můžeme dívat jako na bod v rovině určený kartézskými souřadnicemi $x$ a $y$. \emph{Polární (Goniometrický) tvar komplexního čísla} získám tak, že si body $x$ a $y$ vyjádřím v polárních souřadnicích a ty pak dosadím do rovnice udávající $z$.
+    Nechť $z=x+iy$ je komplexní číslo, pak se na něj můžeme dívat jako na bod v rovině určený kartézskými souřadnicemi $x$ a $y$. \emph{Polární (Goniometrický) tvar komplexního čísla} získám tak, že si body $x$ a $y$ vyjádřím v polárních souřadnicích a ty pak dosadím do rovnice udávající $z$. Tedy
     
     
        $x=r\cos \varphi$, 
        $y=r\sin \varphi$, 
        $z=x+iy=r(\cos \varphi + i \sin \varphi)=\lvert z \rvert e^{i\varphi} $, kde $r=\lvert z \rvert$ a $\varphi$ je argument $z$.
-       Polární souřadnice mi říkají jak je daleko od počátku $r$ a v jakém směru  $\measuredangle \varphi$ se bod $z$ nachází.
+       Polární souřadnice nám říkají jak je daleko od počátku $r$ a v jakém směru  $\measuredangle \varphi$ se bod $z$ nachází.
  \end{definition}
      
     \begin{notation}
@@ -74,7 +76,7 @@ $\exp(t)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
 
 \subsection{Logaritmus}
 %logaritmů můžeme mít mnohem víc
-Pro dané $z\in\mathbb{C}$ řešíme $e^w=z$. 
+Pro dané $z\in\mathbb{C}$ řešíme rovnici $e^w=z$. 
 \begin{itemize}
     \item Pro $z=0$ nemáme řešení. \item Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  \arg(z)}=e^{\log\lvert z \rvert+i   \arg(z)}=e^w\iff\exists\ k \in\mathbb{Z}\colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
     \end{itemize}
@@ -101,7 +103,7 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$.
  Pozor na počítání s komplexním logaritmem! %Nebot některé vzorečky z reálného oboru zde neplatí.
 
  \begin{itemize}
-     \item $\exp(\log z)=z$, $\log(\exp{z})\neq z$, z toho, že je to $2\pi i$-periodické
+     \item $\exp(\log z)=z$, $\log(\exp{z})\neq z$, z toho, že exponenciála je $2\pi i$-periodická
      \item $\log(z w)\neq \log(z) + \log(w)$
  \end{itemize}
 \end{properties}
@@ -125,7 +127,7 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hla
     \item Je-li $z>0$ a $\alpha\in\mathbb{R}$, potom $z^{\alpha}$ je v souladu s definicí z MA.
     \item $m_{\alpha}(z)=\{z^{\alpha}e^{2k\pi i \alpha}\mid k\in\mathbb{Z}\}$, $z\neq 0$
     \newline
-    $w\in \Log z\iff w=\log z +2k\pi i$
+    \begin{proof}$w\in \Log z\iff w=\log z +2k\pi i$\end{proof}
     \item $(z^{\alpha})'=\alpha z^{\alpha-1}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ])$ a $\alpha\in\mathbb{C}$
     \item $(1+z)^{\alpha}=\sum_{n=0}^{\infty}\tbinom{\alpha}{n}z^{n} $, $\lvert z \rvert<1$, kde $\tbinom{\alpha}{n}:=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.%mocninný rozvoj
 \end{itemize}
@@ -135,8 +137,8 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hla
 Nechť $z \in\mathbb{C}\setminus\{0\}$.
 \begin{itemize}
     \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.%celočíselná mocnina je jenom jediná
-    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p\mid_q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{2K\frac{p}{q}\pi i}\mid K=\{0,1,\cdots,q-1\}\}$
-    tvoří vrcholy pravidelného $q$-úhelníka vepsaného do kružnice se středem v počátku. %mocnin je přesně $q$
+    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p/q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{\frac{2K\pi i p}{q}}\mid K=\{0,1,\cdots,q-1\}\}$
+    tvoří vrcholy pravidelného $q$-úhelníka vepsaného do kružnice se středem v počátku a poloměrem $z^{\frac{p}{q}}$. %mocnin je přesně $q$
     %obrázek
     \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.%mocnin je nekonečně
 \end{itemize}
