@@ -7,7 +7,7 @@ Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
     \item $\varphi$ je \emph{regulární křivka}, pokud je $\varphi$ po částech spojitě diferencovatelná, tzn. $\varphi$ je spojitá na $[\alpha,\beta]$ a existuje dělení $\alpha = t_0<t_1<\cdots <t_n=\beta$ takové, že
     $\varphi \big\rvert
      _{[t_i,t_{i+1}]} 
-    $je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$.
+    $ je spojitě diferencovatelné pro každé $i=0,\cdots,n-1$.
     %My se omezíme právě na regulární křivky.
 \end{enumerate}
 \end{definition}
@@ -66,12 +66,13 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \end{note}
 %Příklad
 %Otázka
+\newpage
 \begin{propertiesBasic}
 \mbox{}
 \vspace{-2em}
 \begin{enumerate}
     \item Je-li $\varphi$ křivka, $f$ a $g$ jsou spojité funkce na $\langle\varphi\rangle$ a $A,B \in \mathbb{C}$, potom $$\int_\varphi (Af+Bg)=A\int_\varphi f+B\int_\varphi g.$$
-    \item Je-li $\varphi$ křivka a $f$ je spojitá funkce na $\langle\varphi\rangle$, potom $\left|\int_\varphi f\right|\leq\max_{\langle\varphi\rangle}|f|\cdot V(\varphi)$.
+    \item Je-li $\varphi$ křivka a $f$ je spojitá funkce na $\langle\varphi\rangle$, potom $$\left|\int_\varphi f\right|\leq\max_{\langle\varphi\rangle}|f|\cdot V(\varphi)$$.
     \begin{proof}
      Označíme $M:=\max_{\langle\varphi\rangle}|f|$. Potom máme
      \begin{multline*}
@@ -108,10 +109,10 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \end{definition}
 
 \begin{example}
-$\frac{z^{n+1}}{n+1}$ je primitivní funkcí k $z^n
-\twopartdef
+$\frac{z^{n+1}}{n+1}$ je primitivní funkcí k $z^n$
+$$\twopartdef
 {\text{na } \mathbb{C}}{n=0,1,2,3, \dots}
-{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \dots}$
+{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \dots}$$
 \end{example}
 
 \begin{theorem}[O výpočtu křivkového integrálu pomocí PF]
@@ -128,7 +129,7 @@ Nechť $G\subset\mathbb{C}$ je otevřená a $f$ má na $G$ primitivní funkci $F
 \begin{proof}
 Z \hyperref[CR]{Cauchy-Riemannovy věty} plyne, že 
 $$\frac{\diff}{\diff t}\Bigl(F\bigl(\varphi(t)\bigr)\Bigr)=\frac{\partial F}{\partial x}\varphi'_1+\frac{\partial F}{\partial y}\varphi'_2=F'\varphi'_1+iF'\varphi'_2=F'\bigl(\varphi(t)\bigr)\varphi'(t)\text{.}$$
-Tato rovnost platí až na konečně mnoho $t\in[\alpha\beta]$, neboli $F\circ\varphi$ je zobecnění PF k integrandu.
+Tato rovnost platí až na konečně mnoho $t\in[\alpha,\beta]$, neboli $F\circ\varphi$ je zobecnění PF k integrandu.
 Máme tedy
 $$\int_\varphi f=\int_\alpha^\beta f\bigl(\varphi(t)\bigr)\varphi'(t)\diff t
 =\int_\alpha^\beta \frac{\diff}{\diff t}\Bigl(F\bigl(\varphi(t)\bigr)\Bigr)\diff t=
@@ -158,11 +159,11 @@ $(a)\iff (b)$: víte z MA; $(c)\Rightarrow(b)$: jasné; $(a)\Rightarrow(c)$: uk�
 \end{proof}
 
 \begin{theorem}
-Funkce $f$ je konstatní na oblasti $G\subset\mathbb{C}$, právě když $f'=0$ na $G$.
+Funkce $f$ je konstantní na oblasti $G\subset\mathbb{C}$, právě když $f'=0$ na $G$.
 \end{theorem}
 \begin{proof}
 $\Rightarrow$ Jasné.\\
-$\Leftarrow$ Nechť $z,w\in G$ a $\varphi$ je lomenná čára v $G$ spojující $z$ a $w$. Potom $f(w)-f(z)=\int_\varphi f'=0$, protože $f$ je primitivní funkcí k $f'$ na $G$.
+$\Leftarrow$ Nechť $z,w\in G$ a $\varphi$ je lomená čára v $G$ spojující $z$ a $w$. Potom $f(w)-f(z)=\int_\varphi f'=0$, protože $f$ je primitivní funkcí k $f'$ na $G$.
 \end{proof}
 
 \begin{consequence}
@@ -174,7 +175,7 @@ $$(F_2-F_1)'=F'_2-F'_1=f-f=0\text{.}$$
 \end{proof}
 
 \begin{theorem}[O existenci PF]\label{thm:oExistenciPF}
-Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. NTJE:
+Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. Následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item $f$ má na $G$ primitivní funkci.
     \item $\int_\varphi f=0$ pro každou \emph{uzavřenou} křivku $\varphi$ v $G$.
@@ -195,8 +196,8 @@ Definujeme $F(z):=\int_{\varphi_z} f$, $z\in G$.
 Definice $F$ je korektní, nezávislá na volbě $\varphi_z$, protože předpokládáme 3. Ukážeme, že $F$ je hledaná PF k $f$ na $G$. Nechť $z_1\in G$. Dokážeme, že $F'(z_1)=f(z_1)$. 
 Volme $r>0$, aby $U(z_1,r)\subset G$. Je-li $|h|<r$, 
 potom $$F(z_1+h)-F(z_1)\stackrel{3.}{=}\int_{\varphi_{z_1}\dotplus u} f-\int_{\varphi_{z_1}}f=\int_u f\text{,}$$
-kde $u=\left[z_1;z_1+h \right]$ je \emph{úsečka}, tzn. $u(t)=z_1+t\cdot h$, $t\in[0,1]$. 
-Tedy $$F(z_1+h)-F(z_1)=\int_u f=\int_0^1 f(z_1+th)h \diff t\text{,}$$tudíž $$\frac{F(z_1+h)-F(z_1)}{g}-f(z_1)=\int_0^1 \left(f(z_1+th)-f(z_1)\right)\diff t\text{.}$$ To se blíží k nule pro $h\rightarrow0$, protože 
+kde $u=\left[z_1;z_1+h \right]$ je \emph{úsečka}, tzn. $u(t)=z_1+t.h$, $t\in[0,1]$. 
+Tedy $$F(z_1+h)-F(z_1)=\int_u f=\int_0^1 f(z_1+th)h \diff t\text{,}$$tudíž $$\frac{F(z_1+h)-F(z_1)}{h}-f(z_1)=\int_0^1 \left(f(z_1+th)-f(z_1)\right)\diff t\text{.}$$ To se blíží k nule pro $h\rightarrow0$, protože 
 $$\left| \int_0^1\left(f(z_1+th)-f(z_1)\right)\diff t\right| \leq \max_{z\in[z_1;z_1+h]}\left|f(z)-f(z_1)\right| \xrightarrow{ h\rightarrow 0}0$$
 ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
 \end{proof}

@@ -1,18 +1,23 @@
 % druhá strana
 
 \begin{theorem}[Cauchyův vzorec pro kruh]
-Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi{{t}}:=z_0+r.e^{it}$, $t\in{[0,2\pi]}$ $(*)$. Potom platí TBA
-\[\frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}dz}=
+Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi{(t)}:=z_0+r.e^{it}$, $t\in{[0,2\pi]}$ $(*)$. Potom platí 
+\begin{equation}
+    \frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}dz}=
 \left\{
 	\begin{array}{ll}
 		f(s), \hspace{5mm} |s-z_0|<r\\
 		0,\hspace{5mm} |s-z_0|>r
 	\end{array}
 \right.
-\]\end{theorem}
+\tag{$CV_z$}
+\label{eqn:cvz}
+\end{equation}
+\end{theorem}
 
 \begin{proof}
-(i) Existuje $R>r$ tak, že $U(z_0,R)\subset{G}$. Nechť $|s-z_0|<r$. Definujme 
+Existuje $R>r$ tak, že $U(z_0,R)\subset{G}$.\newline
+(i) Nechť $|s-z_0|<r$. Definujme 
 \[h(z):=
 \left\{
 	\begin{array}{ll}
@@ -31,13 +36,19 @@ Potom $h\in\mathcal{H}(U(z_0,R)\setminus\{s\})$ a spojitá na hvězdovité oblas
 \end{proof}
 
 \begin{consequence}
-Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Potom $f$ má komplexní derivaci všech řádů všude na $G$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi$ je jako v $(*)$. Potom TBA
-\[\frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz=f^{(k)}(s),\hspace{5mm} |s-z_0|<r\hspace{2mm} a\hspace{2mm} k = 0,1,2,3,... \]
+Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Potom $f$ má komplexní derivaci všech řádů všude na $G$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi$ je jako v $(*)$. Potom 
+\begin{equation}
+f^{(k)}(s)=
+\frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz,\hspace{5mm} |s-z_0|<r\hspace{2mm} a\hspace{2mm} k = 0,1,2,3,... 
+\tag{$CV^{(k)}_z$}
+\label{eqn:cvkz}
+\end{equation}
+
 Zde $f^{(0)}=f$ a $k$-tá komplexní derivace $f^{(k)}$ je definovaná jako $f^{(k)}=(f^{(k-1)})'$, má-li pravá strana smysl.
 \end{consequence}
 
 \begin{proof}
-Z věty o derivaci integrálu dle komplexního parametru a $(CV_z)$, protože 
+Z věty o derivaci integrálu dle komplexního parametru a \cref{eqn:cvz}, protože 
 \[\frac{d^k}{ds^k}\left(\frac{1}{z-s}\right)=
 \frac{k!}{(z-s)^{k+1}},\hspace{2mm} z\neq{s}.\]
 \end{proof}
@@ -45,8 +56,13 @@ Z věty o derivaci integrálu dle komplexního parametru a $(CV_z)$, protože
 % čtvrtá strana
 
 \begin{theorem}[Morera]
-Nechť $f$ je spojitá funkce na otevřené $G\subset{\mathbb{C}}$. Potom $f\in\mathcal{H}(G)$, právě když TBA
-\[\int_{\partial\triangle}{f} =0 \hspace{3mm} \text{pro každý trojúhelník }\triangle\subset{G}.\]
+Nechť $f$ je spojitá funkce na otevřené $G\subset{\mathbb{C}}$. Potom $f\in\mathcal{H}(G)$, právě když
+\begin{equation}
+    \begin{aligned}
+\int_{\partial\triangle}{f} =0 \hspace{3mm} \text{pro každý trojúhelník }\triangle\subset{G}.    
+    \end{aligned}
+    \label{eqn:morera}
+\end{equation}
 \end{theorem}
 
 \begin{proof}
@@ -59,21 +75,33 @@ pro každý trojúhelník $\triangle\subset\mathcal{U}$, má $f$ na $\mathcal{U}
 % pátá strana
 
 \begin{theorem}[Cachyho odhady]
-Nechť $z_0\in\mathbb{C}$, $r\in(0,+\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,r)}$. Potom pro každé $k=0,1,2,...$ je TBA
-\[\forall{s\in{\mathcal{U}:=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r.k!}{(d(s))^{k+1}}.\max_{\partial\mathcal{U}}{|f|},\]
+Nechť $z_0\in\mathbb{C}$, $r\in(0,+\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,r)}$. Potom pro každé $k=0,1,2,...$ je 
+\begin{equation}
+\forall{s\in{\mathcal{U}:=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r.k!}{(d(s))^{k+1}}.\max_{\partial\mathcal{U}}{|f|},    
+\tag{$CO_1$}
+\label{eqn:co1}
+\end{equation}
 kde $d(s) := dist(s,\partial\mathcal{U})\overset{def.}{:=}\underset{{z\in{\partial{\mathcal{U}}}}}{min}{|s-z|}$
-\[\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!.2^{k+1}}{r^k}.\max_{\partial{U}}{|f|},\]
-\[|f^{(k)}(z_0)|\leq\frac{k!}{r^k}.\max_{\partial{U}}{|f|}.\]
+\begin{equation}
+\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!.2^{k+1}}{r^k}.\max_{\partial{U}}{|f|}.
+\tag{$CO_2$}
+\label{eqn:co2}
+\end{equation}
+\begin{equation}
+    |f^{(k)}(z_0)|\leq\frac{k!}{r^k}.\max_{\partial{U}}{|f|}. 
+\tag{$CO_3$}
+\label{eqn:co3}
+\end{equation}
 \end{theorem}
 
 \begin{proof}
-$(CO_1)$ dostaneme z $(CV_z^{(k)})$, protože 
+\cref{eqn:co1} dostaneme z \cref{eqn:cvkz}, protože 
 \[|f^{(k)}(s)|=
 \left\lvert\frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz\right\lvert\leq
 \frac{k!}{2\pi}.2\pi{r}.\frac{1}{(d(s))^{k+1}}.\max_{\partial\mathcal{U}}{|f|}\]
 a $|z-s|\geq d(s)$, $z\in\partial\mathcal{U}=\langle\varphi\rangle$, zde $\varphi(t)=z_0+r.e^{it}$, $t\in\left[0,2\pi\right]$.\newline
-$(CO_2)$ plyne z $(CO_1)$, protože $d(s)\geq\frac{r}{2}$ $\forall{s\in{U(z_0,r/2)}}$.\newline
-$(CO_3)$ plyne z $(CO_1)$, protože $d(z_0)=r$. 
+\cref{eqn:co2} plyne z \cref{eqn:co1}, protože $d(s)\geq\frac{r}{2}$ $\forall{s\in{U(z_0,r/2)}}$.\newline
+\cref{eqn:co3} plyne z \cref{eqn:co1}, protože $d(z_0)=r$. 
 \end{proof}
 
 % šestá strana
@@ -83,7 +111,7 @@ Je-li $f$ holomorfní  a omezená na $\mathbb{C}$, potom je $f$ konstantní.
 \end{theorem}
 
 \begin{proof}
-Ukážeme, že $f'=0$ na $\mathbb{C}$. Označme $M:=\sup_\mathbb{C}{|f|}<+\infty$. Nechť $z_0\in\mathbb{C}$. Z $(CO_3)$ dostaneme pro každé $r>0$
+Ukážeme, že $f'=0$ na $\mathbb{C}$. Označme $M:=\sup_\mathbb{C}{|f|}<+\infty$. Nechť $z_0\in\mathbb{C}$. Z \cref{eqn:co3} dostaneme pro každé $r>0$
 \[|f'(z_0)|\leq
 \frac{1}{r}\max_{\partial{U(z_0,r)}}{|f|}\leq
 \frac{M}{r}\underset{{r\to{+\infty}}}{\to}0,\]
@@ -99,9 +127,9 @@ Nechť $p(z)={a_0}{z^n}+{a_1}{z^{n-1}}+...+{a_n}$, kde $a_j\in\mathbb{C}$, $a_0\
 Sporem: Předpokládejme, že $p\neq{0}$ na $\mathbb{C}$. Položme $f:=1/p$. Potom $f$ je holomorfní a omezená na $\mathbb{C}$, tudíž dle Liouvilleovy věty je $f$ i $p$ konstantní. Tedy $p'=0$ a $0=p^{(n)}=n!{a_0}$, což je spor.\newline
 % sedmá strana
 Omezenost $f$: Máme
-\[|f(z)|=\left\lvert\frac{1}{z_n.\left(a_0+\frac{a_1}{z}+...+\frac{a_n}{z^n}\right)}\right\lvert\leq
+\[|f(z)|=\left\lvert\frac{1}{z^n.\left(a_0+\frac{a_1}{z}+...+\frac{a_n}{z^n}\right)}\right\lvert\leq
 \frac{1}{r^n}.\frac{1}{|a_0|-\frac{|a_1|}{r}-...-\frac{|a_n|}{r^n}}\longrightarrow 0\]
-pro $r=|z|\to+\infty$
+pro $r=|z|\to+\infty$.
 
 Existuje $r_0\in(0,+\infty)$ tak, že $|f(z)|\leq{1}$, je-li $|z|>r_0$. Funkce $f$ je omezená na $\overline{U(0,r_0)}$, protože je tam spojitá.
 \end{proof}
@@ -141,8 +169,11 @@ Z Morerovy věty je $f\in\mathcal{H}(G)$.
 \section{\texorpdfstring{Mocninné řady}{Mocninné rady}}
 
 \begin{definition}
-Nechť $\{a_n\}_{n=0}^\infty\subset\mathbb{C}$ a $z_0\in\mathbb{C}$. Potom TBA
-\[\sum_{n=0}^\infty{a_n.(z-z_0)^n}, \hspace{5mm} z\in\mathbb{C}\]
+Nechť $\{a_n\}_{n=0}^\infty\subset\mathbb{C}$ a $z_0\in\mathbb{C}$. Potom 
+\begin{equation}
+\sum_{n=0}^\infty{a_n.(z-z_0)^n}, \hspace{5mm} z\in\mathbb{C}
+\label{eqn:rada}
+\end{equation}
 je mocninná řada o středu $z_0$ s koeficienty $\{a_n\}_{n=0}^\infty$.
 \end{definition}
 
@@ -150,15 +181,15 @@ je mocninná řada o středu $z_0$ s koeficienty $\{a_n\}_{n=0}^\infty$.
 \circled{1} \textbf{Konvergence} (na cvičení) \newline
 Existuje jediné $R\in{[0,+\infty]}$ takové, že 
 \begin{itemize}
-    \item řada TBA konverguje absolutně a lokálně stejnoměrně na  $U(z_0,R):=\{z\in\mathbb{C} : |z-z_0|<R\}$, 
-    \item řada TBA diverguje pro $|z-z_0|>R$. 
+    \item řada \cref{eqn:rada} konverguje absolutně a lokálně stejnoměrně na  $U(z_0,R):=\{z\in\mathbb{C} : |z-z_0|<R\}$, 
+    \item řada \cref{eqn:rada} diverguje pro $|z-z_0|>R$. 
 \end{itemize}
-Číslo $R$ se nazývá poloměr konvergence TBA a platí, že
+Číslo $R$ se nazývá poloměr konvergence \cref{eqn:rada} a platí, že
 \[R=\frac{1}{
 \underset{n\to+\infty}{\limsup}{\sqrt[\leftroot{-3}\uproot{3}n]{|a_n|}}},\]
 kde položíme $\frac{1}{0}=+\infty$, $\frac{1}{+\infty}=0$.
 
-\circled{2} Označíme-li součet TBA na $U(z_0,R)$ jako $f$, potom je $f\in\mathcal{H}(U(z_0,R))$ a 
+\circled{2} Označíme-li součet \cref{eqn:rada} na $U(z_0,R)$ jako $f$, potom je $f\in\mathcal{H}(U(z_0,R))$ a 
 \[
 \forall{k\in\mathbb{N}_0}\hspace{2mm}\forall{z\in{U(z_0,R)}}: \hspace{5mm}
 f^{(k)}(z)=
@@ -167,11 +198,11 @@ speciálně $a_k=\frac{f^{(k)}(z_0)}{k!}$.
 \end{properties}
 
 \begin{note}
-Mocninnou řadu derivujeme "člen po členu", můžeme na $U(z_0,r)$ zaměnit sumu a komplexnou derivaci.
+Mocninnou řadu derivujeme "člen po členu", můžeme na $U(z_0,r)$ zaměnit sumu a komplexní derivaci.
 \end{note}
 
 \begin{proof}
 Užijeme Weierstrassovu větu na 
 \[S_n(z):=\sum_{n=0}^N{a_n(z-z_0)^n},\hspace{5mm} z\in{U(z_0,R)}\]
-Dosadíme-li do TBA $z=z_0$, máme $f^{(k)}(z_0)={a_k}.{k!}$
+Dosadíme-li do \cref{eqn:rada} $z=z_0$, máme $f^{(k)}(z_0)={a_k}.{k!}$
 \end{proof}

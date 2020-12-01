@@ -10,25 +10,41 @@ Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\triangle
 \end{theorem}
 
 \begin{proof}
-Označme $\varphi_0:=\partial\triangle$. Sporem: Předpokládejme, že $|\int_{\varphi_0}f|=:K>0$. Zřejmě $\triangle$ je nedegenerovaný. V  $\triangle$ veďme střední příčky a označme $\psi_1$, $\psi_2$, $\psi_3$, $\psi_4$ obvody čtyř vzniklých trojúhelníků ($\psi_4$ je obvod vnitřního trojúhelníka). Obvody vnitřních trojúhelníků $\psi_1$(vlevo dole),  $\psi_2$(vpravo dole), $\psi_3$(nahore) a  $\psi_4$(uprostřed) probíháme proti směru hodinových ručiček.
+Označme $\varphi_0:=\partial\triangle$. Sporem: Předpokládejme, že $|\int_{\varphi_0}f|=:K>0$. Zřejmě $\triangle$ je nedegenerovaný. V  $\triangle$ veďme střední příčky a označme $\psi_1$, $\psi_2$, $\psi_3$, $\psi_4$ obvody čtyř vzniklých trojúhelníků ($\psi_4$ je obvod vnitřního trojúhelníka). Obvody vnitřních trojúhelníků $\psi_1$(vlevo dole),  $\psi_2$(vpravo dole), $\psi_3$(nahoře) a  $\psi_4$(uprostřed) probíháme proti směru hodinových ručiček.
 Potom $\int_{\varphi_0}f=\int_{\psi_1}f+\int_{\psi_2}f+\int_{\psi_3}f+\int_{\psi_4}f$. Ex. $j_1=1, \ldots, 4$ tak, že $|\int_{\psi_{j_1}}f|\ge \frac{K}{4}$ a $V({\psi_{j_1}})= \frac{V(\varphi)}{2}$.
-Označme $\varphi_1=\psi_{j_1}$. Indukcí sestrojíme posloupnost (uzavřených) trojúhelníků, tž $\triangle \psi_{j_1}$ zase rozdělíme na $4$ menší $\triangle$y středními příčkami a proces opakujeme.
-$\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že $(a) |\int_{\varphi_j}f|\ge \frac{K}{4^j}$ a $V({\varphi_j})= \frac{V(\varphi)}{2^j}$. Máme, že $\bigcap\limits_{j=0}^\infty \triangle_j=\{z_0\} \subset G$, %Víme,že $\triangle_j$ jsou kompaktní. 
+Označme $\varphi_1=\psi_{j_1}$. Indukcí sestrojíme posloupnost (uzavřených) trojúhelníků, tž $\triangle \psi_{j_1}$ zase rozdělíme na $4$ menší $\triangle$-y středními příčkami a proces opakujeme. Pak 
+$\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že \begin{equation}
+\begin{aligned}
+        \left|\int_{\varphi_j}f\right|\ge \frac{K}{4^j} \text{\hspace{3mm}a}\\ V({\varphi_j})= \frac{V(\varphi)}{2^j}
+\end{aligned}
+\tag{a}
+\label{eqn:a}
+\end{equation}. Máme, že $\bigcap\limits_{j=0}^\infty \triangle_j=\{z_0\} \subset G$, %Víme,že $\triangle_j$ jsou kompaktní. 
 protože diam$(\triangle_j)\rightarrow 0$. Položme
 $$\begin{aligned}
-\varepsilon(z): &= \frac{f(z)-f(z_0)}{z-z_0}-f'(z_0) \text{, } z \in G \backslash \{z_0\} \text{;} \\ %rozdíl v bodě $z$ té komplexní derivace od toho derivačního podílu.
-: &= 0  \text{, } z=z_0 \text{.}
+\varepsilon(z): &=
+\left\{
+	\begin{array}{ll}
+		\frac{f(z)-f(z_0)}{z-z_0}-f'(z_0) \text{, } z \in G \backslash \{z_0\} \text{;}\\
+		0  \text{, } z=z_0
+	\end{array}
+\right.
 \end{aligned}
 $$
 Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
+\begin{equation}
+    \begin{aligned}
+    \int_{\varphi_j}f(z) \diff z = \int_{\varphi_j}(f(z_0)+f'(z_0)(z-z_0)) \diff z + \int_{\varphi_j}\varepsilon(z)(z-z_0) \diff z \text{,}
+    \end{aligned}
+    \tag{b}
+    \label{eqn:b}
+\end{equation}
+
+kde první integrand vpravo má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z  \cref{eqn:a},\cref{eqn:b} dostaneme
 $$
-(b) \int_{\varphi_j}f(z) \diff z = \int_{\varphi_j}(f(z_0)+f'(z_0)(z-z_0)) \diff z + \int_{\varphi_j}\varepsilon(z)(z-z_0) \diff z \text{,}
+0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \max_{<\varphi_j>}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
 $$
-kde první integrand má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z $(a),\ (b)$ dostaneme
-$$
-\frac{K}{4^j} \le \left| \int_{\varphi_j}f\right|\stackrel{(b)}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \max_{<\varphi_j>}|\varepsilon|=\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
-$$
-kde druhá nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
+kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
 \end{proof}
 
 \begin{theorem}[Cauchyho věta pro hvězdovité oblasti]
@@ -36,7 +52,7 @@ Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast a  $f \in \mathcal{H}(G)$. 
 \end{theorem}
 
 \begin{proof}
-Z Goursartova lemmatu a dodatku k větě o existenci PF.
+Z Goursartova lemmatu a dodatku k větě o existenci PF (Dodatek 5.23).
 \end{proof}
 
 \begin{note} %obrázky
@@ -44,33 +60,33 @@ Gousartovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je s
 \end{note}
 
 \begin{proof}
-Skutečně, nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Potom
+Nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Rozlišujeme případy:
 \begin{enumerate}
-    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$. Tady nám bude stačit použít obyčejné Gousartovo lemmma
+    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$. Dle Gousartova lemmatu.
     \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, $\triangle_\varepsilon\subset\ \triangle$
     a
     $z_{0}$ je jeho
-    vrcholem. Poměr stran $\triangle$ ku 
+    vrcholem. Nechť poměr stran $\triangle$ ku 
     $\triangle_\varepsilon$ je
     roven $\varepsilon$. $\triangle',\ \triangle''$ jsou trojúhelníky vzniklé rozdělením $\triangle$ na tři trojúhelníky ($\triangle_\varepsilon$, $\triangle'$, $\triangle''$). Obvody vzniklých vnitřních trojúhelníků procházíme proti směru hodinových ručiček.
     Potom $\int_{\partial\triangle}f=\int_{\partial\triangle_\varepsilon}f+\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde poslední dva integrály jsou rovny $0$ podle bodu 1. Tudíž $|\int_{\partial\triangle}f|=|\int_{\partial\triangle_\varepsilon}f| \le \varepsilon \cdot V(\partial\triangle) \cdot \max_\triangle |f| \xrightarrow[\varepsilon \rightarrow 0+]{}0$. Tedy  $\int_{\partial\triangle} f=0$.
-    \item Nechť $z_0$ leží uvnitř strany $\triangle$. Potom $\triangle$ rozříznu na dva menší trojúhelníky $\triangle'$ a $\triangle''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde oba integrály na pravé straně jsou rovny $0$ podle bodu 1. Tudíž $\int_{\partial\triangle}f=0$.
-    \item Nechť $z_0$ leží uvnitř $\triangle$. Potom $\triangle$ rozříznu na tři menší trojúhelníky $\triangle'$ a $\triangle''$, $\triangle'''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f+\int_{\partial\triangle'''}f$, kde jsou všechny tři integrály na pravé straně rovny $0$ podle bodu 1. Tudíž $\int_{\partial\triangle}f=0$.
+    \item Nechť $z_0$ leží uvnitř strany $\triangle$. Potom $\triangle$ rozřízneme na dva menší trojúhelníky $\triangle'$ a $\triangle''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f$, kde oba integrály na pravé straně jsou rovny $0$ podle bodu 2. Tudíž $\int_{\partial\triangle}f=0$.
+    \item Nechť $z_0$ leží uvnitř $\triangle$. Potom $\triangle$ rozřízneme na tři menší trojúhelníky $\triangle'$ a $\triangle''$, $\triangle'''$ se společným vrcholem v $z_{0}$. Jejich obvody procházím proti směru hodinových ručiček. Potom $\int_{\partial\triangle}f=\int_{\partial\triangle'}f+\int_{\partial\triangle''}f+\int_{\partial\triangle'''}f$, kde jsou všechny tři integrály na pravé straně rovny $0$ podle bodu 2. Tudíž $\int_{\partial\triangle}f=0$.
 \end{enumerate}
 \end{proof}
 
 \begin{theorem}[O derivování podle komplexního parametru] %Chceme si zavést pojem index bodu vůči křivce. K tomu potřebujeme rozšířit větu o derivování podle reálného parametru o komplexní parametr.
 Nechť $\varphi$ je křivka v $\mathbb{C}$ a $\Omega \subset \mathbb{C}$ je otevřená. Nechť $F(z,s)$ a komplexní derivace $\frac{\partial F}{\partial s}(z,s)$ %funkce dvou komplexních parametrů, přes $z$ budeme integrovat podle $\varphi$ a $s$ bude ten komplexní parametr, který běhá v množině $\Omega$. 
 jsou spojité komplexní funkce na $\langle\varphi\rangle\times\Omega$. Pro každé $s\in\Omega$ položme $\phi(s):=\int_{\varphi}F(z,s) dz$.
-Potom $\phi\in\mathcal{H}(\Omega)$ a $\phi'=\int_{\varphi}\frac{\partial F}{\partial s}(z,s) dz\text{, }s\in\Omega$.
+Potom $\phi\in\mathcal{H}(\Omega)$ a $\phi'(s)=\int_{\varphi}\frac{\partial F}{\partial s}(z,s) dz\text{, }s\in\Omega$.
 \end{theorem}
 \begin{proof}
 %integrál závislý na komplexním parametru si můžeme přepsat jako integrál závislý na dvou reálných proměných.
-Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),s_1,s_2)\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\mathbb{C}$. Podle vět o spojitosti a derivování integrálu závislího na reálných parametrech $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, }s\in\Omega$ a $j=1,2$ tyto parciální derivace $\frac{\partial \phi}{\partial s_j}(s)$, $j=1,2$ jsou spojité a splnují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splnují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostanu, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
+Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),(s_1,s_2))\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\mathbb{C}$. Podle vět o spojitosti a derivování integrálu závislého na reálných parametrech máme $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, pro }s\in\Omega$ a $j=1,2$ navíc jsou tyto parciální derivacespojité a splňují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splňují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostaneme, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
 \end{proof}
 
 \begin{definition}
-Nechť je $\varphi$ uzavřená křivka v $\mathbb{C}$ a $s\in\mathbb{C}\backslash \langle\varphi\rangle$. Potom číslo $ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$ nazveme \emph{indexem bodu vzhledem ke křivce $\varphi$} 
+Nechť je $\varphi$ uzavřená křivka v $\mathbb{C}$ a $s\in\mathbb{C}\backslash \langle\varphi\rangle$. Potom číslo $$ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$$ nazveme \emph{indexem bodu $s$ vzhledem ke křivce $\varphi$} 
 \end{definition}%Důležité je, že křivka $\varphi$ neobsahuje $s$ tedy integrand nemá nikde singularitu.Takže ten integrál má smysl.
 \begin{note}%Geometrický význam tohoto indexu
 Ukážeme si, že $ind_{\varphi} s$ se rovná počtu oběhů $\varphi$ kolem $s$ v kladném směru (tzn. proti směru hodinových ručiček).
@@ -78,7 +94,7 @@ Ukážeme si, že $ind_{\varphi} s$ se rovná počtu oběhů $\varphi$ kolem $s$
 
 \begin{theorem}
 [o základních vlastnostech indexu] Nechť $\varphi$ je uzavřená křivka v $\mathbb{C}$ a $G:=\mathbb{C}\backslash\langle\varphi\rangle$. %$G$ je koplement, $\varphi$ je samozřejmě regulární a rozřeže nám tu rovinu na několik částí
-Potom je $G$ otevřená, funkce $s\rightarrow ind_{\varphi} s$je konstantní na každé komponentě $G$ a na jediné její neomezené komponentě je nulová. 
+Potom je $G$ otevřená, funkce $s\mapsto ind_{\varphi} s$ je konstantní na každé komponentě $G$ a na jediné její neomezené komponentě je nulová. 
 \end{theorem}
 \begin{proof}
 \begin{itemize}
@@ -86,7 +102,7 @@ Potom je $G$ otevřená, funkce $s\rightarrow ind_{\varphi} s$je konstantní na 
     holomorfní a pro každé $s\in G$ je $\phi'(s)=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{(z-s)^2}=0$, protože $f(z):=\frac{1}{(z-s)^2}$ má PF na $\mathbb{C}\backslash\{s\}$. %integrujeme funkci co má PF přes uzavřenou křivku, proto $=0$
     Tedy $\phi$ je konstantní na každé komponentě $G$.
     \item[(ii)]%Jak to vypadá na té jediné neomezené komponentě
-    Volím $R>0$, aby $\langle\varphi\rangle\subset U(0,R)$. Potom $\mathbb{C}\backslash U(0,R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\mathbb{C}\backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
+    Volíme $R>0$, aby $\langle\varphi\rangle\subset U(0,R)$. Potom $\mathbb{C}\backslash U(0,R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\mathbb{C}\backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
     je $\phi(s)=0$
 \end{itemize}
 
