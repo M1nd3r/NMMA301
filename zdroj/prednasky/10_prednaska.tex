@@ -1,0 +1,113 @@
+\begin{example}
+Nechť $\varphi:=\psi^t+[-1;1]$, kde $\psi^t(t):=e^{it},\ t\in[0,\pi]$. Potom $\mathbb{C}\backslash\langle{\varphi}\rangle=G_0\cup{G_\infty}$, kde $G_0$ je omezená komponenta ("vnitřek") a $G_\infty$ je neomezená komponenta ("vnějšek"). Platí
+$${ind}_\varphi{s}=
+\left\{
+\begin{array}{ll}
+1, \hspace{3mm} s\in{G_0}\\
+0, \hspace{3mm} s\in{G_\infty}.
+\end{array}
+\right.$$
+Položme $\Tilde{\varphi}:=\psi^-\dotplus[1;-1]$,
+kde $\psi^-(t):=e^{it},\ t\in[-\pi,0]$. Potom máme 
+$$1={ind}_{\varphi\dotplus\tilde\varphi}{s}={ind}_\varphi{s}+{ind}_{\tilde{\varphi}}{s}.$$
+\end{example}
+
+\section{Speciální typy integrálů}
+\begin{theorem}
+Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a platí 
+\begin{enumerate}
+    \item $Q\neq0$ na $\mathbb{R}$,
+    \item $st(Q)\geq st(P)+2$, kde $st(Q)$ je stupeň polynomu $Q$.
+\end{enumerate}
+Potom
+\begin{equation}
+    \int_{-\infty}^\infty{R(x)dx}=2i\pi.\sum_{\begin{array}{cc}
+         Q(s)=0  \\
+         {Im}{s}>0 
+    \end{array}}{res_s{R}}.
+    \label{eqn:print}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Ukažte, že integrál v \cref{eqn:print} konverguje, právě když platí 1., 2. Nechť $r>0$ a $\varphi_r:=\varphi^1_r\dotplus\varphi^2_r$, kde $\varphi^1_r(t):=t\ t\in[-r,r]$ a $\varphi^2_r(t):=re^{it},\ t\in[0,\pi]$. Je-li $r>0$ tak velké, aby uvnitř $\varphi_r$ ležely všechny póly $R$ z horní polrovviny, potom
+\begin{equation}
+    2i\pi.\sum_{\begin{array}{cc}
+         Q(s)=0  \\
+         {Im}{s}>0 
+    \end{array}}{res_s{R}}
+    \overset{(RV)}{=}
+    \int_{\varphi_r}{R}=
+    \int_{\varphi_r^1}{R} +\int_{\varphi_r^2}{R}.
+    \label{eqn:res*}
+\end{equation}
+Máme 
+$$\int_{\varphi_r^1}{R}=
+\int_{-r}^r{R}\overset{r\to\infty}{\longrightarrow}
+\int_{-\infty}^\infty{R}.$$
+Protože $\int_{\varphi_r^2}{R}\to{0}$ pro $r\to{+\infty}$, dostaneme z \cref{eqn:res*} pro $r\to\infty$, že platí \cref{eqn:print}.  Neboť existuje $C>0$, $r_0>0$ tak, že $|R(z)|\leq\frac{C}{r^2}$, je-li $|z|=r\geq{r_0}$. Máme totiž
+$$|R(z)|=\left|\frac{a_0 z^n+a_1 z^{n-1}...+a_n}{b_0 z^m+b_1 z^{m-1}+...+b_m}\right|=\frac{1}{|z|^2}|z|^{n-m+2}.\underset{\overset{z\to\infty}{\longrightarrow}\frac{a_0}{b_0}}{\underbrace{\left|\frac{a_0+\frac{a_1}{z}+...+\frac{a_n}{z^n}}{b_0+\frac{b_1}{z}+...+\frac{b_m}{z^m}}\right|}}.$$
+Tedy
+$$\left|\int_{\varphi^2_r}{R}\right|\leq V(\varphi^2_r).\max_{\langle{\varphi^2_r}\rangle}{|R|}
+\leq r\pi\frac{C}{r^2}\overset{r\to\infty}{\longrightarrow}0.$$
+\end{proof}
+
+\begin{example}
+$$I=\underset{sudá}{\int_0^\infty{\frac{x^2+1}{x^4+1}}dx}
+=\frac{1}{2}\underset{:=R(x)}{\int_{-\infty}^\infty\frac{x^2+1}
+{x^4+1}dx}=i\pi.(res_{z_0}R+res_{z_1}R)$$
+$$=-\frac{i\pi}{4\sqrt{2}}\left[(1+i)^2-(1-i)^2\right]=-\frac{i\pi}{4\sqrt{2}}2.2i=\frac{\pi}{\sqrt{2}},$$ protože
+$${res}_{z_k}R=\frac{z_k^2+1}{4z^3_k}.\frac{z_k}{z_k}=
+-\frac{1}{4}(z_k^2+1)z_k,$$
+$${res}_{z_0}R=-\frac{1}{4}(i+1)(1+i)\frac{1}{\sqrt{2}}=-\frac{1}{4\sqrt{2}}(1+i)^2,$$
+$${res}_{z_1}R=-\frac{1}{4}(-i+1)(-1+i)\frac{1}{\sqrt{2}}=\frac{1}{4\sqrt{2}}(1-i)^2.$$
+\end{example}
+
+\begin{theorem}
+Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a platí
+\begin{enumerate}
+    \item $Q\neq 0$ na $\mathbb{R}$,
+    \item $st(Q)\geq st(p)+1$.
+\end{enumerate}
+Nechť $a>0$. Potom
+\begin{equation}
+    \label{eqn:2vint}
+    \int_{-\infty}^\infty{R(x)e^{iax}}dx = 2i\pi.\sum_{\begin{array}{cc}
+         Q(s)=0  \\
+         {Im}{s}>0 
+    \end{array}}{res_s\left({R(z)e^{iaz}}\right)}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Za cvičení:
+\begin{itemize}
+    \item Dokažte, že Newtonův integrál v \cref{eqn:2vint} konverguje právě když platí 1., 2.
+    \item Jak se spočte tento integrál pro $a<0$?
+\end{itemize}
+Jako v předešlé větě integrujeme podél $\varphi_r$ funkci $R(z)e^{iaz}$ a pošleme $r\to\infty$. Platí, že
+\begin{equation}
+    \int_{\varphi_r^2}{R(z)e^{iaz}}dz\overset{r\to\infty}{\longrightarrow}0
+    \label{eqn:odhint}
+\end{equation}
+z \textit{Jordanova Lemmatu} (bylo na 5. cvičení), z 2. totiž máme, že $\lim_{z\to\infty}R(z)=0$.
+\end{proof}
+
+\begin{note}
+Je-li $a<0$, potom \cref{eqn:odhint} obecně neplatí. V tomto případě je nutno integrovat přes dolní půlkružnici.
+\end{note}
+
+\begin{example}
+Spočteme Fourierovu transformaci $\mathcal{F}$ funkce $f(x):=\frac{1}{x^2+1}$, kde
+$$(\mathcal{F}f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\mathbb{R}$$.
+\begin{itemize}
+    \item Nechť $t>0$. Potom $(\mathcal{F}f)(t)=i.{res}_i{(f(z)e^{itz})}=i.\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
+    \item Nechť $t<0$. Potom $(\mathcal{F}f)(t)=i.{res}_{(-i)}{(f(z)e^{itz})}.(-1)=-i.\frac{e^{-t}}{2.(-i)}=\frac{e^{t}}{2}$.
+\end{itemize}
+\textbf{Lépe:}
+$$(\mathcal{F}f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x^2}dx=\frac{e^{-|t|}}{2}, \ t\in\mathbb{R}$$.
+\end{example}
+
+\begin{example}
+$$\int_0^\infty\frac{x\sin{x}}{x^2+1}dx=\frac{1}{2}{Im}\underset{:=I}{\underbrace{\int_{-\infty}^\infty\frac{x.e^{ix}}{x^2+1}dx}}=\frac{\pi}{2e},$$
+protože
+$$I=2\pi i.{res}_{i}{f}=2\pi i \frac{ie^{-1}}{2i}=\frac{\pi i}{e}.$$
+\end{example}
