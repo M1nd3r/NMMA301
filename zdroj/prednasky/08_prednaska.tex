@@ -2,28 +2,42 @@
 
 \subsection{Holomorfní funkce na mezikruží}
 \begin{lemma}
-Nechť $f$ je holomorfní funkce na $P(z_0,r,R):=\{z \in \mathbb{C}| r<|z-z_0|<R \}$, kde $0\leq r < R \leq + \infty$. Pro každé $\rho \in (r,R)$ $(\triangle) \varphi_\rho(t):=z_0+\rho e^{it}$, $t\in [0,2 \pi]$ a $J(\rho)=\int_{\varphi_\rho}f$. Potom je $J$ konstantní na $(r,R)$.
+Nechť $f$ je holomorfní funkce na $P(z_0,r,R):=\{z \in \mathbb{C}| r<|z-z_0|<R \}$, kde $0\leq r < R \leq + \infty$. Pro každé $\rho \in (r,R)$ označme
+\begin{equation}
+     \varphi_\rho(t):=z_0+\rho e^{it} \text{, pro } t\in [0,2 \pi]
+     \tag{$\triangle$}
+     \label{eqn:7.25.tr}
+\end{equation} 
+a $J(\rho)=\int_{\varphi_\rho}f$. Potom je $J$ konstantní na $(r,R)$.
 \end{lemma}
 
 \begin{proof}
-BÚNO nechť $z_0=0$. Nechť $\rho \in (r,R)$. Potom máme $J(\rho)=i\int_0^{2\pi}f(\rho e^{it})\rho e^{it} \diff t= \\ i\int_0^{2\pi}g(\rho e^{it})\diff t$, kde $g(z):=f(z)\cdot z$, $z \in P:=P(0,r,R)$. Dále $J'(\rho)\stackrel{(\times)}{=} \frac{i}{\rho}\int_0^{2\pi}g'(\rho e^{it})\rho e^{it} \diff t=\frac{1}{\rho}\int_{\varphi_\rho}g'=0$, protože $g'$ má PF $g$ na $P$.
-
-Platí $(\times)$, protože $\frac{\diff}{\diff \rho}(g(\rho e^{it}))=\frac{\diff g}{\diff x} \cos t+ \frac{\diff g}{\diff y} \sin t\stackrel{\text{CR věta}}{=}g' \cos t+ i g' \sin t=g'e^{it}$.
+Bez újmy na obecnosti nechť $z_0=0$. Nechť $\rho \in (r,R)$. Potom máme 
+$$J(\rho)=i\int_0^{2\pi}f(\rho e^{it})\rho e^{it} \diff t= \\ i\int_0^{2\pi}g(\rho e^{it})\diff t,$$ 
+kde $g(z):=f(z)\cdot z$, $z \in P:=P(0,r,R)$. Dále 
+\begin{equation}
+    J'(\rho){=} \frac{i}{\rho}\int_0^{2\pi}g'(\rho e^{it})\rho e^{it} \diff t=\frac{1}{\rho}\int_{\varphi_\rho}g'=0, 
+    \tag{$\times$}
+    \label{eqn:7.25.tim}
+\end{equation}
+protože $g'$ má PF $g$ na $P$. Platí \cref{eqn:7.25.tim}, protože 
+$$\frac{\diff}{\diff \rho}\left(g\left(\rho e^{it}\right)\right)=\frac{\diff g}{\diff x} \cos t+ \frac{\diff g}{\diff y} \sin t\stackrel{\text{CR věta}}{=}g' \cos t+ i g' \sin t=g'\left(\rho e^{it}\right)e^{it}.$$
 \end{proof}
 
 \begin{theorem}[Cauchyho vzorec na mezikruží]
 Nechť $f \in \mathcal{H}(P)$, kde $P:=P(z_0,r,R)$. Nechť $r<r_0<R_0<R$ a $s \in P(z_0,r_0,R_0)$. Potom platí
-$$\square f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z)}{z-s} \diff z - \frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z)}{z-s} \diff z\text{,}$$
-kde $\varphi_\rho$ je jako v $(\triangle)$.
+\begin{equation}
+    f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z)}{z-s} \diff z - \frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z)}{z-s} \diff z\text{,}
+    \tag{$\square$}
+    \label{eqn:7.26.sq}
+\end{equation}
+kde $\varphi_\rho$ je jako v \cref{eqn:7.25.tr}.
 \end{theorem}
 
 \begin{proof}
 Pro $z \in P$ položme 
 \begin{equation*}
-    \begin{split}
-h(z)&=\frac{f(z)-f(s)}{z-s}\text{, } z \neq s \text{,}\\
-&=f'(s), z=s\text{.}
- \end{split}
+    h(z)=\twopartdef{\frac{f(z)-f(s)}{z-s}}{z \neq s,}{f'(s)}{z=s.}
 \end{equation*}
 Potom $h \in \mathcal{H}(P)$, protože $h$ má \uv{odstraněnou} singularitu v $s$. Podle lemmatu máme
 $$
@@ -32,11 +46,17 @@ $$
 $$
 \int_{\varphi_{r_0}}h=\int_{\varphi_{r_0}}\frac{f(z) \diff z}{z-s}-f(s) \int_{\varphi_{r_0}}\frac{\diff z}{z-s}\text{, kde poslední integrál je roven }2\pi i \cdot \text{ind}_{\varphi_{r_0}}s=0{.}
 $$
-Dále $\int_{\varphi_{R_0}}h=\int_{\varphi_{r_0}}h$, tudíž platí $(\square)$.
+Dále $\int_{\varphi_{R_0}}h=\int_{\varphi_{r_0}}h$, tudíž platí \cref{eqn:7.26.sq}.
 \end{proof}
 
 \begin{theorem}[O Laurentově rozvoji holomorfní funkce na mezikruží]
-Nechť $P:= \\ P(z_0,r,R)$, kde $0\leq r < R \leq + \infty$. Nechť $f \in \mathcal{H}(P)$. Potom existuje jediná Laurentova řada $(L) \sum\limits_{n=-\infty}^{\infty} a_n(z-z_0)^n$, která má na $P$ součet $f$.
+Nechť $P:= \\ P(z_0,r,R)$, kde $0\leq r < R \leq + \infty$. Nechť $f \in \mathcal{H}(P)$. Potom existuje jediná Laurentova řada 
+\begin{equation}
+    \sum\limits_{n=-\infty}^{\infty} a_n(z-z_0)^n,  
+    \tag{L}
+    \label{eqn:7.27.lau}
+\end{equation}
+která má na $P$ součet $f$.
 \end{theorem}
 
 \begin{proof}
@@ -46,30 +66,40 @@ Nechť $P:= \\ P(z_0,r,R)$, kde $0\leq r < R \leq + \infty$. Nechť $f \in \math
 $$
 \int_{\varphi_\rho}f(z)(z-z_0)^{-(m+1)} \diff z = \int_{\varphi_\rho} \sum\limits_{n=-\infty}^{\infty} a_n(z-z_0)^{n-m-1} \diff z = \sum\limits_{n=-\infty}^{\infty} a_n \int_{\varphi_\rho}(z-z_0)^{n-m-1} \diff z = 
 $$
-$=2\pi i \cdot a_m$, kde z druhé rovnosti suma konverguje stejnoměrně na $\langle\varphi_\rho \rangle$ a poslední integrál je roven $0$ pro $n \neq m$ a $2\pi i \cdot \text{ind}_{\varphi_\rho}z_0=2\pi i$ pro $n=m$.
+$=2\pi i \cdot a_m$, kde v druhé rovnosti suma konverguje stejnoměrně na $\langle\varphi_\rho \rangle$ a poslední integrál je roven $0$ pro $n \neq m$ a $2\pi i \cdot \text{ind}_{\varphi_\rho}z_0=2\pi i$ pro $n=m$.
 
-Závěr: koeficienty $(L)$ se dají vyjádřit pomocí součtu $f$ jako 
-$$
-a_m=\frac{1}{2 \pi i}\int_{\varphi_\rho}\frac{f(z)}{(z-z_0)^{m+1}} dz\text{, } m \in \mathbb{Z}, (**)\text{,}
-$$
-kde $\varphi_\rho$ je jako v $(\triangle)$. Podle lemmatu integrandy nezávisejí na $\rho \in (r,R)$.
-\item existence: Nechť $s \in P$. Volme $r<r_0<R_0<R$, aby $s \in P(z_0, r_0, R_0)$. Potom z Cauchyho vzorce máme 
-$$
-(a) \: f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z) \diff z}{z-s}-\frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z) \diff z}{z-s}\text{;}
-$$
-$$
-(b) \: \frac{1}{z-s}=\frac{1}{(z-z_0)-(s-z_0)}=\frac{1}{z-z_0}\cdot \frac{1}{1-\frac{s-z_0}{z-z_0}}=\sum\limits_{n=0}^{+\infty}\frac{(s-z_0)^n}{(z-z_0)^{n+1}}\text{,}
-$$
-kde řada konverguje stejnoměrně pro $z \in \langle\varphi_{R_0} \rangle$;
-$$
-(c) \: \frac{1}{z-s}=\frac{1}{(z-z_0)-(s-z_0)}=\frac{(-1)}{s-z_0}\cdot \frac{1}{1-\frac{z-z_0}{s-z_0}}=-\sum\limits_{n=0}^{+\infty}\frac{(z-z_0)^n}{(s-z_0)^{n+1}}\text{,}
-$$
-kde řada konverguje stejnoměrně pro $z \in \langle\varphi_{r_0} \rangle$.
-Dosadíme $(b)$, $(c)$ do $(a)$ a dostaneme
-$$
-f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\sum\limits_{n=0}^{+\infty}\frac{(s-z_0)^n}{(z-z_0)^{n+1}}f(z) \diff z+\frac{1}{2 \pi i}\int_{\varphi_{r_0}}\sum\limits_{n=0}^{+\infty}\frac{(z-z_0)^n}{(s-z_0)^{n+1}}f(z) \diff z =
-$$
-$=\sum\limits_{n=0}^{+\infty}(s-z_0)^n\cdot a_n+\sum\limits_{n=0}^{+\infty}(s-z_0)^{-n-1}\cdot a_{-(n+1)}$, kde $a_n$ jsou jako v $(**)$.
+Závěr: koeficienty \cref{eqn:7.27.lau} se dají vyjádřit pomocí součtu $f$ jako 
+\begin{equation}
+    a_m=\frac{1}{2 \pi i}\int_{\varphi_\rho}\frac{f(z)}{(z-z_0)^{m+1}} dz\text{, } m \in \mathbb{Z}, (**)\text{,}
+    \tag{**}
+    \label{eqn:7.27.**}
+\end{equation}
+kde $\varphi_\rho$ je jako v \cref{eqn:7.25.tr}. Podle lemmatu integrandy nezávisejí na $\rho \in (r,R)$.
+\item existence: Nechť $s \in P$. Volme $r<r_0<R_0<R$, aby $s \in P(z_0, r_0, R_0)$. Potom z Cauchyho vzorce máme \begin{equation}
+    f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z) \diff z}{z-s}-\frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z) \diff z}{z-s}\text{,}
+    \tag{a}
+    \label{eqn:7.27.a}
+\end{equation}
+\begin{equation}
+    \frac{1}{z-s}=\frac{1}{(z-z_0)-(s-z_0)}=\frac{1}{z-z_0}\cdot \frac{1}{1-\frac{s-z_0}{z-z_0}}=\sum\limits_{n=0}^{+\infty}\frac{(s-z_0)^n}{(z-z_0)^{n+1}}\text{,}
+    \tag{b}
+    \label{eqn:7.27.b}
+\end{equation}
+neboť $\left|\frac{s-z_0}{z-z_0}\right|<1$, tedy řada konverguje stejnoměrně pro $z \in \langle\varphi_{R_0} \rangle$;
+\begin{equation}
+    \frac{1}{z-s}=\frac{1}{(z-z_0)-(s-z_0)}=\frac{(-1)}{s-z_0}\cdot \frac{1}{1-\frac{z-z_0}{s-z_0}}=-\sum\limits_{n=0}^{+\infty}\frac{(z-z_0)^n}{(s-z_0)^{n+1}}\text{,}
+    \tag{c}
+    \label{eqn:7.27.c}   
+\end{equation}
+neboť $\left|\frac{z-z_0}{s-z_0}\right|<1$, tedy řada konverguje stejnoměrně pro $z \in \langle\varphi_{r_0} \rangle$.
+Dosadíme \cref{eqn:7.27.b}, \cref{eqn:7.27.c} do \cref{eqn:7.27.a} a dostaneme
+\begin{equation}
+    \begin{aligned}
+        f(s)&=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\sum\limits_{n=0}^{+\infty}\frac{(s-z_0)^n}{(z-z_0)^{n+1}}f(z) \diff z+\frac{1}{2 \pi i}\int_{\varphi_{r_0}}\sum\limits_{n=0}^{+\infty}\frac{(z-z_0)^n}{(s-z_0)^{n+1}}f(z) \diff z \\
+        &=\sum\limits_{n=0}^{+\infty}(s-z_0)^n\cdot a_n+\sum\limits_{n=0}^{+\infty}(s-z_0)^{-n-1}\cdot a_{-(n+1)},    
+    \end{aligned}
+\end{equation}
+ kde $a_n$ jsou jako v \cref{eqn:7.27.**}.
 \end{enumerate}
 \end{proof}
 
@@ -98,7 +128,13 @@ Nechť $f \in \mathcal{H}(P(z_0,r))$ a $f(z)=\sum\limits_{-\infty}^{+\infty}a_n(
 Nechť $G \subset \mathbb{C}$ je otevřená, $M \subset G$ je konečná a $f \in \mathcal{H}(G \setminus M)$. Pro každé $s \in M$ označme $H_s$ součet hlavní části Laurentova rozvoje funkce $f$ kolem $s$. Potom existuje jediná $h \in \mathcal{H}(G)$ tak, že $f=\sum\limits_{s\in M} H_s+h$ na $G \setminus M$.
 \end{theorem}
 \begin{proof}
-Zřejmě $H_s \in \mathcal{H}(\mathbb{C} \setminus \{s \}) \forall s \in M$. Funkce $h:=f-\sum\limits_{s\in M} H_s$ je holomorfní na $G \setminus M$ a v bodech $s \in M$ má odstranitelné singularity. Skutečně, nechť $s_0 \in M$. Potom existuje $r_0>0$ tak, že $P(s_0,r_0) \subset G \setminus M$ a $f=R_{s_0}+H_{s_0}$ na $P(s_0,r_0)$, kde $R_{s_0}$ je součet regulární části Laurentova rozvoje $f$ kolem $s_0$ a $R_{s_0}\in \mathcal{H}(U(s_0,r_0))$. Tedy na $P(s_0,r_0)$ máme $h=R_{s_0}+H_{s_0}-\sum\limits_{s\in M} H_s=R_{s_0}-\sum\limits_{s\in M, s \neq s_0} H_s \in \mathcal{H}(U(s_0,r_0))$.
+Zřejmě $\forall s \in M:\ H_s \in \mathcal{H}(\mathbb{C} \setminus \{s \})$. Funkce $h:=f-\sum\limits_{s\in M} H_s$ je holomorfní na $G \setminus M$ a v bodech $s \in M$ má odstranitelné singularity. Skutečně, nechť $s_0 \in M$. Potom existuje $r_0>0$ tak, že $P(s_0,r_0) \subset G \setminus M$ a $f=R_{s_0}+H_{s_0}$ na $P(s_0,r_0)$, kde $R_{s_0}$ je součet regulární části Laurentova rozvoje $f$ kolem $s_0$ a $R_{s_0}\in \mathcal{H}(U(s_0,r_0))$. Tedy na $P(s_0,r_0)$ máme
+$$h=R_{s_0}+H_{s_0}-\sum\limits_{s\in M} H_s=R_{s_0}-\sum\limits_{
+\small{\begin{array}l
+s \neq s_0\\
+s\in M,
+\end{array}}}
+H_s \in \mathcal{H}(U(s_0,r_0)).$$
 \end{proof}
 
 \subsection{Reziduum}
@@ -107,17 +143,22 @@ Nechť $f \in \mathcal{H}(P(z_0))$ a nechť $f(z)=\sum\limits_{n=-\infty}^{+\inf
 \end{definition}
 
 \begin{theorem}[Reziduová na hvězdovitých oblastech]
-Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast, $M \subset G$ je konečná a $f \in \mathcal{H}(G \setminus M)$. Nechť $\varphi$ je uzavřená křivka v $G \setminus M$. Potom máme $(RV) \int_\varphi f=2\pi i \sum\limits_{s\in M}\text{res}_sf \cdot \text{ind}_\varphi s$.
+Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast, $M \subset G$ je konečná a $f \in \mathcal{H}(G \setminus M)$. Nechť $\varphi$ je uzavřená křivka v $G \setminus M$. Potom máme 
+\begin{equation}
+    \int_\varphi f=2\pi i \sum\limits_{s\in M}\text{res}_sf \cdot \text{ind}_\varphi s.
+    \tag{RV}
+    \label{eqn:7.31.RV}
+\end{equation}
 \end{theorem}
 
 \begin{note*}
-Pro $M=\varnothing$ dostaneme Cauchyho větu.
+Pro $M=\emptyset$ dostaneme Cauchyho větu.
 \end{note*}
 
 \begin{proof}
-Podle předchozí věty existuje $f \in \mathcal{H}(G)$ tak, že $f=\sum\limits_{s\in M}H_s+h$ na $G \setminus M$. Potom máme $\int_\varphi f=\sum\limits_{s\in M}\int_\varphi H_s$, protože $\int_\varphi h =0$ z Cauchyho věty pro hvězdovité oblasti. Pro každé $s \in M$:
+Podle předchozí věty existuje $h \in \mathcal{H}(G)$ tak, že $f=\sum\limits_{s\in M}H_s+h$ na $G \setminus M$. Potom máme $\int_\varphi f=\sum\limits_{s\in M}\int_\varphi H_s$, protože $\int_\varphi h =0$ z Cauchyho věty pro hvězdovité oblasti. Pro každé $s \in M$:
 $$
 \int_\varphi H_s(z) \diff z=\int_\varphi \sum\limits_{n=1}^{+\infty}a_{-n}^s\frac{1}{(z-s)^n} \diff z = \sum\limits_{n=1}^{+\infty}a_{-n}^s \int_\varphi \frac{\diff z}{(z-s)^n}=2\pi i \cdot \text{res}_sf\cdot \text{ind}_\varphi s\text{,}
 $$
-jelikož suma konverguje stejnoměrně na $\langle\varphi \rangle$ a poslední integrál je roven $0$, $n \neq 1$ (integrand má PF) a $2 \pi i \cdot \text{ind}_\varphi s$, je-li $n=1$.
+jelikož suma konverguje stejnoměrně na $\langle\varphi \rangle$ a poslední integrál je roven $0$ pro $n \neq 1$ (neboť jinak má integrand PF, a tudíž je integrál přes uzavřenou křivku nulový) a $2 \pi i \cdot \text{ind}_\varphi s$, je-li $n=1$.
 \end{proof}
