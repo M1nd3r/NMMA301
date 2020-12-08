@@ -1,0 +1,58 @@
+\section{Obecná Cauchyho věta a reziduová věta pro cykly}
+
+\begin{definition}
+Konečnou posloupnost $\Gamma:=\{\varphi_1, ... ,\varpi_n\}$, kde $n\in\mathbb{N}$ a $\varphi_1, ... \varphi_n$ jsou uzavřené (regulární) křivky v $\mathbb{C}$, budeme nazývat \emph{cyklus}.
+\end{definition}
+
+\begin{notation}
+Nechť $\Gamma = \{\varphi_1, ... ,\varpi_n\}$ je cyklus. Definujeme
+\begin{itemize}
+    \item \emph{graf} $\Gamma$ jako $$\langle\Gamma\rangle:=\bigcup_{k=1}^n \langle\varphi_k\rangle,$$
+    \item \emph{délku} $\Gamma$ jako $$V\left(\Gamma\right):=\sum_{k=1}^n V(\varphi_k),$$ 
+    \item je-li $f$ spojitá na $\langle\Gamma\rangle$, pak $$\int_\Gamma f := \sum_{k=1}^n int_{\varphi_k}f,$$
+    \item \emph{index} $$\text{ind}_\Gamma(z_0):=\sum_{k=1}^n \text{ind}_{\varphi_k}(z_0) = \frac{1}{2\pi i}\int_\Gamma \frac{dz}{z-z_0},$$
+    \item \emph{vnitřek} $\Gamma$ jako $\text{Int}\Gamma:=\{z_0\in\mathbb{C}\setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)\neq 0\},$
+    \item \emph{vnějšek} $\Gamma$ jako $\text{Ext} \Gamma:=\{z_0\in\mathbb{C}\setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)=0\}.$
+\end{itemize}
+\end{notation}
+
+\begin{note}
+\begin{itemize}
+    \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\text{ind}_\Gamma(z)\in\mathbb{Z}$ konstantní na každé komponentě $\mathbb{C}\setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\mathbb{C}\setminus\langle\Gamma\rangle$ leží v $\text{Ext}\Gamma$.
+    \item Zřejmě máme rozklad $\mathbb{C}=\text{Int}\Gamma\cup\langle\Gamma\rangle\cup\text{Ext} \Gamma$, kde $\text{Int} \Gamma$, $\text{Ext} \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\text{Int} \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
+\end{itemize}
+\end{note}
+
+\begin{example}
+Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\mathbb{C}: |z|=1\}$, $\text{Int}\psi=\emptyset$ a $\text{Ext}\psi=\mathbb{C}\setminus\langle\psi\rangle$.
+\end{example}
+
+\begin{note}
+Uzavřenou křivku $\varphi$ chápeme jako cyklus $\Gamma:=\{\varphi\}$.
+\end{note}
+
+\begin{theorem}[Obecná Cauchyho pro cykly]
+Nechť $G\subset\mathbb{C}$ je otevřená a $\Gamma$ je cyklus v $G$, tedy $\langle\Gamma\rangle\subset G$. Potom platí, že
+\begin{equation}
+    \forall f\in\mathcal{H}(G):\ \int_\Gamma f =0,
+    \tag{CV}
+    \label{eqn:7.30.cv}
+\end{equation}
+právě tehdy, když $\text{Int}\Gamma\subset G$.
+\end{theorem}
+
+\begin{example}
+Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq\infty$. Nechť $r<r_1<r_2<R$ a $\varphi_j(t):=z_0+r_je^{it}$, $t\in[0,2\pi]$. Potom víme, že $\int_{\varphi_1}f=\int_{\varphi_2}f$. Plyne to z předchozí věty pro $\Gamma:=\{\dotminus\varphi_1,\varphi_2\}$. Protože $\text{Int}\Gamma=P(z_0,r_1,r_2)$, máme $0=\int_\Gamma f = \int_{\varphi_1}f-\int_{\varphi_2}f$.
+\end{example}
+
+\begin{theorem}[Reziduová pro cykly]
+Nechť $G\subset\mathbb{C}$ je otevřená, $\Gamma$ je cyklus v $G$ a $\text{Int}\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\mathcal{H}(G\setminus K)$. Potom platí
+\begin{equation}
+    \int_\Gamma f = 2\pi i . \sum_{s\in K}\text{res}_s(f).\text{ind}_\Gamma(s).
+    \tag{RVC}
+    \label{eqn:9.8.rvc}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Zcela analogický jako pro \cref{eqn:7.31.RV} na hvězdovitých oblastech.
+\end{proof}
