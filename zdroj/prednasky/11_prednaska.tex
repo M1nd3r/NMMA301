@@ -1,3 +1,70 @@
+\begin{note}
+Otázka: Jak ind$_\varphi s$ vypočítat? BÚNO: $s=0$.
+\end{note}
+
+\begin{notation}[Polární vyjádření]
+Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá. Víme: $0 \neq z = |z|e^{i \theta}=e^{\phi}$, kde $\theta \in \Arg(z)$ a $\phi = \log|z| + i \theta \in \Log(z)$. $\forall t \in [\alpha, \beta]: 0 \neq \varphi(t)=|\varphi(t)|e^{i \theta(t)}=e^{ \phi(t)}$, kde $\theta(t) \in \Arg(\varphi(t))$ a $\phi(t)=\log|\varphi(t)|+i \theta(t) \in \Log(\varphi(t))$.
+\end{notation}
+
+\begin{definition}
+Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá. Řekneme, že $\theta: [\alpha, \beta] \rightarrow \mathbb{R}$ (resp. $\phi: [\alpha, \beta] \rightarrow \mathbb{C}$) je jednoznačná větev argumentu (resp. jednoznačná větev logaritmu) křivky $\varphi$, pokud je $\theta$ (resp. $\phi$) spojitá na $[\alpha, \beta]$ a $\forall t \in [\alpha, \beta]:  \theta(t) \in \Arg(\varphi(t))$ (resp. $\phi(t) \in \Log(\varphi(t))$).
+\end{definition}
+
+\begin{note}
+Vždy existuje jednoznačná větev argumentu a logaritmu pro spojitou křivku $\varphi$ (cvičení) Dokážeme si to jen pro regulární křivky.
+\end{note}
+
+\begin{theorem}[O jednoznačnosti jednoznačné větve argumentu a logaritmu]
+Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá křivka. Potom
+\begin{itemize}
+    \item $\phi$ je jednoznačná větev logaritmu $\varphi$, právě když $\Re \phi = \log|\varphi|$ a $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
+    \item Jsou-li $\theta_1, \theta_2$ jednoznačné větve argumentu $\varphi$, potom existuje $k \in \mathbb{Z}$, že $\theta_2=\theta_1 + 2 k \pi $.
+\end{itemize}
+\end{theorem}
+
+\begin{proof}
+\begin{itemize}
+    \item Z definice argumentu a logaritmu.
+    \item Pro $\forall t \in [\alpha, \beta]$ existuje $k (t) \in \mathbb{Z}$, že $\theta_2(t)=\theta_1(t) + 2 k(t) \pi$. Protože $k:  [\alpha, \beta] \rightarrow \mathbb{Z}$ je spojitá a $[\alpha, \beta]$ je souvislá, je $k$ konstantní na $[\alpha, \beta]$.
+\end{itemize}
+\end{proof}
+
+\begin{theorem}[O existenci jednoznačné větve logaritmu pro regulární křivky]
+Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je regulární křivka. Potom existuje jednoznačná větev logaritmu $\phi$ křivky $\varphi$ a platí, že
+$$
+\int_\varphi \frac{\diff z}{z}=\phi(\beta) - \phi(\alpha) \text{.}
+$$
+Navíc $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
+\end{theorem}
+\begin{proof}
+Hledáme spojité $\phi$ takové, že $\varphi=e^\phi$. Zřejmě $\int_\varphi \frac{\diff z}{z}=\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)} \diff t$. Položme $\phi_0(s):=\int_\alpha^s \frac{\varphi'(t)}{\varphi(t)} \diff t$, $s \in [\alpha, \beta]$. Potom $\phi_0$ je spojitá na $[\alpha, \beta]$ a $\phi_0'=\frac{\varphi'}{\varphi}$ na $[\alpha, \beta] \setminus K$, kde $K$ je konečná. Potom na $[\alpha, \beta] \setminus K$ je $(\varphi e^{-\phi_0})'=(\varphi' - \varphi \phi_0') e^{-\phi_0}=0$. Tedy existuje $c \in \mathbb{C}$, že $\varphi e^{-\phi_0}=e^c$ na $[\alpha, \beta]$. Položme $\phi:=\phi_0+c$.
+\end{proof}
+
+\begin{theorem}[O výpočtu indexu]
+Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C}$ je uzavřená regulární křivka a $s \in \mathbb{C}\setminus \langle \varphi \rangle$. Nechť $\widetilde{\varphi}:=\varphi-s$ a $\theta$ je jednoznačná větev argumentu křivky $\widetilde{\varphi}$. Potom
+\begin{equation}\tag{oVI}\label{OVI}
+    \text{ind}_\varphi s= \text{ind}_{\widetilde{\varphi}}0=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}\text{.}
+\end{equation}
+Speciálně, $\text{ind}_\varphi s \in \mathbb{Z}$.
+\end{theorem}
+
+\begin{note*}
+\begin{itemize}
+    \item Je-li $\varphi$ pouze spojitá, definujeme $\text{ind}_\varphi s$ vztahem \cref{OVI}.
+    \item Z \cref{OVI} je jasné, že $\text{ind}_\varphi s$ je počet otočení $\varphi$ kolem $s$ proti směru hodinových ručiček.
+\end{itemize}
+\end{note*}
+
+\begin{proof}
+Máme, že
+\begin{equation*}
+\begin{aligned}
+&\text{ind}_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=} \text{ind}_{\widetilde{\varphi}}0=\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Im \phi(\beta)-i \Im \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
+\end{aligned}
+\end{equation*}
+pro nějaké $K \in \mathbb{Z}$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Re \phi (\beta)=\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Re \phi (\alpha)$ a $\Im \phi$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
+\end{proof}
+
 \section{Obecná Cauchyho věta a reziduová věta pro cykly}
 
 \begin{definition}
