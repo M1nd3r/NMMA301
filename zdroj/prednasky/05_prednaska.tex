@@ -1,7 +1,7 @@
 % druhá strana
 
 \begin{theorem}[Cauchyův vzorec pro kruh]
-Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi{(t)}:=z_0+r.e^{it}$, $t\in{[0,2\pi]}$ $(*)$. Potom platí 
+Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\overline{U(z_0,\, r)}\subset{G}$ a $\varphi{(t)}:=z_0+r.e^{it}$, $t\in{[0,\, 2\pi]}$ $(*)$. Potom platí 
 \begin{equation}
     \frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}dz}=
 \left\{
@@ -16,7 +16,7 @@ Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\ove
 \end{theorem}
 
 \begin{proof}
-Existuje $R>r$ tak, že $U(z_0,R)\subset{G}$.\newline
+Existuje $R>r$ tak, že $U(z_0,\, R)\subset{G}$.\newline
 (i) Nechť $|s-z_0|<r$. Definujme 
 \[h(z):=
 \left\{
@@ -25,13 +25,13 @@ Existuje $R>r$ tak, že $U(z_0,R)\subset{G}$.\newline
 		f'(s),\hspace{5mm}z=s.
 	\end{array}
 \right.\]
-Potom $h\in\mathcal{H}(U(z_0,R)\setminus\{s\})$ a spojitá na hvězdovité oblasti $U(z_0,R)$. Potom z Cauchyho věty 
+Potom $h\in\mathcal{H}(U(z_0,\, R)\setminus\{s\})$ a spojitá na hvězdovité oblasti $U(z_0,\, R)$. Potom z Cauchyho věty 
 \[0=
 \frac{1}{2\pi{i}}\int_\varphi{h}=
-\frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}}dz-f(s).\underbrace{\frac{1}{2\pi{i}}\int_\varphi{\frac{dz}{z-s}}}_{=ind_\varphi{s} = 1}
+\frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}}dz-f(s)\cdot \underbrace{\frac{1}{2\pi{i}}\int_\varphi{\frac{dz}{z-s}}}_{=ind_\varphi{s} = 1}
 \]
 % třetí strana
-(ii) Nechť $|s-z_0|>r$. Volme $R'\in(r,|s-z_0|)$, aby $U(z_0,R')\subset{G}$. Potom $f(z)/(z-s)$ je holomorfní funkce na $U(z_0,R')$ a z Cauchyho věty je 
+(ii) Nechť $|s-z_0|>r$. Volme $R'\in(r,|s-z_0|)$, aby $U(z_0,\, R')\subset{G}$. Potom $f(z)/(z-s)$ je holomorfní funkce na $U(z_0,\, R')$ a z Cauchyho věty je 
 \[\frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}}dz =0.\]
 \end{proof}
 
@@ -67,7 +67,7 @@ Nechť $f$ je spojitá funkce na otevřené $G\subset{\mathbb{C}}$. Potom $f\in\
 
 \begin{proof}
 "$\Rightarrow$": Goursatovo lemma\newline
-"$\Leftarrow$": Nechť $\mathcal{U}:=U(z_0,R)$ je libovolný kruh v $G$. Protože $f$ je spojitá na $\mathcal{U}$, $\mathcal{U}$ je hvězdicovitá oblast a 
+"$\Leftarrow$": Nechť $\mathcal{U}:=U(z_0,\, R)$ je libovolný kruh v $G$. Protože $f$ je spojitá na $\mathcal{U}$, $\mathcal{U}$ je hvězdovitá oblast a 
 \[\int_{\partial\triangle}{f} =0\]
 pro každý trojúhelník $\triangle\subset\mathcal{U}$, má $f$ na $\mathcal{U}$ primitivní funkci $F$, to znamená, že $f=F'$ na $\mathcal{U}$. Protože $F\in\mathcal{H}(\mathcal{U})$, máme $f'=F''$ na $\mathcal{U}$, tudíž $f$ je holomorfní na $\mathcal{U}$. Protože $\mathcal{U}$ byl libovolný kruh v $G$, je $f\in\mathcal{H}(G)$.
 \end{proof}
@@ -75,20 +75,20 @@ pro každý trojúhelník $\triangle\subset\mathcal{U}$, má $f$ na $\mathcal{U}
 % pátá strana
 
 \begin{theorem}[Cachyho odhady]
-Nechť $z_0\in\mathbb{C}$, $r\in(0,+\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,r)}$. Potom pro každé $k=0,1,2,...$ je 
+Nechť $z_0\in\mathbb{C}$, $r\in(0,\, +\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,\, r)}$. Potom pro každé $k=0,1,2,...$ je 
 \begin{equation}
-\forall{s\in{\mathcal{U}:=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r.k!}{(d(s))^{k+1}}.\max_{\partial\mathcal{U}}{|f|},    
+\forall{s\in{\mathcal{U}:=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r\cdot k!}{(d(s))^{k+1}}\cdot \max_{\partial\mathcal{U}}{|f|},    
 \tag{$CO_1$}
 \label{eqn:co1}
 \end{equation}
 kde $d(s) := dist(s,\partial\mathcal{U})\overset{def.}{:=}\underset{{z\in{\partial{\mathcal{U}}}}}{min}{|s-z|}$
 \begin{equation}
-\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!.2^{k+1}}{r^k}.\max_{\partial{U}}{|f|}.
+\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!\cdot2^{k+1}}{r^k}\cdot\max_{\partial{U}}{|f|}\cdot
 \tag{$CO_2$}
 \label{eqn:co2}
 \end{equation}
 \begin{equation}
-    |f^{(k)}(z_0)|\leq\frac{k!}{r^k}.\max_{\partial{U}}{|f|}. 
+    |f^{(k)}(z_0)|\leq\frac{k!}{r^k}\cdot\max_{\partial{U}}{|f|}. 
 \tag{$CO_3$}
 \label{eqn:co3}
 \end{equation}
@@ -98,9 +98,9 @@ kde $d(s) := dist(s,\partial\mathcal{U})\overset{def.}{:=}\underset{{z\in{\parti
 \cref{eqn:co1} dostaneme z \cref{eqn:cvkz}, protože 
 \[|f^{(k)}(s)|=
 \left\lvert\frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz\right\lvert\leq
-\frac{k!}{2\pi}.2\pi{r}.\frac{1}{(d(s))^{k+1}}.\max_{\partial\mathcal{U}}{|f|}\]
-a $|z-s|\geq d(s)$, $z\in\partial\mathcal{U}=\langle\varphi\rangle$, zde $\varphi(t)=z_0+r.e^{it}$, $t\in\left[0,2\pi\right]$.\newline
-\cref{eqn:co2} plyne z \cref{eqn:co1}, protože $d(s)\geq\frac{r}{2}$ $\forall{s\in{U(z_0,r/2)}}$.\newline
+\frac{k!}{2\pi}\cdot 2\pi{r}\cdot\frac{1}{(d(s))^{k+1}}\cdot \max_{\partial\mathcal{U}}{|f|}\]
+a $|z-s|\geq d(s)$, $z\in\partial\mathcal{U}=\langle\varphi\rangle$, zde $\varphi(t)=z_0+r\cdote^{it}$, $t\in\left[0,\, 2\pi\right]$.\newline
+\cref{eqn:co2} plyne z \cref{eqn:co1}, protože $d(s)\geq\frac{r}{2}$ $\forall{s\in{U(z_0,\, r/2)}}$.\newline
 \cref{eqn:co3} plyne z \cref{eqn:co1}, protože $d(z_0)=r$. 
 \end{proof}
 
@@ -131,7 +131,7 @@ Omezenost $f$: Máme
 \frac{1}{r^n}.\frac{1}{|a_0|-\frac{|a_1|}{r}-...-\frac{|a_n|}{r^n}}\longrightarrow 0\]
 pro $r=|z|\to+\infty$.
 
-Existuje $r_0\in(0,+\infty)$ tak, že $|f(z)|\leq{1}$, je-li $|z|>r_0$. Funkce $f$ je omezená na $\overline{U(0,r_0)}$, protože je tam spojitá.
+Existuje $r_0\in(0,\, +\infty)$ tak, že $|f(z)|\leq{1}$, je-li $|z|>r_0$. Funkce $f$ je omezená na $\overline{U(0,\, r_0)}$, protože je tam spojitá.
 \end{proof}
 
 \begin{lemma}
@@ -141,9 +141,9 @@ Nechť $\varphi$ je křivka v $\mathbb{C}$, $f_n$ jsou spojité funkce na $\lang
 
 \begin{proof}
 Máme
-\[0\leq\left\lvert{\int_\varphi{f_n}-\int_\varphi{f}}\right\lvert=
+\[0\leq\left\lvert{\int_\varphi{f_n}-\int_\varphi{f}}\, \right\lvert=
 \left\lvert{\int_\varphi{(f_n-f)}}\right\lvert\leq{}
-V(\varphi).\max_{\langle\varphi\rangle}{|f_n-f|}\overset{n\to\infty}{\longrightarrow}0.\]
+V(\varphi)\cdot\max_{\langle\varphi\rangle}{|f_n-f|}\overset{n\to\infty}{\longrightarrow}0.\]
 \end{proof}
 
 % osmá strana
@@ -171,7 +171,7 @@ Z Morerovy věty je $f\in\mathcal{H}(G)$.
 \begin{definition}
 Nechť $\{a_n\}_{n=0}^\infty\subset\mathbb{C}$ a $z_0\in\mathbb{C}$. Potom 
 \begin{equation}
-\sum_{n=0}^\infty{a_n.(z-z_0)^n}, \hspace{5mm} z\in\mathbb{C}
+\sum_{n=0}^\infty{a_n\cdot(z-z_0)^n}, \hspace{5mm} z\in\mathbb{C}
 \label{eqn:rada}
 \end{equation}
 je mocninná řada o středu $z_0$ s koeficienty $\{a_n\}_{n=0}^\infty$.
@@ -189,20 +189,20 @@ Existuje jediné $R\in{[0,+\infty]}$ takové, že
 \underset{n\to+\infty}{\limsup}{\sqrt[\leftroot{-3}\uproot{3}n]{|a_n|}}},\]
 kde položíme $\frac{1}{0}=+\infty$, $\frac{1}{+\infty}=0$.
 
-\circled{2} Označíme-li součet \cref{eqn:rada} na $U(z_0,R)$ jako $f$, potom je $f\in\mathcal{H}(U(z_0,R))$ a 
+\circled{2} Označíme-li součet \cref{eqn:rada} na $U(z_0,\, R)$ jako $f$, potom je $f\in\mathcal{H}(U(z_0,\, R))$ a 
 \[
-\forall{k\in\mathbb{N}_0}\hspace{2mm}\forall{z\in{U(z_0,R)}}: \hspace{5mm}
+\forall{k\in\mathbb{N}_0}\hspace{2mm}\forall{z\in{U(z_0,\,R)}}: \hspace{5mm}
 f^{(k)}(z)=
 \sum_{n=k}^{+\infty}{a_n.n.(n-1)...(n-k+1)(z-z_0)^{n-k}},\]
 speciálně $a_k=\frac{f^{(k)}(z_0)}{k!}$.
 \end{properties}
 
 \begin{note}
-Mocninnou řadu derivujeme "člen po členu", můžeme na $U(z_0,r)$ zaměnit sumu a komplexní derivaci.
+Mocninnou řadu derivujeme "člen po členu", můžeme na $U(z_0,\,r)$ zaměnit sumu a komplexní derivaci.
 \end{note}
 
 \begin{proof}
 Užijeme Weierstrassovu větu na 
-\[S_n(z):=\sum_{n=0}^N{a_n(z-z_0)^n},\hspace{5mm} z\in{U(z_0,R)}\]
+\[S_n(z):=\sum_{n=0}^N{a_n(z-z_0)^n},\hspace{5mm} z\in{U(z_0,\,R)}\]
 Dosadíme-li do \cref{eqn:rada} $z=z_0$, máme $f^{(k)}(z_0)={a_k}.{k!}$
 \end{proof}

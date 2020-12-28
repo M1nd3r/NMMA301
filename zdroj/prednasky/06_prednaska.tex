@@ -1,18 +1,18 @@
 \begin{theorem}[O rozvoji holomorfní funkce na kruhu do mocninné řady]
-Nechť $R \in (0, +\infty]$ a $f \in \mathcal{H}(U(z_0,R))$. Potom existuje jediná mocninná řada $\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, která má na $U(z_0,R)$ součet $f$. Navíc platí, že $a_n=\frac{f^{(n)}(z_0)}{n!}$, $n \in \mathbb{N}_0$.
+Nechť $R \in (0, +\infty]$ a $f \in \mathcal{H}(U(z_0,\,R))$. Potom existuje jediná mocninná řada $\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, která má na $U(z_0,\,R)$ součet $f$. Navíc platí, že $a_n=\frac{f^{(n)}(z_0)}{n!}$, $n \in \mathbb{N}_0$.
 \end{theorem}
 
 \begin{proof}
 \begin{enumerate}
     \item jednoznačnost: Zřejmě z toho, že $a_n=\frac{f^{(n)}(z_0)}{n!}$, $n \in \mathbb{N}_0$.
-    \item existence: Nechť $z \in U(z_0, R)$. Volme $r>0$, aby $|z-z_0|<r<R$. Potom z \cref{eqn:cvz} je
+    \item existence: Nechť $z \in U(z_0,\,R)$. Volme $r>0$, aby $|z-z_0|<r<R$. Potom z \cref{eqn:cvz} je
     \begin{equation}
         f(z)=\frac{1}{2 \pi i} \int_\varphi \frac{f(w)}{w-z} \diff w,
         \tag{a}
         \label{eqn:6.4a}
     \end{equation}
     
-    kde $\varphi(t)=z_0+re^{it} \text{, } t \in [0, 2\pi]$.
+    kde $\varphi(t)=z_0+re^{it} \text{, } t \in [0,\,2\pi]$.
     
     Pro každé $w \in \langle \varphi \rangle$ máme
     \begin{equation}
@@ -37,12 +37,12 @@ Nechť $R \in (0, +\infty]$ a $f \in \mathcal{H}(U(z_0,R))$. Potom existuje jedi
 $e^z=\sum\limits_{n=0}^\infty \frac{z^n}{n!}$, $z \in \mathbb{C}$, protože $\exp \in \mathcal{H}(\mathbb{C})$ a $\exp^{(n)}(0)=\exp(0)=1$.
 \end{example}
 
-\newpage
+
 \begin{theorem}[O nulovém bodě]
 Nechť $f$ je holomorfní funkce na okolí $z_0 \in \mathbb{C}$ a $f(z_0)=0$. Potom buď
 \begin{enumerate}
-    \item existuje $r>0$, že $f=0$ na $U(z_0,r)$, nebo
-    \item existuje $r>0$, že $f\neq 0$ na $P(z_0,r):=U(z_0,r)\backslash \{z_0\}$.
+    \item existuje $r>0$, že $f=0$ na $U(z_0,\,r)$, nebo
+    \item existuje $r>0$, že $f\neq 0$ na $P(z_0,r):=U(z_0,\,r)\backslash \{z_0\}$.
 \end{enumerate}
 V případě 2. existuje jediné $p\in \mathbb{N}$ takové, že 
 \begin{equation}
@@ -54,7 +54,7 @@ V případě 2. existuje jediné $p\in \mathbb{N}$ takové, že
 \end{theorem}
 
 \begin{note}
-Navíc $z_0$ je nulový bod $f$ násobnosti $p$, právě když existuje $r>0$ a $g \in \mathcal{H}(U(z_0,r))$ tak, že $\forall z \in U(z_0,r)$: 
+Navíc $z_0$ je nulový bod $f$ násobnosti $p$, právě když existuje $r>0$ a $g \in \mathcal{H}(U(z_0,\,r))$ tak, že $\forall z \in U(z_0,r)$: 
 \begin{equation}
     g(z) \neq 0 \hspace{3mm}\text{ a }\hspace{3mm} f(z)=(z-z_0)^p g(z).
     \label{eqn:6.7.t}
@@ -62,19 +62,19 @@ Navíc $z_0$ je nulový bod $f$ násobnosti $p$, právě když existuje $r>0$ a 
 \end{note}
 
 \begin{proof}
-Máme, že $f(z)=\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, $z \in U(z_0,r)$. Pokud nenastane 1., potom existuje $n \in \mathbb{N}$, že $0 \neq a_n=\frac{f^{(n)}(z_0)}{n!}$. Zvolme nejmenší $p \in \mathbb{N}$, aby $a_p \neq 0$. Potom platí \cref{eqn:6.6.0} a
+Máme, že $f(z)=\sum\limits _{n=0} ^{\infty} a_n(z-z_0)^n$, $z \in U(z_0,\,r)$. Pokud nenastane 1., potom existuje $n \in \mathbb{N}$, že $0 \neq a_n=\frac{f^{(n)}(z_0)}{n!}$. Zvolme nejmenší $p \in \mathbb{N}$, aby $a_p \neq 0$. Potom platí \cref{eqn:6.6.0} a
 \begin{equation}
     \forall z \in U(z_0,r):\ f(z)=a_p(z-z_0)^p + \ldots = (z-z_0)^p \cdot \underset{:=\ g(z)}{\underbrace{\sum\limits_{n=p}^\infty a_n(z-z_0)^{n-p}}}.
 \end{equation} 
 Dále $g(z)$ definujeme jako poslední sumu. %Nebo-li g(z):=\sum\limits_{n=p}^\infty a_n(z-z_0)^{n-p}$
-Protože $g(z_0)=a_p \neq 0$, existuje $r>0$, že $g \neq 0$ na $U(z_0,r)$ a $f(z)=(z-z_0)^pg(z) \neq 0$ na $P(z_0,r)$. Obrácené tvrzení z poznámky je snadné.
+Protože $g(z_0)=a_p \neq 0$, existuje $r>0$, že $g \neq 0$ na $U(z_0,\,r)$ a $f(z)=(z-z_0)^pg(z) \neq 0$ na $P(z_0,r)$. Obrácené tvrzení z poznámky je snadné.
 \end{proof}
 
 \begin{theorem}[O jednoznačnosti pro holomorfní funkce]
 Nechť $\emptyset \neq G \subset \mathbb{C}$ je oblast a $f,g \in \mathcal{H}(G)$. Pak jsou následující tvrzení ekvivalentní:
 \begin{enumerate}
 \item $f=g$ na $G$;
-\item množina $M:=\{z \in G : f(z)=g(z) \}$ má v $G$ hromadný bod, tj. existuje $z_0 \in G$ takový, že $\forall  r>0:\  M \cap P(z_0,r) \neq \emptyset  \;$
+\item množina $M:=\{z \in G : f(z)=g(z) \}$ má v $G$ hromadný bod, tj. existuje $z_0 \in G$ takový, že $\forall  r>0:\  M \cap P(z_0,\,r) \neq \emptyset  \;$
 \item existuje $z_0 \in G$, že $\forall k \in \mathbb{N}_0: \ f^{(k)}(z_0)=g^{(k)}(z_0) \;$.
 \end{enumerate}
 \end{theorem}
@@ -113,23 +113,22 @@ Nechť platí \cref{eqn:6.8.+}. Potom $f(z)=\sum\limits_{n=0}^\infty a_n(z-z_0)^
     %tato rovnost plyne z toho,že $|f(z)|^2=f(z)\cdot \overline {f(z)}$
     \frac{1}{2\pi} \int_{0}^{2 \pi} \left(\sum\limits_{n=0}^\infty a_n \rho^n e^{int}\right)\left(\sum\limits_{m=0}^\infty \overline{a_m} \rho^m e^{-imt}\right) \diff t  \\
     %Jelikož obě řady konvergují stejnoměrně a absolutně pro $t\in[0,2\pi]$, tak i jejich součin konverguje stejnoměrně a absolutně.
-    & = \sum\limits_{n=0}^\infty \sum\limits_{m=0}^\infty a_n. \overline{a_m} \rho^{n+m} \frac{1}{2 \pi} \int_{0}^{2 \pi}  e^{it(n-m)} \diff t=\sum\limits_{n=0}^\infty |a_n|^2\rho^{2n},
+    & = \sum\limits_{n=0}^\infty \sum\limits_{m=0}^\infty a_n\cdot \overline{a_m} \rho^{n+m} \frac{1}{2 \pi} \int_{0}^{2 \pi}  e^{it(n-m)} \diff t=\sum\limits_{n=0}^\infty |a_n|^2\rho^{2n},
     \end{aligned}
 \end{equation}
- neboť $$\frac{1}{2 \pi} \int_{0}^{2 \pi}  e^{it(n-m)} \diff t = 0 \text{,  pro  } n\neq m \text{ a }$$ 
- $$\frac{1}{2 \pi} \int_{0}^{2 \pi}  e^{it(n-m)} \diff t=1 \text{, pro } n=m.$$
+ neboť
+ $$\frac{1}{2 \pi} \int_{0}^{2 \pi}  e^{it(n-m)} \diff t = \twopartdef{0}{n \neq m,}{1}{n = m.}$$ 
 
-
-Nebo-li $|a_0|^2\geq|a_0|^2+|a_1|^2\rho^2+\cdots$, tudíž $0=a_1=a_2=\cdots$. Dostáváme,že $f=a_0$ na $U(z_0,r)$ a z věty o jednoznačnosti $f=a_0$ na $G$.
+Nebo-li $|a_0|^2\geq|a_0|^2+|a_1|^2\rho^2+\cdots$, tudíž $0=a_1=a_2=\cdots$. Dostáváme, že $f=a_0$ na $U(z_0,r)$ a z věty o jednoznačnosti $f=a_0$ na $G$.
 \end{proof}
 
 \section{\texorpdfstring{Riemannova sféra}{Riemannova sféra}}
 Rozšíříme $\mathbb{C}$ o \emph{nekonečno}.
-Položíme $\Sp=\mathbb{C}\cup\{\infty\}$, kde $\infty\notin\mathbb{C}$, a pro $\varepsilon>0$ zavedeme \emph{okolí} kolem $\infty$ $P(\infty,\varepsilon):=\{z\in\mathbb{C}: |z|>\frac{1}{\varepsilon}\}$,
-$U(\infty,\varepsilon):=P(\infty,\varepsilon)\cup \{\infty\}$.
+Položíme $\Sp=\mathbb{C}\cup\{\infty\}$, kde $\infty\notin\mathbb{C}$, a pro $\varepsilon>0$ zavedeme \emph{okolí} kolem $\infty$, následovně $P(\infty,\,\varepsilon):=\{z\in\mathbb{C}: |z|>\frac{1}{\varepsilon}\}$,
+$U(\infty,\,\varepsilon):=P(\infty,\,\varepsilon)\cup \{\infty\}$.
 
 \begin{definition}
-Řekneme, že $z_n\rightarrow z_0$ v $\Sp$, pokud $\forall\varepsilon>0\textbf{ }  \exists n_0\in\mathbb{N}\textbf{ }\forall n\geq n_0:z_n\in U(z_0,\varepsilon)$.
+Řekneme, že $z_n\rightarrow z_0$ v $\Sp$, pokud $\forall\varepsilon>0\textbf{ }  \exists n_0\in\mathbb{N}\textbf{ }\forall n\geq n_0:z_n\in U(z_0,\,\varepsilon)$.
 \end{definition}
 
 \begin{note} Z definice plyne:
@@ -147,30 +146,30 @@ $\Sp$ je jednobodová kompaktifikace topologického prostoru $\mathbb{C}$.
 Na $\Sp$ zavedeme metriku $\varrho$ (není jediná), tž.
 \begin{equation}
     \left( z_n\overset{n\to\infty}{\longrightarrow} z_0 \text{  v  } \Sp \right)
-    \Leftrightarrow \varrho(z_n,z_0)\overset{n\to\infty}{\longrightarrow} 0.
+    \Leftrightarrow \varrho(z_n,\,z_0)\overset{n\to\infty}{\longrightarrow} 0.
     \label{eqn:7.4.*}
     \tag{*}
-\end{equation} Navíc $(\Sp,\varrho)$ bude \emph{izometrický} s jednotkovou sférou $S^2:=\{(\alpha,\beta,\gamma)\in\mathbb{R}^3: \alpha^2+\beta^2+\gamma^2=1\}$, kterou chápeme jako metrický podprostor $\mathbb{R}^3$. Speciálně $(\Sp,\varrho)$ je \emph{kompaktní}.
+\end{equation} Navíc $(\Sp,\varrho)$ bude \emph{izometrický} s jednotkovou sférou $S^2:=\{(\alpha,\,\beta,\,\gamma)\in\mathbb{R}^3: \alpha^2+\beta^2+\gamma^2=1\}$, kterou chápeme jako metrický podprostor $\mathbb{R}^3$. Speciálně $(\Sp,\,\varrho)$ je \emph{kompaktní}.
 \begin{itemize}
-    \item Definujeme \emph{stereografickou projekci} $\phi:\mathbb{C}\rightarrow S^2\smallsetminus \{N\}$ jako na obrázku, kde $N=(0,0,1)$.
+    \item Definujeme \emph{stereografickou projekci} $\phi:\mathbb{C}\rightarrow S^2\setminus \{N\}$ jako na obrázku, kde $N=(0,\,0,\,1)$.
     $\includegraphics[width=\textwidth]{images/obrazek1.jpeg}$ 
-    Položme $\phi(\infty):=N$. Pro $z\in\mathbb{C}$ je $\{\phi(z)\}=(S\smallsetminus \{N\})\cap p_z$, kde $p_z$ je polopřímka z $N$ procházející bodem $z\in\mathbb{C}$. Potom $\phi:\Sp\xrightarrow[]{na}S^2$ je bijekce.
-    \begin{excercise}.
+    Položme $\phi(\infty):=N$. Pro $z\in\mathbb{C}$ je $\{\phi(z)\}=(S\setminus \{N\})\cap p_z$, kde $p_z$ je polopřímka z $N$ procházející bodem $z\in\mathbb{C}$. Potom $\phi:\Sp\xrightarrow[]{na}S^2$ je bijekce.
+    \begin{excercise}
+    \mbox{}
      \begin{itemize}
-        \item $\phi(z):=\left(\frac{2x}{x^2+y^2+1},\frac{2y}{x^2+y^2+1},\frac{x^2+y^2-1}{x^2+y^2+1}\right)$, $z=x+iy \in \mathbb{C}$.
-        \item $\phi^{-1}(\alpha,\beta,\gamma):=\left(\frac{\alpha}{1-\gamma},\frac{\beta}{1-\gamma}\right)$, pro  $(\alpha,\beta,\gamma)\in S^2\smallsetminus \{N\}$
+        \item[\textbullet] $\phi(z):=\left(\frac{2x}{x^2+y^2+1},\frac{2y}{x^2+y^2+1},\frac{x^2+y^2-1}{x^2+y^2+1}\right)$, $z=x+iy \in \mathbb{C}$.
+        \item[\textbullet] $\phi^{-1}(\alpha,\,\beta,\,\gamma):=\left(\frac{\alpha}{1-\gamma},\frac{\beta}{1-\gamma}\right)$, pro  $(\alpha,\,\beta,\,\gamma)\in S^2\setminus \{N\}$
      \end{itemize}
     \end{excercise}
-    \item Položme $\varrho(z,w):=|\phi(z)-\phi(w)|$, $z,w\in\Sp$, kde $|\cdot|_S$ je Eukleidovská norma  v $\mathbb{R}^3$ ($\phi$ je izometrie $(\Sp,\varrho)$ na $S^2$)
+    \item Položme $\varrho(z,\,w):=|\phi(z)-\phi(w)|$, $z,\,w\in\Sp$, kde $|\cdot|_S$ je eukleidovská norma  v $\mathbb{R}^3$. Potom $\phi$ je izometrie $(\Sp,\varrho)$ na $S^2$.
      
-    \item Platí \cref{eqn:7.4.*}. Skutečně, z předchozího bodu a z cvičení máme: $\varrho(z_n,z_0)\rightarrow0\Leftrightarrow\phi(z_n)\rightarrow\phi(z_0)\Leftrightarrow z_n\rightarrow z_0$ v $\Sp$, protože $\phi$ i $\phi^{-1}$ jsou spojité.
-    \end{itemize}
-     \begin{example}
-     Nechť $z_n\in \mathbb{C}$ a $z_n\rightarrow \infty$. Potom $|z_n|\rightarrow+\infty$, $\phi(z_n)\in S^2$, proto  $\phi_3(z_n)\rightarrow 1$. Odtud $\phi(z_n)\rightarrow N:=(0,0,1)$
-     \end{example}
-     \begin{example}
-     Nechť $(\alpha_n,\beta_n,\gamma_n)\in S^2\smallsetminus\{N\}$ a $(\alpha_n,\beta_n,\gamma_n)\overset{n\to\infty}{\longrightarrow} N$. Potom
-     $|\phi^{-1}(\alpha_n,\beta_n,\gamma_n)|^2=\frac{1-\gamma_n^2}{(1-\gamma_n)^2}=\frac{1+\gamma_n}{1-\gamma_n}\rightarrow+\infty$. Tudíž $\phi^{-1}(\alpha_n,\beta_n,\gamma_n)\rightarrow\infty.$
-     \end{example}
-
+    \item Platí \cref{eqn:7.4.*}. Skutečně, z předchozího bodu a z cvičení máme: $\varrho(z_n,\,z_0)\rightarrow0\Leftrightarrow\phi(z_n)\rightarrow\phi(z_0)\Leftrightarrow z_n\rightarrow z_0$ v $\Sp$, protože $\phi$ i $\phi^{-1}$ jsou spojité.
+    
+     \item 
+     Nechť $z_n\in \mathbb{C}$ a $z_n\rightarrow \infty$. Potom $|z_n|\rightarrow+\infty$, $\phi(z_n)\in S^2$, proto  $\phi_3(z_n)\rightarrow 1$. Odtud $\phi(z_n)\rightarrow N:=(0,\,0,\,1)$
+     
+     \item
+     Nechť $(\alpha_n,\,\beta_n,\,\gamma_n)\in S^2\setminus\{N\}$ a $(\alpha_n,\,\beta_n,\,\gamma_n)\overset{n\to\infty}{\longrightarrow} N$. Potom
+     $|\phi^{-1}(\alpha_n,\,\beta_n,\,\gamma_n)|^2=\frac{1-\gamma_n^2}{(1-\gamma_n)^2}=\frac{1+\gamma_n}{1-\gamma_n}\rightarrow+\infty$. Tudíž $\phi^{-1}(\alpha_n,\,\beta_n,\,\gamma_n)\rightarrow\infty.$
+\end{itemize}
 \end{properties}

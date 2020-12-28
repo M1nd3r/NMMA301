@@ -13,7 +13,7 @@
 \begin{definition}
 Prostor $\mathbb{C}$ je prostor $\mathbb{R}^2$, v němž definujeme navíc:
 \begin{itemize}
-    \item násobení $(x,y).(u,v) = (xu-yv, xv+yu)$
+    \item násobení $(x,y)\cdot(u,v) = (xu-yv, xv+yu)$
     \item ztotožňujeme $(x,0) \cong x$, neboli $\mathbb{R}\subset\mathbb{C}$
     \item značíme $i = (0,1)$
 \end{itemize}
@@ -33,7 +33,8 @@ Vlastnosti $\mathbb{C}$. Nechť $z = (x,y)\in\mathbb{C}$.
 \begin{itemize}
     \item Potom $z = x+iy$ a $(\pm i)^2 = -1$.
     \item Násobení v $\mathbb{C}$ zahrnuje násobení v $\mathbb{R}$ i násobení skalárem v $\mathbb{R}^2$.
-    \item $|z|^2 = z\overline{z}$, $\overline{zw} = \overline{z}.\overline{w}$, $|zw| = |z|.|w|$, $z+\overline{z} = 2.Re(z)$, $z-\overline{z} = 2i.Im(z)$,
+    \item $|z|^2 = z\overline{z}$, $\overline{zw} = \overline{z} \cdot 
+    \overline{w}$, $|zw| = |z|\cdot|w|$, $z+\overline{z} = 2\cdot Re(z)$, $z-\overline{z} = 2i\cdot Im(z)$,
     \item $\frac{1}{z} = \frac{\overline{z}}{|z|^2}$, je-li $z\neq 0$,
     \item $\mathbb{C}$ je těleso.
 \end{itemize}
@@ -127,7 +128,7 @@ $$\diff f(z_0)h:=
 \frac{\partial f_1}{\partial x}(z_0) & \frac{\partial f_1}{\partial y}(z_0)\\
 \frac{\partial f_2}{\partial x}(z_0) & \frac{\partial f_2}{\partial y}(z_0)
 \end{pmatrix}h\text{,\hspace{3mm} }h\in \mathbb{R}^2\text{,}$$
-kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Tato matice se nazývá \emph{Jacobiho matice.})
+kde $f(x,y) = (f_1(x,y), \ f_2(x,y)).$ (Tato matice se nazývá \emph{Jacobiho matice.})
 %hodí se nezapomenout že doted jsme mluvili pouze o reálné diferencovatelnosti. Jako druhou si ted zavedeme komplexní diferencovatelnost(funkci $f$ aproximujeme $\mathbb{C}$\emph{-lineárním zobrazením}).
 \end{note} 
 
@@ -141,15 +142,15 @@ kde $f(x,y) = (f_1(x,y),f_2(x,y)).$ (Tato matice se nazývá \emph{Jacobiho mati
 \end{definition}  
 
 \begin{note}
-Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'=f'\pm{g'}$, $(f.g)'=f'g+g'f$, $(f/g)'=\frac{f'g-g'f}{g^2}$ a $(f\circ g)'=(f'\circ{g}).g'$.
+Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'=f'\pm{g'}$, $(f\cdot g)'=f'g+g'f$, $(f/g)'=\frac{f'g-g'f}{g^2}$ a $(f\circ g)'=(f'\circ{g}) \cdot g'$.
 %Protože s komplexními čísly se počítá stejně jako s reálnými (výjimkou mohou být některé nerovnosti).
-%Tak i pro komplexní funkce jedné komplexní proměnné platí stejné věty jako pro reálné funkce jedné reálné proměnné. Tedy platí: $(f\pm g)'$, $(f.g)'$, $(f/g)'$ a $(f\circ g)'$.
+%Tak i pro komplexní funkce jedné komplexní proměnné platí stejné věty jako pro reálné funkce jedné reálné proměnné. Tedy platí: $(f\pm g)'$, $(f \cdot g)'$, $(f/g)'$ a $(f\circ g)'$.
 
 \end{note} 
 
 \begin{example}\mbox{}
 \begin{itemize}
-    \item $(z^n)' = n.z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}\text{.}$
+    \item $(z^n)' = n\cdot z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}\text{.}$
     \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$\emph{-diferencovatelná}. Skutečně, pro $z_0\in\mathbb{C}$ libovolné, máme $$\lim_{h\to 0}\frac{f(z_0+h)-f(z_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje. 
     %Plyne z toho,že pro $h$ na reálné ose je $\frac{\ \overline{h}\ }{h}=1$ a pro $h$ na imaginární ose je $\frac{\ \overline{h}\ }{h}=-1$
     \end{itemize}
@@ -160,7 +161,7 @@ Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'=f'\pm{g'}$, $(f.g
 % stránka číslo 8 první přednášky
 
 \begin{theorem}[Cauchy-Riemannova]\label{CR}
-Nechť $f$ je funkce diferencovatelná na okolí $z_0 \in \mathbb{C}$. Pak následující tvrzení jsou ekvivalentní:
+Nechť $f$ je funkce definovaná na okolí $z_0 \in \mathbb{C}$. Pak následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item Existuje $f'(z_0)$ %existuje komplexní derivace v $z_{0}$ tj. funkce $f$ je v $z_{0}$ komplexně diferencovatelná.
     \item Existuje $\diff f(z_0)$ a $\diff f(z_0)$ je $ \mathbb{C}$-lineární %existuje TD v $z_{0}$ a ten TD je komplexně lineární

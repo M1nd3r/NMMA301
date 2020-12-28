@@ -2,19 +2,19 @@
 
 \subsection{Holomorfní funkce na mezikruží}
 \begin{lemma}
-Nechť $f$ je holomorfní funkce na $P(z_0,r,R):=\{z \in \mathbb{C}| r<|z-z_0|<R \}$, kde $0\leq r < R \leq + \infty$. Pro každé $\rho \in (r,R)$ označme
+Nechť $f$ je holomorfní funkce na $P(z_0,\,r,\,R):=\{z \in \mathbb{C}| r<|z-z_0|<R \}$, kde $0\leq r < R \leq + \infty$. Pro každé $\rho \in (r,\,R)$ označme
 \begin{equation}
-     \varphi_\rho(t):=z_0+\rho e^{it} \text{, pro } t\in [0,2 \pi]
+     \varphi_\rho(t):=z_0+\rho e^{it} \text{, pro } t\in [0,\,2 \pi]
      \tag{$\triangle$}
      \label{eqn:7.25.tr}
 \end{equation} 
-a $J(\rho)=\int_{\varphi_\rho}f$. Potom je $J$ konstantní na $(r,R)$.
+a $J(\rho)=\int_{\varphi_\rho}f$. Potom je $J$ konstantní na $(r,\,R)$.
 \end{lemma}
 
 \begin{proof}
-Bez újmy na obecnosti nechť $z_0=0$. Nechť $\rho \in (r,R)$. Potom máme 
+Bez újmy na obecnosti nechť $z_0=0$. Nechť $\rho \in (r,\,R)$. Potom máme 
 $$J(\rho)=i\int_0^{2\pi}f(\rho e^{it})\rho e^{it} \diff t= \\ i\int_0^{2\pi}g(\rho e^{it})\diff t,$$ 
-kde $g(z):=f(z)\cdot z$, $z \in P:=P(0,r,R)$. Dále 
+kde $g(z):=f(z)\cdot z$, $z \in P:=P(0,\,r,\,R)$. Dále 
 \begin{equation}
     J'(\rho){=} \frac{i}{\rho}\int_0^{2\pi}g'(\rho e^{it})\rho e^{it} \diff t=\frac{1}{\rho}\int_{\varphi_\rho}g'=0, 
     \tag{$\times$}
@@ -25,7 +25,7 @@ $$\frac{\diff}{\diff \rho}\left(g\left(\rho e^{it}\right)\right)=\frac{\diff g}{
 \end{proof}
 
 \begin{theorem}[Cauchyho vzorec na mezikruží]
-Nechť $f \in \mathcal{H}(P)$, kde $P:=P(z_0,r,R)$. Nechť $r<r_0<R_0<R$ a $s \in P(z_0,r_0,R_0)$. Potom platí
+Nechť $f \in \mathcal{H}(P)$, kde $P:=P(z_0,\,r,\,R)$. Nechť $r<r_0<R_0<R$ a $s \in P(z_0,\,r_0,\,R_0)$. Potom platí
 \begin{equation}
     f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z)}{z-s} \diff z - \frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z)}{z-s} \diff z\text{,}
     \tag{$\square$}
@@ -50,7 +50,7 @@ Dále $\int_{\varphi_{R_0}}h=\int_{\varphi_{r_0}}h$, tudíž platí \cref{eqn:7.
 \end{proof}
 
 \begin{theorem}[O Laurentově rozvoji holomorfní funkce na mezikruží]
-Nechť $P:= \\ P(z_0,r,R)$, kde $0\leq r < R \leq + \infty$. Nechť $f \in \mathcal{H}(P)$. Potom existuje jediná Laurentova řada 
+Nechť $P:= \\ P(z_0\,,r,\,R)$, kde $0\leq r < R \leq + \infty$. Nechť $f \in \mathcal{H}(P)$. Potom existuje jediná Laurentova řada 
 \begin{equation}
     \sum\limits_{n=-\infty}^{\infty} a_n(z-z_0)^n,  
     \tag{L}
@@ -62,7 +62,7 @@ která má na $P$ součet $f$.
 \begin{proof}
 
 \begin{enumerate}
- \item jednoznačnost: Nechť platí $f(z)=\sum\limits_{n=-\infty}^\infty a_n(z-z_0)^n$, $z \in P$. Je-li $\rho \in (r, R)$ a $m \in \mathbb{Z}$, pak 
+ \item jednoznačnost: Nechť platí $f(z)=\sum\limits_{n=-\infty}^\infty a_n(z-z_0)^n$, $z \in P$. Je-li $\rho \in (r,\,R)$ a $m \in \mathbb{Z}$, pak 
 $$
 \int_{\varphi_\rho}f(z)(z-z_0)^{-(m+1)} \diff z = \int_{\varphi_\rho} \sum\limits_{n=-\infty}^{\infty} a_n(z-z_0)^{n-m-1} \diff z = \sum\limits_{n=-\infty}^{\infty} a_n \int_{\varphi_\rho}(z-z_0)^{n-m-1} \diff z = 
 $$
@@ -70,12 +70,12 @@ $=2\pi i \cdot a_m$, kde v druhé rovnosti suma konverguje stejnoměrně na $\la
 
 Závěr: koeficienty \cref{eqn:7.27.lau} se dají vyjádřit pomocí součtu $f$ jako 
 \begin{equation}
-    a_m=\frac{1}{2 \pi i}\int_{\varphi_\rho}\frac{f(z)}{(z-z_0)^{m+1}} dz\text{, } m \in \mathbb{Z}, (**)\text{,}
+    a_m=\frac{1}{2 \pi i}\int_{\varphi_\rho}\frac{f(z)}{(z-z_0)^{m+1}} dz\text{, } m \in \mathbb{Z}, 
     \tag{**}
     \label{eqn:7.27.**}
 \end{equation}
-kde $\varphi_\rho$ je jako v \cref{eqn:7.25.tr}. Podle lemmatu integrandy nezávisejí na $\rho \in (r,R)$.
-\item existence: Nechť $s \in P$. Volme $r<r_0<R_0<R$, aby $s \in P(z_0, r_0, R_0)$. Potom z Cauchyho vzorce máme \begin{equation}
+kde $\varphi_\rho$ je jako v \cref{eqn:7.25.tr}. Podle lemmatu integrandy nezávisejí na $\rho \in (r,\,R)$.
+\item existence: Nechť $s \in P$. Volme $r<r_0<R_0<R$, aby $s \in P(z_0,\,r_0,\,R_0)$. Potom z Cauchyho vzorce máme \begin{equation}
     f(s)=\frac{1}{2 \pi i}\int_{\varphi_{R_0}}\frac{f(z) \diff z}{z-s}-\frac{1}{2 \pi i}\int_{\varphi_{r_0}}\frac{f(z) \diff z}{z-s}\text{,}
     \tag{a}
     \label{eqn:7.27.a}
@@ -105,36 +105,37 @@ Dosadíme \cref{eqn:7.27.b}, \cref{eqn:7.27.c} do \cref{eqn:7.27.a} a dostaneme
 
 \subsection{Izolované singularity 2}
 \begin{theorem}[O Laurentově rozvoji kolem izolované singularity]
-Nechť $f \in \mathcal{H}(P(z_0,r))$ a $f(z)=\sum\limits_{-\infty}^{+\infty}a_n(z-z_0)^n$, $z \in P(z_0,r)$. Potom
+Nechť $f \in \mathcal{H}(P(z_0,\,r))$ a $f(z)=\sum\limits_{-\infty}^{+\infty}a_n(z-z_0)^n$, $z \in P(z_0,\,r)$. Potom
 \begin{enumerate}
-    \item $f$ má v $z_0$ odstranitelnou singularitu $\Leftrightarrow \forall n<0: a_n=0$; 
-    \item $f$ má v $z_0$ pól násobnosti $p \in \mathbb{N}\Leftrightarrow a_{-p} \neq 0$ a $\forall n<-p: a_n=0$; 
+    \item $f$ má v $z_0$ odstranitelnou singularitu $\Leftrightarrow \forall n<0:\;a_n=0$; 
+    \item $f$ má v $z_0$ pól násobnosti $p \in \mathbb{N}\Leftrightarrow a_{-p} \neq 0$ a $\forall n<-p: \;a_n=0$; 
     \item $f$ má v $z_0$ podstatnou singularitu $\Leftrightarrow a_n \neq 0$ pro nekonečně mnoho $n<0$.
 \end{enumerate}
 \end{theorem}
 
 \begin{proof}
+\mbox{}
 \begin{enumerate}
     \item jasné
     \item $f$ má v $z_0$ pól násobnosti $p$, právě když $g(z):=(z-z_0)^pf(z)$ má v $z_0$ odstranitelnou singularitu a po jejím odstranění je $g(z_0) \neq 0$. Neboli $(z-z_0)^pf(z)=\sum\limits_{n=0}^{+\infty}b_n(z-z_0)^n$, $z \in P(z_0,r)$ a $b_0=g(z_0) \neq 0$, tzn. 
     $$
-    f(z)=\frac{b_0}{(z-z_0)^p}+\frac{b_1}{(z-z_0)^{p-1}}+ \dots=\sum\limits_{n=0}^{+\infty}b_n(z-z_0)^{n-p} \text{, } z \in P(z_0,r)\text{.}
+    f(z)=\frac{b_0}{(z-z_0)^p}+\frac{b_1}{(z-z_0)^{p-1}}+ \dots=\sum\limits_{n=0}^{+\infty}b_n(z-z_0)^{n-p} \text{, } z \in P(z_0,\,r)\text{.}
     $$
     \item Z 1., 2. máme, že $f$ nemá v $z_0$ podstatnou singularitu, právě když $a_n \neq 0$ pro konečně mnoho $n<0$.
 \end{enumerate}
 \end{proof}
 
-\begin{theorem}[Rozklad holomorfní funkce s nekonečně mnoha izolovanými singularitami]
+\begin{theorem}[Rozklad holomorfní funkce s konečně mnoha izolovanými singularitami]
 Nechť $G \subset \mathbb{C}$ je otevřená, $M \subset G$ je konečná a $f \in \mathcal{H}(G \setminus M)$. Pro každé $s \in M$ označme $H_s$ součet hlavní části Laurentova rozvoje funkce $f$ kolem $s$. Potom existuje jediná $h \in \mathcal{H}(G)$ tak, že $f=\sum\limits_{s\in M} H_s+h$ na $G \setminus M$.
 \end{theorem}
 \begin{proof}
-Zřejmě $\forall s \in M:\ H_s \in \mathcal{H}(\mathbb{C} \setminus \{s \})$. Funkce $h:=f-\sum\limits_{s\in M} H_s$ je holomorfní na $G \setminus M$ a v bodech $s \in M$ má odstranitelné singularity. Skutečně, nechť $s_0 \in M$. Potom existuje $r_0>0$ tak, že $P(s_0,r_0) \subset G \setminus M$ a $f=R_{s_0}+H_{s_0}$ na $P(s_0,r_0)$, kde $R_{s_0}$ je součet regulární části Laurentova rozvoje $f$ kolem $s_0$ a $R_{s_0}\in \mathcal{H}(U(s_0,r_0))$. Tedy na $P(s_0,r_0)$ máme
+Zřejmě $\forall s \in M:\ H_s \in \mathcal{H}(\mathbb{C} \setminus \{s \})$. Funkce $h:=f-\sum\limits_{s\in M} H_s$ je holomorfní na $G \setminus M$ a v bodech $s \in M$ má odstranitelné singularity. Skutečně, nechť $s_0 \in M$. Potom existuje $r_0>0$ tak, že $P(s_0,\,r_0) \subset G \setminus M$ a $f=R_{s_0}+H_{s_0}$ na $P(s_0,\,r_0)$, kde $R_{s_0}$ je součet regulární části Laurentova rozvoje $f$ kolem $s_0$ a $R_{s_0}\in \mathcal{H}(U(s_0,\,r_0))$. Tedy na $P(s_0,\,r_0)$ máme
 $$h=R_{s_0}+H_{s_0}-\sum\limits_{s\in M} H_s=R_{s_0}-\sum\limits_{
 \small{\begin{array}l
 s \neq s_0\\
 s\in M,
 \end{array}}}
-H_s \in \mathcal{H}(U(s_0,r_0)).$$
+H_s \in \mathcal{H}(U(s_0,\,r_0)).$$
 \end{proof}
 
 \subsection{Reziduum}

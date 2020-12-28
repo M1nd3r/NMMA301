@@ -42,7 +42,7 @@ Nedefinujeme: $0/0,\ \infty/\infty,\ \infty\pm\infty,\ 0\cdot\infty$.
 \begin{definition}
 Nechť $f$ je holomorfní funkce na $P(z_0)$, ale není holomorfní na $U(z_0)$. Potom $f$ má v $z_0$
 \begin{enumerate}
-    \item \emph{izolovanou singularitu} (\emph{odstranitelnou singularitu}), existuje-li $\lim_{z\rightarrow z_0}f(z)\in\Comp$,
+    \item \emph{odstranitelnou singularitu}, existuje-li $\lim_{z\rightarrow z_0}f(z)\in\Comp$,
     \item \emph{pól}, je-li $\lim_{z\rightarrow z_0}f(z)=\infty$,
     \item \emph{podstatnou singularitu}, pokud $\lim_{z\rightarrow z_0}f(z)$ neexistuje.
 \end{enumerate}
@@ -57,7 +57,7 @@ Nechť $f$ je holomorfní funkce na $P(z_0)$, ale není holomorfní na $U(z_0)$.
 \begin{theorem}[O odstranitelné singularitě] Nechť f je holomorfní funkce na $P(z_0)$. Následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item $z_0$ je odstranitelná singularita $f$,
-    \item existuje $r>0$ tak, že $f$ je omezená na $P(z_0,\ r)$,
+    \item existuje $r>0$ tak, že $f$ je omezená na $P(z_0,\, r)$,
     \item existuje $F\in \Holo (U(z_0))$ tak, že $F=f$ na $P(z_0)$.
 \end{enumerate}
 \end{theorem}
@@ -91,14 +91,13 @@ Píšeme $f(z)\sim g(z)$ pro $z\rightarrow z_0$, je-li $\lim_{z\rightarrow z_0}\
 
 \begin{proof}
 $\circled{1.}\Rightarrow\circled{2.}$ Protože $\lim_{z\rightarrow z_0}f(z)=\infty$, je $\lim_{z\rightarrow z_0}\frac{1}{f(z)}=0$. Po odstranění odstranitelné singularity má $1/f$ v $z_0$ nulový bod konečné násobnosti $p\in\N$.\\
-$\circled{2.}\Rightarrow\circled{3.}$ Existuje $r>0$ a $g\in\Holo(U(z_0))$ tak, že $g\neq 0$ na $U(z_0,\ r)$ a $h(z)=(z-z_0)^p g(z),\ z\in U(z_0,\ r)$. Potom 
+$\circled{2.}\Rightarrow\circled{3.}$ Existuje $r>0$ a $g\in\Holo(U(z_0))$ tak, že $g\neq 0$ na $U(z_0,\,r)$ a $h(z)=(z-z_0)^p g(z),\ z\in U(z_0,\,r)$. Potom 
 $$\lim_{z\rightarrow z_0}(z-z_0)^p\underbrace{f(z)}_{=\frac{1}{h(z)}}=\frac{1}{g(z_0)}\in\Comp\setminus\{0\}.$$
 $\circled{3.}\Rightarrow\circled{4.}$ Máme 
 $$\lim_{z\rightarrow z_0}(z-z_0)^kf(z)=\lim_{z\rightarrow z_0}(z-z_0)^{k-p}\underbrace{(z-z_0)^pf(z)}_{\in\ \Comp\setminus\{0\}}=\threepartdef{\infty}{k<p,}{\in\Comp\setminus\{0\}}{k=p,}{0}{k>p.}$$
 $\circled{4.}\Rightarrow\circled{1.}$ Položíme $k=0$.
 \end{proof}
 
-\newpage
 \begin{theorem}[Casorati-Weierstrass] Nechť $f$ je holomorfní funkce na $P(z_0)$. Následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item $z_0$ je podstatná singularita $f$,
@@ -141,7 +140,7 @@ je \emph{Laurentova řada} s koeficienty ${a_n}$ a středem $z_0$. Řada $(R)$ j
 $$\exp\left(\frac{1}{z}\right)=\sum_{n=0}^\infty\frac{1}{n!z^n}$$
 \end{example}
 \begin{properties}[L]
-$\circled{1.}$ \emph{Konvergence:} Existují \emph{jediná} $R,r\in[0,\ +\infty]$ tak, že 
+$\circled{1.}$ \emph{Konvergence:} Existují \emph{jediná} $R,r\in[0,\, +\infty]$ tak, že 
 \begin{enumerate}
     \item
         řada $(R)$ konverguje absolutně a lokálně stejnoměrně na $|z-z_0|<R$ a diverguje na $|z-z_0|>R$, 
@@ -150,11 +149,11 @@ $\circled{1.}$ \emph{Konvergence:} Existují \emph{jediná} $R,r\in[0,\ +\infty]
 \end{enumerate}
 %TODO přidat obrázky
 
-$\circled{2.}$ \emph{Součet:} Nechť $0\leq r<R\leq+\infty$ (toto ne vždy platí: může se stát, že řada nekonverguje). Položme \emph{mezikruží} $P(z_0,\ r,\ R) :=\{z\in\Comp:\ r<|z-z_0|<R\}$. Označíme-li součet $(L)$ jako $f$, potom na $P(z_0,\ r,\ R)$ je $f$ holomorfní, řadu $(L)$ tam derivujeme "člen po členu", atd.
+$\circled{2.}$ \emph{Součet:} Nechť $0\leq r<R\leq+\infty$ (toto ne vždy platí: může se stát, že řada nekonverguje). Položme \emph{mezikruží} $P(z_0,\,r,\, R) :=\{z\in\Comp:\ r<|z-z_0|<R\}$. Označíme-li součet $(L)$ jako $f$, potom na $P(z_0,\, r,\, R)$ je $f$ holomorfní, řadu $(L)$ tam derivujeme "člen po členu", atd.
 \end{properties}
 
-\begin{note} Zkracujeme
-$P(z_0,R)=P(z_0,0,R)$ a $P(z_0,r)=P(z_0,r,\infty)$
+\begin{note} Platí
+$P(z_0,\,R)=P(z_0,\,0,\,R)$. %a $P(z_0,\,r)=P(z_0,\,r,\,\infty)$
 \end{note}
 
 \begin{proof}
@@ -167,4 +166,4 @@ $\circled{1.}$ Číslo $R$ je poloměr konvergence mocninné řady $(R)$. Pro $w
 $\circled{2.}$ Plyne opět z Weierstrassovy věty.
 \end{proof}
 
-\fbox{Cíl} Ukážeme, že $f\in\Holo(P(z_0,\ r,\ R))$, právě když existuje jediné $(L)$, které má na $(P(z_0,\ r,\ R))$ součet $f$.
+\fbox{Cíl} Ukážeme, že $f\in\Holo(P(z_0,\,r,\, R))$, právě když existuje jediné $(L)$, které má na $P(z_0,\, r,\, R)$ součet $f$.

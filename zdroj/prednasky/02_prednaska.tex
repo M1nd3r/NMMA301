@@ -9,7 +9,7 @@ Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}
 \begin{example}\mbox{}
 \begin{itemize}
     \item \emph{Polynom} $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je \emph{celá} funkce.
-    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$,kde $Q^{-1}(\{0\})$ je konečná množina.
+    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$, kde $Q^{-1}(\{0\})$ je konečná množina.
 \end{itemize}    
 \end{example}
 
@@ -32,11 +32,11 @@ $\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
  
  \begin{equation}
  \begin{aligned}
-    f(z)&=\exp(z)\\
-    f_1(x,y)&=e^x \cos y\\
-    f_2(x,y)&=e^x\sin y\\
-    \frac{\partial f_1}{\partial x} &= e^x\cos y = \frac{\partial f_2}{\partial y}\\
-     \frac{\partial f_2}{\partial x} &= e^x \sin y= - \frac{\partial f_1}{\partial y}
+    f(z) = \exp(z), \hspace{3mm}
+    f_1(x,y) &=e^x \cos y, \hspace{3mm}
+    f_2(x,y) =e^x\sin y\\
+    \frac{\partial f_1}{\partial x} = e^x\cos y = \frac{\partial f_2}{\partial y}&, \hspace{3mm}
+     \frac{\partial f_2}{\partial x} = e^x \sin y= - \frac{\partial f_1}{\partial y}
 \end{aligned}
 \end{equation}
    
@@ -56,25 +56,23 @@ $\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
     \newline
   \end{itemize}  
   \end{properties}
-  \begin{definition}
+  \begin{note}
     Nechť $z=x+iy$ je komplexní číslo, pak se na něj můžeme dívat jako na bod v rovině určený kartézskými souřadnicemi $x$ a $y$. \emph{Polární (Goniometrický) tvar komplexního čísla} získáme tak, že si body $x$ a $y$ vyjádříme v polárních souřadnicích a ty pak dosadím do rovnice udávající $z$. Tedy
-    
-    
        $x=r\cos \varphi$, 
        $y=r\sin \varphi$, 
        $z=x+iy=r(\cos \varphi + i \sin \varphi)=\lvert z \rvert e^{i\varphi} $, kde $r=\lvert z \rvert$ a $\varphi$ je argument $z$.
        Polární souřadnice nám říkají jak je daleko od počátku $r$ a v jakém směru  $\measuredangle \varphi$ se bod $z$ nachází.
- \end{definition}
+ \end{note}
      
     \begin{notation}
-          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (-\pi,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. \emph{hlavní hodnota argumentu $z$}. %Popřípadě jen hlavní argument
+          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (-\pi,\,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. \emph{hlavní hodnota argumentu $z$}. %Popřípadě jen hlavní argument
           %Místo intervalu $(-\pi,\pi]$ můžeme brát jakýkoli jiný interval délky $2\pi$. 
     \end{notation}
      
          Platí: 
         \begin{itemize}
             \item $\Arg(z)\colon = \{\arg(z)+2k\pi\mid k\in\mathbb{Z}\}$,
-            \item funkce $\arg\colon \mathbb {C}\setminus\{0\} \to \left (-\pi,\pi\right ]$, kde $\arg$ je surjektivní a navíc je konstantní na polopřímkách vycházejících z $0$. Dále je $\arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,0\right ]$
+            \item funkce $\arg\colon \mathbb {C}\setminus\{0\} \to \left (-\pi,\,\pi\right ]$, kde $\arg$ je surjektivní a navíc je konstantní na polopřímkách vycházejících z $0$. Dále je $\arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,\,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,\,0\right ]$.
         \end{itemize}
 
 
@@ -142,7 +140,7 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hla
 Nechť $z \in\mathbb{C}\setminus\{0\}$.
 \begin{itemize}
     \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.%celočíselná mocnina je jenom jediná
-    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p/q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $m_{\frac{p}{q}}(z)=\{z^{\frac{p}{q}}e^{\frac{2k\pi i p}{q}}: k\in\{0,1,\cdots,q-1\}\}$
+    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p/q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $$m_{\frac{p}{q}}(z)= \left\{ z^{\frac{p}{q}}e^{\frac{2k\pi i p}{q}}: k\in\{0,1,\cdots,q-1\} \right\}$$
     tvoří vrcholy pravidelného $q$-úhelníka vepsaného do kružnice se středem v počátku a poloměrem $z^{\frac{p}{q}}$. %mocnin je přesně $q$
     %obrázek
     \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.%mocnin je nekonečně
@@ -150,8 +148,9 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$.
 \end{observation}
 
 % stránka 7 druhé přednášky
-
+\newpage
 \begin{example}
+\mbox{}
 \begin{itemize}
     \item $\sqrt{-1}=e^{\frac{\pi i}{2}}=i$,  $m_{\frac{1}{2}}(-1)=\{\pm i\}$
     \item $\sqrt[3]{-1}=e^{\frac{\pi i}{3}}$ (nesouhlasí s definicí z MA!),  $m_{\frac{1}{3}}(-1)=\{e^{\frac{\pi i}{3}},e^{-\frac{\pi i}{3}},-1\} $
@@ -202,6 +201,8 @@ $e^{i z}=\cos(z)+i\sin(z)$, kde %rozkládáme na sudou a lichou část
 \end{definition}
 
 \begin{properties}
+\mbox{}
+\vspace{-2em}
 \begin{itemize}
     \item $\cos$ a $\sin$ jsou rozšířením příslušných reálných funkcí z $\mathbb{R}$ do $\mathbb{C}$.
     \item $\sin'(z)=\cos(z)$, $\cos'(z)=-\sin(z)$

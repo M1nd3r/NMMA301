@@ -15,7 +15,7 @@ Potom $\int_{\varphi_0}f=\int_{\psi_1}f+\int_{\psi_2}f+\int_{\psi_3}f+\int_{\psi
 Označme $\varphi_1=\psi_{j_1}$. Indukcí sestrojíme posloupnost (uzavřených) trojúhelníků, tž $\triangle \psi_{j_1}$ zase rozdělíme na $4$ menší $\triangle$-y středními příčkami a proces opakujeme. Pak 
 $\triangle_0:=\triangle \supset \triangle_1 \supset \triangle_2 \supset \ldots$ s obvody $\varphi_0$, $\varphi_1$, $\varphi_2$, \ldots takové, že \begin{equation}
 \begin{aligned}
-        \left|\int_{\varphi_j}f\right|\ge \frac{K}{4^j} \text{\hspace{3mm}a}\\ V({\varphi_j})= \frac{V(\varphi)}{2^j}
+        \left|\int_{\varphi_j}f\, \right|\ge \frac{K}{4^j} \text{\hspace{3mm}a}\\ V({\varphi_j})= \frac{V(\varphi)}{2^j}
 \end{aligned}
 \tag{a}
 \label{eqn:a}
@@ -42,17 +42,17 @@ Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
 
 kde první integrand vpravo má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z  \cref{eqn:a},\cref{eqn:b} dostaneme
 $$
-0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \max_{<\varphi_j>}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
+0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\,\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \cdot \max_{<\varphi_j>}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
 $$
 kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
 \end{proof}
-
+\newpage
 \begin{theorem}[Cauchyho věta pro hvězdovité oblasti]
 Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast a  $f \in \mathcal{H}(G)$. Potom $f$ má na $G$ primitivní funkci. Ekvivalentně: platí, že $\int_\varphi f=0$ pro každou uzavřenou křivku $\varphi$ v $G$.
 \end{theorem}
 
 \begin{proof}
-Z Goursartova lemmatu a dodatku k větě o existenci PF (Dodatek 5.23).
+Z Goursartova lemmatu a dodatku k větě o existenci primitivní funkce (Dodatek 5.23).
 \end{proof}
 
 \begin{note} %obrázky
@@ -62,7 +62,7 @@ Gousartovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je s
 \begin{proof}
 Nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Rozlišujeme případy:
 \begin{enumerate}
-    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$. Dle Gousartova lemmatu.
+    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$ dle Gousartova lemmatu.
     \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, $\triangle_\varepsilon\subset\ \triangle$
     a
     $z_{0}$ je jeho
@@ -102,7 +102,7 @@ Potom je $G$ otevřená, funkce $s\mapsto ind_{\varphi} s$ je konstantní na ka�
     holomorfní a pro každé $s\in G$ je $\phi'(s)=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{(z-s)^2}=0$, protože $f(z):=\frac{1}{(z-s)^2}$ má PF na $\mathbb{C}\backslash\{s\}$. %integrujeme funkci co má PF přes uzavřenou křivku, proto $=0$
     Tedy $\phi$ je konstantní na každé komponentě $G$.
     \item[(ii)]%Jak to vypadá na té jediné neomezené komponentě
-    Volíme $R>0$, aby $\langle\varphi\rangle\subset U(0,R)$. Potom $\mathbb{C}\backslash U(0,R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\mathbb{C}\backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
+    Volíme $R>0$, aby $\langle\varphi\rangle\subset U(0,\, R)$. Potom $\mathbb{C}\backslash U(0,\, R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\mathbb{C}\backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,\, R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
     je $\phi(s)=0$
 \end{itemize}
 
