@@ -2,7 +2,8 @@
 Cauchyho věta -- Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\varphi$ je uzavřená křivka v $G$. Potom Cauchyho věty nám říkají za jakých podmínek na $G$ a $\varphi$ je $\int_\varphi f=0$.
 \end{note}%Na dnešní přednášce si ukážeme dvě verze Cauchyho věty.
 
-\begin{theorem}[Gousartovo lemma -- \uv{Cauchyho věta pro $\triangle$}] %obrázek
+\begin{theorem}[Goursatovo lemma -- \uv{Cauchyho věta pro $\triangle$}]\label{thm:goursat}
+%obrázek
 Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\triangle$ je trojúhelník v $G$. Potom
 \begin{equation}
     \int_{\partial\triangle}f=0\text{.}
@@ -47,22 +48,22 @@ $$
 kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
 \end{proof}
 \newpage
-\begin{theorem}[Cauchyho věta pro hvězdovité oblasti]
+\begin{theorem}[Cauchyho věta pro hvězdovité oblasti]\label{thm:CaVpHvezdicObl}
 Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast a  $f \in \mathcal{H}(G)$. Potom $f$ má na $G$ primitivní funkci. Ekvivalentně: platí, že $\int_\varphi f=0$ pro každou uzavřenou křivku $\varphi$ v $G$.
 \end{theorem}
 
 \begin{proof}
-Z Goursartova lemmatu a dodatku k větě o existenci primitivní funkce (Dodatek 5.23).
+Z Goursatova lemmatu a dodatku k větě o existenci primitivní funkce (Dodatek 5.23).
 \end{proof}
 
 \begin{note} %obrázky
-Gousartovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je spojitá na $G$ a holomorfní na $G \backslash \{z_0\}$ pro nějaké $z_0 \in G$.
+Goursatovo lemma a tedy i předchozí věta platí i pro funkci $f$, která je spojitá na $G$ a holomorfní na $G \backslash \{z_0\}$ pro nějaké $z_0 \in G$.
 \end{note}
 
 \begin{proof}
 Nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Rozlišujeme případy:
 \begin{enumerate}
-    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$ dle Gousartova lemmatu.
+    \item Nechť $z_0 \notin \triangle$. Potom $\int_{\partial\triangle}f=0$ dle Goursatova lemmatu.
     \item Nechť $z_0$ je vrchol $\triangle$. Nechť $\triangle_\varepsilon$ je trojúhelník podobný s $\triangle$, $\triangle_\varepsilon\subset\ \triangle$
     a
     $z_{0}$ je jeho

@@ -85,7 +85,7 @@ Nechť $\Gamma = \{\varphi_1, ... ,\varpi_n\}$ je cyklus. Definujeme
 
 \begin{note}
 \begin{itemize}
-    \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\text{ind}_\Gamma(z)\in\mathbb{Z}$ konstantní na každé komponentě $\mathbb{C}\setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\mathbb{C}\setminus\langle\Gamma\rangle$ leží v $\text{Ext}\Gamma$.
+    \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\ind_\Gamma(z)\in\Z$ konstantní na každé komponentě $\mathbb{C}\setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\mathbb{C}\setminus\langle\Gamma\rangle$ leží v $\Ext\Gamma$.
     \item Zřejmě máme rozklad $\mathbb{C}=\text{Int}\Gamma\cup\langle\Gamma\rangle\cup\text{Ext} \Gamma$, kde $\text{Int} \Gamma$, $\text{Ext} \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\text{Int} \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
 \end{itemize}
 \end{note}
@@ -98,14 +98,14 @@ Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$.
 Uzavřenou křivku $\varphi$ chápeme jako cyklus $\Gamma:=\{\varphi\}$.
 \end{note}
 
-\begin{theorem}[Obecná Cauchyho pro cykly]
+\begin{theorem}[Obecná Cauchyho pro cykly]\label{thm:obCapC}
 Nechť $G\subset\mathbb{C}$ je otevřená a $\Gamma$ je cyklus v $G$, tedy $\langle\Gamma\rangle\subset G$. Potom platí, že
 \begin{equation}
     \forall f\in\mathcal{H}(G):\ \int_\Gamma f =0,
     \tag{CV}
     \label{eqn:7.30.cv}
 \end{equation}
-právě tehdy, když $\text{Int}\Gamma\subset G$.
+právě tehdy, když $\Int\Gamma\subset G$.
 \end{theorem}
 
 \begin{example}
@@ -113,9 +113,9 @@ Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq
 \end{example}
 
 \begin{theorem}[Reziduová pro cykly]
-Nechť $G\subset\mathbb{C}$ je otevřená, $\Gamma$ je cyklus v $G$ a $\text{Int}\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\mathcal{H}(G\setminus K)$. Potom platí
+Nechť $G\subset\mathbb{C}$ je otevřená, $\Gamma$ je cyklus v $G$ a $\Int\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\Holo(G\setminus K)$. Potom platí
 \begin{equation}
-    \int_\Gamma f = 2\pi i . \sum_{s\in K}\text{res}_s(f).\text{ind}_\Gamma(s).
+    \int_\Gamma f = 2\pi i  \sum_{s\in K}\text{res}_s(f)\cdot\ind_\Gamma(s).
     \tag{RVC}
     \label{eqn:9.8.rvc}
 \end{equation}
