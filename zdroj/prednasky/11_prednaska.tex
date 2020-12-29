@@ -1,5 +1,5 @@
 \begin{note}
-Otázka: Jak ind$_\varphi s$ vypočítat? BÚNO: $s=0$.
+Otázka: Jak $\ind_\varphi s$ vypočítat? BÚNO: $s=0$.
 \end{note}
 
 \begin{notation}[Polární vyjádření]
@@ -43,15 +43,15 @@ Hledáme spojité $\phi$ takové, že $\varphi=e^\phi$. Zřejmě $\int_\varphi \
 \begin{theorem}[O výpočtu indexu]
 Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp $ je uzavřená regulární křivka a $s \in \Comp \setminus \langle \varphi \rangle$. Nechť $\widetilde{\varphi}:=\varphi-s$ a $\theta$ je jednoznačná větev argumentu křivky $\widetilde{\varphi}$. Potom
 \begin{equation}\tag{oVI}\label{OVI}
-    \text{ind}_\varphi s= \text{ind}_{\widetilde{\varphi}}0=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}\text{.}
+    \ind_\varphi s= \ind_{\widetilde{\varphi}}0=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}\text{.}
 \end{equation}
-Speciálně, $\text{ind}_\varphi s \in \Z$.
+Speciálně, $\ind_\varphi s \in \Z$.
 \end{theorem}
 
 \begin{note*}
 \begin{itemize}
-    \item Je-li $\varphi$ pouze spojitá, definujeme $\text{ind}_\varphi s$ vztahem \cref{OVI}.
-    \item Z \cref{OVI} je jasné, že $\text{ind}_\varphi s$ je počet otočení $\varphi$ kolem $s$ proti směru hodinových ručiček.
+    \item Je-li $\varphi$ pouze spojitá, definujeme $\ind_\varphi s$ vztahem \cref{OVI}.
+    \item Z \cref{OVI} je jasné, že $\ind_\varphi s$ je počet otočení $\varphi$ kolem $s$ proti směru hodinových ručiček.
 \end{itemize}
 \end{note*}
 
@@ -59,7 +59,7 @@ Speciálně, $\text{ind}_\varphi s \in \Z$.
 Máme, že
 \begin{equation*}
 \begin{aligned}
-&\text{ind}_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=} \text{ind}_{\widetilde{\varphi}}0=\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Im \phi(\beta)-i \Im \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
+&\ind_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=} \ind_{\widetilde{\varphi}}0=\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Im \phi(\beta)-i \Im \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
 \end{aligned}
 \end{equation*}
 pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Re \phi (\beta)=\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Re \phi (\alpha)$ a $\Im \phi$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
@@ -77,21 +77,21 @@ Nechť $\Gamma = \{\varphi_1, ... ,\varpi_n\}$ je cyklus. Definujeme
     \item \emph{graf} $\Gamma$ jako $$\langle\Gamma\rangle:=\bigcup_{k=1}^n \langle\varphi_k\rangle,$$
     \item \emph{délku} $\Gamma$ jako $$V\left(\Gamma\right):=\sum_{k=1}^n V(\varphi_k),$$ 
     \item je-li $f$ spojitá na $\langle\Gamma\rangle$, pak $$\int_\Gamma f := \sum_{k=1}^n int_{\varphi_k}f,$$
-    \item \emph{index} $$\text{ind}_\Gamma(z_0):=\sum_{k=1}^n \text{ind}_{\varphi_k}(z_0) = \frac{1}{2\pi i}\int_\Gamma \frac{dz}{z-z_0},$$
-    \item \emph{vnitřek} $\Gamma$ jako $\text{Int}\Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)\neq 0\},$
-    \item \emph{vnějšek} $\Gamma$ jako $\text{Ext} \Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)=0\}.$
+    \item \emph{index} $$\ind_\Gamma(z_0):=\sum_{k=1}^n \ind_{\varphi_k}(z_0) = \frac{1}{2\pi i}\int_\Gamma \frac{dz}{z-z_0},$$
+    \item \emph{vnitřek} $\Gamma$ jako $\Int\Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \ind_\Gamma(z_0)\neq 0\},$
+    \item \emph{vnějšek} $\Gamma$ jako $\Ext \Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \ind_\Gamma(z_0)=0\}.$
 \end{itemize}
 \end{notation}
 
 \begin{note}
 \begin{itemize}
     \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\ind_\Gamma(z)\in\Z$ konstantní na každé komponentě $\Comp \setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\Comp \setminus\langle\Gamma\rangle$ leží v $\Ext\Gamma$.
-    \item Zřejmě máme rozklad $\Comp =\text{Int}\Gamma\cup\langle\Gamma\rangle\cup\text{Ext} \Gamma$, kde $\text{Int} \Gamma$, $\text{Ext} \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\text{Int} \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
+    \item Zřejmě máme rozklad $\Comp =\Int\Gamma\cup\langle\Gamma\rangle\cup\Ext \Gamma$, kde $\Int \Gamma$, $\Ext \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\Int \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
 \end{itemize}
 \end{note}
 
 \begin{example}
-Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\Comp : |z|=1\}$, $\text{Int}\psi=\emptyset$ a $\text{Ext}\psi=\Comp \setminus\langle\psi\rangle$.
+Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\Comp : |z|=1\}$, $\Int\psi=\emptyset$ a $\Ext\psi=\Comp \setminus\langle\psi\rangle$.
 \end{example}
 
 \begin{note}
@@ -109,7 +109,7 @@ právě tehdy, když $\Int\Gamma\subset G$.
 \end{theorem}
 
 \begin{example}
-Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq\infty$. Nechť $r<r_1<r_2<R$ a $\varphi_j(t):=z_0+r_je^{it}$, $t\in[0,2\pi]$. Potom víme, že $\int_{\varphi_1}f=\int_{\varphi_2}f$. Plyne to z předchozí věty pro $\Gamma:=\{\dotminus\varphi_1,\varphi_2\}$. Protože $\text{Int}\Gamma=P(z_0,r_1,r_2)$, máme $0=\int_\Gamma f = \int_{\varphi_1}f-\int_{\varphi_2}f$.
+Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq\infty$. Nechť $r<r_1<r_2<R$ a $\varphi_j(t):=z_0+r_je^{it}$, $t\in[0,2\pi]$. Potom víme, že $\int_{\varphi_1}f=\int_{\varphi_2}f$. Plyne to z předchozí věty pro $\Gamma:=\{\dotminus\varphi_1,\varphi_2\}$. Protože $\Int\Gamma=P(z_0,r_1,r_2)$, máme $0=\int_\Gamma f = \int_{\varphi_1}f-\int_{\varphi_2}f$.
 \end{example}
 
 \begin{theorem}[Reziduová pro cykly]

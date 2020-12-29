@@ -43,9 +43,9 @@ Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \N_0$
 
 kde první integrand vpravo má PF na $\Comp  $ a první integrál je roven $0$. Pro každé $j \in \N_0$ z  \cref{eqn:a},\cref{eqn:b} dostaneme
 $$
-0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\,\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \cdot \max_{<\varphi_j>}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
+0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\,\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \cdot \max_{\langle\varphi_j\rangle}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{\langle\varphi_j\rangle}|\varepsilon| \text{,}
 $$
-kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{<\varphi_j>}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
+kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z předchozího tedy máme (po vynásobení $4^j$): $0<K \le V^2(\varphi) \cdot \max\limits_{\langle\varphi_j\rangle}|\varepsilon| \rightarrow 0$, protože $\varepsilon$ je spojitá v $z_0$ a $\varepsilon(z_0)=0$. Což je spor.
 \end{proof}
 \newpage
 \begin{theorem}[Cauchyho věta pro hvězdovité oblasti]\label{thm:CaVpHvezdicObl}
@@ -87,15 +87,15 @@ Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varph
 \end{proof}
 
 \begin{definition}
-Nechť je $\varphi$ uzavřená křivka v $\Comp  $ a $s\in\Comp  \backslash \langle\varphi\rangle$. Potom číslo $$ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$$ nazveme \emph{indexem bodu $s$ vzhledem ke křivce $\varphi$} 
+Nechť je $\varphi$ uzavřená křivka v $\Comp  $ a $s\in\Comp  \backslash \langle\varphi\rangle$. Potom číslo $$\ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$$ nazveme \emph{indexem bodu $s$ vzhledem ke křivce $\varphi$} 
 \end{definition}%Důležité je, že křivka $\varphi$ neobsahuje $s$ tedy integrand nemá nikde singularitu.Takže ten integrál má smysl.
 \begin{note}%Geometrický význam tohoto indexu
-Ukážeme si, že $ind_{\varphi} s$ se rovná počtu oběhů $\varphi$ kolem $s$ v kladném směru (tzn. proti směru hodinových ručiček).
+Ukážeme si, že $\ind_{\varphi} s$ se rovná počtu oběhů $\varphi$ kolem $s$ v kladném směru (tzn. proti směru hodinových ručiček).
 \end{note}
 
 \begin{theorem}
 [o základních vlastnostech indexu] Nechť $\varphi$ je uzavřená křivka v $\Comp  $ a $G:=\Comp  \backslash\langle\varphi\rangle$. %$G$ je koplement, $\varphi$ je samozřejmě regulární a rozřeže nám tu rovinu na několik částí
-Potom je $G$ otevřená, funkce $s\mapsto ind_{\varphi} s$ je konstantní na každé komponentě $G$ a na jediné její neomezené komponentě je nulová. 
+Potom je $G$ otevřená, funkce $s\mapsto \ind_{\varphi} s$ je konstantní na každé komponentě $G$ a na jediné její neomezené komponentě je nulová. 
 \end{theorem}
 \begin{proof}
 \begin{itemize}
@@ -111,7 +111,7 @@ Potom je $G$ otevřená, funkce $s\mapsto ind_{\varphi} s$ je konstantní na ka�
 
 \begin{example}
 Nechť $z_{0}\in\Comp  \text{, }r>0\text{ a }\varphi(t):=z_{0}+r e^{it}\text{, }t\in [0,2\pi]$. %$z_0$ je bod v komplexní rovině, $\varphi$ je kladně orientovaná kružnice o středu $z_0$ a poloměru $r$.
-Potom $$ind_{\varphi}s=
+Potom $$\ind_{\varphi}s=
 \twopartdef
 {0}{|s-z_{0}|<r,}  %body uvnitř kružnice
 {1}{|s-z_{0}|>r.}$$ %body vně kružnice
@@ -119,7 +119,7 @@ Potom $$ind_{\varphi}s=
 
 % Kružnice nám rozřízne rovinu na vnitřek a vnějšek. Tedy komplement kružnice má dvě komponenty
 Spočetli jsme, že
-$ind_{\varphi}z_{0}=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{z-z_{0}}=1$.
+$\ind_{\varphi}z_{0}=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{z-z_{0}}=1$.
 %body uvitř kruhu mají index $=1$
 Zbytek plyne z předchozí věty.
 \end{example}
