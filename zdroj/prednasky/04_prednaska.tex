@@ -1,10 +1,10 @@
 \begin{note}
-Cauchyho věta -- Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\varphi$ je uzavřená křivka v $G$. Potom Cauchyho věty nám říkají za jakých podmínek na $G$ a $\varphi$ je $\int_\varphi f=0$.
+Cauchyho věta -- Nechť $G \subset \Comp  $ je otevřená, $f \in \Holo (G)$ a $\varphi$ je uzavřená křivka v $G$. Potom Cauchyho věty nám říkají za jakých podmínek na $G$ a $\varphi$ je $\int_\varphi f=0$.
 \end{note}%Na dnešní přednášce si ukážeme dvě verze Cauchyho věty.
 
 \begin{theorem}[Goursatovo lemma -- \uv{Cauchyho věta pro $\triangle$}]\label{thm:goursat}
 %obrázek
-Nechť $G \subset \mathbb{C}$ je otevřená, $f \in \mathcal{H}(G)$ a $\triangle$ je trojúhelník v $G$. Potom
+Nechť $G \subset \Comp  $ je otevřená, $f \in \Holo (G)$ a $\triangle$ je trojúhelník v $G$. Potom
 \begin{equation}
     \int_{\partial\triangle}f=0\text{.}
 \end{equation} 
@@ -32,7 +32,7 @@ $$\begin{aligned}
 \right.
 \end{aligned}
 $$
-Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
+Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \N_0$
 \begin{equation}
     \begin{aligned}
     \int_{\varphi_j}f(z) \diff z = \int_{\varphi_j}(f(z_0)+f'(z_0)(z-z_0)) \diff z + \int_{\varphi_j}\varepsilon(z)(z-z_0) \diff z \text{,}
@@ -41,7 +41,7 @@ Potom $\varepsilon$ je spojitá na $G$ a máme pro $j \in \mathbb{N}_0$
     \label{eqn:b}
 \end{equation}
 
-kde první integrand vpravo má PF na $\mathbb{C}$ a první integrál je roven $0$. Pro každé $j \in \mathbb{N}_0$ z  \cref{eqn:a},\cref{eqn:b} dostaneme
+kde první integrand vpravo má PF na $\Comp  $ a první integrál je roven $0$. Pro každé $j \in \N_0$ z  \cref{eqn:a},\cref{eqn:b} dostaneme
 $$
 0<\frac{K}{4^j} \le \left| \int_{\varphi_j}f\,\right|\stackrel{\cref{eqn:b}}{=} \left|\int_{\varphi_j}\varepsilon(z)(z-z_0)\right| \le V^2(\varphi_j) \cdot \max_{<\varphi_j>}|\varepsilon|\overset{\cref{eqn:a}}{=}\frac{V^2(\varphi)}{4^j}\cdot \max_{<\varphi_j>}|\varepsilon| \text{,}
 $$
@@ -49,7 +49,7 @@ kde třetí nerovnost platí díky tomu, že $|z-z_0| \le V(\varphi_j)$. Z před
 \end{proof}
 \newpage
 \begin{theorem}[Cauchyho věta pro hvězdovité oblasti]\label{thm:CaVpHvezdicObl}
-Nechť $G \subset \mathbb{C}$ je hvězdovitá oblast a  $f \in \mathcal{H}(G)$. Potom $f$ má na $G$ primitivní funkci. Ekvivalentně: platí, že $\int_\varphi f=0$ pro každou uzavřenou křivku $\varphi$ v $G$.
+Nechť $G \subset \Comp  $ je hvězdovitá oblast a  $f \in \Holo (G)$. Potom $f$ má na $G$ primitivní funkci. Ekvivalentně: platí, že $\int_\varphi f=0$ pro každou uzavřenou křivku $\varphi$ v $G$.
 \end{theorem}
 
 \begin{proof}
@@ -77,40 +77,40 @@ Nechť $\triangle$ je nedegenerovaný trojúhelník v $G$. Rozlišujeme případ
 \end{proof}
 
 \begin{theorem}[O derivování podle komplexního parametru] %Chceme si zavést pojem index bodu vůči křivce. K tomu potřebujeme rozšířit větu o derivování podle reálného parametru o komplexní parametr.
-Nechť $\varphi$ je křivka v $\mathbb{C}$ a $\Omega \subset \mathbb{C}$ je otevřená. Nechť $F(z,s)$ a komplexní derivace $\frac{\partial F}{\partial s}(z,s)$ %funkce dvou komplexních parametrů, přes $z$ budeme integrovat podle $\varphi$ a $s$ bude ten komplexní parametr, který běhá v množině $\Omega$. 
+Nechť $\varphi$ je křivka v $\Comp  $ a $\Omega \subset \Comp  $ je otevřená. Nechť $F(z,s)$ a komplexní derivace $\frac{\partial F}{\partial s}(z,s)$ %funkce dvou komplexních parametrů, přes $z$ budeme integrovat podle $\varphi$ a $s$ bude ten komplexní parametr, který běhá v množině $\Omega$. 
 jsou spojité komplexní funkce na $\langle\varphi\rangle\times\Omega$. Pro každé $s\in\Omega$ položme $\phi(s):=\int_{\varphi}F(z,s) dz$.
-Potom $\phi\in\mathcal{H}(\Omega)$ a $\phi'(s)=\int_{\varphi}\frac{\partial F}{\partial s}(z,s) dz\text{, }s\in\Omega$.
+Potom $\phi\in\Holo (\Omega)$ a $\phi'(s)=\int_{\varphi}\frac{\partial F}{\partial s}(z,s) dz\text{, }s\in\Omega$.
 \end{theorem}
 \begin{proof}
 %integrál závislý na komplexním parametru si můžeme přepsat jako integrál závislý na dvou reálných proměných.
-Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),(s_1,s_2))\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\mathbb{C}$. Podle vět o spojitosti a derivování integrálu závislého na reálných parametrech máme $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, pro }s\in\Omega$ a $j=1,2$ navíc jsou tyto parciální derivacespojité a splňují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splňují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostaneme, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
+Pro $s=s_1+is_2=(s_1,\ s_2)\in\Omega$ máme $\phi(s)=\int^\beta_{\alpha}F(\varphi(t),(s_1,s_2))\varphi'(t) dt$, pokud $\varphi\colon [\alpha,\beta]\rightarrow\Comp  $. Podle vět o spojitosti a derivování integrálu závislého na reálných parametrech máme $\frac{\partial \phi}{\partial s_j}(s)=\int_{\varphi}\frac{\partial F}{\partial s_j}(z,s) dz\text{, pro }s\in\Omega$ a $j=1,2$ navíc jsou tyto parciální derivacespojité a splňují   \cref{eqn:CR}-podmínky. To je vidět z toho, že $\frac{\partial F}{\partial s_j}(z,s)$, $j=1,2$ jsou spojité a splňují \cref{eqn:CR}-podmínky. Z \cref{eqn:CR} dostaneme, že funkce $\varphi$ je komplexně diferencovatelná a komplexní derivace se rovná derivaci vzhledem k té první proměnné. Odtud plyne věta. 
 \end{proof}
 
 \begin{definition}
-Nechť je $\varphi$ uzavřená křivka v $\mathbb{C}$ a $s\in\mathbb{C}\backslash \langle\varphi\rangle$. Potom číslo $$ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$$ nazveme \emph{indexem bodu $s$ vzhledem ke křivce $\varphi$} 
+Nechť je $\varphi$ uzavřená křivka v $\Comp  $ a $s\in\Comp  \backslash \langle\varphi\rangle$. Potom číslo $$ind_{\varphi} s:=\frac{1}{2\pi i}\int_{\varphi} \frac{dz}{z-s}$$ nazveme \emph{indexem bodu $s$ vzhledem ke křivce $\varphi$} 
 \end{definition}%Důležité je, že křivka $\varphi$ neobsahuje $s$ tedy integrand nemá nikde singularitu.Takže ten integrál má smysl.
 \begin{note}%Geometrický význam tohoto indexu
 Ukážeme si, že $ind_{\varphi} s$ se rovná počtu oběhů $\varphi$ kolem $s$ v kladném směru (tzn. proti směru hodinových ručiček).
 \end{note}
 
 \begin{theorem}
-[o základních vlastnostech indexu] Nechť $\varphi$ je uzavřená křivka v $\mathbb{C}$ a $G:=\mathbb{C}\backslash\langle\varphi\rangle$. %$G$ je koplement, $\varphi$ je samozřejmě regulární a rozřeže nám tu rovinu na několik částí
+[o základních vlastnostech indexu] Nechť $\varphi$ je uzavřená křivka v $\Comp  $ a $G:=\Comp  \backslash\langle\varphi\rangle$. %$G$ je koplement, $\varphi$ je samozřejmě regulární a rozřeže nám tu rovinu na několik částí
 Potom je $G$ otevřená, funkce $s\mapsto ind_{\varphi} s$ je konstantní na každé komponentě $G$ a na jediné její neomezené komponentě je nulová. 
 \end{theorem}
 \begin{proof}
 \begin{itemize}
     \item[(i)] Podle předchozí věty je $\phi(s):=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{z-s}\text{, }s\in G$  %$\phi(s)$ je index toho bodu $s$ vůči té křivce $\varphi$
-    holomorfní a pro každé $s\in G$ je $\phi'(s)=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{(z-s)^2}=0$, protože $f(z):=\frac{1}{(z-s)^2}$ má PF na $\mathbb{C}\backslash\{s\}$. %integrujeme funkci co má PF přes uzavřenou křivku, proto $=0$
+    holomorfní a pro každé $s\in G$ je $\phi'(s)=\frac{1}{2\pi i}\int_{\varphi}\frac{dz}{(z-s)^2}=0$, protože $f(z):=\frac{1}{(z-s)^2}$ má PF na $\Comp  \backslash\{s\}$. %integrujeme funkci co má PF přes uzavřenou křivku, proto $=0$
     Tedy $\phi$ je konstantní na každé komponentě $G$.
     \item[(ii)]%Jak to vypadá na té jediné neomezené komponentě
-    Volíme $R>0$, aby $\langle\varphi\rangle\subset U(0,\, R)$. Potom $\mathbb{C}\backslash U(0,\, R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\mathbb{C}\backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,\, R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
+    Volíme $R>0$, aby $\langle\varphi\rangle\subset U(0,\, R)$. Potom $\Comp  \backslash U(0,\, R)$ je obsaženo v jediné neomezené komponentě $G_{0}$ množiny $G$. Navíc pro $s\in\Comp  \backslash U(0,R)$ je funkce $g(z):=\frac{1}{z-s}\text{, }z\in U(0,\, R)$ holomorfní a dle Cauchyho věty pro hvězdovitou oblast %neb kruh je hvězdovitá oblast
     je $\phi(s)=0$
 \end{itemize}
 
 \end{proof}
 
 \begin{example}
-Nechť $z_{0}\in\mathbb{C}\text{, }r>0\text{ a }\varphi(t):=z_{0}+r e^{it}\text{, }t\in [0,2\pi]$. %$z_0$ je bod v komplexní rovině, $\varphi$ je kladně orientovaná kružnice o středu $z_0$ a poloměru $r$.
+Nechť $z_{0}\in\Comp  \text{, }r>0\text{ a }\varphi(t):=z_{0}+r e^{it}\text{, }t\in [0,2\pi]$. %$z_0$ je bod v komplexní rovině, $\varphi$ je kladně orientovaná kružnice o středu $z_0$ a poloměru $r$.
 Potom $$ind_{\varphi}s=
 \twopartdef
 {0}{|s-z_{0}|<r,}  %body uvnitř kružnice

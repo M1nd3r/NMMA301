@@ -1,7 +1,7 @@
 \section{\texorpdfstring{Křivkový integrál}{Krivkový integrál}}
 %Chceme integrovat komplexní funkci jedné komplexní proměnné podél křivky v komplexní rovině tj. chceme zavést integrál funkce podél křivky. 
 \begin{definition}
-Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
+Nechť $\varphi:[\alpha,\beta] \rightarrow \Comp  $. Potom
 \begin{enumerate}
     \item $\varphi$ je \emph{křivka}, pokud je $\varphi$ spojitá
     \item $\varphi$ je \emph{regulární křivka}, pokud je $\varphi$ po částech spojitě diferencovatelná, tzn. $\varphi$ je spojitá na $[\alpha,\beta]$ a existuje dělení $\alpha = t_0<t_1<\cdots <t_n=\beta$ takové, že
@@ -13,21 +13,21 @@ Nechť $\varphi:[\alpha,\beta] \rightarrow \mathbb{C}$. Potom
 \end{definition}
 
 \begin{definition}[Úsečka]
-Nechť $a, b \in \mathbb{C}$. Potom $\varphi(t):= a + t(b-a)$, $ t \in [0,1]$ je úsečka z \emph{a} do \emph{b}. Značíme $[a;b]$.%Místo ',' píšeme ';' abychom to odlišili od značení pro reálný interval.
+Nechť $a, b \in \Comp  $. Potom $\varphi(t):= a + t(b-a)$, $ t \in [0,1]$ je úsečka z \emph{a} do \emph{b}. Značíme $[a;b]$.%Místo ',' píšeme ';' abychom to odlišili od značení pro reálný interval.
 \end{definition} 
 
 \begin{notation}
-Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ a $\psi:[\gamma,\delta]\rightarrow\mathbb{C}$ jsou (regulární) křivky. Potom jejich \emph{součet} je regulární křivka.
+Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ a $\psi:[\gamma,\delta]\rightarrow\Comp  $ jsou (regulární) křivky. Potom jejich \emph{součet} je regulární křivka.
 $(\varphi \dotplus \psi)(t) := 
 \twopartdef { \varphi(t) } {t \in[\alpha,\beta]} {\psi(t-\beta+\gamma)} {t \in[\beta,\delta+\beta-\gamma]}$, pokud $\varphi(\beta)=\psi(\gamma)$.
 \end{notation}
 
 \begin{definition}[Lomenná čára]
-Řekneme, že regulární křivka $\varphi$ je \emph{lomenná čára} v $\mathbb{C}$, existují-li $z_1,z_2,\cdots,z_k \in \mathbb{C}$ taková, že $\varphi=[z_1;z_2]\dotplus[z_2;z_3]\dotplus\cdots\dotplus[z_{k-1};z_k]$.% Regulární křivka je lomennou čarou, pokud ji dostanu jako součet konečně mnoha úseček.
+Řekneme, že regulární křivka $\varphi$ je \emph{lomenná čára} v $\Comp  $, existují-li $z_1,z_2,\cdots,z_k \in \Comp  $ taková, že $\varphi=[z_1;z_2]\dotplus[z_2;z_3]\dotplus\cdots\dotplus[z_{k-1};z_k]$.% Regulární křivka je lomennou čarou, pokud ji dostanu jako součet konečně mnoha úseček.
 \end{definition}
 
 \begin{definition}[Kružnice]
-Nechť $z_0\in\mathbb{C}$ a $r>0$. Potom $\varphi(t):=z_0+re^{it}$, $t\in [0,2\pi]$ je \emph{kružnice} probíhaná v kladném směru (proti směru hodinových ručiček).
+Nechť $z_0\in\Comp  $ a $r>0$. Potom $\varphi(t):=z_0+re^{it}$, $t\in [0,2\pi]$ je \emph{kružnice} probíhaná v kladném směru (proti směru hodinových ručiček).
 \end{definition}
 
 \begin{note}
@@ -35,7 +35,7 @@ Pro křivku $\varphi$ může být její graf $\langle\varphi\rangle:=\varphi([\a
 \end{note}
 
 \begin{agreement}
-Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulární křivku v $\mathbb{C}$}. %Z toho důvodu, abychom se vyhnuli divným případům jako je třeba právě Peanova křivka.
+Pokud neřekneme něco jiného, \emph{křivkou} budeme rozumět \emph{regulární křivku v $\Comp  $}. %Z toho důvodu, abychom se vyhnuli divným případům jako je třeba právě Peanova křivka.
 \end{agreement}
 
 \begin{reminder}
@@ -51,7 +51,7 @@ Jako v MA definujeme
 \end{enumerate}
 \end{reminder}
 \begin{definition}
-Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f:\langle\varphi\rangle\rightarrow\mathbb{C}$ je spojitá. Potom definujeme
+Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ je regulární křivka a $f:\langle\varphi\rangle\rightarrow\Comp  $ je spojitá. Potom definujeme
 \begin{equation}\label{krivkovyIntegral}
     \int_\varphi f:=\int_\alpha^\beta f\big(\varphi(t)\big)\varphi'(t)\diff t
 \end{equation}
@@ -69,7 +69,7 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \mbox{}
 \vspace{-2em}
 \begin{enumerate}
-    \item Je-li $\varphi$ křivka, $f$ a $g$ jsou spojité funkce na $\langle\varphi\rangle$ a $A,B \in \mathbb{C}$, potom $$\int_\varphi (Af+Bg)=A\int_\varphi f+B\int_\varphi g.$$
+    \item Je-li $\varphi$ křivka, $f$ a $g$ jsou spojité funkce na $\langle\varphi\rangle$ a $A,B \in \Comp  $, potom $$\int_\varphi (Af+Bg)=A\int_\varphi f+B\int_\varphi g.$$
     \item Je-li $\varphi$ křivka a $f$ je spojitá funkce na $\langle\varphi\rangle$, potom $$\left|\int_\varphi f\right|\leq\max_{\langle\varphi\rangle}|f|\cdot V(\varphi).$$
     \begin{proof}
      Označíme $M:=\max_{\langle\varphi\rangle}|f|$. Potom máme
@@ -82,7 +82,7 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
      \end{multline*}
     \end{proof}
     \item Nechť %Křivkový integrál je lineární i v tom integračním oboru.
-    $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$, $\psi:[\gamma,\delta],\rightarrow\mathbb{C}$ jsou křivky a $\varphi(\beta)=\psi(\gamma)$. Potom 
+    $\varphi:[\alpha,\beta]\rightarrow\Comp  $, $\psi:[\gamma,\delta],\rightarrow\Comp  $ jsou křivky a $\varphi(\beta)=\psi(\gamma)$. Potom 
     \begin{align*}
         \int_{\varphi\dotplus\psi}f&=\int_\varphi f+\int_\psi f \\ 
         &\text{a} \\
@@ -90,7 +90,7 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
     \end{align*}
     kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k %pokud integruju v opačném směru tak se mi nezmění velikost integrálu, pouze jeho znaménko.
     $\varphi$.
-    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. %\Omega je změna parametrizace křivky \varphi.
+    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. %\Omega je změna parametrizace křivky \varphi.
     Potom $$\int_\varphi f = \int_\psi f\text{.}$$
     \begin{proof}
     \begin{multline*}
@@ -103,18 +103,18 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\mathbb{C}$ je regulární křivka a $f
 \end{enumerate}
 \end{propertiesBasic}
 \begin{definition}
-Řekneme, že funkce $f$ má na otevřené $G\subset\mathbb{C}$ \emph{primitivní funkci F}, pokud $F'=f$ na $G$.
+Řekneme, že funkce $f$ má na otevřené $G\subset\Comp  $ \emph{primitivní funkci F}, pokud $F'=f$ na $G$.
 \end{definition}
 
 \begin{example}
 $\frac{z^{n+1}}{n+1}$ je primitivní funkcí k $z^n$
 $$\twopartdef
-{\text{na } \mathbb{C}}{n=0,1,2,3, \dots}
-{\text{na } \mathbb{C}\setminus\{0\}}{n=-2,-3,-4, \dots}$$
+{\text{na } \Comp  }{n=0,1,2,3, \dots}
+{\text{na } \Comp  \setminus\{0\}}{n=-2,-3,-4, \dots}$$
 \end{example}
 
 \begin{theorem}[O výpočtu křivkového integrálu pomocí PF]
-Nechť $G\subset\mathbb{C}$ je otevřená a $f$ má na $G$ primitivní funkci $F$. Nechť $\varphi:[\alpha,\,\beta]\rightarrow G$ je křivka a $f$ je spojitá$\phantomsection$\hyperref[$^{(*)}$end]{$^{(*)}$} \label{^{(*)}start}na $\langle\varphi\rangle$. Potom
+Nechť $G\subset\Comp  $ je otevřená a $f$ má na $G$ primitivní funkci $F$. Nechť $\varphi:[\alpha,\,\beta]\rightarrow G$ je křivka a $f$ je spojitá$\phantomsection$\hyperref[$^{(*)}$end]{$^{(*)}$} \label{^{(*)}start}na $\langle\varphi\rangle$. Potom
 \begin{enumerate}
     \item $\int_\varphi f=F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)$
     \item $\int_\varphi f=0$, je-li $\varphi$ \emph{uzavřená}, tzn. $\varphi(\alpha)=\varphi(\beta)$
@@ -137,14 +137,14 @@ F\bigl(\varphi(\beta)\bigr)-F\bigl(\varphi(\alpha)\bigr)\text{.}$$
 \begin{example}
 \mbox{}
 \begin{itemize}
-    \item $\frac{1}{z}$ je holomorfní na $\mathbb{C}\setminus\{0\}$, ale na $\mathbb{C}\setminus\{0\}$ \emph{nemá} primitivní funkci, neboť víme $$\int_\varphi \frac{\diff z}{z}=2\pi i \neq 0 \text{ pro } \varphi(t)=e^{it}\text{, } t \in [0,¨,2\pi]\text{.}$$ 
-    \item $\frac{1}{z}$ má na $\mathbb{C}\setminus(-\infty,¨,0]$ primitivní funkci $\log(z)$. $$\log'(z)=\frac{1}{z}\text{.}$$
+    \item $\frac{1}{z}$ je holomorfní na $\Comp\setminus\{0\}$, ale na $\Comp\setminus\{0\}$ \emph{nemá} primitivní funkci, neboť víme $$\int_\varphi \frac{\diff z}{z}=2\pi i \neq 0 \text{ pro } \varphi(t)=e^{it}\text{, } t \in [0,\,2\pi]\text{.}$$ 
+    \item $\frac{1}{z}$ má na $\Comp  \setminus(-\infty,\,0]$ primitivní funkci $\log(z)$. $$\log'(z)=\frac{1}{z}\text{.}$$
 \end{itemize}
 %V reálném oboru je existence PF vlastnost lokální, v komplexním oboru je to vlastnost globální (záleží na vlastnostech té množiny na které tu PF hledám)
 \end{example}
 
 \begin{reminder}[Souvislost]
-Nechť $G\subset\mathbb{C}(\mathbb{R}^n)$ otevřená. Následující tvrzení jsou ekvivalentní:
+Nechť $G\subset\Comp  (\Real ^n)$ otevřená. Následující tvrzení jsou ekvivalentní:
 
 \begin{enumerate}[(a)]
     \item $G$ je \emph{souvislá}, tj. $G$ je \emph{oblast}.
@@ -157,7 +157,7 @@ $(a)\iff (b)$: víte z MA; $(c)\Rightarrow(b)$: jasné; $(a)\Rightarrow(c)$: uk�
 \end{proof}
 
 \begin{theorem}
-Funkce $f$ je konstantní na oblasti $G\subset\mathbb{C}$, právě když $f'=0$ na $G$.
+Funkce $f$ je konstantní na oblasti $G\subset\Comp  $, právě když $f'=0$ na $G$.
 \end{theorem}
 \begin{proof}
 $\Rightarrow$ Jasné.\\
@@ -165,7 +165,7 @@ $\Leftarrow$ Nechť $z,w\in G$ a $\varphi$ je lomená čára v $G$ spojující $
 \end{proof}
 
 \begin{consequence}
-Jsou-li $F_1, \, F_2$ primitivní funkce k $f$ na \emph{oblasti} $G\subset\mathbb{C}$, potom existuje $c\in\mathbb{C}$ tak, že $F_2=F_1+c$.
+Jsou-li $F_1, \, F_2$ primitivní funkce k $f$ na \emph{oblasti} $G\subset\Comp  $, potom existuje $c\in\Comp  $ tak, že $F_2=F_1+c$.
 \end{consequence}
 
 \begin{proof}
@@ -173,7 +173,7 @@ $$(F_2-F_1)'=F'_2-F'_1=f-f=0\text{.}$$
 \end{proof}
 
 \begin{theorem}[O existenci primitivní funkce]\label{thm:oExistenciPF}
-Nechť $G\subset\mathbb{C}$ je oblast a $f$ je spojitá na $G$. Následující tvrzení jsou ekvivalentní:
+Nechť $G\subset\Comp  $ je oblast a $f$ je spojitá na $G$. Následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item $f$ má na $G$ primitivní funkci.
     \item $\int_\varphi f=0$ pro každou \emph{uzavřenou} křivku $\varphi$ v $G$.
@@ -205,13 +205,13 @@ ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
 \mbox{}
 \begin{enumerate}
     \item 
-        Řekneme, že $M\subset\mathbb{C}$ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0;\,z]\subset M$ pro každé $z\in M$.
+        Řekneme, že $M\subset\Comp  $ je \emph{hvězdovitá}, pokud existuje $z_0\in M$ (tzv. \emph{střed hvězdovitosti}), pro který $[z_0;\,z]\subset M$ pro každé $z\in M$.
         \begin{note*}
             Konvexní $\subsetneq$ hvězdovitá.
         \end{note*}
     \item
-        Řekneme, že $\triangle\subset\mathbb{C}$ 
-        je \emph{trojúhelník} s vrcholy $a,b,c\in\mathbb{C}$, 
+        Řekneme, že $\triangle\subset\Comp  $ 
+        je \emph{trojúhelník} s vrcholy $a,b,c\in\Comp  $, 
         pokud $$\triangle:=\left\{ \alpha a+\beta b + \gamma c\text{ }|\text{ }\alpha,\,\beta,\,\gamma\geq 0,\alpha+\beta+\gamma=1 \right\}$$ (\emph{konvexní obal }$a,b,c$) a značíme
         $\partial\triangle:=[a;b]\dotplus[b;c]\dotplus[c;a]$. 
         Připouštíme i degenerované $\triangle$, tzn. $a,b,c$ mohou ležet na jedné přímce nebo body $a,b,c$ mohou splývat...
@@ -219,7 +219,7 @@ ze spojitosti $f$ v $z_1$. Máme, že $F'(z_1)=f(z_1)$.
 \end{notation}
 
 \begin{amendment}
-Nechť $f$ je spojitá funkce na \emph{hvězdovité} oblasti $G\subset\mathbb{C}.$ Je-li
+Nechť $f$ je spojitá funkce na \emph{hvězdovité} oblasti $G\subset\Comp  .$ Je-li
 \begin{equation}\label{intTriangle}
     \int_{\partial\triangle}f=0\text{,}
 \end{equation}

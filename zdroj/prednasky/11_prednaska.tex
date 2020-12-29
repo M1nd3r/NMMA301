@@ -3,11 +3,11 @@ Otázka: Jak ind$_\varphi s$ vypočítat? BÚNO: $s=0$.
 \end{note}
 
 \begin{notation}[Polární vyjádření]
-Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá. Víme: $0 \neq z = |z|e^{i \theta}=e^{\phi}$, kde $\theta \in \Arg(z)$ a $\phi = \log|z| + i \theta \in \Log(z)$. $\forall t \in [\alpha, \beta]: 0 \neq \varphi(t)=|\varphi(t)|e^{i \theta(t)}=e^{ \phi(t)}$, kde $\theta(t) \in \Arg(\varphi(t))$ a $\phi(t)=\log|\varphi(t)|+i \theta(t) \in \Log(\varphi(t))$.
+Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Víme: $0 \neq z = |z|e^{i \theta}=e^{\phi}$, kde $\theta \in \Arg(z)$ a $\phi = \log|z| + i \theta \in \Log(z)$. $\forall t \in [\alpha, \beta]: 0 \neq \varphi(t)=|\varphi(t)|e^{i \theta(t)}=e^{ \phi(t)}$, kde $\theta(t) \in \Arg(\varphi(t))$ a $\phi(t)=\log|\varphi(t)|+i \theta(t) \in \Log(\varphi(t))$.
 \end{notation}
 
 \begin{definition}
-Nechť $\varphi: [\alpha,\,\beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá. Řekneme, že $\theta: [\alpha, \beta] \rightarrow \mathbb{R}$ (resp. $\phi: [\alpha, \beta] \rightarrow \mathbb{C}$) je jednoznačná větev argumentu (resp. jednoznačná větev logaritmu) křivky $\varphi$, pokud je $\theta$ (resp. $\phi$) spojitá na $[\alpha, \beta]$ a $\forall t \in [\alpha, \beta]:  \theta(t) \in \Arg(\varphi(t))$ (resp. $\phi(t) \in \Log(\varphi(t))$).
+Nechť $\varphi: [\alpha,\,\beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Řekneme, že $\theta: [\alpha, \beta] \rightarrow \Real$ (resp. $\phi: [\alpha, \beta] \rightarrow \Comp $) je jednoznačná větev argumentu (resp. jednoznačná větev logaritmu) křivky $\varphi$, pokud je $\theta$ (resp. $\phi$) spojitá na $[\alpha, \beta]$ a $\forall t \in [\alpha, \beta]:  \theta(t) \in \Arg(\varphi(t))$ (resp. $\phi(t) \in \Log(\varphi(t))$).
 \end{definition}
 
 \begin{note}
@@ -15,37 +15,37 @@ Vždy existuje jednoznačná větev argumentu a logaritmu pro spojitou křivku $
 \end{note}
 
 \begin{theorem}[O jednoznačnosti jednoznačné větve argumentu a logaritmu]
-Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je spojitá křivka. Potom
+Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá křivka. Potom
 \begin{itemize}
     \item $\phi$ je jednoznačná větev logaritmu $\varphi$, právě když $\Re \phi = \log|\varphi|$ a $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
-    \item Jsou-li $\theta_1, \theta_2$ jednoznačné větve argumentu $\varphi$, potom existuje $k \in \mathbb{Z}$, že $\theta_2=\theta_1 + 2 k \pi $.
+    \item Jsou-li $\theta_1, \theta_2$ jednoznačné větve argumentu $\varphi$, potom existuje $k \in \Z$, že $\theta_2=\theta_1 + 2 k \pi $.
 \end{itemize}
 \end{theorem}
 
 \begin{proof}
 \begin{itemize}
     \item Z definice argumentu a logaritmu.
-    \item Pro $\forall t \in [\alpha, \beta]$ existuje $k (t) \in \mathbb{Z}$, že $\theta_2(t)=\theta_1(t) + 2 k(t) \pi$. Protože $k:  [\alpha, \beta] \rightarrow \mathbb{Z}$ je spojitá a $[\alpha, \beta]$ je souvislá, je $k$ konstantní na $[\alpha, \beta]$.
+    \item Pro $\forall t \in [\alpha, \beta]$ existuje $k (t) \in \Z$, že $\theta_2(t)=\theta_1(t) + 2 k(t) \pi$. Protože $k:  [\alpha, \beta] \rightarrow \Z$ je spojitá a $[\alpha, \beta]$ je souvislá, je $k$ konstantní na $[\alpha, \beta]$.
 \end{itemize}
 \end{proof}
 
 \begin{theorem}[O existenci jednoznačné větve logaritmu pro regulární křivky]
-Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C} \setminus \{0\}$ je regulární křivka. Potom existuje jednoznačná větev logaritmu $\phi$ křivky $\varphi$ a platí, že
+Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je regulární křivka. Potom existuje jednoznačná větev logaritmu $\phi$ křivky $\varphi$ a platí, že
 $$
 \int_\varphi \frac{\diff z}{z}=\phi(\beta) - \phi(\alpha) \text{.}
 $$
 Navíc $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
 \end{theorem}
 \begin{proof}
-Hledáme spojité $\phi$ takové, že $\varphi=e^\phi$. Zřejmě $\int_\varphi \frac{\diff z}{z}=\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)} \diff t$. Položme $\phi_0(s):=\int_\alpha^s \frac{\varphi'(t)}{\varphi(t)} \diff t$, $s \in [\alpha, \beta]$. Potom $\phi_0$ je spojitá na $[\alpha, \beta]$ a $\phi_0'=\frac{\varphi'}{\varphi}$ na $[\alpha, \beta] \setminus K$, kde $K$ je konečná. Potom na $[\alpha, \beta] \setminus K$ je $(\varphi e^{-\phi_0})'=(\varphi' - \varphi \phi_0') e^{-\phi_0}=0$. Tedy existuje $c \in \mathbb{C}$, že $\varphi e^{-\phi_0}=e^c$ na $[\alpha, \beta]$. Položme $\phi:=\phi_0+c$.
+Hledáme spojité $\phi$ takové, že $\varphi=e^\phi$. Zřejmě $\int_\varphi \frac{\diff z}{z}=\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)} \diff t$. Položme $\phi_0(s):=\int_\alpha^s \frac{\varphi'(t)}{\varphi(t)} \diff t$, $s \in [\alpha, \beta]$. Potom $\phi_0$ je spojitá na $[\alpha, \beta]$ a $\phi_0'=\frac{\varphi'}{\varphi}$ na $[\alpha, \beta] \setminus K$, kde $K$ je konečná. Potom na $[\alpha, \beta] \setminus K$ je $(\varphi e^{-\phi_0})'=(\varphi' - \varphi \phi_0') e^{-\phi_0}=0$. Tedy existuje $c \in \Comp $, že $\varphi e^{-\phi_0}=e^c$ na $[\alpha, \beta]$. Položme $\phi:=\phi_0+c$.
 \end{proof}
 
 \begin{theorem}[O výpočtu indexu]
-Nechť $\varphi: [\alpha, \beta] \rightarrow \mathbb{C}$ je uzavřená regulární křivka a $s \in \mathbb{C}\setminus \langle \varphi \rangle$. Nechť $\widetilde{\varphi}:=\varphi-s$ a $\theta$ je jednoznačná větev argumentu křivky $\widetilde{\varphi}$. Potom
+Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp $ je uzavřená regulární křivka a $s \in \Comp \setminus \langle \varphi \rangle$. Nechť $\widetilde{\varphi}:=\varphi-s$ a $\theta$ je jednoznačná větev argumentu křivky $\widetilde{\varphi}$. Potom
 \begin{equation}\tag{oVI}\label{OVI}
     \text{ind}_\varphi s= \text{ind}_{\widetilde{\varphi}}0=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}\text{.}
 \end{equation}
-Speciálně, $\text{ind}_\varphi s \in \mathbb{Z}$.
+Speciálně, $\text{ind}_\varphi s \in \Z$.
 \end{theorem}
 
 \begin{note*}
@@ -62,13 +62,13 @@ Máme, že
 &\text{ind}_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=} \text{ind}_{\widetilde{\varphi}}0=\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Im \phi(\beta)-i \Im \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
 \end{aligned}
 \end{equation*}
-pro nějaké $K \in \mathbb{Z}$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Re \phi (\beta)=\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Re \phi (\alpha)$ a $\Im \phi$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
+pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Re \phi (\beta)=\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Re \phi (\alpha)$ a $\Im \phi$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
 \end{proof}
 
 \section{Obecná Cauchyho věta a reziduová věta pro cykly}
 
 \begin{definition}
-Konečnou posloupnost $\Gamma:=\{\varphi_1, ... ,\varpi_n\}$, kde $n\in\mathbb{N}$ a $\varphi_1, ... \varphi_n$ jsou uzavřené (regulární) křivky v $\mathbb{C}$, budeme nazývat \emph{cyklus}.
+Konečnou posloupnost $\Gamma:=\{\varphi_1, ... ,\varpi_n\}$, kde $n\in\N$ a $\varphi_1, ... \varphi_n$ jsou uzavřené (regulární) křivky v $\Comp $, budeme nazývat \emph{cyklus}.
 \end{definition}
 
 \begin{notation}
@@ -78,20 +78,20 @@ Nechť $\Gamma = \{\varphi_1, ... ,\varpi_n\}$ je cyklus. Definujeme
     \item \emph{délku} $\Gamma$ jako $$V\left(\Gamma\right):=\sum_{k=1}^n V(\varphi_k),$$ 
     \item je-li $f$ spojitá na $\langle\Gamma\rangle$, pak $$\int_\Gamma f := \sum_{k=1}^n int_{\varphi_k}f,$$
     \item \emph{index} $$\text{ind}_\Gamma(z_0):=\sum_{k=1}^n \text{ind}_{\varphi_k}(z_0) = \frac{1}{2\pi i}\int_\Gamma \frac{dz}{z-z_0},$$
-    \item \emph{vnitřek} $\Gamma$ jako $\text{Int}\Gamma:=\{z_0\in\mathbb{C}\setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)\neq 0\},$
-    \item \emph{vnějšek} $\Gamma$ jako $\text{Ext} \Gamma:=\{z_0\in\mathbb{C}\setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)=0\}.$
+    \item \emph{vnitřek} $\Gamma$ jako $\text{Int}\Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)\neq 0\},$
+    \item \emph{vnějšek} $\Gamma$ jako $\text{Ext} \Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \text{ind}_\Gamma(z_0)=0\}.$
 \end{itemize}
 \end{notation}
 
 \begin{note}
 \begin{itemize}
-    \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\ind_\Gamma(z)\in\Z$ konstantní na každé komponentě $\mathbb{C}\setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\mathbb{C}\setminus\langle\Gamma\rangle$ leží v $\Ext\Gamma$.
-    \item Zřejmě máme rozklad $\mathbb{C}=\text{Int}\Gamma\cup\langle\Gamma\rangle\cup\text{Ext} \Gamma$, kde $\text{Int} \Gamma$, $\text{Ext} \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\text{Int} \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
+    \item Rozmyslete si, že podobně jako pro křivky, je zobrazení $z\mapsto\ind_\Gamma(z)\in\Z$ konstantní na každé komponentě $\Comp \setminus\langle\Gamma\rangle$ a jediná neomezená komponenta $\Comp \setminus\langle\Gamma\rangle$ leží v $\Ext\Gamma$.
+    \item Zřejmě máme rozklad $\Comp =\text{Int}\Gamma\cup\langle\Gamma\rangle\cup\text{Ext} \Gamma$, kde $\text{Int} \Gamma$, $\text{Ext} \Gamma$ jsou otevřené a $\langle\Gamma\rangle$, $\text{Int} \Gamma\cup\langle\Gamma\rangle$ jsou kompaktní.
 \end{itemize}
 \end{note}
 
 \begin{example}
-Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\mathbb{C}: |z|=1\}$, $\text{Int}\psi=\emptyset$ a $\text{Ext}\psi=\mathbb{C}\setminus\langle\psi\rangle$.
+Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\Comp : |z|=1\}$, $\text{Int}\psi=\emptyset$ a $\text{Ext}\psi=\Comp \setminus\langle\psi\rangle$.
 \end{example}
 
 \begin{note}
@@ -99,9 +99,9 @@ Uzavřenou křivku $\varphi$ chápeme jako cyklus $\Gamma:=\{\varphi\}$.
 \end{note}
 
 \begin{theorem}[Obecná Cauchyho pro cykly]\label{thm:obCapC}
-Nechť $G\subset\mathbb{C}$ je otevřená a $\Gamma$ je cyklus v $G$, tedy $\langle\Gamma\rangle\subset G$. Potom platí, že
+Nechť $G\subset\Comp $ je otevřená a $\Gamma$ je cyklus v $G$, tedy $\langle\Gamma\rangle\subset G$. Potom platí, že
 \begin{equation}
-    \forall f\in\mathcal{H}(G):\ \int_\Gamma f =0,
+    \forall f\in\Holo(G):\ \int_\Gamma f =0,
     \tag{CV}
     \label{eqn:7.30.cv}
 \end{equation}
@@ -113,7 +113,7 @@ Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq
 \end{example}
 
 \begin{theorem}[Reziduová pro cykly]
-Nechť $G\subset\mathbb{C}$ je otevřená, $\Gamma$ je cyklus v $G$ a $\Int\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\Holo(G\setminus K)$. Potom platí
+Nechť $G\subset\Comp$ je otevřená, $\Gamma$ je cyklus v $G$ a $\Int\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\Holo(G\setminus K)$. Potom platí
 \begin{equation}
     \int_\Gamma f = 2\pi i  \sum_{s\in K}\text{res}_s(f)\cdot\ind_\Gamma(s).
     \tag{RVC}

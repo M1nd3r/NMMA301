@@ -4,23 +4,23 @@
 
 % stránka číslo 2 první přednášky
 
-\textbf{$\mathbb{R}^2$} je reálný vektorový prostor dimenze 2. Definujeme v něm \emph{Euklidovskou normu} a \emph{metriku}:
+\textbf{$\Real ^2$} je reálný vektorový prostor dimenze 2. Definujeme v něm \emph{Euklidovskou normu} a \emph{metriku}:
 \begin{itemize}
-    \item $|z| = \sqrt{x^2+y^2}$, $z = (x,y)\in\mathbb{R}^2$
-    \item $\rho(z,w):= |z-w|$, $z,w\in\mathbb{R}^2$
+    \item $|z| = \sqrt{x^2+y^2}$, $z = (x,y)\in\Real ^2$
+    \item $\rho(z,w):= |z-w|$, $z,w\in\Real ^2$
 \end{itemize}
 
 \begin{definition}
-Prostor $\mathbb{C}$ je prostor $\mathbb{R}^2$, v němž definujeme navíc:
+Prostor $\Comp  $ je prostor $\Real ^2$, v němž definujeme navíc:
 \begin{itemize}
     \item násobení $(x,y)\cdot(u,v) = (xu-yv, xv+yu)$
-    \item ztotožňujeme $(x,0) \cong x$, neboli $\mathbb{R}\subset\mathbb{C}$
+    \item ztotožňujeme $(x,0) \cong x$, neboli $\Real \subset\Comp  $
     \item značíme $i = (0,1)$
 \end{itemize}
 \end{definition}
 
 \begin{notation}
-Nechť $z = x+iy$, kde $x,y\in\mathbb{R}$. Potom
+Nechť $z = x+iy$, kde $x,y\in\Real $. Potom
 \begin{itemize}
     \item $\overline{z}:= x-iy$ je \textit{komplexně sdružené číslo} k $z$,
     \item $Re(z):= x$ je \textit{reálná část} $z$, $Im(z):= y$ je \textit{imaginární část} $z$,
@@ -29,20 +29,20 @@ Nechť $z = x+iy$, kde $x,y\in\mathbb{R}$. Potom
 \end{notation} 
 
 \begin{properties}
-Vlastnosti $\mathbb{C}$. Nechť $z = (x,y)\in\mathbb{C}$.
+Vlastnosti $\Comp  $. Nechť $z = (x,y)\in\Comp  $.
 \begin{itemize}
     \item Potom $z = x+iy$ a $(\pm i)^2 = -1$.
-    \item Násobení v $\mathbb{C}$ zahrnuje násobení v $\mathbb{R}$ i násobení skalárem v $\mathbb{R}^2$.
+    \item Násobení v $\Comp  $ zahrnuje násobení v $\Real $ i násobení skalárem v $\Real ^2$.
     \item $|z|^2 = z\overline{z}$, $\overline{zw} = \overline{z} \cdot 
     \overline{w}$, $|zw| = |z|\cdot|w|$, $z+\overline{z} = 2\cdot Re(z)$, $z-\overline{z} = 2i\cdot Im(z)$,
     \item $\frac{1}{z} = \frac{\overline{z}}{|z|^2}$, je-li $z\neq 0$,
-    \item $\mathbb{C}$ je těleso.
+    \item $\Comp  $ je těleso.
 \end{itemize}
 \end{properties}
 
 % stránka číslo 3 první přednášky
 
-Pozor, $\mathbb{C}$ nelze \emph{rozumně} uspořádat!
+Pozor, $\Comp  $ nelze \emph{rozumně} uspořádat!
 \begin{itemize}
     \item $i>0\implies -1=i^2>0$,
     \item $i<0\implies -1=i^2>0$.
@@ -53,7 +53,7 @@ Pozor, $\mathbb{C}$ nelze \emph{rozumně} uspořádat!
 \section{Lineární zobrazení}
 \begin{definition}
 %Je-li
-$\mathbb{R}^2$ je \emph{reálný vektorový prostor} dimenze 2, jeho báze je $\left\{(1,0)^T, (0,1)^T\right\}$. Obecné $\mathbb{R}$\emph{-lineární zobrazení} $L:\mathbb{R}^2\to\mathbb{R}^2$ má tvar 
+$\Real ^2$ je \emph{reálný vektorový prostor} dimenze 2, jeho báze je $\left\{(1,0)^T, (0,1)^T\right\}$. Obecné $\Real $\emph{-lineární zobrazení} $L:\Real ^2\to\Real ^2$ má tvar 
 
 \begin{equation}\label{eq:rLinearMap}
 \begin{pmatrix}
@@ -69,9 +69,9 @@ x \\ y
 \end{pmatrix}
 \text{,}
 \end{equation}
-kde $a,b,c,d\in\mathbb{R}$.
+kde $a,b,c,d\in\Real $.
 %Je-li
-$\mathbb{C}$ je \emph{komplexní vektorový prostor} dimenze 1, jeho báze je $\{1\}$. Obecné $\mathbb{C}$\emph{-lineární zobrazení} $L:\mathbb{C}\to\mathbb{C}$ má tvar $Lz = wz, z\in\mathbb{C}$, kde $w\in\mathbb{C}$. Nechť $z = (x+iy)$, $ w=(a+ib)$. 
+$\Comp  $ je \emph{komplexní vektorový prostor} dimenze 1, jeho báze je $\{1\}$. Obecné $\Comp  $\emph{-lineární zobrazení} $L:\Comp  \to\Comp  $ má tvar $Lz = wz, z\in\Comp  $, kde $w\in\Comp  $. Nechť $z = (x+iy)$, $ w=(a+ib)$. 
 Potom $$Lz=(a+ib)(x+iy)= (ax-by, bx+ay) = 
 \begin{pmatrix}
 a & -b\\
@@ -80,27 +80,27 @@ b & a
 \begin{pmatrix}
 x \\ y
 \end{pmatrix}\text{.}$$
-%Platí díky tomu, že $\mathbb{C} \cong \mathbb{R}^2$.
-%Všimneme si, že každé $\mathbb{C}$\emph{-lineární zobrazení} je $\mathbb{R}$\emph{-lineární zobrazení}, ale matice tohoto lineárního zobrazení je speciální viz pozorování níže.
+%Platí díky tomu, že $\Comp   \cong \Real ^2$.
+%Všimneme si, že každé $\Comp  $\emph{-lineární zobrazení} je $\Real $\emph{-lineární zobrazení}, ale matice tohoto lineárního zobrazení je speciální viz pozorování níže.
 \end{definition}
 
 \begin{observation}
-$\mathbb{R}$\emph{-lineární zobrazení} \cref{eq:rLinearMap} je $\mathbb{C}$\emph{-lineární}, právě když $d = a$, $ c = -b$.
+$\Real $\emph{-lineární zobrazení} \cref{eq:rLinearMap} je $\Comp  $\emph{-lineární}, právě když $d = a$, $ c = -b$.
 \end{observation} 
 
 \begin{note}
-$\mathbb{C}$\emph{-lineární zobrazení} jsou velmi specifická $\mathbb{R}$\emph{-lineární zobrazení}.
+$\Comp  $\emph{-lineární zobrazení} jsou velmi specifická $\Real $\emph{-lineární zobrazení}.
 %Tj. komplexních lin. zob je mnohem méně, než těch reálných.
 \end{note}
 
 % stránka číslo 5 první přední přednášky
 \begin{agreement}
-Nebude-li řečeno něco jiného, \emph{funkce} znamená \emph{komplexní funkci komplexní proměnné}. Na $f: \mathbb{C} \to \mathbb{C}$ se můžeme vždy dívat jako na $f: \mathbb{R}^2 \to \mathbb{R}^2$, protože $\mathbb{C}\approx\mathbb{R}^2$.
-Nechť $f$ je funkce z $\mathbb{C}$ do $\mathbb{C}$. Spojitost a limita se definuje stejně jako v základním kurzu matematické analýzy.
+Nebude-li řečeno něco jiného, \emph{funkce} znamená \emph{komplexní funkci komplexní proměnné}. Na $f: \Comp   \to \Comp  $ se můžeme vždy dívat jako na $f: \Real ^2 \to \Real ^2$, protože $\Comp  \approx\Real ^2$.
+Nechť $f$ je funkce z $\Comp  $ do $\Comp  $. Spojitost a limita se definuje stejně jako v základním kurzu matematické analýzy.
 \end{agreement}
 %Následuje rychlé připomenutí definic z MA
 \begin{definition}
-Pro $z_0\in\mathbb{C}, \delta>0$ značíme $U(z_0,\delta):= \{z\in\mathbb{C}: |z-z_0|<\delta\}$ a nazýváme ji \emph{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \emph{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0)$, $P(z_0)$.
+Pro $z_0\in\Comp  , \delta>0$ značíme $U(z_0,\delta):= \{z\in\Comp  : |z-z_0|<\delta\}$ a nazýváme ji \emph{okolí} $z_0$. Dále $P(z_0,\delta):= U(z_0,\delta)\setminus\{z_0\}$ nazýváme \emph{prstencové okolí}. Pokud $\delta$ není důležité, budeme často psát jen $U(z_0)$, $P(z_0)$.
 
 Potom definujeme
 \begin{itemize}
@@ -113,9 +113,9 @@ Potom definujeme
 
 \section{Diferencovatelnost}
 %Funkce $f$ je v daném bodě diferencovatelná, pokud se dá v blízkosti toho bodu aproximovat lineárním zobrazením.
-%Jelikož máme dva typy lineárních zobrazení (podle toho zda se na tu rovinu díváme jako na $\mathbb{R}^2$, nebo jako na $\mathbb{C}$) tak dává smysl abychom měli i dva typy diferencovatelnosti.Jako první si uvedeme reálnou diferencovatelnost (funkci $f$ aproximujeme $\mathbb{R}$\emph{-lineárním zobrazením}).
+%Jelikož máme dva typy lineárních zobrazení (podle toho zda se na tu rovinu díváme jako na $\Real ^2$, nebo jako na $\Comp  $) tak dává smysl abychom měli i dva typy diferencovatelnosti.Jako první si uvedeme reálnou diferencovatelnost (funkci $f$ aproximujeme $\Real $\emph{-lineárním zobrazením}).
 \begin{definition}
-Funkce $f$ je v $z_0$ $\mathbb{R}$\emph{-diferencovatelná}, pokud existuje $\mathbb{R}$\emph{-lineární zobrazení} \\$L: \mathbb{R}^2\to\mathbb{R}^2$ takové, že
+Funkce $f$ je v $z_0$ $\Real $\emph{-diferencovatelná}, pokud existuje $\Real $\emph{-lineární zobrazení} \\$L: \Real ^2\to\Real ^2$ takové, že
 $$\lim_{h\to 0}\frac{f(z_0+h)-f(z_0)-L(h)}{|h|} = 0.$$
 \end{definition} 
 
@@ -127,15 +127,15 @@ $$\diff f(z_0)h:=
 \begin{pmatrix}
 \frac{\partial f_1}{\partial x}(z_0) & \frac{\partial f_1}{\partial y}(z_0)\\
 \frac{\partial f_2}{\partial x}(z_0) & \frac{\partial f_2}{\partial y}(z_0)
-\end{pmatrix}h\text{,\hspace{3mm} }h\in \mathbb{R}^2\text{,}$$
+\end{pmatrix}h\text{,\hspace{3mm} }h\in \Real ^2\text{,}$$
 kde $f(x,y) = (f_1(x,y), \ f_2(x,y)).$ (Tato matice se nazývá \emph{Jacobiho matice.})
-%hodí se nezapomenout že doted jsme mluvili pouze o reálné diferencovatelnosti. Jako druhou si ted zavedeme komplexní diferencovatelnost(funkci $f$ aproximujeme $\mathbb{C}$\emph{-lineárním zobrazením}).
+%hodí se nezapomenout že doted jsme mluvili pouze o reálné diferencovatelnosti. Jako druhou si ted zavedeme komplexní diferencovatelnost(funkci $f$ aproximujeme $\Comp  $\emph{-lineárním zobrazením}).
 \end{note} 
 
 % stránka 7 první přednášky
 
 \begin{definition}
-Řekneme, že funkce $f$ je v $z_0$ $\mathbb{C}$\emph{-diferencovatelná}, pokud existuje konečná limita 
+Řekneme, že funkce $f$ je v $z_0$ $\Comp  $\emph{-diferencovatelná}, pokud existuje konečná limita 
 \[f'(z_0):= \lim_{h \to 0}\frac{f(z_0+h)-f(z_0)}{h}.\] 
 %, kde $h$ je komplexní číslo blížící se k nule.
 Číslo $f'(z_0)$ nazýváme \emph{komplexní derivací} $f$ v $z_0$. 
@@ -150,8 +150,8 @@ Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'=f'\pm{g'}$, $(f\c
 
 \begin{example}\mbox{}
 \begin{itemize}
-    \item $(z^n)' = n\cdot z^{n-1}$, $z\in \mathbb{C}$ a $n\in \mathbb{N}\text{.}$
-    \item $f(z) = \overline{z}$ není nikde v $\mathbb{C}$ $\mathbb{C}$\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\mathbb{R}$\emph{-diferencovatelná}. Skutečně, pro $z_0\in\mathbb{C}$ libovolné, máme $$\lim_{h\to 0}\frac{f(z_0+h)-f(z_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje. 
+    \item $(z^n)' = n\cdot z^{n-1}$, $z\in \Comp  $ a $n\in \N\text{.}$
+    \item $f(z) = \overline{z}$ není nikde v $\Comp  $ $\Comp  $\emph{-diferencovatelná}, ale $f(x,y) = (x,-y)$ je všude $\Real $\emph{-diferencovatelná}. Skutečně, pro $z_0\in\Comp  $ libovolné, máme $$\lim_{h\to 0}\frac{f(z_0+h)-f(z_0)}{h} = \lim_{h\to 0}\frac{\ \overline{h}\ }{h}\text{,}$$ avšak poslední limita neexistuje. 
     %Plyne z toho,že pro $h$ na reálné ose je $\frac{\ \overline{h}\ }{h}=1$ a pro $h$ na imaginární ose je $\frac{\ \overline{h}\ }{h}=-1$
     \end{itemize}
     %Již víme, že reálných lineárních zobrazení je mnohem více než komplexních lineárních zobrazení. Což znamená,  že pro funkci je mnohem těžší býti komplexně diferencovatelná v daném bodě, než-li v něm být reálně diferencovatelná.
@@ -161,10 +161,10 @@ Jako pro reálnou funkci reálné proměnné platí $(f\pm g)'=f'\pm{g'}$, $(f\c
 % stránka číslo 8 první přednášky
 
 \begin{theorem}[Cauchy-Riemannova]\label{CR}
-Nechť $f$ je funkce definovaná na okolí $z_0 \in \mathbb{C}$. Pak následující tvrzení jsou ekvivalentní:
+Nechť $f$ je funkce definovaná na okolí $z_0 \in \Comp  $. Pak následující tvrzení jsou ekvivalentní:
 \begin{enumerate}
     \item Existuje $f'(z_0)$ %existuje komplexní derivace v $z_{0}$ tj. funkce $f$ je v $z_{0}$ komplexně diferencovatelná.
-    \item Existuje $\diff f(z_0)$ a $\diff f(z_0)$ je $ \mathbb{C}$-lineární %existuje TD v $z_{0}$ a ten TD je komplexně lineární
+    \item Existuje $\diff f(z_0)$ a $\diff f(z_0)$ je $ \Comp  $-lineární %existuje TD v $z_{0}$ a ten TD je komplexně lineární
     \item Existuje $\diff f(z_0)$ a v $z_0$ platí tzv. \emph{Cauchy-Riemannovy podmínky}: % $f$ je v $z_{0}$ reálně diferencovatelná
 \end{enumerate}
 %C-R podmínky jsou vztahy mezi parciálními derivacemi funkce $f$
@@ -190,14 +190,14 @@ Po vynásobení výrazu v limitě $h/|h|$ dostaneme, že
 \begin{equation}\label{eq:cr12-2}
 0 = \lim_{h \to 0} \frac{f(z_0+h)-f(z_0)-wh}{|h|}\text{,}
 \end{equation}% Číslování je trochu matoucí, chci si ho potom upravit na (1) a (2) místo (2) a (3) - čistě pro přehlednost.
-což je ekvivalentní tomu, že  $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{eq:cr12-2} plyne \cref{eq:cr12-1} vynásobením $|h|/h$.
+což je ekvivalentní tomu, že  $\diff f(z_0)h=wh$, $h\in \Comp  $. Z \cref{eq:cr12-2} plyne \cref{eq:cr12-1} vynásobením $|h|/h$.
 \end{proof}
 
 % stránka číslo 9 první přednášky
 
 \begin{note}\mbox{}
 \begin{itemize}
-    \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \mathbb{C}$ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$ %Poslední rovnost platí co do hodnoty, nikoliv co do existence. Muže se stát, že všechny reálné parciální derivace existují, ale ta komplexní nikoliv....proto tam máme to existuje-li $f'(z_0)$, potom...
+    \item Existuje-li $f'(z_0)$, potom $df(z_0)h = f'(z_0)h, h \in \Comp  $ a $f'(z_0) = \frac{\partial f}{\partial x}(z_0)$ %Poslední rovnost platí co do hodnoty, nikoliv co do existence. Muže se stát, že všechny reálné parciální derivace existují, ale ta komplexní nikoliv....proto tam máme to existuje-li $f'(z_0)$, potom...
     \item Platí, že \cref{eqn:CR}
     $\iff \frac{\partial f}{\partial x}(z_0)    = -i\frac{\partial f}{\partial y}(z_0)$
 \end{itemize}
@@ -214,7 +214,7 @@ což je ekvivalentní tomu, že  $\diff f(z_0)h=wh$, $h\in \mathbb{C}$. Z \cref{
 Nechť $f(z) = \overline{z}$, pak $f(x,y) = (x,-y)$. %funkce $f$ vyjádřená v reálných souřadnicích
 Dále 
 $$\frac{\partial f_1}{\partial x} = 1\text{, } \frac{\partial f_1}{\partial y} = 0\text{, } \frac{\partial f_2}{\partial x} = 0\text{, } \frac{\partial f_2}{\partial y} = -1\text{.}$$
-Máme, že $f\in C^\infty(\mathbb{R}^2)$, ale v žádném $z\in \mathbb{C}$ nesplňuje \cref{eqn:CR}, proto není nikde\\ $\mathbb{C}$\emph{-diferencovatelná}.
+Máme, že $f\in C^\infty(\Real ^2)$, ale v žádném $z\in \Comp  $ nesplňuje \cref{eqn:CR}, proto není nikde\\ $\Comp  $\emph{-diferencovatelná}.
 \end{example}
 %funkce $f$ je hladká na celé rovině v reálném smyslu, ale v žádném bodě roviny nejsou splněny (CR), nebot $\frac{\partial f_1}{\partial x} = 1 \neq -1 =\frac{\partial f_2}{\partial y} $
 % konec první přednášky

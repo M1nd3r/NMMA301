@@ -1,7 +1,7 @@
 % druhá strana
 
 \begin{theorem}[Cauchyův vzorec pro kruh]
-Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Nechť $\overline{U(z_0,\, r)}\subset{G}$ a $\varphi{(t)}:=z_0+r.e^{it}$, $t\in{[0,\, 2\pi]}$ $(*)$. Potom platí 
+Nechť $G\subset{\Comp  }$ je otevřená a $f\in\Holo (G)$. Nechť $\overline{U(z_0,\, r)}\subset{G}$ a $\varphi{(t)}:=z_0+r.e^{it}$, $t\in{[0,\, 2\pi]}$ $(*)$. Potom platí 
 \begin{equation}
     \frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}dz}=
 \left\{
@@ -25,7 +25,7 @@ Existuje $R>r$ tak, že $U(z_0,\, R)\subset{G}$.\newline
 		f'(s),\hspace{5mm}z=s.
 	\end{array}
 \right.\]
-Potom $h\in\mathcal{H}(U(z_0,\, R)\setminus\{s\})$ a spojitá na hvězdovité oblasti $U(z_0,\, R)$. Potom z Cauchyho věty 
+Potom $h\in\Holo (U(z_0,\, R)\setminus\{s\})$ a spojitá na hvězdovité oblasti $U(z_0,\, R)$. Potom z Cauchyho věty 
 \[0=
 \frac{1}{2\pi{i}}\int_\varphi{h}=
 \frac{1}{2\pi{i}}\int_\varphi{\frac{f(z)}{z-s}}dz-f(s)\cdot \underbrace{\frac{1}{2\pi{i}}\int_\varphi{\frac{dz}{z-s}}}_{=ind_\varphi{s} = 1}
@@ -36,7 +36,7 @@ Potom $h\in\mathcal{H}(U(z_0,\, R)\setminus\{s\})$ a spojitá na hvězdovité ob
 \end{proof}
 
 \begin{consequence}
-Nechť $G\subset{\mathbb{C}}$ je otevřená a $f\in\mathcal{H}(G)$. Potom $f$ má komplexní derivaci všech řádů všude na $G$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi$ je jako v $(*)$. Potom 
+Nechť $G\subset{\Comp  }$ je otevřená a $f\in\Holo (G)$. Potom $f$ má komplexní derivaci všech řádů všude na $G$. Nechť $\overline{U(z_0,r)}\subset{G}$ a $\varphi$ je jako v $(*)$. Potom 
 \begin{equation}
 f^{(k)}(s)=
 \frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz,\hspace{5mm} |s-z_0|<r\hspace{2mm} a\hspace{2mm} k = 0,1,2,3,... 
@@ -56,7 +56,7 @@ Z věty o derivaci integrálu dle komplexního parametru a \cref{eqn:cvz}, proto
 % čtvrtá strana
 
 \begin{theorem}[Morera]\label{thm:morera}
-Nechť $f$ je spojitá funkce na otevřené $G\subset{\mathbb{C}}$. Potom $f\in\mathcal{H}(G)$, právě když
+Nechť $f$ je spojitá funkce na otevřené $G\subset{\Comp  }$. Potom $f\in\Holo (G)$, právě když
 \begin{equation}
     \begin{aligned}
 \int_{\partial\triangle}{f} =0 \hspace{3mm} \text{pro každý trojúhelník }\triangle\subset{G}.    
@@ -67,21 +67,21 @@ Nechť $f$ je spojitá funkce na otevřené $G\subset{\mathbb{C}}$. Potom $f\in\
 
 \begin{proof}
 "$\Rightarrow$": Goursatovo lemma\newline
-"$\Leftarrow$": Nechť $\mathcal{U}:=U(z_0,\, R)$ je libovolný kruh v $G$. Protože $f$ je spojitá na $\mathcal{U}$, $\mathcal{U}$ je hvězdovitá oblast a 
+"$\Leftarrow$": Nechť $\Ukruh :=U(z_0,\, R)$ je libovolný kruh v $G$. Protože $f$ je spojitá na $\Ukruh $, $\Ukruh $ je hvězdovitá oblast a 
 \[\int_{\partial\triangle}{f} =0\]
-pro každý trojúhelník $\triangle\subset\mathcal{U}$, má $f$ na $\mathcal{U}$ primitivní funkci $F$, to znamená, že $f=F'$ na $\mathcal{U}$. Protože $F\in\mathcal{H}(\mathcal{U})$, máme $f'=F''$ na $\mathcal{U}$, tudíž $f$ je holomorfní na $\mathcal{U}$. Protože $\mathcal{U}$ byl libovolný kruh v $G$, je $f\in\mathcal{H}(G)$.
+pro každý trojúhelník $\triangle\subset\Ukruh $, má $f$ na $\Ukruh $ primitivní funkci $F$, to znamená, že $f=F'$ na $\Ukruh $. Protože $F\in\Holo (\Ukruh )$, máme $f'=F''$ na $\Ukruh $, tudíž $f$ je holomorfní na $\Ukruh $. Protože $\Ukruh $ byl libovolný kruh v $G$, je $f\in\Holo (G)$.
 \end{proof}
 
 % pátá strana
 
-\begin{theorem}[Cachyho odhady]
-Nechť $z_0\in\mathbb{C}$, $r\in(0,\, +\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,\, r)}$. Potom pro každé $k=0,1,2,...$ je 
+\begin{theorem}[Cauchyho odhady]
+Nechť $z_0\in\Comp  $, $r\in(0,\, +\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,\, r)}$. Potom pro každé $k=0,1,2,...$ je 
 \begin{equation}
-\forall{s\in{\mathcal{U}:=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r\cdot k!}{(d(s))^{k+1}}\cdot \max_{\partial\mathcal{U}}{|f|},    
+\forall{s\in{\Ukruh :=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r\cdot k!}{(d(s))^{k+1}}\cdot \max_{\partial\Ukruh }{|f|},    
 \tag{$CO_1$}
 \label{eqn:co1}
 \end{equation}
-kde $d(s) := dist(s,\partial\mathcal{U})\overset{def.}{:=}\underset{{z\in{\partial{\mathcal{U}}}}}{min}{|s-z|}$
+kde $d(s) := dist(s,\partial\Ukruh )\overset{def.}{:=}\underset{{z\in{\partial{\Ukruh }}}}{min}{|s-z|}$
 \begin{equation}
 \forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!\cdot2^{k+1}}{r^k}\cdot\max_{\partial{U}}{|f|}\cdot
 \tag{$CO_2$}
@@ -98,8 +98,9 @@ kde $d(s) := dist(s,\partial\mathcal{U})\overset{def.}{:=}\underset{{z\in{\parti
 \cref{eqn:co1} dostaneme z \cref{eqn:cvkz}, protože 
 \[|f^{(k)}(s)|=
 \left\lvert\frac{k!}{2\pi{i}}\int_\varphi{\frac{f(z)}{(z-s)^{k+1}}}dz\right\lvert\leq
-\frac{k!}{2\pi}\cdot 2\pi{r}\cdot\frac{1}{(d(s))^{k+1}}\cdot \max_{\partial\mathcal{U}}{|f|}\]
-a $|z-s|\geq d(s)$, $z\in\partial\mathcal{U}=\langle\varphi\rangle$, zde $\varphi(t)=z_0+r\cdote^{it}$, $t\in\left[0,\, 2\pi\right]$.\newline
+\frac{k!}{2\pi}\cdot 2\pi{r}\cdot\frac{1}{(d(s))^{k+1}}\cdot \max_{\partial\Ukruh }{|f|}\]
+a $|z-s|\geq d(s)$, $z\in\partial\Ukruh =\langle\varphi\rangle$, 
+zde $\varphi(t)=z_0+r\cdot e^{it}$, $t\in\left[0, 2\pi\right]$.\newline
 \cref{eqn:co2} plyne z \cref{eqn:co1}, protože $d(s)\geq\frac{r}{2}$ $\forall{s\in{U(z_0,\, r/2)}}$.\newline
 \cref{eqn:co3} plyne z \cref{eqn:co1}, protože $d(z_0)=r$. 
 \end{proof}
@@ -107,11 +108,12 @@ a $|z-s|\geq d(s)$, $z\in\partial\mathcal{U}=\langle\varphi\rangle$, zde $\varph
 % šestá strana
 
 \begin{theorem}[Liouville] \label{thm:liouville}
-Je-li $f$ holomorfní  a omezená na $\mathbb{C}$, potom je $f$ konstantní.
+Je-li $f$ holomorfní  a omezená na $\Comp  $, potom je $f$ konstantní.
 \end{theorem}
 
 \begin{proof}
-Ukážeme, že $f'=0$ na $\mathbb{C}$. Označme $M:=\sup_\mathbb{C}{|f|}<+\infty$. Nechť $z_0\in\mathbb{C}$. Z \cref{eqn:co3} dostaneme pro každé $r>0$
+Ukážeme, že $f'=0$ na $\Comp$. 
+Označme $M:=\sup_{\,\Comp}{|f|}<+\infty$. Nechť $z_0\in\Comp$. Z \cref{eqn:co3} dostaneme pro každé $r>0$
 \[|f'(z_0)|\leq
 \frac{1}{r}\max_{\partial{U(z_0,r)}}{|f|}\leq
 \frac{M}{r}\underset{{r\to{+\infty}}}{\to}0,\]
@@ -119,12 +121,12 @@ tudíž $f'(z_0)=0$.
 \end{proof}
 
 \begin{consequence}[Základní věta algebry]
-V $\mathbb{C}$ má polynom stupně aspoň $1$ vždy aspoň jeden kořen.
+V $\Comp  $ má polynom stupně aspoň $1$ vždy aspoň jeden kořen.
 \end{consequence}
 
 \begin{proof}
-Nechť $p(z)={a_0}{z^n}+{a_1}{z^{n-1}}+...+{a_n}$, kde $a_j\in\mathbb{C}$, $a_0\neq{0}$ a $n\geq{1}$.\newline
-Sporem: Předpokládejme, že $p\neq{0}$ na $\mathbb{C}$. Položme $f:=1/p$. Potom $f$ je holomorfní a omezená na $\mathbb{C}$, tudíž dle Liouvilleovy věty je $f$ i $p$ konstantní. Tedy $p'=0$ a $0=p^{(n)}=n!{a_0}$, což je spor.\newline
+Nechť $p(z)={a_0}{z^n}+{a_1}{z^{n-1}}+...+{a_n}$, kde $a_j\in\Comp  $, $a_0\neq{0}$ a $n\geq{1}$.\newline
+Sporem: Předpokládejme, že $p\neq{0}$ na $\Comp  $. Položme $f:=1/p$. Potom $f$ je holomorfní a omezená na $\Comp  $, tudíž dle Liouvilleovy věty je $f$ i $p$ konstantní. Tedy $p'=0$ a $0=p^{(n)}=n!{a_0}$, což je spor.\newline
 % sedmá strana
 Omezenost $f$: Máme
 \[|f(z)|=\left\lvert\frac{1}{z^n.\left(a_0+\frac{a_1}{z}+...+\frac{a_n}{z^n}\right)}\right\lvert\leq
@@ -135,7 +137,7 @@ Existuje $r_0\in(0,\, +\infty)$ tak, že $|f(z)|\leq{1}$, je-li $|z|>r_0$. Funkc
 \end{proof}
 
 \begin{lemma}
-Nechť $\varphi$ je křivka v $\mathbb{C}$, $f_n$ jsou spojité funkce na $\langle\varphi\rangle$ pro $n=1,2,3,...$ a $f_n\rightrightarrows{f}$ na $\langle\varphi\rangle$. Potom $f$ je spojitá na $\langle\varphi\rangle$ a 
+Nechť $\varphi$ je křivka v $\Comp  $, $f_n$ jsou spojité funkce na $\langle\varphi\rangle$ pro $n=1,2,3,...$ a $f_n\rightrightarrows{f}$ na $\langle\varphi\rangle$. Potom $f$ je spojitá na $\langle\varphi\rangle$ a 
 \[\int_\varphi{f_n}\longrightarrow\int_\varphi{f}.\]
 \end{lemma}
 
@@ -148,16 +150,16 @@ V(\varphi)\cdot\max_{\langle\varphi\rangle}{|f_n-f|}\overset{n\to\infty}{\longri
 
 % osmá strana
 \begin{theorem}[Weierstrass]
-Nechť $G\subset{\mathbb{C}}$ je otevřená, $f_n\in\mathcal{H}(G)$ pro $n\in\mathbb{N}$ a $f_n\overset{loc}{\rightrightarrows}f$ na $G$. Potom $f\in\mathcal{H}(G)$ a $f_n^{(k)}\overset{loc}{\rightrightarrows}f^{(k)}$ na $G$ pro každé $k\in\mathbb{N}$.
+Nechť $G\subset{\Comp  }$ je otevřená, $f_n\in\Holo (G)$ pro $n\in\N$ a $f_n\overset{loc}{\rightrightarrows}f$ na $G$. Potom $f\in\Holo (G)$ a $f_n^{(k)}\overset{loc}{\rightrightarrows}f^{(k)}$ na $G$ pro každé $k\in\N$.
 \end{theorem}
 
 \begin{proof}
 \circled{1} Zřejmě je $f$ spojitá. Nechť $\triangle$ je trojúhelník v $G$. Potom 
 \[0=\int_{\partial\triangle}{f_n}\overset{Lemma}{\longrightarrow}
 \int_{\partial\triangle}{f}=0\]
-Z Morerovy věty je $f\in\mathcal{H}(G)$.
+Z Morerovy věty je $f\in\Holo (G)$.
 
-\circled{2} Nechť $k\in\mathbb{N}$ a $z_0\in{G}$. Volme $r>0$, aby $\overline{U(z_0,r)}\subset{G}$. Potom z $(CO_2)$ máme:
+\circled{2} Nechť $k\in\N$ a $z_0\in{G}$. Volme $r>0$, aby $\overline{U(z_0,r)}\subset{G}$. Potom z $(CO_2)$ máme:
 \[\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{3mm}
 {\left\lvert{f_n^{(k)}(s)-f^{(k)}(s)}\right\lvert}=
 \left\lvert{\left({f_n-f}\right)^{(k)}(s)}\right\lvert\leq
@@ -169,9 +171,9 @@ Z Morerovy věty je $f\in\mathcal{H}(G)$.
 \section{\texorpdfstring{Mocninné řady}{Mocninné rady}}
 
 \begin{definition}
-Nechť $\{a_n\}_{n=0}^\infty\subset\mathbb{C}$ a $z_0\in\mathbb{C}$. Potom 
+Nechť $\{a_n\}_{n=0}^\infty\subset\Comp  $ a $z_0\in\Comp  $. Potom 
 \begin{equation}
-\sum_{n=0}^\infty{a_n\cdot(z-z_0)^n}, \hspace{5mm} z\in\mathbb{C}
+\sum_{n=0}^\infty{a_n\cdot(z-z_0)^n}, \hspace{5mm} z\in\Comp  
 \label{eqn:rada}
 \end{equation}
 je mocninná řada o středu $z_0$ s koeficienty $\{a_n\}_{n=0}^\infty$.
@@ -181,7 +183,7 @@ je mocninná řada o středu $z_0$ s koeficienty $\{a_n\}_{n=0}^\infty$.
 \circled{1} \textbf{Konvergence} (na cvičení) \newline
 Existuje jediné $R\in{[0,+\infty]}$ takové, že 
 \begin{itemize}
-    \item řada \cref{eqn:rada} konverguje absolutně a lokálně stejnoměrně na  $U(z_0,R):=\{z\in\mathbb{C} : |z-z_0|<R\}$, 
+    \item řada \cref{eqn:rada} konverguje absolutně a lokálně stejnoměrně na  $U(z_0,R):=\{z\in\Comp   : |z-z_0|<R\}$, 
     \item řada \cref{eqn:rada} diverguje pro $|z-z_0|>R$. 
 \end{itemize}
 Číslo $R$ se nazývá poloměr konvergence \cref{eqn:rada} a platí, že
@@ -189,9 +191,9 @@ Existuje jediné $R\in{[0,+\infty]}$ takové, že
 \underset{n\to+\infty}{\limsup}{\sqrt[\leftroot{-3}\uproot{3}n]{|a_n|}}},\]
 kde položíme $\frac{1}{0}=+\infty$, $\frac{1}{+\infty}=0$.
 
-\circled{2} Označíme-li součet \cref{eqn:rada} na $U(z_0,\, R)$ jako $f$, potom je $f\in\mathcal{H}(U(z_0,\, R))$ a 
+\circled{2} Označíme-li součet \cref{eqn:rada} na $U(z_0,\, R)$ jako $f$, potom je $f\in\Holo (U(z_0,\, R))$ a 
 \[
-\forall{k\in\mathbb{N}_0}\hspace{2mm}\forall{z\in{U(z_0,\,R)}}: \hspace{5mm}
+\forall{k\in\N_0}\hspace{2mm}\forall{z\in{U(z_0,\,R)}}: \hspace{5mm}
 f^{(k)}(z)=
 \sum_{n=k}^{+\infty}{a_n.n.(n-1)...(n-k+1)(z-z_0)^{n-k}},\]
 speciálně $a_k=\frac{f^{(k)}(z_0)}{k!}$.

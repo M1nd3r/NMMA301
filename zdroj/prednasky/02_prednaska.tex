@@ -1,34 +1,34 @@
 % stránka číslo 1 druhé přednášky
 
 \begin{definition}
-Nechť $G\subset \mathbb{C}$ je otevřená %tj. $G$ obsahuje s každým bodem i nějaké jeho okolí
-a $f \colon G \to \mathbb{C}$.
-Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\mathbb{C}$\emph{-diferencovatelná} v každém $z_{0}\in {G}$. Značíme $\mathcal{H}(G)$ prostor všech holomorfních funkcí $f \colon G \to \mathbb{C}$. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \mathcal{H}(\mathbb{C})$.
+Nechť $G\subset \Comp  $ je otevřená %tj. $G$ obsahuje s každým bodem i nějaké jeho okolí
+a $f \colon G \to \Comp  $.
+Potom říkáme, že $f$ je na $G$ \emph{holomorfní}, pokud $f$ je  $\Comp  $\emph{-diferencovatelná} v každém $z_{0}\in {G}$. Značíme $\Holo (G)$ prostor všech holomorfních funkcí $f \colon G \to \Comp  $. Říkáme, že funkce $F$ je \emph{celá}, pokud $F\in \Holo (\Comp  )$.
 \end{definition}
 %tj. hlavním objektem této přednášky bude studium holomorfních funkcí
 \begin{example}\mbox{}
 \begin{itemize}
-    \item \emph{Polynom} $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \mathbb{C}$ je \emph{celá} funkce.
-    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\mathbb{C}\setminus Q^{-1}(\{0\})$, kde $Q^{-1}(\{0\})$ je konečná množina.
+    \item \emph{Polynom} $p(z) = a_0z^{n}+a_1z^{n-1}+...+a_n$, $z\in \Comp  $ je \emph{celá} funkce.
+    \item Nechť $R=P/Q$, kde $P$, $Q$ jsou polynomy, které nemají společné kořeny a $Q\not\equiv 0$. Potom racionální funkce $R$ je holomorfní na $\Comp  \setminus Q^{-1}(\{0\})$, kde $Q^{-1}(\{0\})$ je konečná množina.
 \end{itemize}    
 \end{example}
 
 % stránky číslo 2 a 3 druhé přednášky
 
-\section{Elementární funkce v \texorpdfstring{$\mathbb{C}$}{C}}
+\section{Elementární funkce v \texorpdfstring{$\Comp  $}{C}}
 \subsection{Exponenciála}
 
 \begin{definition}
-$\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
+$\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \Comp  $
 \end{definition}
 
 \begin{properties}
 \mbox{}
 \vspace{-2em}
 \begin{itemize}    
-    \item $\exp \mid_\mathbb{R}$ je reálná exponenciála 
+    \item $\exp \mid_{\Real} $ je reálná exponenciála 
     \item $\exp(z+w)=\exp(z)\exp(w)$
-    \item $\exp'(z)=\exp(z)$, $ z \in\mathbb{C}$
+    \item $\exp'(z)=\exp(z)$, $ z \in\Comp  $
  
  \begin{equation}
  \begin{aligned}
@@ -43,15 +43,15 @@ $\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
      
      
      
-    Tedy $f\in\mathcal{C}^{\infty}(\mathbb{R}^2)$ % $f$ má spojité všechny reálné parciální derivace
-    a \cref{eqn:CR} platí všude v $\mathbb{R}^2\cong\mathbb{C}$. Z CR-věty a poznámky 3.7 máme $f'(z)=\exp(z)\text{, } z\in\mathbb{C}$
-    \item $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$, $z\in\mathbb{C}\text{.}$
-    \item $\exp(\mathbb{C})=\mathbb{C}\setminus\{0\}$ 
-    \item $\exp$ není prostá na $\mathbb{C}$, je $2\pi i$-periodická a platí dokonce:
+    Tedy $f\in\Comp^{\infty}(\Real ^2)$ % $f$ má spojité všechny reálné parciální derivace
+    a \cref{eqn:CR} platí všude v $\Real ^2\cong\Comp  $. Z CR-věty a poznámky 3.7 máme $f'(z)=\exp(z)\text{, } z\in\Comp  $
+    \item $\exp(z)=\sum_{n=0}^{\infty}\frac{z^n}{n!}$, $z\in\Comp  \text{.}$
+    \item $\exp(\Comp  )=\Comp  \setminus\{0\}$ 
+    \item $\exp$ není prostá na $\Comp  $, je $2\pi i$-periodická a platí dokonce:
     \newline
-    $\exp(z) =\exp(w) \iff\exists k \in\mathbb{Z}\colon w=z+2k\pi i$
-     \item Nechť $P:=\{z\in\mathbb{C}\mid \Img z \in \left (-\pi,\pi\right ]\}$.
-     Potom $\exp\mid_P$ je prostá a $\exp(P)=\mathbb{C}\setminus\{0\}$.
+    $\exp(z) =\exp(w) \iff\exists k \in\Z \colon w=z+2k\pi i$
+     \item Nechť $P:=\{z\in\Comp  \mid \Img z \in \left (-\pi,\pi\right ]\}$.
+     Potom $\exp\mid_P$ je prostá a $\exp(P)=\Comp  \setminus\{0\}$.
      %obrázek
     \newline
   \end{itemize}  
@@ -65,14 +65,14 @@ $\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
  \end{note}
      
     \begin{notation}
-          Nechť $z\in\mathbb{C}\setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\mathbb{R}\mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (-\pi,\,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. \emph{hlavní hodnota argumentu $z$}. %Popřípadě jen hlavní argument
+          Nechť $z\in\Comp  \setminus\{0\}$. Potom položme $\Arg(z):=\left\{\varphi\in\Real \mid z=\lvert z \rvert e^{i\varphi}\right\}$ Je-li $\Arg(z) \cap  (-\pi,\,\pi]=\{\varphi_0\}$, potom $\arg(z):=\varphi_0$ je tzv. \emph{hlavní hodnota argumentu $z$}. %Popřípadě jen hlavní argument
           %Místo intervalu $(-\pi,\pi]$ můžeme brát jakýkoli jiný interval délky $2\pi$. 
     \end{notation}
      
          Platí: 
         \begin{itemize}
-            \item $\Arg(z)\colon = \{\arg(z)+2k\pi\mid k\in\mathbb{Z}\}$,
-            \item funkce $\arg\colon \mathbb {C}\setminus\{0\} \to \left (-\pi,\,\pi\right ]$, kde $\arg$ je surjektivní a navíc je konstantní na polopřímkách vycházejících z $0$. Dále je $\arg$ spojitá na $\mathbb {C}\setminus\left (-\infty,\,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,\,0\right ]$.
+            \item $\Arg(z)\colon = \{\arg(z)+2k\pi\mid k\in\Z \}$,
+            \item funkce $\arg\colon \Comp\setminus\{0\} \to \left (-\pi,\,\pi\right ]$, kde $\arg$ je surjektivní a navíc je konstantní na polopřímkách vycházejících z $0$. Dále je $\arg$ spojitá na $\Comp\setminus\left (-\infty,\,0\right ]$, ale není spojitá v žádném $z\in \left (-\infty,\,0\right ]$.
         \end{itemize}
 
 
@@ -80,27 +80,27 @@ $\exp(z)\colon=e^{x}(\cos y + i\sin y)$, $z=x+i y\in \mathbb{C}$
 
 \subsection{Logaritmus}
 %logaritmů můžeme mít mnohem víc
-Pro dané $z\in\mathbb{C}$ řešíme rovnici $e^w=z$. 
+Pro dané $z\in\Comp  $ řešíme rovnici $e^w=z$. 
 \begin{itemize}
-    \item Pro $z=0$ nemá rovnice řešení. \item Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  \arg(z)}=e^{\log\lvert z \rvert+i   \arg(z)}=e^w\iff\exists\ k \in\mathbb{Z}\colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
+    \item Pro $z=0$ nemá rovnice řešení. \item Pro $z\neq 0$ je $z=\lvert z \rvert e^{i  \arg(z)}=e^{\log\lvert z \rvert+i   \arg(z)}=e^w\iff\exists\ k \in\Z \colon w=\log \lvert z \rvert +i arg(z)+2k\pi i$.
     \end{itemize}
 
 \begin{definition}
-Nechť $z\in\mathbb{C}\setminus\{0\}$. Položme 
+Nechť $z\in\Comp  \setminus\{0\}$. Položme 
 \begin{itemize}
-    \item $\Log z\colon=\{w\in\mathbb{C}\mid e^w=z\}$
+    \item $\Log z\colon=\{w\in\Comp  \mid e^w=z\}$
     \item $\log z\colon= \log\lvert z \rvert + i \arg z$,  tzv. \emph{hlavní hodnota logaritmu $z$}.
 \end{itemize}
 \end{definition}
 
 \begin{properties}
-Nechť $z \in\mathbb{C}\setminus\{0\}$.
+Nechť $z \in\Comp  \setminus\{0\}$.
 
 \begin{itemize}
-    \item $\Log z =\{\log z +2k\pi i\mid k\in\mathbb{Z}\}$ a $
+    \item $\Log z =\{\log z +2k\pi i\mid k\in\Z \}$ a $
     \log =(\exp{}\mid _P)^{-1}$, kde $P$ je množina z vlastností exponenciály.
-    \item $\log{}$ není spojitá v žádném $z\in\left (-\infty,0\right ]$, ale $\log{}\in \mathcal{H}(\mathbb{C}\setminus\left (-\infty,0\right ])$.
-    \newline Navíc $\log'z=\frac{1}{z}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ]$.
+    \item $\log{}$ není spojitá v žádném $z\in\left (-\infty,0\right ]$, ale $\log{}\in \Holo (\Comp  \setminus\left (-\infty,0\right ])$.
+    \newline Navíc $\log'z=\frac{1}{z}$, $z\in\Comp  \setminus\left (-\infty,0\right ]$.
      \item $\log(1-z)=-\sum_{n=1}^{\infty}\frac{z^n}{n}$, $\lvert z \rvert<1$
 \end{itemize}
 
@@ -119,7 +119,7 @@ např. $0=\log 1= \log((-1)(-1))\neq 2 \log(-1)=2\pi i$
 \subsection{Obecná mocnina}
 
 \begin{definition}
-Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hlavní hodnotu $\alpha$-té mocniny $z$} definujeme $z^{\alpha}\colon=\exp(\alpha \log z)$. Položme $m_{\alpha}(z)\colon=\{\exp(\alpha w)\mid w\in \Log z\}$. % To je vlastně množina všech $\alpha$-tých mocnin $z$.
+Nechť $z \in\Comp  \setminus\{0\}$ a  $\alpha\in\Comp  $. Potom \emph{hlavní hodnotu $\alpha$-té mocniny $z$} definujeme $z^{\alpha}\colon=\exp(\alpha \log z)$. Položme $m_{\alpha}(z)\colon=\{\exp(\alpha w)\mid w\in \Log z\}$. % To je vlastně množina všech $\alpha$-tých mocnin $z$.
 \end{definition}
 
 \begin{properties}
@@ -128,22 +128,22 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$ a  $\alpha\in\mathbb{C}$. Potom \emph{hla
 \begin{itemize}
     \item $e^z=\exp(z \log e)=\exp(z)$ 
     % stránka 6 druhé přednášky
-    \item Je-li $z>0$ a $\alpha\in\mathbb{R}$, potom $z^{\alpha}$ je v souladu s definicí z MA.
-    \item $m_{\alpha}(z)=\{z^{\alpha}e^{2k\pi i \alpha}\mid k\in\mathbb{Z}\}$, $z\neq 0$
+    \item Je-li $z>0$ a $\alpha\in\Real $, potom $z^{\alpha}$ je v souladu s definicí z MA.
+    \item $m_{\alpha}(z)=\{z^{\alpha}e^{2k\pi i \alpha}\mid k\in\Z \}$, $z\neq 0$
     \begin{proof}$w\in \Log z\iff w=\log z +2k\pi i$\end{proof}
-    \item $(z^{\alpha})'=\alpha z^{\alpha-1}$, $z\in\mathbb{C}\setminus\left (-\infty,0\right ])$ a $\alpha\in\mathbb{C}$
+    \item $(z^{\alpha})'=\alpha z^{\alpha-1}$, $z\in\Comp  \setminus\left (-\infty,0\right ])$ a $\alpha\in\Comp  $
     \item $(1+z)^{\alpha}=\sum_{n=0}^{\infty}\tbinom{\alpha}{n}z^{n} $, $\lvert z \rvert<1$, kde $\tbinom{\alpha}{n}:=\frac{\alpha(\alpha-1)\cdots(\alpha-n+1)}{n!}$.%mocninný rozvoj
 \end{itemize}
 \end{properties}
 
 \begin{observation}
-Nechť $z \in\mathbb{C}\setminus\{0\}$.
+Nechť $z \in\Comp  \setminus\{0\}$.
 \begin{itemize}
-    \item Nechť $\alpha\in\mathbb{Z}$. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.%celočíselná mocnina je jenom jediná
-    \item Nechť $\alpha\in\mathbb{Q}$ a $\alpha=p/q$, kde $q\in\mathbb{N}$, $p\in\mathbb{Z}$ a $p,q$ jsou nesoudělná. Potom $$m_{\frac{p}{q}}(z)= \left\{ z^{\frac{p}{q}}e^{\frac{2k\pi i p}{q}}: k\in\{0,1,\cdots,q-1\} \right\}$$
+    \item Nechť $\alpha\in\Z $. Potom $m_{\alpha}(z)=\{z^{\alpha}\}$.%celočíselná mocnina je jenom jediná
+    \item Nechť $\alpha\in\Q$ a $\alpha=p/q$, kde $q\in\N$, $p\in\Z $ a $p,q$ jsou nesoudělná. Potom $$m_{\frac{p}{q}}(z)= \left\{ z^{\frac{p}{q}}e^{\frac{2k\pi i p}{q}}: k\in\{0,1,\cdots,q-1\} \right\}$$
     tvoří vrcholy pravidelného $q$-úhelníka vepsaného do kružnice se středem v počátku a poloměrem $z^{\frac{p}{q}}$. %mocnin je přesně $q$
     %obrázek
-    \item Nechť $\alpha\in\mathbb{C}\setminus\mathbb{Q}$. Potom je $m_{\alpha}(z)$ nekonečné.%mocnin je nekonečně
+    \item Nechť $\alpha\in\Comp  \setminus\Q$. Potom je $m_{\alpha}(z)$ nekonečné.%mocnin je nekonečně
 \end{itemize}
 \end{observation}
 
@@ -156,7 +156,7 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$.
     \item $\sqrt[3]{-1}=e^{\frac{\pi i}{3}}$ (nesouhlasí s definicí z MA!),  $m_{\frac{1}{3}}(-1)=\{e^{\frac{\pi i}{3}},e^{-\frac{\pi i}{3}},-1\} $
     %obrázek
     \item  $i^i=e^{-\frac{\pi }{2}}$, 
-    $m_{i}(i)=\{e^{-\frac{\pi }{2}+2k\pi}\mid k\in\mathbb{Z}\}$
+    $m_{i}(i)=\{e^{-\frac{\pi }{2}+2k\pi}\mid k\in\Z \}$
 \end{itemize}
 
  \vspace{5mm}
@@ -168,7 +168,7 @@ Nechť $z \in\mathbb{C}\setminus\{0\}$.
 \end{example}
 
 \begin{note}
-Je-li $f \colon \mathbb{C} \to \mathbb{C}$, potom $f(z)=\underset{\text{sudá část}}{\underbrace{\frac{f(z)+f(-z)}{2}}}+\underset{\text{lichá část}}{\underbrace{\frac{f(z)-f(-z)}{2}}}$.
+Je-li $f \colon \Comp   \to \Comp  $, potom $f(z)=\underset{\text{sudá část}}{\underbrace{\frac{f(z)+f(-z)}{2}}}+\underset{\text{lichá část}}{\underbrace{\frac{f(z)-f(-z)}{2}}}$.
 \end{note}
 
 \subsection{Hyperbolické funkce}
@@ -176,8 +176,8 @@ Je-li $f \colon \mathbb{C} \to \mathbb{C}$, potom $f(z)=\underset{\text{sudá č
 $e^{z}=\cosh(z)+\sinh(z)$, kde
 
 \begin{definition}
-\[\cosh(z):=\frac{e^{z}+e^{-z}}{2}\text{, }z\in \mathbb{C}\] \newline
-\[\sinh(z):=\frac{e^{z}-e^{-z}}{2}\text{, }z\in \mathbb{C}\]
+\[\cosh(z):=\frac{e^{z}+e^{-z}}{2}\text{, }z\in \Comp  \] \newline
+\[\sinh(z):=\frac{e^{z}-e^{-z}}{2}\text{, }z\in \Comp  \]
 \end{definition}
 
 % stránka číslo 8 druhé přednášky
@@ -196,18 +196,18 @@ $e^{z}=\cosh(z)+\sinh(z)$, kde
 $e^{i z}=\cos(z)+i\sin(z)$, kde %rozkládáme na sudou a lichou část
 
 \begin{definition}
-\[\cos(z):=\frac{e^{i z}+e^{-i z}}{2}, z\in \mathbb{C}\]
-\[\sin(z):=\frac{e^{i z}-e^{-i z}}{2i}, z\in \mathbb{C}\]
+\[\cos(z):=\frac{e^{i z}+e^{-i z}}{2}, z\in \Comp  \]
+\[\sin(z):=\frac{e^{i z}-e^{-i z}}{2i}, z\in \Comp  \]
 \end{definition}
 
 \begin{properties}
 \mbox{}
 \vspace{-2em}
 \begin{itemize}
-    \item $\cos$ a $\sin$ jsou rozšířením příslušných reálných funkcí z $\mathbb{R}$ do $\mathbb{C}$.
+    \item $\cos$ a $\sin$ jsou rozšířením příslušných reálných funkcí z $\Real $ do $\Comp  $.
     \item $\sin'(z)=\cos(z)$, $\cos'(z)=-\sin(z)$
-    \item $\sin$ i $\cos$ jsou $2\pi$-periodické, ale nejsou omezené na $\mathbb{C}$. Platí, že $\sin(\mathbb{C})=\mathbb{C}=\cos(\mathbb{C})$
-    \item i na $\mathbb{C}$ platí součtové vzorce, atd.
+    \item $\sin$ i $\cos$ jsou $2\pi$-periodické, ale nejsou omezené na $\Comp  $. Platí, že $\sin(\Comp  )=\Comp  =\cos(\Comp  )$
+    \item i na $\Comp  $ platí součtové vzorce, atd.
     \item $\sin(z)=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!}$, $ 
     \cos(z)=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}$
 \end{itemize}

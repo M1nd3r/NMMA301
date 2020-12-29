@@ -1,5 +1,5 @@
 \begin{example}
-Nechť $\varphi:=\psi^t+[-1;\,1]$, kde $\psi^t(t):=e^{it},\ t\in[0,\,\pi]$. Potom $\mathbb{C}\backslash\langle{\varphi}\rangle=G_0\cup{G_\infty}$, kde $G_0$ je omezená komponenta ("vnitřek") a $G_\infty$ je neomezená komponenta ("vnějšek"). Platí
+Nechť $\varphi:=\psi^t+[-1;\,1]$, kde $\psi^t(t):=e^{it},\ t\in[0,\,\pi]$. Potom $\Comp \backslash\langle{\varphi}\rangle=G_0\cup{G_\infty}$, kde $G_0$ je omezená komponenta ("vnitřek") a $G_\infty$ je neomezená komponenta ("vnějšek"). Platí
 $${ind}_\varphi{s}=
 \left\{
 \begin{array}{ll}
@@ -16,7 +16,7 @@ $$1={ind}_{\varphi\dotplus\tilde\varphi}{s}={ind}_\varphi{s}+{ind}_{\tilde{\varp
 \begin{theorem}
 Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a platí 
 \begin{enumerate}
-    \item $Q\neq0$ na $\mathbb{R}$,
+    \item $Q\neq0$ na $\Real $,
     \item $st(Q)\geq st(P)+2$, kde $st(Q)$ je stupeň polynomu $Q$.
 \end{enumerate}
 Potom
@@ -65,7 +65,7 @@ $${res}_{z_1}R=-\frac{1}{4}(-i+1)(-1+i)\frac{1}{\sqrt{2}}=\frac{1}{4\sqrt{2}}(1-
 \begin{theorem}
 Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a platí
 \begin{enumerate}
-    \item $Q\neq 0$ na $\mathbb{R}$,
+    \item $Q\neq 0$ na $\Real $,
     \item $st(Q)\geq st(p)+1$.
 \end{enumerate}
 Nechť $a>0$. Potom
@@ -96,14 +96,14 @@ Je-li $a<0$, potom \cref{eqn:odhint} obecně neplatí. V tomto případě je nut
 \end{note}
 
 \begin{example}
-Spočteme Fourierovu transformaci $\mathcal{F}$ funkce $f(x):=\frac{1}{x^2+1}$, kde
-$$(\mathcal{F}f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\mathbb{R}$$.
+Spočteme Fourierovu transformaci $\F $ funkce $f(x):=\frac{1}{x^2+1}$, kde
+$$(\F f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\Real $$.
 \begin{itemize}
-    \item Nechť $t>0$. Potom $(\mathcal{F}f)(t)=i\cdot{res}_i{(f(z)e^{itz})}=i\cdot\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
-    \item Nechť $t<0$. Potom $(\mathcal{F}f)(t)=i\cdot{res}_{(-i)}{(f(z)e^{itz})}\cdot(-1)=-i\cdot\frac{e^{-t}}{2\cdot  r(-i)}=\frac{e^{t}}{2}$.
+    \item Nechť $t>0$. Potom $(\F f)(t)=i\cdot{res}_i{(f(z)e^{itz})}=i\cdot\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
+    \item Nechť $t<0$. Potom $(\F f)(t)=i\cdot{res}_{(-i)}{(f(z)e^{itz})}\cdot(-1)=-i\cdot\frac{e^{-t}}{2\cdot  r(-i)}=\frac{e^{t}}{2}$.
 \end{itemize}
 \textbf{Lépe:}
-$$(\mathcal{F}f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x^2}dx=\frac{e^{-|t|}}{2}, \ t\in\mathbb{R}.$$
+$$(\F f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x^2}dx=\frac{e^{-|t|}}{2}, \ t\in\Real .$$
 \end{example}
 
 \begin{example}
