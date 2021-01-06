@@ -1,46 +1,68 @@
 \begin{proof}[Důkaz věty \cref{thm:obCapC} (\nameref{thm:obCapC})]
 \mbox{}\\
-    \circled{1.} Nechť platí \cref{eqn:7.30.cv}. Je-li $z_0\in\Comp\setminus G$, pak $f(z):=\frac{1}{z-z_0}\in\Holo (G)$ a podle \cref{eqn:7.30.cv} je $\ind_\Gamma z_0=0$, neboli $z_0\in \Ext\Gamma$.
+    "$\Longrightarrow$": Nechť platí \cref{eqn:7.30.cv}. Je-li $z_0\in\Comp\setminus G$, pak $f(z):=\frac{1}{z-z_0}\in\Holo (G)$ a podle \cref{eqn:7.30.cv} je $\ind_\Gamma z_0=0$, neboli $z_0\in \Ext\Gamma$.
     
-    \circled{2.} Nechť $\Int\Gamma\subset G$ a $f\in \Holo (G)$.\newline Nejdříve dokážeme, že $\forall\xi\in G\setminus\langle\Gamma\rangle$ \cref{eqn:cvz} $$\frac{1}{2\pi i}\int\frac{f(z) \diff z}{z-\xi}=f(\xi)\cdot\ind_\Gamma \xi,$$ 
+    "$\Longleftarrow$": Nechť $\Int\Gamma\subset G$ a $f\in \Holo (G)$. Nejdříve dokážeme, že 
+    \begin{equation}
+        \forall\xi\in G\setminus\langle\Gamma\rangle:\ 
+        \frac{1}{2\pi i}\int_\Gamma\frac{f(z) \diff z}{z-\xi}=f(\xi)\cdot\ind_\Gamma \xi,
+        \label{eqn:10.8:cvz} 
+        \tag{$CV_z$}
+    \end{equation}
     což je ekvivalentní s 
     \begin{equation}
-        \frac{1}{2\pi i}\int\frac{f(z) -f(\xi)}{z-\xi}\diff z=\frac{1}{2\pi i}\int\frac{f(z) \diff z}{z-\xi}-f(\xi)\cdot\ind_\Gamma \xi.
+        0=\frac{1}{2\pi i}\int_\Gamma\frac{f(z) -f(\xi)}{z-\xi}\diff z=\frac{1}{2\pi i}\int_\Gamma\frac{f(z) \diff z}{z-\xi}-f(\xi)\cdot\ind_\Gamma \xi.
         \tag{*}
         \label{eqn:proof_obCapC_ekviv}
     \end{equation}
     
     Položme 
-    $g(z,\xi):=\twopartdef{\frac{f(z)-f(\xi)}{z-\xi}}{z\neq\xi,\ (z,\, \xi)\in G,}{f'(z)}{z=\xi,\ (z,\, \xi)\in G.}$ Potom (a) $g$ je spojitá na $G\times G$. Jasné v bodech $(z,\, \xi),\ z\neq\xi.$ Nechť $z_0\in G$. Dokážeme, že $g$ je spojitá v $(z_0,\, z_0)$. Nechť $\varepsilon>0.$ Protože $f'$ je spojitá v $z_0\in G$, existuje $r>0$ takové, že $U(z_0,\, r)\subset G$ a $\forall t\in U(z_0,\, r):$ 
-    \begin{equation}
-          \left|f'(z)-f'(z_0)\right|\leq\varepsilon.
-          \tag{$\times$}
-          \label{eqn:proof_obCpC_1}
-    \end{equation}
-  
+    $$g(z,\xi):=\twopartdef{\frac{f(z)-f(\xi)}{z-\xi}}{z\neq\xi,\ (z,\, \xi)\in G,}{f'(z)}{z=\xi,\ (z,\, \xi)\in G.}$$
     
-    Je-li $z,\xi\in U(z_0,r)$ a $z\neq\xi$, potom pro úsečku $\varphi(t):=\xi+t(z-\xi),\ t\in [0,1]$ platí $f(z)-f(\xi)=\int_\varphi f'=\int_0^1 f'(\varphi(t))\diff t\cdot(z-\xi)$, tudíž $|g(z,\, \xi)-g(z_0,z_0)|=\left|\int_0^1(f'(\varphi(t)-f'(z_0))\diff t \right|\stackrel{\cref{eqn:proof_obCpC_1}}{\leq}\varepsilon$.\\
-    
-    (b) $\forall z\in G:g(z,\cdot)\in \Holo(G)$. Jasné pro $\xi\neq z$. V $\xi=z$ je ale odstranitelná singularita. Položme $h(\xi)=\frac{1}{2\pi i}\int_\Gamma g(z,\, \xi)\diff z,\ \xi \in G$. Podle věty o derivování integrálu podle komplexního paramteru platí, že $h \in\Holo(G)$. Je-li $\xi\in G\cap\Ext\Gamma$, potom v \cref{eqn:proof_obCapC_ekviv} máme $h(\xi)=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z$. Položme $h(\xi):=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z, \xi \in \underset{ot.}{\Ext\Gamma}\setminus G$. Potom $h$ je holomorfní na $G$ i na $\Ext\Gamma$, tedy i na celém $\Comp=G\cup\Ext\Gamma$. Ukážeme že $h$ je omezená. Potom z věty \cref{thm:liouville} (\nameref{thm:liouville}) plyne, že $h$ je konstantní. Skutečně, máme $\lim_{\xi\rightarrow\infty}h(\xi)=0$. 
-    Nechť $\langle\Gamma\rangle\subset U(0,R).$ Je-li $|\xi|>R$, potom $|h(\xi)|\leq\frac{1}{2\pi}U(\Gamma)\cdot\max|f|\cdot\frac{1}{|\xi|-R}\xrightarrow[\xi\rightarrow\infty]{}0$, protože $|z-\xi|\geq|\xi|-R$. Tedy $h=0$ na $\Comp$, speciálně platí \cref{eqn:cvz}.
+    Potom 
+    \begin{enumerate}[label=(\alph*)]
+        \item $g$ je spojitá na $G\times G$. Jasné v bodech $(z,\, \xi),\ z\neq\xi.$ Nechť $z_0\in G$. Dokážeme, že $g$ je spojitá v $(z_0,\, z_0)$. Nechť $\varepsilon>0.$ Protože $f'$ je spojitá v $z_0\in G$, existuje $r>0$ takové, že $U(z_0,\, r)\subset G$ a 
+        \begin{equation}
+            \forall z \in U(z_0,\, r):\ 
+            \left|f'(z)-f'(z_0)\right|\leq\varepsilon.
+            \tag{$\times$}
+            \label{eqn:proof_obCpC_1}
+        \end{equation}
+        Je-li $z,\xi\in U(z_0,r)$ a $z\neq\xi$, potom pro úsečku $\varphi(t):=\xi+t(z-\xi),\ t\in [0,1]$ platí 
+        $$f(z)-f(\xi)=\int_\varphi f'=\int_0^1 f'(\varphi(t))\cdot(z-\xi)\diff t=(z-\xi)\cdot\int_0^1 f'(\varphi(t))\diff t,$$
+        tudíž 
+        $$|g(z,\, \xi)-g(z_0,z_0)|=\left|\int_0^1(f'(\varphi(t)-f'(z_0))\diff t \right|\stackrel{\cref{eqn:proof_obCpC_1}}{\leq}\varepsilon.$$
+        
+        \item $\forall z\in G:g(z,\cdot)\in \Holo(G)$. Jasné pro $\xi\neq z$. V $\xi=z$ je ale odstranitelná singularita. Položme 
+        $$h(\xi):=\frac{1}{2\pi i}\int_\Gamma g(z,\, \xi)\diff z,\ \xi \in G.$$
+        Podle věty o derivování integrálu podle komplexního parametru platí, že $h \in\Holo(G)$. Je-li $\xi\in G\cap\Ext\Gamma$, potom v \cref{eqn:proof_obCapC_ekviv} máme $h(\xi)=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z$. Položme 
+        $$h(\xi):=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z,\ \xi \in \underset{ot.}{\Ext\Gamma}\setminus G.$$
+        Potom $h$ je holomorfní na $G$ i na $\Ext\Gamma$, tedy i na celém $\Comp=G\cup\Ext\Gamma$. Ukážeme že $h$ je omezená. Potom z věty \cref{thm:liouville} (\nameref{thm:liouville}) plyne, že $h$ je konstantní. Skutečně, máme $\lim_{\xi\rightarrow\infty}h(\xi)=0$. To plyne takto.
+        Nechť $\langle\Gamma\rangle\subset U(0,R).$ Je-li $|\xi|>R$, potom
+        $$|h(\xi)|\leq\frac{1}{2\pi}\cdot V(\Gamma)\cdot\underset{\langle\Gamma\rangle}{\max}|f|\cdot\frac{1}{|\xi|-R}\xrightarrow[\xi\rightarrow\infty]{}0,$$
+        protože $|z-\xi|\geq|\xi|-|z|\geq|\xi|-R$. Tedy $h=0$ na $\Comp$, speciálně platí \cref{eqn:10.8:cvz}.
+    \end{enumerate}
     
     Dále zvolme $\xi\in G\setminus\langle\Gamma\rangle$ a položme 
-    $$f_1(z):=(z-\xi)f(z),\ z\in G.$$ Podle \cref{eqn:cvz} je $$\int_\Gamma f(z)\diff z=\int_\Gamma\frac{f_1(z) \diff z}{z-\xi}\stackrel{\cref{eqn:cvz}}{=}2\pi i f_1(\xi)\cdot\ind_\Gamma\xi=0.$$
+    $$f_1(z):=(z-\xi)f(z),\ z\in G.$$ 
+    Podle \cref{eqn:10.8:cvz} je 
+    $$\int_\Gamma f(z)\diff z=\int_\Gamma\frac{f_1(z) \diff z}{z-\xi}
+    \stackrel{\cref{eqn:10.8:cvz}}{=}2\pi i \cdot \underset{=\; 0}{\underbrace{f_1(\xi)}}\cdot\ind_\Gamma\xi=0.$$
 \end{proof}
 V důkazu potřebujeme lepší větu o derivování integrálu podle komplexního parametru.
 
-\begin{theorem}
-Nechť $G\subset\Comp$ je otevřená a $\Gamma$ je cyklus. Nechť $g$ je spojitá funkce na $\langle\Gamma\rangle\times G$ a $\forall z\in \langle\Gamma\rangle:g(z,\cdot)\in \Holo(G)$. Potom je funkce $$h(\xi):=\int_\Gamma g(z,\, \xi)\diff z,\ \xi \in G$$ holomorfní.
+\begin{theorem}[O derivování integrálu podle komplexního parametru]
+Nechť $G\subset\Comp$ je otevřená a $\Gamma$ je cyklus. Nechť $g$ je spojitá funkce na $\langle\Gamma\rangle\times G$ a $\forall z\in \langle\Gamma\rangle:g(z,\cdot)\in \Holo(G)$. Potom je funkce $$h(\xi):=\int_\Gamma g(z,\, \xi)\diff z,\ \xi \in G$$ holomorfní na $G$.
 \end{theorem}
 
 \begin{proof}
-Zřejmě je $h$ spojitá na $G$. Nechť $\triangle$ je trojúhleník v $G$. Potom $$\int_{\partial\triangle}h=\int_{\partial\triangle}\left(\int_\Gamma g(z,\, \xi)\diff z\right)\diff \xi \stackrel{FUBINI}{=}\int_\Gamma\underbrace{\left(\int_{\partial\triangle} g(z,\, \xi)\diff \xi \right)}_{\stackrel{\hyperref[thm:goursat]{GOURSAT}}{=}0}\diff z = 0.$$ 
+Zřejmě je $h$ spojitá na $G$. Nechť $\triangle$ je trojúhelník v $G$. Potom $$\int_{\partial\triangle}h(\xi)\diff \xi=\int_{\partial\triangle}\left(\int_\Gamma g(z,\, \xi)\diff z\right)\diff \xi \stackrel{Fubini}{=}\int_\Gamma\underbrace{\left(\int_{\partial\triangle} g(z,\, \xi)\diff \xi \right)}_{\stackrel{\hyperref[thm:goursat]{Goursat}}{=}0}\diff z = 0.$$ 
 Z Věty \cref{thm:morera} (\nameref{thm:morera}) plyne, že $h\in\Holo(G)$.
 \end{proof}
 
-\begin{note} Nechť $G\subset\Comp$ je \emph{hvězdicovitá oblast}. Potom platí 
+\begin{note} Nechť $G\subset\Comp$ je \emph{hvězdovitá oblast}. Potom platí 
 \begin{equation}
-    \Int\Gamma\subset G \text{ pro každý cyklus } \Gamma \text{ v } G.
+    \text{ pro každý cyklus } \Gamma \text{ v } G \text{ je } \Int\Gamma\subset G.
     \tag{JS}
     \label{eqn:JS}
 \end{equation}
@@ -57,19 +79,20 @@ Nechť $G\subset\Comp$ je otevřená. Potom platí \cref{eqn:JS}, právě když 
 
 \begin{proof}
 $\fbox{$\Rightarrow$}$ Těžší. Bude v $\fbox{KA1}$.\\
-$\fbox{$\Leftarrow$}$ Nechť $\Gamma$ je cyklus v $G$. Položme $\ind_\Gamma \infty=0$. Potom zřejmě $\ind_\Gamma:\Sp\setminus\langle\Gamma\rangle\rightarrow \Z$ je spojitá, tudíž konstantní na každé komponentě $\Sp\setminus\langle\Gamma\rangle$. Speciálně, máme $\Int\Gamma\subset G$.
+$\fbox{$\Leftarrow$}$ Nechť $\Gamma$ je cyklus v $G$. Položme $\ind_\Gamma \infty=0$. Potom zřejmě $\ind_\Gamma:\Sp\setminus\langle\Gamma\rangle\rightarrow \Z$ je spojitá, tudíž konstantní na každé komponentě $\Sp\setminus\langle\Gamma\rangle$. Speciálně, máme $\forall s\in \Sp\setminus G:\ \ind_\Gamma s =0$, tedy $\Int\Gamma\subset G$.
 \end{proof}
 
 \begin{definition}
 Oblast $G\subset \Comp$ se nazývá \emph{jednoduše souvislá} (j. s.), pokud $\Sp\setminus G$ je souvislá.
 \end{definition}
+\newpage
 
 \begin{note}
 \begin{enumerate}\mbox{}
     \item 
-        Hvězdicovité oblasti $\subsetneq$ jednoduše souvislé oblasti.
+        Hvězdovité oblasti $\subsetneq$ jednoduše souvislé oblasti.
     \item
-        Je-li $G\subset\Comp$ \emph{j. s. oblast}, potom v Cauchyově a reziduové větě je podmínka "$\Int\Gamma\subset G$" splněna automaticky, je-li $\Gamma$ cyklus v $G$.
+        Je-li $G\subset\Comp$ \emph{jednoduše souvislá oblast}, potom v Cauchyově a reziduové větě je podmínka "$\Int\Gamma\subset G$"\textbf{ } splněna automaticky, je-li $\Gamma$ cyklus v $G$.
 \end{enumerate}
 \end{note}
 
@@ -82,7 +105,7 @@ Pojem indexu, vnitřku a vnějšku lze zobecnit i pro \emph{spojité} uzavřené
 \end{note}
 
 \begin{theorem}[Jordanova]\label{thm:Jordan}
-Nechť $\varphi$ je Jordanova křivkav $\Comp$. Potom $\Int\varphi$ a $\Ext\varphi$ jsou oblasti a $\Comp\setminus\langle\varphi\rangle=\Int\varphi\cup\Ext\varphi$. Navíc buď $\ind_\varphi s=1\ \forall s \in \Int\varphi$, nebo $\ind_\varphi s=-1\ \forall s \in \Int\varphi$.
+Nechť $\varphi$ je Jordanova křivka $\Comp$. Potom $\Int\varphi$ a $\Ext\varphi$ jsou oblasti a $\Comp\setminus\langle\varphi\rangle=\Int\varphi\cup\Ext\varphi$. Navíc buď $\forall s \in \Int\varphi:\ \ind_\varphi s=1$, nebo $\forall s \in \Int\varphi:\ \ind_\varphi s=-1$.
 \end{theorem}
 \begin{proof}
 Těžký, nebude.

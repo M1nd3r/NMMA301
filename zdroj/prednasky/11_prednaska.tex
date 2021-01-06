@@ -1,3 +1,5 @@
+\section{Index}
+
 \begin{note}
 Otázka: Jak $\ind_\varphi s$ vypočítat? BÚNO: $s=0$.
 \end{note}
@@ -7,22 +9,23 @@ Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá
 \end{notation}
 
 \begin{definition}
-Nechť $\varphi: [\alpha,\,\beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Řekneme, že $\theta: [\alpha, \beta] \rightarrow \Real$ (resp. $\phi: [\alpha, \beta] \rightarrow \Comp $) je jednoznačná větev argumentu (resp. jednoznačná větev logaritmu) křivky $\varphi$, pokud je $\theta$ (resp. $\phi$) spojitá na $[\alpha, \beta]$ a $\forall t \in [\alpha, \beta]:  \theta(t) \in \Arg(\varphi(t))$ (resp. $\phi(t) \in \Log(\varphi(t))$).
+Nechť $\varphi: [\alpha,\,\beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Řekneme, že $\theta: [\alpha, \beta] \rightarrow \Real$ (resp. $\phi: [\alpha, \beta] \rightarrow \Comp $) je \emph{jednoznačná větev argumentu} (resp. \emph{jednoznačná větev logaritmu}) křivky $\varphi$, pokud je $\theta$ (resp. $\phi$) spojitá na $[\alpha, \beta]$ a $\forall t \in [\alpha, \beta]:  \theta(t) \in \Arg(\varphi(t))$ (resp. $\phi(t) \in \Log(\varphi(t))$).
 \end{definition}
 
 \begin{note}
-Vždy existuje jednoznačná větev argumentu a logaritmu pro spojitou křivku $\varphi$ (cvičení) Dokážeme si to jen pro regulární křivky.
+Vždy existuje jednoznačná větev argumentu a logaritmu pro spojitou křivku $\varphi$ (cvičení). Dokážeme si to jen pro regulární křivky.
 \end{note}
 
 \begin{theorem}[O jednoznačnosti jednoznačné větve argumentu a logaritmu]
 Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá křivka. Potom
 \begin{itemize}
-    \item $\phi$ je jednoznačná větev logaritmu $\varphi$, právě když $\Re \phi = \log|\varphi|$ a $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
+    \item $\phi$ je jednoznačná větev logaritmu $\varphi$, právě když $\Rel(\phi) = \log|\varphi|$ a $\Img(\phi)$ je jednoznačná větev argumentu $\varphi$.
     \item Jsou-li $\theta_1, \theta_2$ jednoznačné větve argumentu $\varphi$, potom existuje $k \in \Z$, že $\theta_2=\theta_1 + 2 k \pi $.
 \end{itemize}
 \end{theorem}
 
 \begin{proof}
+\mbox{}
 \begin{itemize}
     \item Z definice argumentu a logaritmu.
     \item Pro $\forall t \in [\alpha, \beta]$ existuje $k (t) \in \Z$, že $\theta_2(t)=\theta_1(t) + 2 k(t) \pi$. Protože $k:  [\alpha, \beta] \rightarrow \Z$ je spojitá a $[\alpha, \beta]$ je souvislá, je $k$ konstantní na $[\alpha, \beta]$.
@@ -34,7 +37,7 @@ Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je regulár
 $$
 \int_\varphi \frac{\diff z}{z}=\phi(\beta) - \phi(\alpha) \text{.}
 $$
-Navíc $\Im \phi$ je jednoznačná větev argumentu $\varphi$.
+Navíc $\Img(\phi)$ je jednoznačná větev argumentu $\varphi$.
 \end{theorem}
 \begin{proof}
 Hledáme spojité $\phi$ takové, že $\varphi=e^\phi$. Zřejmě $\int_\varphi \frac{\diff z}{z}=\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)} \diff t$. Položme $\phi_0(s):=\int_\alpha^s \frac{\varphi'(t)}{\varphi(t)} \diff t$, $s \in [\alpha, \beta]$. Potom $\phi_0$ je spojitá na $[\alpha, \beta]$ a $\phi_0'=\frac{\varphi'}{\varphi}$ na $[\alpha, \beta] \setminus K$, kde $K$ je konečná. Potom na $[\alpha, \beta] \setminus K$ je $(\varphi e^{-\phi_0})'=(\varphi' - \varphi \phi_0') e^{-\phi_0}=0$. Tedy existuje $c \in \Comp $, že $\varphi e^{-\phi_0}=e^c$ na $[\alpha, \beta]$. Položme $\phi:=\phi_0+c$.
@@ -49,6 +52,7 @@ Speciálně, $\ind_\varphi s \in \Z$.
 \end{theorem}
 
 \begin{note*}
+\mbox{}
 \begin{itemize}
     \item Je-li $\varphi$ pouze spojitá, definujeme $\ind_\varphi s$ vztahem \cref{OVI}.
     \item Z \cref{OVI} je jasné, že $\ind_\varphi s$ je počet otočení $\varphi$ kolem $s$ proti směru hodinových ručiček.
@@ -59,24 +63,26 @@ Speciálně, $\ind_\varphi s \in \Z$.
 Máme, že
 \begin{equation*}
 \begin{aligned}
-&\ind_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=} \ind_{\widetilde{\varphi}}0=\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Im \phi(\beta)-i \Im \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
+&\ind_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=}
+\frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}=
+\ind_{\widetilde{\varphi}}0=\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Img \phi(\beta)-i \Img \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
 \end{aligned}
 \end{equation*}
-pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Re \phi (\beta)=\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Re \phi (\alpha)$ a $\Im \phi$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
+pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Rel(\phi(\beta)) =\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Rel(\phi(\alpha)) $ a $\Img(\phi)$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
 \end{proof}
 
 \section{Obecná Cauchyho věta a reziduová věta pro cykly}
 
 \begin{definition}
-Konečnou posloupnost $\Gamma:=\{\varphi_1, ... ,\varpi_n\}$, kde $n\in\N$ a $\varphi_1, ... \varphi_n$ jsou uzavřené (regulární) křivky v $\Comp $, budeme nazývat \emph{cyklus}.
+Konečnou posloupnost $\Gamma:=\{\varphi_1, ... ,\varphi_n\}$, kde $n\in\N$ a $\varphi_1, ... \varphi_n$ jsou uzavřené (regulární) křivky v $\Comp $, budeme nazývat \emph{cyklus}.
 \end{definition}
 
 \begin{notation}
-Nechť $\Gamma = \{\varphi_1, ... ,\varpi_n\}$ je cyklus. Definujeme
+Nechť $\Gamma = \{\varphi_1, ... ,\varphi_n\}$ je cyklus. Definujeme
 \begin{itemize}
     \item \emph{graf} $\Gamma$ jako $$\langle\Gamma\rangle:=\bigcup_{k=1}^n \langle\varphi_k\rangle,$$
     \item \emph{délku} $\Gamma$ jako $$V\left(\Gamma\right):=\sum_{k=1}^n V(\varphi_k),$$ 
-    \item je-li $f$ spojitá na $\langle\Gamma\rangle$, pak $$\int_\Gamma f := \sum_{k=1}^n int_{\varphi_k}f,$$
+    \item je-li $f$ spojitá na $\langle\Gamma\rangle$, pak $$\int_\Gamma f := \sum_{k=1}^n \int_{\varphi_k}f,$$
     \item \emph{index} $$\ind_\Gamma(z_0):=\sum_{k=1}^n \ind_{\varphi_k}(z_0) = \frac{1}{2\pi i}\int_\Gamma \frac{dz}{z-z_0},$$
     \item \emph{vnitřek} $\Gamma$ jako $\Int\Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \ind_\Gamma(z_0)\neq 0\},$
     \item \emph{vnějšek} $\Gamma$ jako $\Ext \Gamma:=\{z_0\in\Comp \setminus\langle\Gamma\rangle: \ind_\Gamma(z_0)=0\}.$

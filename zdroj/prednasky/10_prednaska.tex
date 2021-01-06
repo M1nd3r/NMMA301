@@ -1,5 +1,5 @@
 \begin{example}
-Nechť $\varphi:=\psi^t+[-1;\,1]$, kde $\psi^t(t):=e^{it},\ t\in[0,\,\pi]$. Potom $\Comp \backslash\langle{\varphi}\rangle=G_0\cup{G_\infty}$, kde $G_0$ je omezená komponenta ("vnitřek") a $G_\infty$ je neomezená komponenta ("vnějšek"). Platí
+Nechť $\varphi:=\psi^++[-1;\,1]$, kde $\psi^+(t):=e^{it},\ t\in[0,\,\pi]$. Potom $\Comp \backslash\langle{\varphi}\rangle=G_0\cup{G_\infty}$, kde $G_0$ je omezená komponenta ("vnitřek") a $G_\infty$ je neomezená komponenta ("vnějšek"). Platí
 $$\ind_\varphi{s}=
 \left\{
 \begin{array}{ll}
@@ -8,7 +8,7 @@ $$\ind_\varphi{s}=
 \end{array}
 \right.$$
 Položme $\Tilde{\varphi}:=\psi^-\dotplus[1;\,-1]$,
-kde $\psi^-(t):=e^{it},\ t\in[-\pi,\,0]$. Potom máme 
+kde $\psi^-(t):=e^{it},\ t\in[-\pi,\,0]$. Potom pro $|s|<1$ máme 
 $$1=\ind_{\varphi\dotplus\tilde\varphi}{s}=\ind_\varphi{s}+\ind_{\tilde{\varphi}}{s}.$$
 \end{example}
 
@@ -23,17 +23,17 @@ Potom
 \begin{equation}
     \int_{-\infty}^\infty{R(x)dx}=2i\pi.\sum_{\begin{array}{cc}
          Q(s)=0  \\
-         {Im}{s}>0 
+         \Img(s)>0 
     \end{array}}{res_s{R}}.
     \label{eqn:print}
 \end{equation}
 \end{theorem}
 \begin{proof}
-Ukažte, že integrál v \cref{eqn:print} konverguje, právě když platí 1., 2. Nechť $r>0$ a $\varphi_r:=\varphi^1_r\dotplus\varphi^2_r$, kde $\varphi^1_r(t):=t\ t\in[-r,r]$ a $\varphi^2_r(t):=re^{it},\ t\in[0,\pi]$. Je-li $r>0$ tak velké, aby uvnitř $\varphi_r$ ležely všechny póly $R$ z horní polrovviny, potom
+Ukažte, že integrál v \cref{eqn:print} konverguje, právě když platí 1., 2 (za cvičení). Nechť $r>0$ a $\varphi_r:=\varphi^1_r\dotplus\varphi^2_r$, kde $\varphi^1_r(t):=t,\ t\in[-r,r]$ a $\varphi^2_r(t):=re^{it},\ t\in[0,\pi]$. Je-li $r>0$ tak velké, aby uvnitř $\varphi_r$ ležely všechny póly $R$ z horní poloroviny, potom
 \begin{equation}
     2i\pi.\sum_{\begin{array}{cc}
          Q(s)=0  \\
-         {Im}{s}>0 
+         \Img(s)>0 
     \end{array}}{res_s{R}}
     \overset{(RV)}{=}
     \int_{\varphi_r}{R}=
@@ -52,9 +52,9 @@ $$\left|\int_{\varphi^2_r}{R}\right|\leq V(\varphi^2_r)\cdot\max_{\langle{\varph
 \end{proof}
 
 \begin{example}
-$$I=\underset{\text{sudá}}{\int_0^\infty{\frac{x^2+1}{x^4+1}}dx}
-=\frac{1}{2}\underset{:=R(x)}{\int_{-\infty}^\infty\frac{x^2+1}
-{x^4+1}dx}=i\pi\cdot(res_{z_0}R+res_{z_1}R)$$
+$$I=\int_0^\infty{\underset{\text{sudá}}{\underbrace{\frac{x^2+1}{x^4+1}}}dx}
+=\frac{1}{2}{\int_{-\infty}^\infty\underset{:=R(x)}{\underbrace{\frac{x^2+1}
+{x^4+1}}}dx}=i\pi\cdot(res_{z_0}R+res_{z_1}R)$$
 $$=-\frac{i\pi}{4\sqrt{2}}\left[(1+i)^2-(1-i)^2\right]=-\frac{i\pi}{4\sqrt{2}}2\cdot 2i=\frac{\pi}{\sqrt{2}},$$ protože
 $${res}_{z_k}R=\frac{z_k^2+1}{4z^3_k}\cdot\frac{z_k}{z_k}=
 -\frac{1}{4}(z_k^2+1)z_k,$$
@@ -73,7 +73,7 @@ Nechť $a>0$. Potom
     \label{eqn:2vint}
     \int_{-\infty}^\infty{R(x)e^{iax}}dx = 2i\pi\cdot\sum_{\begin{array}{cc}
          Q(s)=0  \\
-         {Im}{s}>0 
+         \Img(s)>0 
     \end{array}}{res_s\left({R(z)e^{iaz}}\right)}.
 \end{equation}
 \end{theorem}
@@ -97,7 +97,7 @@ Je-li $a<0$, potom \cref{eqn:odhint} obecně neplatí. V tomto případě je nut
 
 \begin{example}
 Spočteme Fourierovu transformaci $\F $ funkce $f(x):=\frac{1}{x^2+1}$, kde
-$$(\F f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\Real $$.
+$$(\F f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\Real. $$
 \begin{itemize}
     \item Nechť $t>0$. Potom $(\F f)(t)=i\cdot{res}_i{(f(z)e^{itz})}=i\cdot\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
     \item Nechť $t<0$. Potom $(\F f)(t)=i\cdot{res}_{(-i)}{(f(z)e^{itz})}\cdot(-1)=-i\cdot\frac{e^{-t}}{2\cdot  r(-i)}=\frac{e^{t}}{2}$.
@@ -107,7 +107,7 @@ $$(\F f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x
 \end{example}
 
 \begin{example}
-$$\int_0^\infty\frac{x\sin{x}}{x^2+1}dx=\frac{1}{2}{Im}\underset{:=I}{\underbrace{\int_{-\infty}^\infty\frac{x.e^{ix}}{x^2+1}dx}}=\frac{\pi}{2e},$$
+$$\int_0^\infty\frac{x\sin{x}}{x^2+1}dx=\frac{1}{2}\Img \underset{:=I}{\underbrace{\left(\int_{-\infty}^\infty\frac{x.e^{ix}}{x^2+1}dx\right)}}=\frac{\pi}{2e},$$
 protože
 $$I=2\pi i\,{res}_{i}{f}=2\pi i \frac{ie^{-1}}{2i}=\frac{\pi i}{e}.$$
 \end{example}

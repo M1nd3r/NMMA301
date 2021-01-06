@@ -2,26 +2,25 @@
 
 \section{Zajímavé funkce}
 \subsection{Funkce Gama}
-Položme $\Gamma (z) := \int_0^{+\infty}t^{z-1}e^{-t} \diff t$, $\Re(z)>0$. Potom platí
+Položme $$\Gamma (z) := \int_0^{+\infty}t^{z-1}e^{-t} \diff t,\ \Rel(z)>0.$$
+Potom platí
 
 \begin{enumerate}
-    \item $\Gamma$ je holomorfní funkce na $\Re(z)>0$.
+    \item $\Gamma$ je holomorfní funkce na $\Rel(z)>0$.
      \begin{proof}
-      Nechť $z=x+iy$. Potom integrál konverguje jako Lebesgueův, právě když $\Re(z)>0$. Skutečně, $t^{z-1}=e^{(x+iy-1)\cdot \log t}$, $|t^{z-1}|=t^{x-1}$. Dále z vět o spojitosti a derivování integrálu podle reálných parametrů $x, y$ máme
+      Nechť $z=x+iy$. Potom integrál konverguje jako Lebesgueův, právě když $\Rel(z)>0$. Skutečně, $t^{z-1}=e^{(x+iy-1)\cdot \log t}$, $|t^{z-1}|=t^{x-1}$. Dále z vět o spojitosti a derivování integrálu podle reálných parametrů $x, y$ máme
       $$
        \frac{\partial \Gamma}{\partial x}(x,y)=\int_0^{+\infty}t^{z-1}\log (t) e^{-t} \diff t=-i \frac{\partial \Gamma}{\partial y}\text{, protože}
       $$
       $$
        \frac{\partial t^{z-1}}{\partial x}=t^{z-1}\log (t)=-i \frac{\partial t^{z-1}}{\partial y}\text{.}
       $$
-      Z CR věty plyne, že $\Gamma$ je holomorfní na $\Re(z)>0$.
+      Z věty \ref{CR} (\nameref{CR}) plyne, že $\Gamma$ je holomorfní na $\Rel(z)>0$.
      \end{proof}
-    \item $\Gamma (z+1)=z \cdot \Gamma (z)$, $\Re(z)>0$. Speciálně, $\Gamma(n+1)=n!$, $n=0, 1, 2, \dots$
+    \item $\Gamma (z+1)=z \cdot \Gamma (z)$, $\Rel(z)>0$. Speciálně, $\Gamma(n+1)=n!$, $n=0, 1, 2, \dots$
      \begin{proof}
-      $\Gamma (1)=\int_0^{+\infty}e^{-t} \diff t=1 \text{;}$
-      $$
-       \Gamma(z+1)=\int_0^{+\infty}t^{z}e^{-t} \diff t=[-t^ze^{-t}]_0^{+\infty}+z\cdot \Gamma (z)
-      $$
+      $$\Gamma (1)=\int_0^{+\infty}e^{-t} \diff t=1,$$
+      $$\Gamma(z+1)=\int_0^{+\infty}t^{z}e^{-t} \diff t=\underset{=\;0}{\underbrace{[-t^ze^{-t}]_0^{+\infty}}}+z\cdot \Gamma (z).$$
      \end{proof}
      \begin{note*}
       Z věty o jednoznačnosti stačí rovnost dokázat např. pro reálná $z>0$.
@@ -30,10 +29,10 @@ Položme $\Gamma (z) := \int_0^{+\infty}t^{z-1}e^{-t} \diff t$, $\Re(z)>0$. Poto
     
     Víme z 2., že
     \begin{equation}\tag{Podíl Gamma}\label{PodilGamma}
-        \Gamma(z)=\frac{\Gamma(z+1)}{z}\text{ , } \Re(z)>0 \text{.}
+        \Gamma(z)=\frac{\Gamma(z+1)}{z}\text{ , } \Rel(z)>0 \text{.}
     \end{equation}
-    Protože pravá strana má smysl i pro $0 \geq \Re(z)>-1$, $z \neq 0$, definujeme pro taková $z$ funkci $\Gamma (z)$ jako $\Gamma(z)=\frac{\Gamma(z+1)}{z}$.
-    Nyní má ale pravá strana smysl i pro $-1 \geq \Re(z)>-2$, $z \neq -1, 0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{PodilGamma} atd. Navíc máme
+    Protože pravá strana má smysl i pro $0 \geq \Rel(z)>-1$, $z \neq 0$, definujeme pro taková $z$ funkci $\Gamma (z)$ jako $\Gamma(z)=\frac{\Gamma(z+1)}{z}$.
+    Nyní má ale pravá strana smysl i pro $-1 \geq \Rel(z)>-2$, $z \neq -1, 0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{PodilGamma} atd. Navíc máme
     $$
      \text{res}_{0} \Gamma (z)=\text{res}_{0}\left(\frac{\Gamma (z+1)}{z} \right)=\Gamma(1)=1;
     $$
