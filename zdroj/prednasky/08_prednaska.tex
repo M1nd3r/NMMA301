@@ -140,13 +140,13 @@ H_s \in \Holo (U(s_0,\,r_0)).$$
 
 \subsection{Reziduum}
 \begin{definition}
-Nechť $f \in \Holo (P(z_0))$ a nechť $f(z)=\sum\limits_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, $z\in P(z_0)$. Potom reziduem $f$ v $z_0$ nazveme číslo res$_{z_0}f:=a_{-1}$.
+Nechť $f \in \Holo (P(z_0))$ a nechť $f(z)=\sum\limits_{n=-\infty}^{+\infty}a_n(z-z_0)^n$, $z\in P(z_0)$. Potom reziduem $f$ v $z_0$ nazveme číslo $\res_{z_0}f:=a_{-1}$.
 \end{definition}
 
 \begin{theorem}[Reziduová na hvězdovitých oblastech]
 Nechť $G \subset \Comp $ je hvězdovitá oblast, $M \subset G$ je konečná a $f \in \Holo (G \setminus M)$. Nechť $\varphi$ je uzavřená křivka v $G \setminus M$. Potom máme 
 \begin{equation}
-    \int_\varphi f=2\pi i \sum\limits_{s\in M}\text{res}_sf \cdot \ind_\varphi s.
+    \int_\varphi f=2\pi i \sum\limits_{s\in M}\res_sf \cdot \ind_\varphi s.
     \tag{RV}
     \label{eqn:7.31.RV}
 \end{equation}
@@ -159,7 +159,7 @@ Pro $M=\emptyset$ dostaneme Cauchyho větu.
 \begin{proof}
 Podle předchozí věty existuje $h \in \Holo (G)$ tak, že $f=\sum\limits_{s\in M}H_s+h$ na $G \setminus M$. Potom máme $\int_\varphi f=\sum\limits_{s\in M}\int_\varphi H_s$, protože $\int_\varphi h =0$ z Cauchyho věty pro hvězdovité oblasti. Pro každé $s \in M$:
 $$
-\int_\varphi H_s(z) \diff z=\int_\varphi \sum\limits_{n=1}^{+\infty}a_{-n}^s\frac{1}{(z-s)^n} \diff z = \sum\limits_{n=1}^{+\infty}a_{-n}^s \int_\varphi \frac{\diff z}{(z-s)^n}=2\pi i \cdot \text{res}_sf\cdot \ind_\varphi s\text{,}
+\int_\varphi H_s(z) \diff z=\int_\varphi \sum\limits_{n=1}^{+\infty}a_{-n}^s\frac{1}{(z-s)^n} \diff z = \sum\limits_{n=1}^{+\infty}a_{-n}^s \int_\varphi \frac{\diff z}{(z-s)^n}=2\pi i \cdot \res_sf\cdot \ind_\varphi s\text{,}
 $$
 jelikož suma konverguje stejnoměrně na $\langle\varphi \rangle$ a poslední integrál je roven $0$ pro $n \neq 1$ (neboť jinak má integrand PF, a tudíž je integrál přes uzavřenou křivku nulový) a $2 \pi i \cdot \ind_\varphi s$, je-li $n=1$.
 \end{proof}

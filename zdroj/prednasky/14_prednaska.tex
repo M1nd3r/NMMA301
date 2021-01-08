@@ -1,48 +1,172 @@
 % lednová přednáška
 
 \section{Zajímavé funkce}
+\setcounter{equation}{0}
 \subsection{Funkce Gama}
-Položme $$\Gamma (z) := \int_0^{+\infty}t^{z-1}e^{-t} \diff t,\ \Rel(z)>0.$$
-Potom platí
 
-\begin{enumerate}
-    \item $\Gamma$ je holomorfní funkce na $\Rel(z)>0$.
-     \begin{proof}
-      Nechť $z=x+iy$. Potom integrál konverguje jako Lebesgueův, právě když $\Rel(z)>0$. Skutečně, $t^{z-1}=e^{(x+iy-1)\cdot \log t}$, $|t^{z-1}|=t^{x-1}$. Dále z vět o spojitosti a derivování integrálu podle reálných parametrů $x, y$ máme
-      $$
-       \frac{\partial \Gamma}{\partial x}(x,y)=\int_0^{+\infty}t^{z-1}\log (t) e^{-t} \diff t=-i \frac{\partial \Gamma}{\partial y}\text{, protože}
-      $$
-      $$
-       \frac{\partial t^{z-1}}{\partial x}=t^{z-1}\log (t)=-i \frac{\partial t^{z-1}}{\partial y}\text{.}
-      $$
-      Z věty \ref{CR} (\nameref{CR}) plyne, že $\Gamma$ je holomorfní na $\Rel(z)>0$.
-     \end{proof}
-    \item $\Gamma (z+1)=z \cdot \Gamma (z)$, $\Rel(z)>0$. Speciálně, $\Gamma(n+1)=n!$, $n=0, 1, 2, \dots$
-     \begin{proof}
-      $$\Gamma (1)=\int_0^{+\infty}e^{-t} \diff t=1,$$
-      $$\Gamma(z+1)=\int_0^{+\infty}t^{z}e^{-t} \diff t=\underset{=\;0}{\underbrace{[-t^ze^{-t}]_0^{+\infty}}}+z\cdot \Gamma (z).$$
-     \end{proof}
-     \begin{note*}
-      Z věty o jednoznačnosti stačí rovnost dokázat např. pro reálná $z>0$.
-     \end{note*}
-    \item $\Gamma$ lze jednoznačně rozšířit na funkci holomorfní na $\Comp \setminus \{0, -1, -2, -3, \dots \}$, přičemž v bodech $0, -1, -2, -3, \dots$ má $\Gamma$ jednoduché póly a $\text{res}_{-n} \Gamma=\frac{(-1)^n}{n!}$, $n=0, 1, 2, 3, \dots$
-    
-    Víme z 2., že
-    \begin{equation}\tag{Podíl Gamma}\label{PodilGamma}
-        \Gamma(z)=\frac{\Gamma(z+1)}{z}\text{ , } \Rel(z)>0 \text{.}
-    \end{equation}
-    Protože pravá strana má smysl i pro $0 \geq \Rel(z)>-1$, $z \neq 0$, definujeme pro taková $z$ funkci $\Gamma (z)$ jako $\Gamma(z)=\frac{\Gamma(z+1)}{z}$.
-    Nyní má ale pravá strana smysl i pro $-1 \geq \Rel(z)>-2$, $z \neq -1, 0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{PodilGamma} atd. Navíc máme
-    $$
-     \text{res}_{0} \Gamma (z)=\text{res}_{0}\left(\frac{\Gamma (z+1)}{z} \right)=\Gamma(1)=1;
-    $$
-    $$
-     \text{res}_{-1} \Gamma (z)=\text{res}_{-1}\left(\frac{\Gamma (z+2)}{z(z+1)} \right)=-\Gamma(1)=-1;
-    $$
-     $$
-     \text{res}_{-n} \Gamma (z)=\text{res}_{-n}\left(\frac{\Gamma (z+n+1)}{z(z+1)\dots (z+n)} \right)=\frac{\Gamma(1)}{n!}\cdot (-1)^n =\frac{(-1)^n}{n!}\text{, } n \in \N_0\text{,}
-    $$
-    protože $\Gamma(z+n+1)=(z+n)(z+n-1) \cdot \dots \cdot z \cdot \Gamma(z)$.
-\end{enumerate}
+\begin{definition}[Funkce $\Gamma$]
+Položme 
+\begin{equation}\label{eqn:gamma}
+    \Gamma (z) := \int_0^{+\infty}t^{z-1}e^{-t} \diff t,\ \Rel(z)>0.
+\end{equation} 
+\end{definition}
+
+\begin{lemma}
+Funkce $\Gamma$ je holomorfní funkce na $\Rel(z)>0$.
+\end{lemma}
+
+\begin{proof}
+  Nechť $z=x+iy$. Potom integrál konverguje jako Lebesgueův, právě když $\Rel(z)>0$. Skutečně, $t^{z-1}=e^{(x+iy-1)\cdot \log t}$, $|t^{z-1}|=t^{x-1}$. Dále z vět o spojitosti a derivování integrálu podle reálných parametrů $x,\ y$ máme
+\begin{align*}
+   \frac{\partial \Gamma}{\partial x}(x\,,y)&=\int_0^{+\infty}t^{z-1}\log (t) e^{-t} \diff t=-i \frac{\partial \Gamma}{\partial y}\text{, protože}\\
+   \frac{\partial t^{z-1}}{\partial x}&=t^{z-1}\log (t)=-i \frac{\partial t^{z-1}}{\partial y}\text{.}
+\end{align*}
+  Z věty \ref{CR} (\nameref{CR}) plyne, že $\Gamma$ je holomorfní na $\Rel(z)>0$.
+ \end{proof}
+ 
+\begin{lemma}\label{lemma:gammaIter}
+$\Gamma(z+1)=z\cdot\Gamma(z),\ \Rel(z)>0$. Speciálně, $\Gamma(n+1)=n!,\ n=0,\,1,\,2,\,\ldots$ 
+\end{lemma}
+
+\begin{proof}
+\begin{align*}
+    \Gamma(1)&=\int_0^{+\infty}e^{-t}\diff t=1,\\
+    \Gamma(z+1)&=\int_0^{+\infty}\underbrace{t^z}_u \underbrace{e^{-t}}_{\frac{dv}{dt}}\diff t \underset{partes}{\underset{per}{=}} \underbrace{\left[-t^z e^{-t}\right]_0^{+\infty}}_{=0}+z\cdot\Gamma(z),\\
+    \frac{du}{dt}&=zt^{z-1},\ v:=-e^{-t}.
+\end{align*}
+\end{proof}
+
+\begin{note*}
+Z věty \cref{thm:jednoznacnostHolo} (\nameref{thm:jednoznacnostHolo}) stačí rovnost dokázat např. pro reálné $z>0$.
+\end{note*}
+
+\begin{lemma}
+Funkci $\Gamma$ lze jednoznačně rozšířit na funkci holomorfní na $\Comp\setminus\{0,\,-1,\,-2,\,-3,\,\ldots\}$, přičemž v bodech $0,\,-1,\,-2,\,-3,\,\ldots$ 
+má $\Gamma$ jednoduché póly a $\res_{-n}\Gamma=(-1)^n/n!,\  n=0,\,1,\,2,\,3,\,\ldots$ 
+\end{lemma}
+
+\begin{proof}
+Víme z \cref{lemma:gammaIter}, že
+\begin{equation}\tag{*}\label{eqn:gammaIterFraction}
+    \Gamma(z)=\frac{\Gamma(z+1)}{z},\ \Rel(z)>0,
+\end{equation}
+protože pravá strana má smysl i pro $0\geq\Rel(z)>-1,\ z\neq 0$, definujeme pro taková $z$ funkci $\Gamma(z)$ jako $\frac{\Gamma(z+1)}{z}$. Nyní má ale pravá strana smysl pro $-1\geq\Rel(z)>-2, z\neq-1,\,0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{eqn:gammaIterFraction}, atd. Navíc máme 
+\begin{align*}
+    \res_0\Gamma(z)&=\res_0\left(\frac{\Gamma(z+1)}{z}\right)=\Gamma(1)=1, \\
+    \res_{-1}\Gamma(z)&=\res_{-1}\left(\frac{\Gamma(z+2)}{z(z+1)}\right)=-\Gamma(1)=-1, \\
+    \res_{-n}\Gamma(z)&=\res_{-n}\left(\frac{\Gamma(z+n+1)}{z(z+1)\cdots(z+n)}\right)=\frac{\Gamma(1)}{n!}\cdot(-1)^n=\frac{(-1)^n}{n!},\ n \in \N_0,
+\end{align*}
+protože $\Gamma(z+n+1)=(z+n)(z+n-1) \cdots z \cdot \Gamma(z)$.
+\end{proof}
 
 \subsection{Riemannova zeta funkce}
+
+\begin{definition}[Riemannova $\zeta$ funkce]
+Pro $\Rel(z)>1$ položme
+\begin{equation}\label{eqn:zeta}
+    \zeta(z):=\sum_{n=1}^\infty \frac{1}{n^z}.
+\end{equation}
+\end{definition}
+
+\begin{lemma}
+Funkce $\zeta$ je holomorfní funkce na $\Rel z>1$.
+\end{lemma}
+
+\begin{proof}
+Skutečně, řada v \cref{eqn:zeta} konverguje absolutně a lokálně stejnoměrně na $\Rel z>1$, protože $$\left|\frac{1}{n^z}\right|=\left|e^{-z\cdot \log(n)}\right|=e^{-\Rel(z)\cdot\log n}\leq\frac{1}{n^{x_0}},$$ 
+je-li $\Rel (z)\geq x_0>1$ a $\sum_{n=1}^\infty\frac{1}{n^{x_0}}<+\infty$. Z Věty \cref{thm:weierstrass} (\nameref{thm:weierstrass}) plyne\\ $\zeta\in\Holo\big(\{\Rel(z)>1\}\big)$.
+\end{proof}
+
+\begin{definition}[Dirichletova eta funkce]
+\begin{equation}\label{eqn:eta}
+    \eta(z):=\sum_{n=1}^\infty \frac{(-1)^{n+1}}{n^z},\ \Rel(z)>0.
+\end{equation}
+\end{definition}
+
+\begin{lemma}
+Funkce $\eta$ je holomorfní na $\Rel(z)>0$.
+\end{lemma}
+
+\begin{proof}
+Na $\Rel(z)>1$ je důkaz stejný jako pro $\zeta$. Na $0<\Rel(z)<1$ řada v \cref{eqn:eta} konverguje neabsolutně - pro reálná $z$ je důkaz snadný.
+\end{proof}
+
+\begin{lemma}\label{lemma:etaZetaRelation} Platí
+\begin{equation*}
+    \eta(z)=(1-2^{1-z})\zeta(z),\ \Rel(z)>1.
+\end{equation*}
+\end{lemma}
+
+\begin{proof}
+Nechť $\Rel(z)>1$. Potom \begin{align*}
+    \zeta(z)+\eta(z&)\,=\,2\cdot\sum_{n=1}^\infty \frac{1}{(2n-1)^z} \text{ a}\\
+    \eta(z)&\underset{konv.}{\underset{abs.}{=}}\sum_{n=1}^\infty \frac{1}{(2n-1)^z}-\sum_{n=1}^\infty\frac{1}{(2n)^z}=\frac{\zeta(z)+\eta(z)}{2}-\frac{1}{2^z}\zeta(z),\ \text{tudíž}\\
+    \eta(z&)\,=\,\zeta(z)-2^{1-z}\zeta(z).
+\end{align*}
+\end{proof}
+
+\begin{lemma}
+$\varphi(z):=1-2^{1-z}$ je celá funkce, která má \emph{nulové body} právě v bodech $$z_k:=1+k\cdot\frac{2\pi i}{\log 2},\ k\in \Z,$$ a to \emph{jednoduché}.
+\end{lemma}
+
+\begin{proof}\mbox{}
+\begin{itemize}
+    \item $2^{1-z}=e^{(1-z\log 2)}=1\iff(1-z)\cdot\log2=2k\pi i,\ k\in \Z$,
+    \item $\varphi'(z)=2^{1-z}\cdot\log2,\ \varphi'(z_k)=\log2\neq0$.
+\end{itemize}
+\end{proof}
+
+\begin{lemma}
+Funkci $\zeta$ lze jednoznačně rozšířit na holomorfní funkci na $\Comp\setminus\{1\}$ s jednoduchým pólem v 1 a $\res_1\zeta=1$.
+\end{lemma}
+
+\begin{proof}
+Z \cref{lemma:etaZetaRelation} víme, že pro $\Rel(z)>1$ je 
+\begin{equation}\tag{*}\label{eqn:zetaExpansion}
+    \zeta(z)=\frac{\eta(z)}{\left(1-2^{1-z}\right)}.
+\end{equation}
+Protože pravá strana \cref{eqn:zetaExpansion} má smysl i pro $1\geq\Rel(z)>0,\ z\neq z_k$ pro všechna $k\in\Z$, rozšíříme $\zeta$ holomorfně pro taková $z$ pomocí \cref{eqn:zetaExpansion}. Dále z \cref{eqn:zetaExpansion} máme $\res_1\zeta=\frac{\eta(1)}{\varphi'(1)}=\frac{\log2}{\log2}=1$.
+Pro další vlastnosti $zeta$ viz např. [CONWAY, J. B.; Functions of one complex variable, Springer, 1978].
+\end{proof}
+
+\begin{lemma}
+Mimo \emph{kritický pás} $\{z\in\Comp|0<\Rel(z)<1\}$ má $\zeta$ 
+nulové body právě v $-2,\,-4,\,-6,\,$\\$-8,\,\ldots$ \emph{triviální nulové body}.
+\end{lemma}
+\fbox{Reimannova hypotéza} Je-li $z$ nulový bod funkce $\zeta$ v kritickém pásu, potom $\Rel(z)=\frac{1}{2}$. Jeden z nejslavnějších otevřených problémů v matematice (odměna j milion \$). Má úzkou souvislost s rozložením prvočísel, viz [RIEMANN, B.; On the Number of Prime Numbers less than a Given Quantity, 1859]
+
+\begin{theorem} [Eulerova]\label{thm:EulerovaV}
+Je-li $\Rel(z)>1$, potom 
+\begin{equation}\label{eqn:eulerovaV1}
+    \zeta(z)=\prod_{n=1}^\infty\left(\frac{1}{1-p_n^{-z}}\right),
+\end{equation}
+kde $\{p_n\}_{n=1}^\infty$ je posloupnost všech prvočísel.
+\end{theorem}
+
+\begin{note*}
+Zde $\prod_{n=1}^\infty a_n:=\lim_{N\rightarrow+\infty}\prod_{n=1}^N a_n$, má-li pravá strana smysl.
+\end{note*}
+
+\begin{proof}
+Pro každé $n\in\N$ platí 
+$$\frac{1}{1-\underset{\phantom{.}|\cdots|<1}{p_n^{-z}}}=\sum_{m=0}^{+\infty}p_n^{-mz}.$$
+Nechť $n\in\N$. Potom
+\begin{equation}\tag{*}\label{eqn:eulerV}
+    \prod_{k=1}^n\left(\frac{1}{1-p_k^{-z}}\right)=\sum_{j=1}^{+\infty}n_j^{-z}
+\end{equation}
+jsou-li $n_1,\,n_2,\,\ldots$ všechna přirozená čísla, která se dají rozložit na součin mocnin jen prvočísel $p_1,\,p_2,\,\ldots,\,p_n$. 
+Zde se využívá jednoznačnosti faktorizace $n_j$ jako součinu provčísel. Pokud v \cref{eqn:eulerV} pošleme $n\rightarrow\infty$, dostaneme \cref{eqn:eulerovaV1}.
+\end{proof}
+
+\subsection{Prvočíselná věta}
+
+\begin{theorem}[Prvočíselná] \emph{[HADAWARD, J.; POUSSIN, Ch. J. de Pa Valleé; 1896]}
+Nechť $\pi(x)$ je počet prvočísel $p\leq x$ pro každé $x>0$. Potom 
+$$\pi(x)\sim \frac{x}{\log x}\text{, pro }x\rightarrow\infty $$
+$$\text{tzn. }\lim_{x\rightarrow+\infty}\frac{\pi(x)}{\left(\frac{x}{\log x}\right)}=1
+$$
+\end{theorem}
+
+\begin{note*}
+První velký úspěch KA. Nyní existují důkazy, které užívají pouze elementární techniky z UKA - Cauchyho integrální vzorec, Cauchyho větu a odhady křivkových integrálů.
+\end{note*}

@@ -65,7 +65,7 @@ Máme, že
 \begin{aligned}
 &\ind_\varphi s\stackrel{z=\varphi(t)}{=}\frac{1}{2 \pi i}\int_\alpha^\beta \frac{\varphi'(t)}{\varphi(t)-s} \diff t \stackrel{z=\varphi(t)-s}{=}
 \frac{1}{2 \pi i} \int_{\widetilde{\varphi}} \frac{\diff z}{z}=
-\ind_{\widetilde{\varphi}}0=\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Img \phi(\beta)-i \Img \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
+\ind_{\widetilde{\varphi}}0\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Img \phi(\beta)-i \Img \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
 \end{aligned}
 \end{equation*}
 pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Rel(\phi(\beta)) =\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Rel(\phi(\alpha)) $ a $\Img(\phi)$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
@@ -121,7 +121,7 @@ Nechť $f$ je holomorfní funkce na mezikruží $P(z_0,r,R)$, kde $0\leq r<R\leq
 \begin{theorem}[Reziduová pro cykly]
 Nechť $G\subset\Comp$ je otevřená, $\Gamma$ je cyklus v $G$ a $\Int\Gamma\subset G$. Nechť $K\subset G\setminus\langle\Gamma\rangle$ je konečná  a $f\in\Holo(G\setminus K)$. Potom platí
 \begin{equation}
-    \int_\Gamma f = 2\pi i  \sum_{s\in K}\text{res}_s(f)\cdot\ind_\Gamma(s).
+    \int_\Gamma f = 2\pi i  \sum_{s\in K}\res_s(f)\cdot\ind_\Gamma(s).
     \tag{RVC}
     \label{eqn:9.8.rvc}
 \end{equation}

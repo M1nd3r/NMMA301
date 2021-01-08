@@ -12,7 +12,7 @@ kde $\psi^-(t):=e^{it},\ t\in[-\pi,\,0]$. Potom pro $|s|<1$ máme
 $$1=\ind_{\varphi\dotplus\tilde\varphi}{s}=\ind_\varphi{s}+\ind_{\tilde{\varphi}}{s}.$$
 \end{example}
 
-\section{Speciální typy integrálů}
+\section{Speciální typy integrálů} \setcounter{equation}{0}
 \begin{theorem}
 Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a platí 
 \begin{enumerate}
@@ -21,10 +21,10 @@ Nechť $R=P/Q$, kde $P,Q$ jsou polynomy, které nemají společné kořeny a pla
 \end{enumerate}
 Potom
 \begin{equation}
-    \int_{-\infty}^\infty{R(x)dx}=2i\pi.\sum_{\begin{array}{cc}
+    \int_{-\infty}^\infty{R(x)dx}=2i\pi\cdot\sum_{\begin{array}{cc}
          Q(s)=0  \\
          \Img(s)>0 
-    \end{array}}{res_s{R}}.
+    \end{array}}{\res_s{R}}.
     \label{eqn:print}
 \end{equation}
 \end{theorem}
@@ -34,7 +34,7 @@ Ukažte, že integrál v \cref{eqn:print} konverguje, právě když platí 1., 2
     2i\pi.\sum_{\begin{array}{cc}
          Q(s)=0  \\
          \Img(s)>0 
-    \end{array}}{res_s{R}}
+    \end{array}}{\res_s{R}}
     \overset{(RV)}{=}
     \int_{\varphi_r}{R}=
     \int_{\varphi_r^1}{R} +\int_{\varphi_r^2}{R}.
@@ -54,12 +54,12 @@ $$\left|\int_{\varphi^2_r}{R}\right|\leq V(\varphi^2_r)\cdot\max_{\langle{\varph
 \begin{example}
 $$I=\int_0^\infty{\underset{\text{sudá}}{\underbrace{\frac{x^2+1}{x^4+1}}}dx}
 =\frac{1}{2}{\int_{-\infty}^\infty\underset{:=R(x)}{\underbrace{\frac{x^2+1}
-{x^4+1}}}dx}=i\pi\cdot(res_{z_0}R+res_{z_1}R)$$
+{x^4+1}}}dx}=i\pi\cdot(\res_{z_0}R+\res_{z_1}R)$$
 $$=-\frac{i\pi}{4\sqrt{2}}\left[(1+i)^2-(1-i)^2\right]=-\frac{i\pi}{4\sqrt{2}}2\cdot 2i=\frac{\pi}{\sqrt{2}},$$ protože
-$${res}_{z_k}R=\frac{z_k^2+1}{4z^3_k}\cdot\frac{z_k}{z_k}=
+$$\res_{z_k}R=\frac{z_k^2+1}{4z^3_k}\cdot\frac{z_k}{z_k}=
 -\frac{1}{4}(z_k^2+1)z_k,$$
-$${res}_{z_0}R=-\frac{1}{4}(i+1)(1+i)\frac{1}{\sqrt{2}}=-\frac{1}{4\sqrt{2}}(1+i)^2,$$
-$${res}_{z_1}R=-\frac{1}{4}(-i+1)(-1+i)\frac{1}{\sqrt{2}}=\frac{1}{4\sqrt{2}}(1-i)^2.$$
+$$\res_{z_0}R=-\frac{1}{4}(i+1)(1+i)\frac{1}{\sqrt{2}}=-\frac{1}{4\sqrt{2}}(1+i)^2,$$
+$$\res_{z_1}R=-\frac{1}{4}(-i+1)(-1+i)\frac{1}{\sqrt{2}}=\frac{1}{4\sqrt{2}}(1-i)^2.$$
 \end{example}
 
 \begin{theorem}
@@ -74,7 +74,7 @@ Nechť $a>0$. Potom
     \int_{-\infty}^\infty{R(x)e^{iax}}dx = 2i\pi\cdot\sum_{\begin{array}{cc}
          Q(s)=0  \\
          \Img(s)>0 
-    \end{array}}{res_s\left({R(z)e^{iaz}}\right)}.
+    \end{array}}{\res_s\left({R(z)e^{iaz}}\right)}.
 \end{equation}
 \end{theorem}
 \begin{proof}
@@ -99,8 +99,8 @@ Je-li $a<0$, potom \cref{eqn:odhint} obecně neplatí. V tomto případě je nut
 Spočteme Fourierovu transformaci $\F $ funkce $f(x):=\frac{1}{x^2+1}$, kde
 $$(\F f)(t):=\frac{1}{2\pi}\int_{-\infty}^\infty{f(x)e^{itx}}dx, \ t\in\Real. $$
 \begin{itemize}
-    \item Nechť $t>0$. Potom $(\F f)(t)=i\cdot{res}_i{(f(z)e^{itz})}=i\cdot\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
-    \item Nechť $t<0$. Potom $(\F f)(t)=i\cdot{res}_{(-i)}{(f(z)e^{itz})}\cdot(-1)=-i\cdot\frac{e^{-t}}{2\cdot  r(-i)}=\frac{e^{t}}{2}$.
+    \item Nechť $t>0$. Potom $(\F f)(t)=i\cdot\res_i{(f(z)e^{itz})}=i\cdot\frac{e^{-t}}{2i}=\frac{e^{-t}}{2}$.
+    \item Nechť $t<0$. Potom $(\F f)(t)=i\cdot\res_{(-i)}{(f(z)e^{itz})}\cdot(-1)=-i\cdot\frac{e^{-t}}{2\cdot  r(-i)}=\frac{e^{t}}{2}$.
 \end{itemize}
 \textbf{Lépe:}
 $$(\F f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x^2}dx=\frac{e^{-|t|}}{2}, \ t\in\Real .$$
@@ -109,5 +109,5 @@ $$(\F f)(t)=\frac{1}{2\pi}\int_{-\infty}^\infty\frac{\cos{(tx)}+i\sin{(tx)}}{1+x
 \begin{example}
 $$\int_0^\infty\frac{x\sin{x}}{x^2+1}dx=\frac{1}{2}\Img \underset{:=I}{\underbrace{\left(\int_{-\infty}^\infty\frac{x.e^{ix}}{x^2+1}dx\right)}}=\frac{\pi}{2e},$$
 protože
-$$I=2\pi i\,{res}_{i}{f}=2\pi i \frac{ie^{-1}}{2i}=\frac{\pi i}{e}.$$
+$$I=2\pi i\,\res_{i}{f}=2\pi i \frac{ie^{-1}}{2i}=\frac{\pi i}{e}.$$
 \end{example}
