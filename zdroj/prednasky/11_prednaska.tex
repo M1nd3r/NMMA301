@@ -5,7 +5,8 @@ Otázka: Jak $\ind_\varphi s$ vypočítat? BÚNO: $s=0$.
 \end{note}
 
 \begin{notation}[Polární vyjádření]
-Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Víme: $0 \neq z = |z|e^{i \theta}=e^{\phi}$, kde $\theta \in \Arg(z)$ a $\phi = \log|z| + i \theta \in \Log(z)$. $\forall t \in [\alpha, \beta]: 0 \neq \varphi(t)=|\varphi(t)|e^{i \theta(t)}=e^{ \phi(t)}$, kde $\theta(t) \in \Arg(\varphi(t))$ a $\phi(t)=\log|\varphi(t)|+i \theta(t) \in \Log(\varphi(t))$.
+Nechť $\varphi: [\alpha, \beta] \rightarrow \Comp  \setminus \{0\}$ je spojitá. Víme, že $0 \neq z = |z|e^{i \theta}=e^{\phi}$, kde $\theta \in \Arg(z)$ a $\phi = \log|z| + i \theta \in \Log(z)$. Potom pro každé $t \in [\alpha, \beta]$ je $ 0 \neq \varphi(t)=|\varphi(t)|e^{i \theta(t)}=e^{ \phi(t)}$, kde $\theta(t) \in \Arg(\varphi(t))$ a $\phi(t)=\log|\varphi(t)|+i \theta(t) \in \Log(\varphi(t))$. 
+Otázkou je, zda lze $\theta$ a $\Phi$ zvolit spojité na $[\alpha,\beta]$.
 \end{notation}
 
 \begin{definition}
@@ -68,7 +69,7 @@ Máme, že
 \ind_{\widetilde{\varphi}}0\stackrel{\text{Věta}}{=}\\ &=  \frac{1}{2 \pi i}(\phi(\beta)-\phi(\alpha))=\frac{1}{2 \pi i}(i \Img \phi(\beta)-i \Img \phi(\alpha))=\frac{\theta(\beta)-\theta(\alpha)}{2 \pi}=K
 \end{aligned}
 \end{equation*}
-pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$, $\Rel(\phi(\beta)) =\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Rel(\phi(\alpha)) $ a $\Img(\phi)$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
+pro nějaké $K \in \Z$, kde $\phi$ je jednoznačná větev logaritmu $\widetilde{\varphi}$. Zřejmě $\Rel(\phi(\beta)) =\log |\widetilde{\varphi}(\beta)|=\log |\widetilde{\varphi}(\alpha)|=\Rel(\phi(\alpha)) $ a $\Img(\phi)$ je jednoznačná větev argumentu $\widetilde{\varphi}$.
 \end{proof}
 
 \section{Obecná Cauchyho věta a reziduová věta pro cykly}
@@ -96,13 +97,13 @@ Nechť $\Gamma = \{\varphi_1, ... ,\varphi_n\}$ je cyklus. Definujeme
 \end{itemize}
 \end{note}
 
-\begin{example}
-Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\Comp : |z|=1\}$, $\Int\psi=\emptyset$ a $\Ext\psi=\Comp \setminus\langle\psi\rangle$.
-\end{example}
-
 \begin{note}
 Uzavřenou křivku $\varphi$ chápeme jako cyklus $\Gamma:=\{\varphi\}$.
 \end{note}
+
+\begin{example}
+Je-li $\psi:=\varphi\dotminus\varphi$, $\varphi(t):=e^{it}$, pro $t\in[0,2\pi]$. Potom $\langle\psi\rangle=\{z\in\Comp : |z|=1\}$, $\Int\psi=\emptyset$ a $\Ext\psi=\Comp \setminus\langle\psi\rangle$.
+\end{example}
 
 \begin{theorem}[Obecná Cauchyho pro cykly]\label{thm:obCapC}
 Nechť $G\subset\Comp $ je otevřená a $\Gamma$ je cyklus v $G$, tedy $\langle\Gamma\rangle\subset G$. Potom platí, že

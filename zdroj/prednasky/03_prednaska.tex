@@ -92,15 +92,16 @@ Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ je regulární křivka a $f:\l
     \end{align*}
     kde $(\dotminus \varphi)(t):=\varphi(-t)$, $t\in[-\beta,-\alpha]$ je \emph{opačná křivka} k %pokud integruju v opačném směru tak se mi nezmění velikost integrálu, pouze jeho znaménko.
     $\varphi$.
-    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ je křivka, $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. %\Omega je změna parametrizace křivky \varphi.
+    \item Křivkový integrál \emph{nezávisí na parametrizaci křivky}. Nechť $\varphi:[\alpha,\beta]\rightarrow\Comp  $ je křivka,\\
+    $\omega:[\gamma,\delta]\xrightarrow{\text{na}}[\alpha,\beta]$ je spojitě diferencovatelné s $\omega'>0$ a $\psi:=\varphi\circ\omega$. %\Omega je změna parametrizace křivky \varphi.
     Potom $$\int_\varphi f = \int_\psi f\text{.}$$
     \begin{proof}
-    \begin{multline*}
+    \begin{equation*}
         \int_\psi f=
-    \int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr) \varphi'\bigl(\omega(t)\bigr)\omega'(t)\diff t\\
-    =\int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr)\psi'(t)\diff t \stackrel{\text{subst.}}{\stackrel{\tau=\omega(t)}{=}}
+    \int_\gamma^\delta f\Bigl(\varphi\bigl(\omega(t)\bigr)\Bigr) \varphi'\bigl(\omega(t)\bigr)\omega'(t)\diff t
+     \stackrel{\text{subst.}}{\stackrel{\tau=\omega(t)}{=}}
     \int_\alpha^\beta f\bigl(\varphi(\tau)\bigr) \varphi'(\tau)\diff \tau=\int_\varphi f \text{.} 
-    \end{multline*}
+    \end{equation*}
     \end{proof}
 \end{enumerate}
 \end{propertiesBasic}

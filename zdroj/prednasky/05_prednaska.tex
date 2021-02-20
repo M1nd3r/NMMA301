@@ -49,7 +49,7 @@ Zde $f^{(0)}=f$ a $k$-tá komplexní derivace $f^{(k)}$ je definovaná jako $f^{
 
 \begin{proof}
 Z věty o derivaci integrálu dle komplexního parametru a \cref{eqn:cvz}, protože 
-\[\frac{d^k}{ds^k}\left(\frac{1}{z-s}\right)=
+\[\frac{\diff^k}{\diff s^k}\left(\frac{1}{z-s}\right)=
 \frac{k!}{(z-s)^{k+1}},\hspace{2mm} z\neq{s}.\]
 \end{proof}
 
@@ -77,18 +77,18 @@ pro každý trojúhelník $\triangle\subset\Ukruh $, má $f$ na $\Ukruh $ primit
 \begin{theorem}[Cauchyho odhady]
 Nechť $z_0\in\Comp  $, $r\in(0,\, +\infty)$ a $f$ je holomorní funkce na otevřené množině obsahující $\overline{U(z_0,\, r)}$. Potom pro každé $k=0,1,2,...$ je 
 \begin{equation}
-\forall{s\in{\Ukruh :=U(z_0,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r\cdot k!}{(d(s))^{k+1}}\cdot \max_{\partial\Ukruh }{|f|},    
+\forall{s\in{\Ukruh :=U(z_0,\,r)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{r\cdot k!}{(d(s))^{k+1}}\cdot \max_{\partial\Ukruh }{|f|},    
 \tag{$CO_1$}
 \label{eqn:co1}
 \end{equation}
-kde $d(s) := dist(s,\partial\Ukruh )\overset{def.}{:=}\underset{{z\in{\partial{\Ukruh }}}}{min}{|s-z|}$
+kde $d(s) := dist(s,\partial\Ukruh )\overset{\textit{def.}}{:=}\underset{{z\in{\partial{\Ukruh }}}}{min}{|s-z|}$
 \begin{equation}
-\forall{s\in{U\left(z_0,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!\cdot2^{k+1}}{r^k}\cdot\max_{\partial{U}}{|f|}\cdot
+\forall{s\in{U\left(z_0,\,\frac{r}{2}\right)}}:\hspace{5mm}|f^{(k)}(s)|\leq\frac{k!\cdot2^{k+1}}{r^k}\cdot\max_{\partial{\Ukruh}}{|f|}\cdot
 \tag{$CO_2$}
 \label{eqn:co2}
 \end{equation}
 \begin{equation}
-    |f^{(k)}(z_0)|\leq\frac{k!}{r^k}\cdot\max_{\partial{U}}{|f|}. 
+    |f^{(k)}(z_0)|\leq\frac{k!}{r^k}\cdot\max_{\partial{\Ukruh}}{|f|}. 
 \tag{$CO_3$}
 \label{eqn:co3}
 \end{equation}
@@ -205,6 +205,6 @@ Mocninnou řadu derivujeme "člen po členu", můžeme na $U(z_0,\,r)$ zaměnit 
 
 \begin{proof}
 Užijeme Weierstrassovu větu na 
-\[S_n(z):=\sum_{n=0}^N{a_n(z-z_0)^n},\hspace{5mm} z\in{U(z_0,\,R)}\]
+\[S_N(z):=\sum_{n=0}^N{a_n(z-z_0)^n},\hspace{5mm} z\in{U(z_0,\,R)}\]
 Dosadíme-li do \cref{eqn:rada} $z=z_0$, máme $f^{(k)}(z_0)={a_k}.{k!}$
 \end{proof}

@@ -48,9 +48,9 @@ má $\Gamma$ jednoduché póly a $\res_{-n}\Gamma=(-1)^n/n!,\  n=0,\,1,\,2,\,3,\
 \begin{proof}
 Víme z \cref{lemma:gammaIter}, že
 \begin{equation}\tag{*}\label{eqn:gammaIterFraction}
-    \Gamma(z)=\frac{\Gamma(z+1)}{z},\ \Rel(z)>0,
+    \Gamma(z)=\frac{\Gamma(z+1)}{z},\ \Rel(z)>0.
 \end{equation}
-protože pravá strana má smysl i pro $0\geq\Rel(z)>-1,\ z\neq 0$, definujeme pro taková $z$ funkci $\Gamma(z)$ jako $\frac{\Gamma(z+1)}{z}$. Nyní má ale pravá strana smysl pro $-1\geq\Rel(z)>-2, z\neq-1,\,0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{eqn:gammaIterFraction}, atd. Navíc máme 
+Protože pravá strana má smysl i pro $0\geq\Rel(z)>-1,\ z\neq 0$, definujeme pro taková $z$ funkci $\Gamma(z)$ jako $\frac{\Gamma(z+1)}{z}$. Nyní má ale pravá strana smysl pro $-1\geq\Rel(z)>-2, z\neq-1,\,0$ a pro taková $z$ rozšíříme definici $\Gamma$ opět pomocí \cref{eqn:gammaIterFraction}, atd. Z věty o jednoznačnosti plyne, že toto holomorfní rozšíření $\Gamma$ je jednoznačné. Navíc máme 
 \begin{align*}
     \res_0\Gamma(z)&=\res_0\left(\frac{\Gamma(z+1)}{z}\right)=\Gamma(1)=1, \\
     \res_{-1}\Gamma(z)&=\res_{-1}\left(\frac{\Gamma(z+2)}{z(z+1)}\right)=-\Gamma(1)=-1, \\
@@ -111,7 +111,7 @@ $\varphi(z):=1-2^{1-z}$ je celá funkce, která má \emph{nulové body} právě 
 
 \begin{proof}\mbox{}
 \begin{itemize}
-    \item $2^{1-z}=e^{(1-z\log 2)}=1\iff(1-z)\cdot\log2=2k\pi i,\ k\in \Z$,
+    \item $2^{1-z}=e^{(1-z)\log 2}=1\iff(1-z)\cdot\log2=2k\pi i,\ k\in \Z$,
     \item $\varphi'(z)=2^{1-z}\cdot\log2,\ \varphi'(z_k)=\log2\neq0$.
 \end{itemize}
 \end{proof}
@@ -126,14 +126,15 @@ Z \cref{lemma:etaZetaRelation} víme, že pro $\Rel(z)>1$ je
     \zeta(z)=\frac{\eta(z)}{\left(1-2^{1-z}\right)}.
 \end{equation}
 Protože pravá strana \cref{eqn:zetaExpansion} má smysl i pro $1\geq\Rel(z)>0,\ z\neq z_k$ pro všechna $k\in\Z$, rozšíříme $\zeta$ holomorfně pro taková $z$ pomocí \cref{eqn:zetaExpansion}. Dále z \cref{eqn:zetaExpansion} máme $\res_1\zeta=\frac{\eta(1)}{\varphi'(1)}=\frac{\log2}{\log2}=1$.
-Pro další vlastnosti $zeta$ viz např. [CONWAY, J. B.; Functions of one complex variable, Springer, 1978].
+Pro další vlastnosti $\zeta$ viz např. [CONWAY, J. B.; Functions of one complex variable, Springer, 1978].
 \end{proof}
 
 \begin{lemma}
 Mimo \emph{kritický pás} $\{z\in\Comp|0<\Rel(z)<1\}$ má $\zeta$ 
 nulové body právě v $-2,\,-4,\,-6,\,$\\$-8,\,\ldots$ \emph{triviální nulové body}.
 \end{lemma}
-\fbox{Reimannova hypotéza} Je-li $z$ nulový bod funkce $\zeta$ v kritickém pásu, potom $\Rel(z)=\frac{1}{2}$. Jeden z nejslavnějších otevřených problémů v matematice (odměna j milion \$). Má úzkou souvislost s rozložením prvočísel, viz [RIEMANN, B.; On the Number of Prime Numbers less than a Given Quantity, 1859]
+\fbox{Riemannova hypotéza} Je-li $z$ nulový bod funkce $\zeta$ v kritickém pásu, potom $\Rel(z)=\frac{1}{2}$. Jeden z nejslavnějších otevřených problémů v matematice (odměna 1 milion \$). Má úzkou souvislost s rozložením prvočísel, viz [Riemann, B.; Ueber die Anzahl der Primzahlen unter
+einer gegebenen Grösse, anglický překlad: On the Number of Prime Numbers less than a Given Quantity, 1859]
 
 \begin{theorem} [Eulerova]\label{thm:EulerovaV}
 Je-li $\Rel(z)>1$, potom 

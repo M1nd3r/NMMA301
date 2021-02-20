@@ -17,7 +17,7 @@
     \end{equation}
     
     Položme 
-    $$g(z,\xi):=\twopartdef{\frac{f(z)-f(\xi)}{z-\xi}}{z\neq\xi,\ (z,\, \xi)\in G,}{f'(z)}{z=\xi,\ (z,\, \xi)\in G.}$$
+    $$g(z,\xi):=\twopartdef{\frac{f(z)-f(\xi)}{z-\xi}}{z\neq\xi,\ (z,\, \xi)\in G\times G,}{f'(z)}{z=\xi,\ (z,\, \xi)\in G\times G.}$$
     
     Potom 
     \begin{enumerate}[label=(\alph*)]
@@ -33,9 +33,12 @@
         tudíž 
         $$|g(z,\, \xi)-g(z_0,z_0)|=\left|\int_0^1(f'(\varphi(t)-f'(z_0))\diff t \right|\stackrel{\cref{eqn:proof_obCpC_1}}{\leq}\varepsilon.$$
         
+        Pro $z\in U(z_0,r)$ je
+        $$|g(z,z)-g(z_0,z_0)|=|f'(z)-f'(z_0)|\leq \varepsilon$$ z $\cref{eqn:proof_obCpC_1}$.
+        
         \item $\forall z\in G:g(z,\cdot)\in \Holo(G)$. Jasné pro $\xi\neq z$. V $\xi=z$ je ale odstranitelná singularita. Položme 
         $$h(\xi):=\frac{1}{2\pi i}\int_\Gamma g(z,\, \xi)\diff z,\ \xi \in G.$$
-        Podle věty o derivování integrálu podle komplexního parametru platí, že $h \in\Holo(G)$. Je-li $\xi\in G\cap\Ext\Gamma$, potom v \cref{eqn:proof_obCapC_ekviv} máme $h(\xi)=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z$. Položme 
+        Podle věty o derivování integrálu podle komplexního parametru platí, že $h \in\Holo(G)$. Je-li $\xi\in G\cap\Ext\Gamma$, potom z \cref{eqn:proof_obCapC_ekviv} máme $h(\xi)=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z$. Položme 
         $$h(\xi):=\frac{1}{2\pi i}\int_\Gamma\frac{f(z)}{z-\xi}\diff z,\ \xi \in \underset{ot.}{\Ext\Gamma}\setminus G.$$
         Potom $h$ je holomorfní na $G$ i na $\Ext\Gamma$, tedy i na celém $\Comp=G\cup\Ext\Gamma$. Ukážeme že $h$ je omezená. Potom z věty \cref{thm:liouville} (\nameref{thm:liouville}) plyne, že $h$ je konstantní. Skutečně, máme $\lim_{\xi\rightarrow\infty}h(\xi)=0$. To plyne takto.
         Nechť $\langle\Gamma\rangle\subset U(0,R).$ Je-li $|\xi|>R$, potom
@@ -71,7 +74,7 @@ Z Věty \cref{thm:morera} (\nameref{thm:morera}) plyne, že $h\in\Holo(G)$.
 Plyne z Věty \cref{thm:obCapC} (\nameref{thm:obCapC}) a z \cref{thm:CaVpHvezdicObl} (\nameref{thm:CaVpHvezdicObl}).
 \end{proof}
 
- Otázka: Charakterizuj $G\in\Comp$ otevřené, pro které platí \cref{eqn:JS}.
+ Otázka: Charakterizuj $G\subset\Comp$ otevřené, pro které platí \cref{eqn:JS}.
  
 \begin{theorem} 
 Nechť $G\subset\Comp$ je otevřená. Potom platí \cref{eqn:JS}, právě když $\Sp\setminus G$ je souvislá.
@@ -105,7 +108,7 @@ Pojem indexu, vnitřku a vnějšku lze zobecnit i pro \emph{spojité} uzavřené
 \end{note}
 
 \begin{theorem}[Jordanova]\label{thm:Jordan}
-Nechť $\varphi$ je Jordanova křivka $\Comp$. Potom $\Int\varphi$ a $\Ext\varphi$ jsou oblasti a $\Comp\setminus\langle\varphi\rangle=\Int\varphi\cup\Ext\varphi$. Navíc buď $\forall s \in \Int\varphi:\ \ind_\varphi s=1$, nebo $\forall s \in \Int\varphi:\ \ind_\varphi s=-1$.
+Nechť $\varphi$ je Jordanova křivka v $\Comp$. Potom $\Int\varphi$ a $\Ext\varphi$ jsou oblasti a $\Comp\setminus\langle\varphi\rangle=\Int\varphi\cup\Ext\varphi$. Navíc buď $\forall s \in \Int\varphi:\ \ind_\varphi s=1$, nebo $\forall s \in \Int\varphi:\ \ind_\varphi s=-1$.
 \end{theorem}
 \begin{proof}
 Těžký, nebude.
